@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://jianzuoyi.github.io/sitemap.xml
