@@ -1,90 +1,45 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on 简佐义的博客</title>
+    <title>Categories on Jane - A super concise theme for Hugo</title>
     <link>https://jianzuoyi.github.io/categories/</link>
-    <description>Recent content in Categories on 简佐义的博客</description>
+    <description>Recent content in Categories on Jane - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Mon, 04 Mar 2019 16:01:23 +0800</lastBuildDate><atom:link href="https://jianzuoyi.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Tue, 15 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jianzuoyi.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>docs</title>
-      <link>https://jianzuoyi.github.io/categories/docs/</link>
-      <pubDate>Mon, 04 Mar 2019 16:01:23 +0800</pubDate>
+      <title>关于</title>
+      <link>https://jianzuoyi.github.io/categories/%E5%85%B3%E4%BA%8E/</link>
+      <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jianzuoyi.github.io/categories/docs/</guid>
+      <guid>https://jianzuoyi.github.io/categories/%E5%85%B3%E4%BA%8E/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>index</title>
-      <link>https://jianzuoyi.github.io/categories/index/</link>
-      <pubDate>Mon, 04 Mar 2019 16:01:23 +0800</pubDate>
+      <title>Rosalind</title>
+      <link>https://jianzuoyi.github.io/categories/rosalind/</link>
+      <pubDate>Wed, 09 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jianzuoyi.github.io/categories/index/</guid>
+      <guid>https://jianzuoyi.github.io/categories/rosalind/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>math</title>
-      <link>https://jianzuoyi.github.io/categories/math/</link>
-      <pubDate>Mon, 04 Mar 2019 16:01:23 +0800</pubDate>
+      <title>病原微生物检测</title>
+      <link>https://jianzuoyi.github.io/categories/%E7%97%85%E5%8E%9F%E5%BE%AE%E7%94%9F%E7%89%A9%E6%A3%80%E6%B5%8B/</link>
+      <pubDate>Wed, 02 Dec 2020 00:00:00 +0800</pubDate>
       
-      <guid>https://jianzuoyi.github.io/categories/math/</guid>
+      <guid>https://jianzuoyi.github.io/categories/%E7%97%85%E5%8E%9F%E5%BE%AE%E7%94%9F%E7%89%A9%E6%A3%80%E6%B5%8B/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>shortcodes</title>
-      <link>https://jianzuoyi.github.io/categories/shortcodes/</link>
-      <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
+      <title>自学生信</title>
+      <link>https://jianzuoyi.github.io/categories/%E8%87%AA%E5%AD%A6%E7%94%9F%E4%BF%A1/</link>
+      <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jianzuoyi.github.io/categories/shortcodes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>English</title>
-      <link>https://jianzuoyi.github.io/categories/english/</link>
-      <pubDate>Thu, 31 Aug 2017 15:43:48 +0800</pubDate>
-      
-      <guid>https://jianzuoyi.github.io/categories/english/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>test</title>
-      <link>https://jianzuoyi.github.io/categories/test/</link>
-      <pubDate>Wed, 30 Aug 2017 15:43:48 +0800</pubDate>
-      
-      <guid>https://jianzuoyi.github.io/categories/test/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Development</title>
-      <link>https://jianzuoyi.github.io/categories/development/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://jianzuoyi.github.io/categories/development/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>golang</title>
-      <link>https://jianzuoyi.github.io/categories/golang/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://jianzuoyi.github.io/categories/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Syntax Highlighting</title>
-      <link>https://jianzuoyi.github.io/categories/syntax-highlighting/</link>
-      <pubDate>Tue, 30 Aug 2011 16:01:23 +0800</pubDate>
-      
-      <guid>https://jianzuoyi.github.io/categories/syntax-highlighting/</guid>
+      <guid>https://jianzuoyi.github.io/categories/%E8%87%AA%E5%AD%A6%E7%94%9F%E4%BF%A1/</guid>
       <description></description>
     </item>
     

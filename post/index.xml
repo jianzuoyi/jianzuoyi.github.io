@@ -1,167 +1,190 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on 简佐义的博客</title>
+    <title>Posts on Jane - A super concise theme for Hugo</title>
     <link>https://jianzuoyi.github.io/post/</link>
-    <description>Recent content in Posts on 简佐义的博客</description>
+    <description>Recent content in Posts on Jane - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Mon, 04 Mar 2019 16:01:23 +0800</lastBuildDate><atom:link href="https://jianzuoyi.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Wed, 09 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jianzuoyi.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Jane 主题预览</title>
-      <link>https://jianzuoyi.github.io/post/jane-theme-preview/</link>
-      <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
+      <title>Rosalind刷题笔记：013 随机DNA序列</title>
+      <link>https://jianzuoyi.github.io/post/rosalind/2020-12-09-rosalind-013-prob/</link>
+      <pubDate>Wed, 09 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jianzuoyi.github.io/post/jane-theme-preview/</guid>
-      <description>主题预览,内容有待填充。</description>
+      <guid>https://jianzuoyi.github.io/post/rosalind/2020-12-09-rosalind-013-prob/</guid>
+      <description>众所周知，基因组的核酸链不可能是随机形成的。有时候许多物种基因组之间，存在一些保守序列（motif），这意味着它们可能具有重要功能。但是，我</description>
     </item>
     
     <item>
-      <title>Math Preview</title>
-      <link>https://jianzuoyi.github.io/post/math-preview/</link>
-      <pubDate>Mon, 04 Mar 2019 16:01:23 +0800</pubDate>
+      <title>Rosalind刷题笔记：011 DNA六框翻译</title>
+      <link>https://jianzuoyi.github.io/post/rosalind/2020-12-08-rosalind-011-dna-orf/</link>
+      <pubDate>Tue, 08 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jianzuoyi.github.io/post/math-preview/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://www.intmath.com/cg5/katex-mathjax-comparison.php&#34;&gt;KaTeX and MathJax Comparison Demo, currently processed as KaTex&lt;/a&gt;&lt;/p&gt;</description>
+      <guid>https://jianzuoyi.github.io/post/rosalind/2020-12-08-rosalind-011-dna-orf/</guid>
+      <description>开放阅读框（Open Reading Frame, ORF）是由起始密码子开始，直到终止密码子结束，中间不含有其他终止密码子的核酸序列。由于DNA是双链结构，任何一条链</description>
     </item>
     
     <item>
-      <title>Shortcodes Preview</title>
-      <link>https://jianzuoyi.github.io/post/shortcodes-preview/</link>
-      <pubDate>Sun, 04 Mar 2018 16:01:23 +0800</pubDate>
+      <title>Rosalind刷题笔记：012 排列组合</title>
+      <link>https://jianzuoyi.github.io/post/rosalind/2020-12-08-rosalind-012-perm/</link>
+      <pubDate>Tue, 08 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jianzuoyi.github.io/post/shortcodes-preview/</guid>
-      <description>&lt;h2 id=&#34;what-a-shortcode-is&#34;&gt;What a Shortcode is&lt;/h2&gt;
-&lt;p&gt;Hugo loves Markdown because of its simple content format, but there are times when Markdown falls short. Often, content authors are forced to add raw HTML (e.g., video &lt;code&gt;&amp;lt;iframes&amp;gt;&lt;/code&gt;) to Markdown content. We think this contradicts the beautiful simplicity of Markdown&amp;rsquo;s syntax.&lt;/p&gt;
-&lt;p&gt;Hugo created &lt;strong&gt;shortcodes&lt;/strong&gt; to circumvent these limitations.&lt;/p&gt;
-&lt;p&gt;A shortcode is a simple snippet inside a content file that Hugo will render using a predefined template. Note that shortcodes will not work in template files. If you need the type of drop-in functionality that shortcodes provide but in a template, you most likely want a [partial template][partials] instead.&lt;/p&gt;
-&lt;p&gt;In addition to cleaner Markdown, shortcodes can be updated any time to reflect new classes, techniques, or standards. At the point of site generation, Hugo shortcodes will easily merge in your changes. You avoid a possibly complicated search and replace operation.&lt;/p&gt;
-&lt;p&gt;More details: &lt;a href=&#34;https://gohugo.io/content-management/shortcodes/&#34;&gt;https://gohugo.io/content-management/shortcodes/&lt;/a&gt;&lt;/p&gt;</description>
+      <guid>https://jianzuoyi.github.io/post/rosalind/2020-12-08-rosalind-012-perm/</guid>
+      <description>点突变只能使同一个物种内的个体得到变异，而要产生新物种，则需要更大规模的改变，这就是基因组重排。如果我们比较相邻物种的基因组，会发现它们的染</description>
     </item>
     
     <item>
-      <title>Image Preview</title>
-      <link>https://jianzuoyi.github.io/post/image-preview/</link>
-      <pubDate>Sat, 03 Mar 2018 16:01:23 +0800</pubDate>
+      <title>Rosalind刷题笔记：008 孟德尔第一定律</title>
+      <link>https://jianzuoyi.github.io/post/rosalind/2020-12-07-rosalind-008-first-law/</link>
+      <pubDate>Mon, 07 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jianzuoyi.github.io/post/image-preview/</guid>
-      <description>&lt;p&gt;Thanks for &lt;a href=&#34;https://github.com/liwenyip/hugo-easy-gallery&#34;&gt;liwenyip/hugo-easy-gallery&lt;/a&gt; &amp;amp; &lt;a href=&#34;https://github.com/xianmin/hugo-theme-jane/pull/48&#34;&gt;Zebradil · Pull Request #48&lt;/a&gt; .&lt;/p&gt;
-&lt;p&gt;Now, we could use &lt;code&gt;{{&amp;lt; gallery &amp;gt;}}&lt;/code&gt; shortcode in hugo-theme-jane.&lt;/p&gt;
-&lt;h2 id=&#34;normal-image&#34;&gt;Normal Image&lt;/h2&gt;
-&lt;p&gt;This is an image in &lt;code&gt;static/image&lt;/code&gt; folder.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;![&lt;span class=&#34;nt&#34;&gt;This is an image in `static/image` folder.&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;/image/example.jpg&lt;/span&gt;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description>
+      <guid>https://jianzuoyi.github.io/post/rosalind/2020-12-07-rosalind-008-first-law/</guid>
+      <description>遗传学三大定律是：基因的分离定律、基因的自由组合定律、基因的连锁与交换定律。本题主要考查孟德尔第一定律及概率论基础知识。 给定： 三个正整数k,</description>
     </item>
     
     <item>
-      <title>Shortcodes Notice Preview</title>
-      <link>https://jianzuoyi.github.io/post/shortcode-notice/</link>
-      <pubDate>Sat, 03 Mar 2018 16:01:23 +0800</pubDate>
+      <title>Rosalind刷题笔记：009 查找DNA中的motif</title>
+      <link>https://jianzuoyi.github.io/post/rosalind/2020-12-07-rosalind-009-dna-motif/</link>
+      <pubDate>Mon, 07 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jianzuoyi.github.io/post/shortcode-notice/</guid>
-      <description>normal use Note example: 1 2 3 {{% notice note %}} A notice disclaimer {{% /notice %}} Result: You could custom title : 1 2 3 {{% notice note 笔记 %}} A notice disclaimer {{% /notice %}} tip 1 2 3 {{% notice tip %}} A tip disclaimer {{% /tip %}} info 1 2 3 {{% notice info %}} A info disclaimer {{% /notice %}} warning 1 2 3</description>
+      <guid>https://jianzuoyi.github.io/post/rosalind/2020-12-07-rosalind-009-dna-motif/</guid>
+      <description>在字符串中查找子串是一个常见问题。子串在字符串中可能是唯一的，比如特定的基因序列；也有可能有多个拷贝，比如基因组中的重复序列。这些重复序列可</description>
     </item>
     
     <item>
-      <title>Jane-Theme Footnote Preview</title>
-      <link>https://jianzuoyi.github.io/post/doc-footnote-preview/</link>
-      <pubDate>Thu, 01 Mar 2018 16:01:23 +0800</pubDate>
+      <title>Rosalind刷题笔记：010 DNA一致性序列计算</title>
+      <link>https://jianzuoyi.github.io/post/rosalind/2020-12-07-rosalind-010-dna-cons/</link>
+      <pubDate>Mon, 07 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jianzuoyi.github.io/post/doc-footnote-preview/</guid>
-      <description>&lt;p&gt;Hugo-theme-jane optimized for footnote. When you mouse hover the footnote&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; , footnote content will be displayed.&lt;/p&gt;</description>
+      <guid>https://jianzuoyi.github.io/post/rosalind/2020-12-07-rosalind-010-dna-cons/</guid>
+      <description>经常碰到需要计算一组DNA序列的一致性序列，比如去除测序数据中的PCR错误，最简单的方法就是通过计算它们之间的一致性序列。 计算一致性序列，通</description>
     </item>
     
     <item>
-      <title>English Creating a New Theme</title>
-      <link>https://jianzuoyi.github.io/post/english-preview/</link>
-      <pubDate>Thu, 31 Aug 2017 15:43:48 +0800</pubDate>
+      <title>Rosalind刷题笔记：007 兔子问题和递推</title>
+      <link>https://jianzuoyi.github.io/post/rosalind/2020-12-06-rosalind-007-fib/</link>
+      <pubDate>Sun, 06 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jianzuoyi.github.io/post/english-preview/</guid>
-      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.&lt;/p&gt;</description>
+      <guid>https://jianzuoyi.github.io/post/rosalind/2020-12-06-rosalind-007-fib/</guid>
+      <description>序列是一组有序对象的集合，它有如下特征： 序列内元素可以重复； 序列可以是有限的，也可以是无限的。 递推关系是一种用来定义序列的方法，可以通过前面</description>
     </item>
     
     <item>
-      <title>This is a very long title This is a very long title This is a very long title This is a very long title This is a very long title</title>
-      <link>https://jianzuoyi.github.io/post/this-is-a-very-long-title/</link>
-      <pubDate>Wed, 30 Aug 2017 15:43:48 +0800</pubDate>
+      <title>Rosalind刷题笔记：002 中心法则：转录</title>
+      <link>https://jianzuoyi.github.io/post/rosalind/2020-12-05-rosalind-002-transcript/</link>
+      <pubDate>Sat, 05 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jianzuoyi.github.io/post/this-is-a-very-long-title/</guid>
-      <description>This is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long title</description>
+      <guid>https://jianzuoyi.github.io/post/rosalind/2020-12-05-rosalind-002-transcript/</guid>
+      <description>我在生物信息学：全景一文中，阐述了生物信息学的应用领域非常广泛。但是有一点是很关键的，就是细胞内的生命活动都遵从中心法则，生物信息学很多时候</description>
     </item>
     
     <item>
-      <title>Creating a New Theme</title>
-      <link>https://jianzuoyi.github.io/post/creating-a-new-theme/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      <title>Rosalind刷题笔记：003 中心法则：翻译</title>
+      <link>https://jianzuoyi.github.io/post/rosalind/2020-12-05-rosalind-003-translate/</link>
+      <pubDate>Sat, 05 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jianzuoyi.github.io/post/creating-a-new-theme/</guid>
-      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
-We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
+      <guid>https://jianzuoyi.github.io/post/rosalind/2020-12-05-rosalind-003-translate/</guid>
+      <description>我在生物信息学：全景一文中，阐述了生物信息学的应用领域非常广泛。但是有一点是很关键的，就是细胞内的生命活动都遵从中心法则，生物信息学很多时候</description>
     </item>
     
     <item>
-      <title>(Hu)go Template Primer</title>
-      <link>https://jianzuoyi.github.io/post/goisforlovers/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <title>Rosalind刷题笔记：004 求DNA的反向互补序列</title>
+      <link>https://jianzuoyi.github.io/post/rosalind/2020-12-05-rosalind-004-revc/</link>
+      <pubDate>Sat, 05 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jianzuoyi.github.io/post/goisforlovers/</guid>
-      <description>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
-This document is a brief primer on using go templates.</description>
+      <guid>https://jianzuoyi.github.io/post/rosalind/2020-12-05-rosalind-004-revc/</guid>
+      <description>碱基互补配对原则是：A与T配对，G与C配对。 求DNA的反向互补序列分两步：第一是反向，第二是互补。比如序列“ATGC”，反向就是“CGTA”</description>
     </item>
     
     <item>
-      <title>Getting Started with Hugo</title>
-      <link>https://jianzuoyi.github.io/post/hugoisforlovers/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <title>Rosalind刷题笔记：005 计算GC含量</title>
+      <link>https://jianzuoyi.github.io/post/rosalind/2020-12-05-rosalind-005-gc_content/</link>
+      <pubDate>Sat, 05 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jianzuoyi.github.io/post/hugoisforlovers/</guid>
-      <description>Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
-Save it somewhere specific as we will be using it in the next step.
-More complete instructions are available at installing hugo
-Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
-Follow the following steps:
- Clone the hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:</description>
+      <guid>https://jianzuoyi.github.io/post/rosalind/2020-12-05-rosalind-005-gc_content/</guid>
+      <description>DNA序列的GC含量是指序列中&amp;rsquo;G&amp;rsquo;和&amp;rsquo;C&amp;rsquo;所占的百分比。 一条DNA序列很容易表示，但是如果</description>
     </item>
     
     <item>
-      <title>Migrate to Hugo from Jekyll</title>
-      <link>https://jianzuoyi.github.io/post/migrate-from-jekyll/</link>
-      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
+      <title>Rosalind刷题笔记：006 计算点突变数</title>
+      <link>https://jianzuoyi.github.io/post/rosalind/2020-12-05-rosalind-006-hamm/</link>
+      <pubDate>Sat, 05 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jianzuoyi.github.io/post/migrate-from-jekyll/</guid>
-      <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
-▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png  should become
-▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
+      <guid>https://jianzuoyi.github.io/post/rosalind/2020-12-05-rosalind-006-hamm/</guid>
+      <description>汉明距离的定义：对于两条长度相等的字符串来说，汉明距离指的是它们之间不相同的字符数。对于两条DNA，则是它们之间的点突变数目。 **给定：**</description>
     </item>
     
     <item>
-      <title>Syntax Highlighting</title>
-      <link>https://jianzuoyi.github.io/post/syntax-highlighting/</link>
-      <pubDate>Tue, 30 Aug 2011 16:01:23 +0800</pubDate>
+      <title>Rosalind刷题笔记：001 碱基统计</title>
+      <link>https://jianzuoyi.github.io/post/rosalind/2020-12-04-rosalind-001-base-count/</link>
+      <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jianzuoyi.github.io/post/syntax-highlighting/</guid>
-      <description>&lt;p&gt;More detail: &lt;a href=&#34;https://gohugo.io/content-management/syntax-highlighting/&#34;&gt;Syntax Highlighting | Hugo&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;helloWorld&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-  &lt;span class=&#34;nx&#34;&gt;alert&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Hello, World!&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description>
+      <guid>https://jianzuoyi.github.io/post/rosalind/2020-12-04-rosalind-001-base-count/</guid>
+      <description>前言 Rosalind is a platform for learning bioinformatics and programming through problem solving. Rosalind是一个通过解决实际生物学问题来学习生物信息和练习编程的平台，类似于IT行业的刷题网站力扣（Lee</description>
+    </item>
+    
+    <item>
+      <title>从零开始学PCR技术（五）：试验污染</title>
+      <link>https://jianzuoyi.github.io/post/2020-12-02-pcr-5-pollution/</link>
+      <pubDate>Wed, 02 Dec 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-12-02-pcr-5-pollution/</guid>
+      <description>从零开始学PCR技术（五）：试验污染 PCR反应最大的特点是具有较大的扩增能力和极高的灵敏度，正因为如此，极其微量的污染即可造成检测结果的假阳</description>
+    </item>
+    
+    <item>
+      <title>从零开始学PCR技术（四）：常见问题</title>
+      <link>https://jianzuoyi.github.io/post/2020-12-01-pcr-4-question/</link>
+      <pubDate>Tue, 01 Dec 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-12-01-pcr-4-question/</guid>
+      <description>从零开始学PCR技术（四）：常见问题 PCR反应可能存在问题，比如无扩增条带、有扩增条带但是假阳性、出现非特异性条带或者条带出现拖尾现象，这是</description>
+    </item>
+    
+    <item>
+      <title>从零开始学PCR技术（三）：PCR引物设计</title>
+      <link>https://jianzuoyi.github.io/post/2020-11-30-pcr-3-primer-design/</link>
+      <pubDate>Mon, 30 Nov 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-11-30-pcr-3-primer-design/</guid>
+      <description>扩增子测序在临床基因检测中有广泛应用，合理的Panel设计非常重要，而Panel设计最终要落地，精心设计引物就是重中之重了。 本文通过公开资料</description>
+    </item>
+    
+    <item>
+      <title>从零开始学PCR技术（二）：Taq DNA酶</title>
+      <link>https://jianzuoyi.github.io/post/2020-11-29-pcr-2-taq_dna/</link>
+      <pubDate>Sun, 29 Nov 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-11-29-pcr-2-taq_dna/</guid>
+      <description>PCR技术改变了现代分子生物学，而Taq DNA聚合酶改变了PCR。 1986年，Mullis发明了PCR技术，当时使用的是大肠杆菌聚合酶I（K</description>
+    </item>
+    
+    <item>
+      <title>从零开始学PCR技术（零）：PCR技术科普</title>
+      <link>https://jianzuoyi.github.io/post/2020-11-29-pcr-0-kepu/</link>
+      <pubDate>Sun, 29 Nov 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-11-29-pcr-0-kepu/</guid>
+      <description>近日，拿到华大基因CEO尹烨的第二本基因科普书《生命密码2》，其中关于PCR的科普，很精彩。比纯技术文章读起来轻松许多，故摘录在此，与大家分</description>
+    </item>
+    
+    <item>
+      <title>从零开始学PCR技术（一）：PCR技术简介</title>
+      <link>https://jianzuoyi.github.io/post/2020-11-27-pcr-1-introduction/</link>
+      <pubDate>Fri, 27 Nov 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-11-27-pcr-1-introduction/</guid>
+      <description>PCR可能是分子生物学中使用最广泛的技术。虽然我本科学的是生物科学，提过DNA，也跑过PCR，但现在都快忘了PCR的步骤是三个还是四个了。赶</description>
+    </item>
+    
+    <item>
+      <title>01 如何自学生物信息学：从菜鸟到专家</title>
+      <link>https://jianzuoyi.github.io/post/2020-11-23-learn-bioinfomatics/</link>
+      <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-11-23-learn-bioinfomatics/</guid>
+      <description>看透了如此多的秘密，我们已停止相信尚有不可知之物。然而，那不可知之物却仍然坐在那里，冷静地舔着自己的嘴唇。 ​ ——H.L. Mencken 尽管人类已把航天器</description>
     </item>
     
   </channel>

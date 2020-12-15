@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>02 生信人的自我修养：Linux 命令速查手册 - Jane - A super concise theme for Hugo</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="xianmin" />
+  <meta name="description" content="标题：生信人的自我修养：Linux命令速查手册 目标：致力于为生信人打造一个完整的Linux命令速查手册 作者：简佐义（jianzuoyi@qq" />
+
+  <meta name="keywords" content="Hugo, theme, jane" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.79.0" />
+
+
+<link rel="canonical" href="https://jianzuoyi.github.io/post/2020-11-20.linux/" />
+
+
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.b3a8813c06e6d785beba22bf8264e174fa2cb3a396b22f9ba24e2c00c18aaf7f.css" integrity="sha256-s6iBPAbm14W&#43;uiK/gmThdPoss6OWsi&#43;bok4sAMGKr38=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+<meta property="og:title" content="02 生信人的自我修养：Linux 命令速查手册" />
+<meta property="og:description" content="标题：生信人的自我修养：Linux命令速查手册 目标：致力于为生信人打造一个完整的Linux命令速查手册 作者：简佐义（jianzuoyi@qq" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jianzuoyi.github.io/post/2020-11-20.linux/" />
+<meta property="article:published_time" content="2020-11-20T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-11-20T00:00:00+00:00" />
+<meta itemprop="name" content="02 生信人的自我修养：Linux 命令速查手册">
+<meta itemprop="description" content="标题：生信人的自我修养：Linux命令速查手册 目标：致力于为生信人打造一个完整的Linux命令速查手册 作者：简佐义（jianzuoyi@qq">
+<meta itemprop="datePublished" content="2020-11-20T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2020-11-20T00:00:00+00:00" />
+<meta itemprop="wordCount" content="7712">
+
+
+
+<meta itemprop="keywords" content="自学生信," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="02 生信人的自我修养：Linux 命令速查手册"/>
+<meta name="twitter:description" content="标题：生信人的自我修养：Linux命令速查手册 目标：致力于为生信人打造一个完整的Linux命令速查手册 作者：简佐义（jianzuoyi@qq"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Jane</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/">This is Home</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/post/">Archives</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/tags/">Tags</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/categories/">Categories</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://gohugo.io" rel="noopener" target="_blank">
+              external-link
+              
+              <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92 0 0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"></path>
+  <path d="M841.152 457.152c-30.528 0-54.784 24.512-54.784 54.656l0 274.752L237.696 786.56 237.696 237.696l206.016 0c6.656 0 10.752 0 13.248 0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128L183.04 128C153.216 128 128 152.576 128 182.848c0 3.136 0.256 6.272 0.768 9.28C128.256 195.136 128 198.272 128 201.408l0 639.488c0 0.064 0 0.192 0 0.256 0 0.128 0 0.192 0 0.32 0 30.528 24.512 54.784 54.784 54.784l646.976 0c6.592 0 9.728 0 11.712 0 28.736 0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344l0-20.352L896 561.408 896 512.128C896 481.792 871.424 457.152 841.152 457.152z"></path>
+</svg>
+
+              </i>
+            </a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/about/">关于</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://jianzuoyi.github.io/">
+              docs
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://jianzuoyi.github.io/post/2020-11-23-learn-bioinfomatics/">01 如何自学生物信息学：从菜鸟到专家</a>
+              </li>
+            
+              <li>
+                <a href="https://jianzuoyi.github.io/post/2020-11-20.linux/">02 生信人的自我修养：Linux 命令速查手册</a>
+              </li>
+            
+              <li>
+                <a href="https://jianzuoyi.github.io/post/2020-11-19-conda/">03 生物信息基础：conda包管理器安装及使用</a>
+              </li>
+            
+              <li>
+                <a href="https://jianzuoyi.github.io/post/2020-11-09.git/">04 代码版本控制及托管：我的最佳实践</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      Jane
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/">This is Home</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://gohugo.io" rel="noopener" target="_blank">
+              external-link
+              
+              <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92 0 0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"></path>
+  <path d="M841.152 457.152c-30.528 0-54.784 24.512-54.784 54.656l0 274.752L237.696 786.56 237.696 237.696l206.016 0c6.656 0 10.752 0 13.248 0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128L183.04 128C153.216 128 128 152.576 128 182.848c0 3.136 0.256 6.272 0.768 9.28C128.256 195.136 128 198.272 128 201.408l0 639.488c0 0.064 0 0.192 0 0.256 0 0.128 0 0.192 0 0.32 0 30.528 24.512 54.784 54.784 54.784l646.976 0c6.592 0 9.728 0 11.712 0 28.736 0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344l0-20.352L896 561.408 896 512.128C896 481.792 871.424 457.152 841.152 457.152z"></path>
+</svg>
+
+              </i>
+            </a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/about/">关于</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item active">
+        
+          
+          <a class="menu-item-link menu-parent" href="https://jianzuoyi.github.io/">docs</a>
+          <ul class="submenu">
+            
+              <li>
+                <a href="https://jianzuoyi.github.io/post/2020-11-23-learn-bioinfomatics/">01 如何自学生物信息学：从菜鸟到专家</a>
+              </li>
+            
+              <li>
+                <a href="https://jianzuoyi.github.io/post/2020-11-20.linux/">02 生信人的自我修养：Linux 命令速查手册</a>
+              </li>
+            
+              <li>
+                <a href="https://jianzuoyi.github.io/post/2020-11-19-conda/">03 生物信息基础：conda包管理器安装及使用</a>
+              </li>
+            
+              <li>
+                <a href="https://jianzuoyi.github.io/post/2020-11-09.git/">04 代码版本控制及托管：我的最佳实践</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+
+    
+    
+
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">02 生信人的自我修养：Linux 命令速查手册</h1>
+      
+      <div class="post-meta">
+        <time datetime="2020-11-20" class="post-time">
+          2020-11-20
+        </time>
+        <div class="post-category">
+            <a href="https://jianzuoyi.github.io/categories/%E8%87%AA%E5%AD%A6%E7%94%9F%E4%BF%A1/"> 自学生信 </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#man---获得帮助">man - 获得帮助</a></li>
+    <li><a href="#ls---显示目录内容">ls - 显示目录内容</a></li>
+    <li><a href="#pwd---显示当前目录">pwd - 显示当前目录</a></li>
+    <li><a href="#cd---切换目录">cd - 切换目录</a></li>
+    <li><a href="#mkdir---创建目录">mkdir - 创建目录</a></li>
+    <li><a href="#cat---合并文件按行">cat - 合并文件（按行）</a></li>
+    <li><a href="#paste---合并文件按列">paste - 合并文件（按列）</a></li>
+    <li><a href="#split---分割文件">split - 分割文件</a></li>
+    <li><a href="#cut---剪切文件">cut - 剪切文件</a></li>
+    <li><a href="#less-head-tail---显示文件内容">less, head, tail - 显示文件内容</a></li>
+    <li><a href="#wc----统计文件内容">wc  - 统计文件内容</a></li>
+    <li><a href="#touch---创建文件">touch - 创建文件</a></li>
+    <li><a href="#cp-mv-rm--文件目录的复制移动删除">cp, mv, rm- 文件/目录的复制，移动，删除</a></li>
+    <li><a href="#tar---文件打包压缩">tar - 文件打包/压缩</a></li>
+    <li><a href="#chmod---改变文件目录权限">chmod - 改变文件/目录权限</a></li>
+    <li><a href="#chown---改变文件目录归属">chown - 改变文件/目录归属</a></li>
+    <li><a href="#sort-uniq---排序去重">sort, uniq - 排序，去重</a></li>
+    <li><a href="#wget---下载文件">wget - 下载文件</a></li>
+    <li><a href="#ssh---远程登录">ssh - 远程登录</a></li>
+    <li><a href="#scp---远程文件传输">scp - 远程文件传输</a></li>
+    <li><a href="#rsync---远程文件拷贝">rsync - 远程文件拷贝</a></li>
+    <li><a href="#df-du-free---查看磁盘内存使用情况">df, du, free - 查看磁盘/内存使用情况</a></li>
+    <li><a href="#top-htop-ps-kill---任务管理">top, htop, ps, kill - 任务管理</a></li>
+    <li><a href="#nohupdisown---远程任务管理">nohup，disown - 远程任务管理</a></li>
+    <li><a href="#---管道">| - 管道</a></li>
+    <li><a href="#----输入输出重定向">&gt;, &raquo; - 输入输出重定向</a></li>
+    <li><a href="#find-locate-which---文件查找">find, locate, which - 文件查找</a></li>
+    <li><a href="#xargs---命令组合工具">xargs - 命令组合工具</a></li>
+    <li><a href="#parallel---并行工具">parallel - 并行工具</a></li>
+    <li><a href="#useradd---添加用户">useradd - 添加用户</a></li>
+    <li><a href="#passwd---更改密码">passwd - 更改密码</a></li>
+    <li><a href="#dos2unix---文件格式转换">dos2unix - 文件格式转换</a></li>
+    <li><a href="#grep">grep</a></li>
+    <li><a href="#sed">sed</a>
+      <ul>
+        <li><a href="#actions">Actions</a></li>
+      </ul>
+    </li>
+    <li><a href="#awk">awk</a>
+      <ul>
+        <li><a href="#常用参数">常用参数</a></li>
+        <li><a href="#记录与字段">记录与字段</a></li>
+        <li><a href="#表达式与操作符">表达式与操作符</a></li>
+        <li><a href="#正则表达式">正则表达式</a></li>
+        <li><a href="#数组">数组</a></li>
+        <li><a href="#控制语句">控制语句</a></li>
+        <li><a href="#内置变量">内置变量</a></li>
+        <li><a href="#内置函数">内置函数</a></li>
+        <li><a href="#输入输出">输入输出</a></li>
+        <li><a href="#示例">示例</a></li>
+      </ul>
+    </li>
+    <li><a href="#bash脚本模板">Bash脚本模板</a></li>
+    <li><a href="#其他命令">其他命令</a></li>
+    <li><a href="#写在最后">写在最后</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <blockquote>
+<p>标题：生信人的自我修养：Linux命令速查手册</p>
+<p>目标：致力于为生信人打造一个完整的Linux命令速查手册</p>
+<p>作者：简佐义（jianzuoyi@qq.com）</p>
+<p>版本：1.0		日期：2020-11-20</p>
+<p>本文永久地址：https://jianzuoyi.github.io/tutorial/tutorial-linux/</p>
+<p>欢迎转载，转载请保留作者信息，谢谢。</p>
+<p>如果你对生物信息学感兴趣，欢迎在公众号或知乎关注我。</p>
+<p>博客：https://jianzuoyi.github.io/</p>
+<p>知乎：https://www.zhihu.com/people/jianzuoyi</p>
+<p>公众号：简说基因</p>
+</blockquote>
+<p>精心整理了生物信息学中常用的Linux命令，很不容易。所有命令的用法都经本人亲自测试。掌握这些命令，是每一个生信人基本的自我修养。</p>
+<h2 id="man---获得帮助">man - 获得帮助</h2>
+<pre><code>man ls		  # 许多Linux自带命令可以通过man查看使用帮助
+ls --help     # 有些程序可以通过-h, --help查看使用帮助
+</code></pre><h2 id="ls---显示目录内容">ls - 显示目录内容</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ls     					<span style="color:#75715e"># 显示目录内容</span>
+ls -l  					<span style="color:#75715e"># 以列表显示形式显示目录内容，通常在~/.bashrc文件中增加一行：alias ll=&#39;ls -l&#39;</span>
+       					<span style="color:#75715e"># 以后就可以直接使用别名ll了，更方便</span>
+ll -h  					<span style="color:#75715e"># 以人类可读的方式显示文件大小</span>
+ll -t  					<span style="color:#75715e"># 以文件的修改时间排序，最新修改的在最前面</span>
+ll -tr 					<span style="color:#75715e"># 以文件的修改时间排序，最新修改的在最后面</span>
+watch -n <span style="color:#ae81ff">3</span> -dc ls -l	<span style="color:#75715e"># 追踪目录内容的变化，每3秒刷新一次</span>
+</code></pre></div><h2 id="pwd---显示当前目录">pwd - 显示当前目录</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pwd                 <span style="color:#75715e"># 显示当前目录的绝对路径</span>
+ls <span style="color:#e6db74">`</span>pwd<span style="color:#e6db74">`</span>/file  		<span style="color:#75715e"># 显示文件的绝对路径</span>
+</code></pre></div><h2 id="cd---切换目录">cd - 切换目录</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd dir    <span style="color:#75715e"># 切换到目录dir</span>
+cd	      <span style="color:#75715e"># 切换到用户的HOME目录</span>
+cd ~	  <span style="color:#75715e"># 同cd，~表示HOME目录</span>
+cd ..     <span style="color:#75715e"># 切换到上一级目录；一个点.表示当前目录，两个点..表示上一级目录</span>
+cd -      <span style="color:#75715e"># 切换到进入当前目录之前所在的目录</span>
+</code></pre></div><h2 id="mkdir---创建目录">mkdir - 创建目录</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir dir           <span style="color:#75715e"># 创建dir目录</span>
+mkdir -p dir1/dir2  <span style="color:#75715e"># 递归创建目录，如dir1不存在，会先创建dir1</span>
+</code></pre></div><h2 id="cat---合并文件按行">cat - 合并文件（按行）</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat file          	  <span style="color:#75715e"># 合并一个或多个文件至标准输出，当只有一个文件时，相当于显示所有文件内容</span>
+cat file1 file2       <span style="color:#75715e"># 合并file1和file2的内容，并在屏幕上输出</span>
+cat R1.fq.gz R2.fq.gz <span style="color:#75715e"># 可以合并gzip压缩文件，如测序数据原始reads的合并</span>
+</code></pre></div><h2 id="paste---合并文件按列">paste - 合并文件（按列）</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">paste -d <span style="color:#e6db74">&#39; &#39;</span> file1 file2	<span style="color:#75715e"># 按列对列的方式一行一行合并文件。默认列中间加TAB键， -d参数可以改变列之间的分隔符</span>
+</code></pre></div><h2 id="split---分割文件">split - 分割文件</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">split -d -l <span style="color:#ae81ff">10000</span> file chunk_	<span style="color:#75715e"># 按行数分割文件，每个文件最多10000行，分割成的文件名为chunk_01, chunk_02。。。</span>
+split -d -b 100m file chunk_	<span style="color:#75715e"># 按大小分割文件，每个文件最多100m，分割成的文件名为chunk_01, chunk_02。。。</span>
+</code></pre></div><h2 id="cut---剪切文件">cut - 剪切文件</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cut -f <span style="color:#ae81ff">1</span> file					<span style="color:#75715e"># 剪切文件的第1列</span>
+cut -f 1,2						<span style="color:#75715e"># 剪切文件的第1，2列</span>
+cut -f 3-						<span style="color:#75715e"># 剪切第3列及之后的所有列</span>
+cut -d <span style="color:#e6db74">&#39; &#39;</span> -f <span style="color:#ae81ff">1</span> file			<span style="color:#75715e"># 剪切第1列，但以空格作为列与列之间的分隔符。默认以TAB作为分隔符</span>
+grep <span style="color:#e6db74">&#39;^&gt;&#39;</span> test.fa | cut -c 2-	<span style="color:#75715e"># 得到fasta文件中的序列名称（去掉了&gt;符号）</span>
+</code></pre></div><h2 id="less-head-tail---显示文件内容">less, head, tail - 显示文件内容</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">less file       <span style="color:#75715e"># 分屏显示文件内容，按空格键显示下一页，按下/后可以搜索内容</span>
+less -SN file   <span style="color:#75715e"># 显示文件的行号，并且截断太长的行 </span>
+
+head file	    <span style="color:#75715e"># 默认显示文件前10行</span>
+head -n <span style="color:#ae81ff">20</span> file <span style="color:#75715e"># 显示文件前20行</span>
+
+tail file		<span style="color:#75715e"># 默认显示文件后10行</span>
+tail -n <span style="color:#ae81ff">20</span> file	<span style="color:#75715e"># 显示文件后20行</span>
+tail -n +2 file	<span style="color:#75715e"># 跳过第1行，显示从第2行开始的所有行，可用于跳过文件的标题行</span>
+tail -f file	<span style="color:#75715e"># 当文件的内容还在增加时，实时显示末尾增加的内容，常用于查看日志文件的更新情况</span>
+</code></pre></div><h2 id="wc----统计文件内容">wc  - 统计文件内容</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wc -l file		<span style="color:#75715e"># 统计文件行数</span>
+</code></pre></div><h2 id="touch---创建文件">touch - 创建文件</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">touch file					<span style="color:#75715e"># 创建一个空文件</span>
+touch <span style="color:#f92672">{</span>file1,file2,file3<span style="color:#f92672">}</span>	<span style="color:#75715e"># 同时创建3个文件</span>
+</code></pre></div><h2 id="cp-mv-rm--文件目录的复制移动删除">cp, mv, rm- 文件/目录的复制，移动，删除</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">scp file1 file2		<span style="color:#75715e"># 将file1复制一份，命名为file2，复制目录要加-r参数：scp -r</span>
+mv file1 dir1/		<span style="color:#75715e"># 将file1移动到dir1/目录下</span>
+mv file1 file2		<span style="color:#75715e"># 重命名：即将file1移动成为file2</span>
+rm file				<span style="color:#75715e"># 删除文件，删除目录要加-r参数：rm -r</span>
+rm -f file			<span style="color:#75715e"># 文件若不存在，删除时会报错，加-f参数就不会报错</span>
+</code></pre></div><h2 id="tar---文件打包压缩">tar - 文件打包/压缩</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 平时tar基本上就能完成打包、压缩、解压的任务了</span>
+tar czvf file.tar.gz files	<span style="color:#75715e"># 打包并压缩</span>
+tar xvf file.tar.gz			<span style="color:#75715e"># 解包，解压缩</span>
+
+gzip file					<span style="color:#75715e"># 压缩</span>
+gunzip file.gz				<span style="color:#75715e"># 解压</span>
+</code></pre></div><h2 id="chmod---改变文件目录权限">chmod - 改变文件/目录权限</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chmod +x file	<span style="color:#75715e"># 增加[本人]可执行权限</span>
+chmod -x file	<span style="color:#75715e"># 取消[本人]可执行权限</span>
+chmod a+x file	<span style="color:#75715e"># 增加[所有人]可执行权限</span>
+chmod a-x file	<span style="color:#75715e"># 取消[所有人]可执行权限</span>
+</code></pre></div><h2 id="chown---改变文件目录归属">chown - 改变文件/目录归属</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chown jianzuoyi:jianzuoyi file		<span style="color:#75715e"># 将文件的所有权给jianzuoyi</span>
+chown -R jianzuoyi:jianzuoyi dirname	<span style="color:#75715e"># 将目录以及目录内的文件的所有权给jianzuoyi</span>
+</code></pre></div><h2 id="sort-uniq---排序去重">sort, uniq - 排序，去重</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sort file				<span style="color:#75715e"># 默认按字典序对文件进行排序</span>
+sort -k2,2 -k3,3 file	<span style="color:#75715e"># 先按第2列排序，第2列相同，再按第3列排序</span>
+sort -k2,2n file		<span style="color:#75715e"># 按第2列排序，且第2列是数字，升序</span>
+sort -k2,2nr file		<span style="color:#75715e"># 按第2列排序，且第2列是数字，降序</span>
+sort -u file			<span style="color:#75715e"># 先排序文件，然后去除相邻的重复行，只保留一条记录</span>
+sort file | uniq		<span style="color:#75715e"># 去除相信的重复行，只保留一条记录，相当于： sort -u file</span>
+
+<span style="color:#75715e"># 利用sort, uniq取两个文件的交、并、补集</span>
+sort a b | uniq			<span style="color:#75715e"># 并集</span>
+sort a b | uniq -d &gt; c	<span style="color:#75715e"># 交集</span>
+sort a c | uniq -u 		<span style="color:#75715e"># 补集</span>
+</code></pre></div><h2 id="wget---下载文件">wget - 下载文件</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget https://repo.anaconda.com/archive/Anaconda3-2020.07-Linux-x86_64.sh	<span style="color:#75715e"># 下载文件到当前目录，文件名保持不变</span>
+</code></pre></div><h2 id="ssh---远程登录">ssh - 远程登录</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh username@host					 <span style="color:#75715e"># ssh 远程连接至服务器</span>
+</code></pre></div><h2 id="scp---远程文件传输">scp - 远程文件传输</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">scp username@host:/path/to/file .	 <span style="color:#75715e"># 将远程服务器上的文件传输到当前目录，文件名保持不变，复制目录加参数-r</span>
+scp file username@host:/path/to/dir/ <span style="color:#75715e"># 将本地文件复制到远程服务器，文件名保持不变，复制目录加参数-r</span>
+</code></pre></div><h2 id="rsync---远程文件拷贝">rsync - 远程文件拷贝</h2>
+<p>rsync与scp不同，它只是做增量更新且支持断点续传，也就是要复制的文件存在于目标文件夹且内容与当前要复制的相同，则不会复制。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rsync -azvP dir1 dir2					<span style="color:#75715e"># 将dir1的内容同步至dir2</span>
+rsync -azvP --delete dir1 dir2			<span style="color:#75715e"># 同步dir2与dir1，dir1中删除的文件，dir2中也要跟着删除</span>
+rsync -azvP --exclude <span style="color:#e6db74">&#39;file&#39;</span> dir1 dir2  <span style="color:#75715e"># 同步dir2与dir2，且将file排除在外</span>
+</code></pre></div><h2 id="df-du-free---查看磁盘内存使用情况">df, du, free - 查看磁盘/内存使用情况</h2>
+<hr>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">df -h		<span style="color:#75715e"># 查看磁盘使用情况，-h表示以人类可读的方式显示容量大小</span>
+du -sh		<span style="color:#75715e"># 查看当前目录使用了多少磁盘空间</span>
+du -sh *	<span style="color:#75715e"># 查看当前目录下各文件或文件夹使用的磁盘空间</span>
+free -h		<span style="color:#75715e"># 查看内存使用情况</span>
+</code></pre></div><h2 id="top-htop-ps-kill---任务管理">top, htop, ps, kill - 任务管理</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">top -c		<span style="color:#75715e"># 查看CPU，内存的使用情况</span>
+htop		<span style="color:#75715e"># top的完美替代品，Linux系统不自带，需要安装， ubuntu系统：apt install htop</span>
+ps aut		<span style="color:#75715e"># 查看后台任务运行情况，第2列是任务的PID号</span>
+kill -9 PID <span style="color:#75715e"># 删除编号为PID的任务</span>
+</code></pre></div><h2 id="nohupdisown---远程任务管理">nohup，disown - 远程任务管理</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nohup ./run.sh &amp;&gt; run.sh.o &amp;	<span style="color:#75715e"># 远程SSH登录服务器，在后台运行任务，断开远程连接后任务仍然在后台跑</span>
+</code></pre></div><ul>
+<li>如果运行任务时没有加nohup命令，但任务运行时间长，但又必须断开（比如快下班了），若不想让任务因为断开远程连接而中断，可以用disown命令补救</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./run.sh	<span style="color:#75715e"># 假如任务是直接这样开始跑的</span>
+ctrl + z	<span style="color:#75715e"># 按ctrl + z，将任务放到后台</span>
+jobs		<span style="color:#75715e"># 输入jobs命令，回车，可以看到任务是暂停的： [1]+  Stopped(SIGTSTP)        bash run.sh</span>
+bg			<span style="color:#75715e"># 让后台暂停的任务开始运行</span>
+jobs		<span style="color:#75715e"># 再次运行jobs，可以看到任务已经跑起来了：   [1]+  Running                 bash run.sh &amp;</span>
+disown -r 	<span style="color:#75715e"># 从当前shell中移除运行中的作业，至此，可以关掉终端回家了</span>
+</code></pre></div><h2 id="---管道">| - 管道</h2>
+<p>管道，将前一个命令的输出作为后一个命令的输入</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">command1 | command2
+</code></pre></div><h2 id="----输入输出重定向">&gt;, &raquo; - 输入输出重定向</h2>
+<p>Linux中常用重定向操作符有：</p>
+<ol>
+<li>标准输入（/dev/stdin）：代码为0， 使用&lt;或&laquo;</li>
+<li>标准输出（/dev/stdout）：代码为1，使用&gt;（覆盖）或&raquo;（追加）</li>
+<li>标准错误输出（/dev/stderr）：代码为2，使用2&gt;或2&raquo;</li>
+<li>&amp;&gt;  标准输出和错误输出同时重定向</li>
+<li>/dev/null  代表垃圾箱，不想要保存的东西都可以重定向到这里</li>
+</ol>
+<ul>
+<li>输出重定向就是将命令的结果重定向到文件，而不是输出到屏幕，通常用于保存命令的结果</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./run.sh &gt; run.sh.o		<span style="color:#75715e"># 标准输出到run.sh.o日志文件</span>
+./run.sh 2&gt; run.sh.e	<span style="color:#75715e"># 标准错误输出到run.sh.e错误日志文件</span>
+./run.sh &amp;&gt; run.sh.log	<span style="color:#75715e"># 标准输出和标准错误都输出到定一个文件</span>
+./run.sh &amp;&gt; /dev/null	<span style="color:#75715e"># 丢弃标准输出和标准错误信息</span>
+</code></pre></div><ul>
+<li>输入重定向是将文件作为输入的来源，而不是键盘</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">command &lt; file			<span style="color:#75715e"># 将file的内容作为command的输入 </span>
+command <span style="color:#e6db74">&lt;&lt; END			# 从标准输入（键盘）中读取数据，直到遇到分界符END</span>时停止（分界符用户可以自定义）
+command &lt;file1 &gt; file2	<span style="color:#75715e"># 将file1作为command的输入，并将处理结果输出到file2</span>
+</code></pre></div><ul>
+<li>综合运用</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">while</span> read line
+<span style="color:#66d9ef">do</span>
+    <span style="color:#66d9ef">do</span> something
+<span style="color:#66d9ef">done</span> &lt; file.txt &gt; result.txt
+</code></pre></div><p>逐行读入file.txt的内容，处理之后，将结果保存到result.txt文件中。</p>
+<h2 id="find-locate-which---文件查找">find, locate, which - 文件查找</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find -name file					<span style="color:#75715e"># 在当前目录查找名为file的文件</span>
+find dir/ -name file			<span style="color:#75715e"># 在dir/目录下查找名为file的文件</span>
+find dir/ -name <span style="color:#e6db74">&#39;*file*&#39;</span>		<span style="color:#75715e"># 在dir/目录下查找包含file关键词的文件，-name参数支持正则表达式</span>
+find dir/ -name file -delete	<span style="color:#75715e"># 查找文件并删除</span>
+
+locate file						<span style="color:#75715e"># 查找文件</span>
+which command					<span style="color:#75715e"># 显示命令的绝对路径</span>
+</code></pre></div><h2 id="xargs---命令组合工具">xargs - 命令组合工具</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat file | xargs		<span style="color:#75715e"># 将file的内容显示成一行</span>
+cat file | xargs -n3	<span style="color:#75715e"># 将file的内容每3列一行进行输出</span>
+find /ifs/result -name <span style="color:#e6db74">&#39;*.fq.gz&#39;</span> | xargs -n1 -I<span style="color:#f92672">{}</span> cp <span style="color:#f92672">{}</span> /ifs/data/	<span style="color:#75715e"># 查找fq.gz文件并复制到/ifs/data目录下</span>
+find /ifs/result -name <span style="color:#e6db74">&#39;*.fq.gz&#39;</span> | xargs tar czvf all.fq.gz			<span style="color:#75715e"># 查找fq.gz文件并打包在一起</span>
+find . -type f -name <span style="color:#e6db74">&#39;*.log&#39;</span> -print0 | xargs -0 rm -f				<span style="color:#75715e"># 当rm文件过多时，可以这样删除</span>
+find . -type f -name <span style="color:#e6db74">&#39;*.py&#39;</span> -print0 | xargs -0 wc -l				<span style="color:#75715e"># 统计一个目录中所有python文件的行数</span>
+</code></pre></div><h2 id="parallel---并行工具">parallel - 并行工具</h2>
+<p>parallel是增强版的xargs。假如一个脚本文件中有4条命令：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># cat run.sh</span>
+echo a
+echo b
+echo c
+echo d
+
+<span style="color:#75715e"># 同时执行4个任务，生信中常通过这种方式并行执行多个任务</span>
+cat run.sh | parallel -j 4	
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find *.fq | parallel -j <span style="color:#ae81ff">12</span> <span style="color:#e6db74">&#34;fastqc {} --outdir .&#34;</span>	<span style="color:#75715e"># 同时执行12个Fastqc任务</span>
+find *.bam | parallel --dry-run <span style="color:#e6db74">&#39;samtools index {}&#39;</span> <span style="color:#75715e"># 同时执行samtools index任务，--dry-run显示任务命令但不实际执行，用于命令检查</span>
+</code></pre></div><h2 id="useradd---添加用户">useradd - 添加用户</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">useradd -m username	<span style="color:#75715e"># 创建用户并为其在/home下创建一个以其名称命名的目录</span>
+</code></pre></div><h2 id="passwd---更改密码">passwd - 更改密码</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">passwd	    	   <span style="color:#75715e"># 更改当前用户的密码</span>
+passwd username	   <span style="color:#75715e"># 更改指定用户的密码</span>
+</code></pre></div><h2 id="dos2unix---文件格式转换">dos2unix - 文件格式转换</h2>
+<p>Linux很多工具都是针对纯文本文件的，并且需要是Unix-like格式的文本文件。但是很多时候文件是从Windows或Mac系统上传到Linux服务器上的，这可能导致文件格式不兼容，原因是不同平台生成的文本文件的换行符不一样。</p>
+<table>
+<thead>
+<tr>
+<th>操作系统</th>
+<th>符号</th>
+<th>正则表达式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mac</td>
+<td>^M</td>
+<td>\r</td>
+</tr>
+<tr>
+<td>Linux</td>
+<td>$</td>
+<td>\n</td>
+</tr>
+<tr>
+<td>Windows</td>
+<td>^M$</td>
+<td>\r\n</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat -A file				<span style="color:#75715e"># 查看文件换行符情况</span>
+dos2unix file			<span style="color:#75715e"># Windows格式转换成Unix-like格式</span>
+</code></pre></div><h2 id="grep">grep</h2>
+<p><strong>用于查找文件里符合条件的字符串。</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">grep <span style="color:#f92672">[</span>-abcEFGhHilLnqrsvVwxy<span style="color:#f92672">][</span>-A&lt;显示列数&gt;<span style="color:#f92672">][</span>-B&lt;显示列数&gt;<span style="color:#f92672">][</span>-C&lt;显示列数&gt;<span style="color:#f92672">][</span>-d&lt;进行动作&gt;<span style="color:#f92672">][</span>-e&lt;范本样式&gt;<span style="color:#f92672">][</span>-f&lt;范本文件&gt;<span style="color:#f92672">][</span>--help<span style="color:#f92672">][</span>范本样式<span style="color:#f92672">][</span>文件或目录...<span style="color:#f92672">]</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">grep pattern files			 <span style="color:#75715e"># 搜索文件中包含pattern的行</span>
+grep -v pattern files		 <span style="color:#75715e"># 搜索文件中不包含pattern的行</span>
+
+grep -f pattern.txt files	 <span style="color:#75715e"># 搜索的pattern来自于文件中</span>
+grep -i pattern files		 <span style="color:#75715e"># 不区分大小写。默认搜索是区分大小写的</span>
+grep -i pattern files		 <span style="color:#75715e"># 只匹配整个单词，而不是字符串的一部分（如搜索hello，不会匹配到helloworld）</span>
+grep -n pattern files		 <span style="color:#75715e"># 显示行号信息</span>
+grep -c pattern files		 <span style="color:#75715e"># 显示匹配的行数</span>
+grep -l pattern files		 <span style="color:#75715e"># 只显示匹配的文件名</span>
+grep -L pattern files		 <span style="color:#75715e"># 显示不匹配的文件名</span>
+grep -C number pattern files <span style="color:#75715e"># 额外显示匹配行的上下[number]行</span>
+grep pattern1 | grep pattern2 files <span style="color:#75715e"># 显示既匹配pattern1，又匹配pattern2的行</span>
+grep -E <span style="color:#e6db74">&#34;pattern1|pattern2&#34;</span> files	<span style="color:#75715e"># 显示匹配pattern1或者pattern2的行, grep -E相当于egrep</span>
+
+<span style="color:#75715e"># 用于搜索的特殊字符</span>
+^: 表示行前
+$: 表示行尾
+
+grep <span style="color:#e6db74">&#39;^#&#39;</span> result.vcf		<span style="color:#75715e"># 显示VCF文件的表头信息</span>
+grep <span style="color:#e6db74">&#39;^hello$&#39;</span> files		<span style="color:#75715e"># 显示只包含hello的行</span>
+grep -v <span style="color:#e6db74">&#39;^\s*$&#39;</span> file		<span style="color:#75715e"># 删除空白行</span>
+</code></pre></div><h2 id="sed">sed</h2>
+<p>sed是stream editor的缩写，中文称之为“流编辑器”。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sed command file
+</code></pre></div><ul>
+<li>command部分，针对每行要进行的处理</li>
+<li>file，要处理的文件</li>
+</ul>
+<h3 id="actions">Actions</h3>
+<ul>
+<li>d：删除该行</li>
+<li>p：打印该行</li>
+<li>i：在行的前面插入新行</li>
+<li>a：在行的后面插入新行</li>
+<li>r：读取指定文件的内容。</li>
+<li>w：写入指定文件。</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sed -n <span style="color:#e6db74">&#39;10p&#39;</span> file		<span style="color:#75715e"># 显示第10行</span>
+sed -n <span style="color:#e6db74">&#39;10,20p&#39;</span> file	<span style="color:#75715e"># 显示第10到20之间的行</span>
+sed -n <span style="color:#e6db74">&#39;/pattern/p&#39;</span> file# 显示含有pattern的行
+sed -n <span style="color:#e6db74">&#39;/pattern1/,/pattern2/p&#39;</span> file <span style="color:#75715e"># 显示patter1与pattern2之间的行</span>
+
+sed <span style="color:#e6db74">&#39;10d&#39;</span> file			<span style="color:#75715e"># 删除第10行</span>
+sed <span style="color:#e6db74">&#39;10,20d&#39;</span> file		<span style="color:#75715e"># 删除第10到20之间的行</span>
+sed <span style="color:#e6db74">&#39;/pattern/d&#39;</span>		<span style="color:#75715e"># 删除匹配pattern的行</span>
+sed <span style="color:#e6db74">&#39;/^\s*$/d&#39;</span> file		<span style="color:#75715e"># 删除空白行</span>
+sed <span style="color:#e6db74">&#39;s/^\s*//&#39;</span> file		<span style="color:#75715e"># 删除行前的空白：空格，制表符</span>
+sed <span style="color:#e6db74">&#39;s/\s*$//&#39;</span> file		<span style="color:#75715e"># 删除行尾的空白：空格，制表符</span>
+sed <span style="color:#e6db74">&#39;s/^\s*//;s/\s*$//&#39;</span> file <span style="color:#75715e"># 删除行首和行尾的空白：空格，制表符</span>
+
+sed <span style="color:#e6db74">&#39;s/AA/BB/&#39;</span> file		<span style="color:#75715e"># 将文件中的AA替换成BB，只替换一行中第一次出现的AA，替换后的结果输出到屏幕</span>
+sed <span style="color:#e6db74">&#39;s/AA/BB/g&#39;</span> file	<span style="color:#75715e"># 将文件中的所有AA都替换成BB，替换后的结果输出到屏幕</span>
+sed -i <span style="color:#e6db74">&#39;s/AA/BB/g&#39;</span> file <span style="color:#75715e"># 将文件中的所有AA都替换成BB，直接更改文件的内容</span>
+sed <span style="color:#e6db74">&#39;/CC/s/AA/BB/g&#39;</span> file# 只替换那些含有CC的行
+sed <span style="color:#e6db74">&#39;s/pattern/&amp;XXXX/&#39;</span> file	<span style="color:#75715e"># 在pattern之后加上XXXX。&amp;表示之前被匹配的内容</span>
+sed <span style="color:#e6db74">&#39;s/pattern.*/&amp;XXXX&#39;</span> file# 在匹配pattern的行尾加上XXXX。pattern.*表示包含pattern的整行内容
+
+sed -n <span style="color:#e6db74">&#39;1~4s/^@/&gt;/p;2~4p&#39;</span> file.fq &gt; file.fa	<span style="color:#75715e"># Fastq文件转Fasta文件</span>
+sed -n <span style="color:#e6db74">&#39;2~4p&#39;</span> file.fq		<span style="color:#75715e"># 提取Fastq文件的序列</span>
+
+sed <span style="color:#e6db74">&#39;y/ABC/XYZ/&#39;</span> file	<span style="color:#75715e"># 将ABC逐字替换成XYZ</span>
+
+sed <span style="color:#e6db74">&#39;1i\hello&#39;</span> file		<span style="color:#75715e"># 在第1行前面插入一行，内容为hello，通常用来为文件增加标题</span>
+sed <span style="color:#e6db74">&#39;1a\hello&#39;</span> file		<span style="color:#75715e"># 在第1行后面插入一行，内容为hello</span>
+sed <span style="color:#e6db74">&#39;1r file2&#39;</span> file1	<span style="color:#75715e"># 在第1行后面读入file2的内容</span>
+sed <span style="color:#e6db74">&#39;/pattern/w file2&#39;</span> file1 <span style="color:#75715e"># 将匹配的行写入file2中</span>
+</code></pre></div><h2 id="awk">awk</h2>
+<p>Awk是一个强大的文本分析工具，它每次读入一条记录，并把每条记录切分成字段后进行分析。Awk官方文档是非常好的学习材料，通过<code>man awk</code>查看。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">awk <span style="color:#e6db74">&#39;BEGIN { action } pattern { action } END { action }&#39;</span>
+</code></pre></div><p><strong>Awk程序通常是一系列 pattern {action}对：</strong></p>
+<p><code>pattern</code>，表示模式匹配，只处理匹配的行。pattern可以省略，表示匹配所有行</p>
+<p><code>action</code>，表示对匹配行所做的动作。{actions}可以省略，表示{ print }。<code>BEGIN</code>和<code>END</code>的{action}不能省略</p>
+<p><strong>pattern可能是：</strong></p>
+<p><code>BEGIN</code>， 执行初始化操作，程序开始时执行一次</p>
+<p><code>END</code>，执行收尾工作，程序结束时执行一次</p>
+<p><code>expression</code>，一个表达式，既可以是判断语句，也可以是正则表达式</p>
+<h3 id="常用参数">常用参数</h3>
+<ul>
+<li><code>-F value</code>		    设置域分隔符，相当于给FS内置变量赋值</li>
+<li><code>-v var=value</code>    将变量value的值赋给程序变量var，-v可以多次使用</li>
+</ul>
+<h3 id="记录与字段">记录与字段</h3>
+<p>记录是一次读入的内容，通常是文件的一行，保存在字段变量$0中，记录可以被分割成字段，保存在变量$1，$2，&hellip;，$NF中。</p>
+<h3 id="表达式与操作符">表达式与操作符</h3>
+<p>Awk表达式的符号与C语言的类似，基本的表达式有数字，字符串，变量，字段，数组以及函数调用。变量无需声明，它们在首次使用时被初始化为<code>null</code>。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">assignment          <span style="color:#f92672">=</span>  +<span style="color:#f92672">=</span>  -<span style="color:#f92672">=</span>  *<span style="color:#f92672">=</span>  /<span style="color:#f92672">=</span>  %<span style="color:#f92672">=</span>  ^<span style="color:#f92672">=</span>
+conditional         ?  :
+logical and         <span style="color:#f92672">&amp;&amp;</span>
+logical or          <span style="color:#f92672">||</span>
+logical not         !
+array membership    in
+matching       		~   !~
+relational          &lt;  &gt;   &lt;<span style="color:#f92672">=</span>  &gt;<span style="color:#f92672">=</span>  <span style="color:#f92672">==</span>  !<span style="color:#f92672">=</span>
+concatenation       <span style="color:#f92672">(</span>no explicit operator<span style="color:#f92672">)</span>
+add ops             +  -
+mul ops             *  /  %
+unary               +  -
+exponentiation      ^
+inc and dec         ++ -- <span style="color:#f92672">(</span>both post and pre<span style="color:#f92672">)</span>
+field               $
+</code></pre></div><h3 id="正则表达式">正则表达式</h3>
+<p>在Awk中语言中，通常测试一个记录、字段或字符串是否与一个正则表达式匹配，匹配返回1，不匹配返回0。正则表达式用两个反斜杠<code>/</code>包围。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">expr ~ /r/							 <span style="color:#75715e"># 评估expr是否与r匹配。匹配的意思是expr的一个子串是否在正则表达式r定义的字符串集中。</span>
+
+/r/ <span style="color:#f92672">{</span> action <span style="color:#f92672">}</span>, $0 ~ /r/ <span style="color:#f92672">{</span> action <span style="color:#f92672">}</span>	 <span style="color:#75715e"># 两者相同， /r/ 等于 $0 ~ /r/</span>
+</code></pre></div><p>任何表达式都可以放到<code>~</code>和<code>!~</code>右边或者内建的需要正则表达式的地方。在必要的时候，该表达式会被转变成字符串，然后作为一个正则表达式来解释。以下三行awk命令完成同样的功能：输出第5列为10的的行。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">seq <span style="color:#ae81ff">20</span> | xargs -n5 &gt; file
+<span style="color:#75715e"># cat file</span>
+<span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">5</span>
+<span style="color:#ae81ff">6</span> <span style="color:#ae81ff">7</span> <span style="color:#ae81ff">8</span> <span style="color:#ae81ff">9</span> <span style="color:#ae81ff">10</span>
+<span style="color:#ae81ff">11</span> <span style="color:#ae81ff">12</span> <span style="color:#ae81ff">13</span> <span style="color:#ae81ff">14</span> <span style="color:#ae81ff">15</span>
+<span style="color:#ae81ff">16</span> <span style="color:#ae81ff">17</span> <span style="color:#ae81ff">18</span> <span style="color:#ae81ff">19</span> <span style="color:#ae81ff">20</span>
+
+awk <span style="color:#e6db74">&#39;$5 ~ /10/&#39;</span> file
+awk <span style="color:#e6db74">&#39;$5 ~ &#34;10&#34;&#39;</span> file
+awk <span style="color:#e6db74">&#39;$5 ~ 10&#39;</span> file
+</code></pre></div><h3 id="数组">数组</h3>
+<p>Awk支持一维数组。其表示方法为<code>array[expr]</code>，<code>expr</code>在内部被统一转换成字符串类型，因此A[1]，与A[&ldquo;1&rdquo;]相同，事实上索引都是“1”。索引为字符串的数组被称为关联数组。<code>expr in array</code>用于判断数组元素array[expr]是否存在。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span> var in array <span style="color:#f92672">)</span> statement
+</code></pre></div><h3 id="控制语句">控制语句</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span> expr <span style="color:#f92672">)</span> statement
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span> expr <span style="color:#f92672">)</span> statement <span style="color:#66d9ef">else</span> statement
+<span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span> expr <span style="color:#f92672">)</span> statement
+<span style="color:#66d9ef">do</span> statement <span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span> expr <span style="color:#f92672">)</span>
+<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span> opt_expr ; opt_expr ; opt_expr <span style="color:#f92672">)</span> statement
+<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span> var in array <span style="color:#f92672">)</span> statement
+<span style="color:#66d9ef">continue</span>
+break
+</code></pre></div><h3 id="内置变量">内置变量</h3>
+<ul>
+<li><code>NR</code> - 当前行数</li>
+<li><code>NF</code> - 当前行的列数</li>
+<li><code>RS</code>，行分隔符，默认是换行符</li>
+<li><code>FS</code>，列分隔符，默认是空格和制表符</li>
+<li><code>ORS</code>，输出行分隔符，默认为换行符</li>
+<li><code>OFS</code>，输出列分隔符，默认为空格</li>
+<li><code>FILENAME</code>，当前文件名</li>
+</ul>
+<h3 id="内置函数">内置函数</h3>
+<h4 id="字符串函数">字符串函数</h4>
+<p>sub()、substr()、gsub()，sprintf()，index()，length()， match()，split()，tolower(), toupper()</p>
+<h4 id="数学函数">数学函数</h4>
+<p>sin()，cos(), &hellip;</p>
+<h3 id="输入输出">输入输出</h3>
+<p>有两个输出语句，<code>print</code>和<code>printf</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>							<span style="color:#75715e"># 打印整条记录到标准输出，相当于print $0</span>
+<span style="color:#66d9ef">print</span> expr1, expr2, <span style="color:#f92672">...</span>, exprn	<span style="color:#75715e"># 打印指定字段到标准输出</span>
+printf format, expr<span style="color:#f92672">-</span>list		<span style="color:#75715e"># C语言printf函数的重用</span>
+</code></pre></div><p>输入函数getline有以下几种形式：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">getline							<span style="color:#75715e"># 读取下一条记录到$0，更新NF，NR和FNR</span>
+getline var						<span style="color:#75715e"># 读取下一条记录到var，更新NR和FNR</span>
+getline &lt; file					<span style="color:#75715e"># 从文件读取记录到$0，更新NF</span>
+getline var &lt; file				<span style="color:#75715e"># 从文件读取记录到var</span>
+command | getline				<span style="color:#75715e"># 通过管道传递command的结果到$0，更新NF</span>
+command | getline var			<span style="color:#75715e"># 通过管道传递command的结果到var</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">seq <span style="color:#ae81ff">10</span> | awk <span style="color:#e6db74">&#39;{print $0;getline}&#39;</span>					  <span style="color:#75715e"># 显示奇数行</span>
+seq <span style="color:#ae81ff">10</span> | awk <span style="color:#e6db74">&#39;{getline; print $0}&#39;</span>					  <span style="color:#75715e"># 显示偶数行</span>
+seq <span style="color:#ae81ff">10</span> | awk <span style="color:#e6db74">&#39;{getline tmp; print tmp; print $0}&#39;</span>	  <span style="color:#75715e"># 奇偶行对调</span>
+
+awk <span style="color:#e6db74">&#39;BEGIN {&#34;date&#34; | getline;close(&#34;date&#34;);print $0}&#39;</span> <span style="color:#75715e"># 得到系统当前时间</span>
+
+<span style="color:#75715e"># fastq转换成fasta</span>
+awk <span style="color:#e6db74">&#39;{getline seq; getline comment; getline quality; sub(&#34;@&#34;, &#34;&gt;&#34;, $0); print $0&#34;\n&#34;seq}&#39;</span> file
+</code></pre></div><h3 id="示例">示例</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+awk <span style="color:#e6db74">&#39;{print $0}&#39;</span> file	<span style="color:#75715e"># 打印整行</span>
+awk <span style="color:#e6db74">&#39;{print $1}&#39;</span> file	<span style="color:#75715e"># 打印第一列</span>
+awk <span style="color:#e6db74">&#39;{print $2}&#39;</span> file	<span style="color:#75715e"># 打印第二列</span>
+awk <span style="color:#e6db74">&#39;{print $NF}&#39;</span> file	<span style="color:#75715e"># 打印最后一列</span>
+awk <span style="color:#e6db74">&#39;{print $(NF-1)}&#39;</span> file#打印倒数第二列
+awk -F <span style="color:#e6db74">&#39;;&#39;</span> -v OFS<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;\t&#39;</span> <span style="color:#e6db74">&#39;{print $1,$2,$NF}&#39;</span> file	<span style="color:#75715e"># 读入的文件以逗号;分隔列，打印第1列，第2列和最后一列，并且打印时以制表符作为列的分隔符</span>
+number<span style="color:#f92672">=</span>10;awk -v n<span style="color:#f92672">=</span>$number <span style="color:#e6db74">&#39;{print n}&#39;</span> file	<span style="color:#75715e"># number的值被传给了程序变量n</span>
+awk <span style="color:#e6db74">&#39;$2 &gt; 100&#39;</span> file		<span style="color:#75715e"># 打印第2列大于100的行</span>
+awk <span style="color:#e6db74">&#39;NR&gt;1 &amp;&amp; NR&lt;4&#39;</span> file <span style="color:#75715e"># 打印第2~3行</span>
+
+awk <span style="color:#e6db74">&#39;/EGFR/&#39;</span> file		<span style="color:#75715e"># 打印含有EGFR的行，相当于grep EGFR file</span>
+awk <span style="color:#e6db74">&#39;$1 ~ /EGFR/&#39;</span> file	<span style="color:#75715e"># 打印第1列含有EGFR的列</span>
+
+<span style="color:#75715e"># 按指定列去除重复行</span>
+<span style="color:#75715e"># cat file</span>
+<span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">5</span>
+<span style="color:#ae81ff">6</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">8</span> <span style="color:#ae81ff">9</span> <span style="color:#ae81ff">10</span>
+<span style="color:#ae81ff">11</span> <span style="color:#ae81ff">12</span> <span style="color:#ae81ff">13</span> <span style="color:#ae81ff">14</span> <span style="color:#ae81ff">15</span>
+<span style="color:#ae81ff">16</span> <span style="color:#ae81ff">17</span> <span style="color:#ae81ff">18</span> <span style="color:#ae81ff">19</span> <span style="color:#ae81ff">20</span>
+awk <span style="color:#e6db74">&#39;!a[$2]++&#39;</span> file		<span style="color:#75715e"># 第二列出现两次2，只保留第一次出现的那一行，结果如下：</span>
+<span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">5</span>
+<span style="color:#ae81ff">11</span> <span style="color:#ae81ff">12</span> <span style="color:#ae81ff">13</span> <span style="color:#ae81ff">14</span> <span style="color:#ae81ff">15</span>
+<span style="color:#ae81ff">16</span> <span style="color:#ae81ff">17</span> <span style="color:#ae81ff">18</span> <span style="color:#ae81ff">19</span> <span style="color:#ae81ff">20</span>
+
+awk <span style="color:#e6db74">&#39;{sum+=$1} END {print sum}&#39;</span> file	<span style="color:#75715e"># 累加文件的第一列</span>
+awk <span style="color:#e6db74">&#39;{sum+=$1} END {print sum/NR}&#39;</span> file	<span style="color:#75715e"># 求第一列的平均数</span>
+
+<span style="color:#75715e"># 从含有多条fasta序列的文件中提取指定序列</span>
+ awk -v RS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&gt;&#34;</span> <span style="color:#e6db74">&#39;/chr1/ {print $0}&#39;</span> hg19.fa	<span style="color:#75715e"># 提取chr1的序列</span>
+ awk -v RS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&gt;&#34;</span> <span style="color:#e6db74">&#39;/chr1|chr2/ {print $0}&#39;</span> hg19.fa	<span style="color:#75715e"># 提取chr1和chr2的序列</span>
+</code></pre></div><h2 id="bash脚本模板">Bash脚本模板</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>
+command1
+
+command2
+
+...
+</code></pre></div><p><code>chmod +x run.sh</code> 给run.sh脚本增加可执行权限</p>
+<p>执行脚本，以下三种方式都可以：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 脚本在前台执行，标准输出和标准错误输出到屏幕</span>
+./run.sh
+bash run.sh
+sh run.sh		<span style="color:#75715e"># 前提sh链接到了bash，如果没有，需要root权限执行命令：ln -sf /bin/bash /bin/sh</span>
+
+<span style="color:#75715e"># 脚本在前台执行，标准输出和标准错误保存到文件</span>
+./run.sh &amp;&gt; run.sh.o
+
+<span style="color:#75715e"># 脚本在后台执行，在最后加上一个&amp;符号</span>
+./run.sh &amp;&gt; run.sh.o &amp;
+
+<span style="color:#75715e"># 脚本在后台执行，并且防断线（长时间运行任务时使用）</span>
+nohup ./run.sh &amp;&gt; run.sh.o &amp;
+</code></pre></div><h2 id="其他命令">其他命令</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo $PATH		<span style="color:#75715e"># 显示环境变量</span>
+time command	<span style="color:#75715e"># 显示命令执行时间</span>
+date			<span style="color:#75715e"># 显示日期和时间</span>
+history			<span style="color:#75715e"># 显示历史命令</span>
+export PATH<span style="color:#f92672">=</span>$PATH:/path/to/bin	<span style="color:#75715e"># 将路径加入环境变量中</span>
+ln -s file file2# 为file文件创建软链接，名称为file2
+exit			<span style="color:#75715e"># 退出登录</span>
+Tab键自动补全	 <span style="color:#75715e"># Tab键可以补全命令或文件路径，输入部分命令或路径时，尝试按Tab键补全</span>
+Ctrl + c		<span style="color:#75715e"># 中止当前命令的执行</span>
+seq 10			<span style="color:#75715e"># 产生1到10的整数</span>
+md5sum			<span style="color:#75715e"># 生成，或验证文件的MD5值</span>
+</code></pre></div><h2 id="写在最后">写在最后</h2>
+<p>我的文章都汇总在个人博客（https://jianzuoyi.github.io），每个主题都会反复打磨，这样既有利于自己提高，也能为读者提供优质内容。下面是一些反响较好的文章，推荐给你。</p>
+<p><a href="https://zhuanlan.zhihu.com/p/292351855">生物信息学：全景</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/161568818">一个生信人的自白：从生物转生信，我的学习与工作经历</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/213999986">最佳生物信息工作环境</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/297961991">生物信息基础：conda包管理器安装和使用</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/297858072">生物信息基础：基因组文件读写（pysam）</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/214019754">概述：NGS测序在病原微生物检测中的应用</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/214107076">病原微生物扩增子数据分析实战（一）：bcl2fastq软件完成数据拆分</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/218012184">病原微生物扩增子数据分析实战（二）：fastp软件进行质量控制</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/242638228">病原微生物扩增子数据分析实战（三）：vsearch软件鉴定物种组成</a></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">xianmin</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+      2020-11-20
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://jianzuoyi.github.io/tags/%E8%87%AA%E5%AD%A6%E7%94%9F%E4%BF%A1/">自学生信</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/2020-11-23-learn-bioinfomatics/">
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
+            <span class="prev-text nav-default">01 如何自学生物信息学：从菜鸟到专家</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/2020-11-20.base-pair-unit/">
+            <span class="next-text nav-default">为什么说生物信息学是真正的大数据行业？</span>
+            <span class="prev-text nav-mobile">Next</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+    
+
+  
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+  
+    <a href="mailto:your@email.com" rel="me noopener" class="iconfont"
+      title="email" >
+      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
+      title="stack-overflow"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M809.714286 932.571429l-638.857143 0 0-274.285714-91.428571 0 0 365.714286 821.714286 0 0-365.714286-91.428571 0 0 274.285714zm-538.285714-299.428571l18.857143-89.714286 447.428571 94.285714-18.857143 89.142857zm58.857143-213.714286l38.285714-83.428571 414.285714 193.714286-38.285714 82.857143zm114.857143-203.428571l58.285714-70.285714 350.857143 293.142857-58.285714 70.285714zm226.857143-216l272.571429 366.285714-73.142857 54.857143-272.571429-366.285714zm-410.285714 840.571429l0-90.857143 457.142857 0 0 90.857143-457.142857 0z"></path>
+</svg>
+
+    </a>
+  
+    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
+      title="twitter"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1264 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M1229.8616 18.043658c0 0-117.852626 63.135335-164.151872 67.344358-105.225559-164.151872-505.082682-92.598492-437.738325 223.078185C278.622548 312.675223 89.216542 47.506814 89.216542 47.506814s-117.852626 189.406006 75.762402 345.139833C127.097743 396.85567 55.544363 371.601535 55.544363 371.601535S26.081207 535.753407 253.368414 615.724832c-21.045112 29.463156-113.643603 8.418045-113.643603 8.418045s25.254134 143.10676 231.496229 180.987961c-143.10676 130.479693-387.230056 92.598492-370.393967 105.225559 206.242095 189.406006 1119.599946 231.496229 1128.01799-643.98042C1179.353331 249.539887 1263.533778 123.269217 1263.533778 123.269217s-130.479693 37.881201-138.897738 33.672179C1225.652577 98.015083 1229.8616 18.043658 1229.8616 18.043658"></path>
+</svg>
+
+    </a>
+  
+    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
+      title="facebook"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="33" height="33">
+  <path d="M965.7344 2.7648c14.848 0 28.2624 5.5296 40.2432 16.6912C1017.9584 30.5152 1024 43.52 1024 58.2656l0 910.2336c0 14.848-6.0416 27.7504-18.0224 38.8096C993.8944 1018.4704 980.48 1024 965.7344 1024L704.9216 1024 704.9216 629.9648l133.2224 0 19.456-155.4432-152.576 0L705.024 373.0432c0-50.688 25.9072-76.0832 77.7216-76.0832l80.4864 0L863.232 163.5328c-27.7504-5.4272-67.4816-8.192-119.296-8.192-59.1872 0-106.8032 18.0224-142.9504 54.0672C564.736 245.5552 546.7136 296.0384 546.7136 360.7552l0 113.7664L413.4912 474.5216l0 155.4432 133.2224 0L546.7136 1024 55.5008 1024c-14.848 0-27.7504-5.5296-38.8096-16.6912C5.5296 996.2496 0 983.3472 0 968.4992L0 58.2656C0 43.52 5.5296 30.5152 16.6912 19.456c11.0592-11.0592 24.064-16.6912 38.8096-16.6912L965.7344 2.7648z"></path>
+</svg>
+
+    </a>
+  
+    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
+      title="linkedin"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="33" height="33">
+  <path d="M872.405333 872.618667h-151.637333v-237.610667c0-56.661333-1.152-129.578667-79.018667-129.578667-79.061333 0-91.136 61.653333-91.136 125.397334v241.792H398.976V384h145.664v66.602667h1.962667c20.352-38.4 69.845333-78.933333 143.786666-78.933334 153.642667 0 182.058667 101.12 182.058667 232.746667v268.202667zM227.712 317.141333a87.978667 87.978667 0 0 1-88.021333-88.106666 88.064 88.064 0 1 1 88.021333 88.106666z m76.032 555.477334H151.68V384h152.064v488.618667zM948.266667 0H75.562667C33.792 0 0 33.024 0 73.770667v876.458666C0 991.018667 33.792 1024 75.562667 1024h872.576C989.866667 1024 1024 991.018667 1024 950.229333V73.770667C1024 33.024 989.866667 0 948.138667 0h0.128z"></path>
+</svg>
+
+    </a>
+  
+    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
+      title="google"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M853.333333 85.333333C900.266667 85.333333 938.666667 123.733333 938.666667 170.666667L938.666667 853.333333C938.666667 900.266667 900.266667 938.666667 853.333333 938.666667L170.666667 938.666667C123.733333 938.666667 85.333333 900.266667 85.333333 853.333333L85.333333 170.666667C85.333333 123.306667 123.733333 85.333333 170.666667 85.333333L853.333333 85.333333M853.333333 512 768 512 768 426.666667 725.333333 426.666667 725.333333 512 640 512 640 554.666667 725.333333 554.666667 725.333333 640 768 640 768 554.666667 853.333333 554.666667 853.333333 512M384 481.706667 384 554.666667 506.026667 554.666667C499.626667 584.96 469.333333 645.973333 384 645.973333 311.04 645.973333 253.013333 584.96 253.013333 512 253.013333 439.04 311.04 378.026667 384 378.026667 426.666667 378.026667 453.973333 396.373333 469.333333 411.306667L527.36 356.693333C490.666667 320 442.026667 298.666667 384 298.666667 264.96 298.666667 170.666667 392.96 170.666667 512 170.666667 631.04 264.96 725.333333 384 725.333333 506.026667 725.333333 588.373333 640 588.373333 517.973333 588.373333 503.04 588.373333 493.653333 584.96 481.706667L384 481.706667Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
+      title="github"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M512 12.672c-282.88 0-512 229.248-512 512 0 226.261333 146.688 418.133333 350.08 485.76 25.6 4.821333 34.986667-11.008 34.986667-24.618667 0-12.16-0.426667-44.373333-0.64-87.04-142.421333 30.890667-172.458667-68.693333-172.458667-68.693333C188.672 770.986667 155.008 755.2 155.008 755.2c-46.378667-31.744 3.584-31.104 3.584-31.104 51.413333 3.584 78.421333 52.736 78.421333 52.736 45.653333 78.293333 119.850667 55.68 149.12 42.581333 4.608-33.109333 17.792-55.68 32.426667-68.48-113.706667-12.8-233.216-56.832-233.216-253.013333 0-55.893333 19.84-101.546667 52.693333-137.386667-5.76-12.928-23.04-64.981333 4.48-135.509333 0 0 42.88-13.738667 140.8 52.48 40.96-11.392 84.48-17.024 128-17.28 43.52 0.256 87.04 5.888 128 17.28 97.28-66.218667 140.16-52.48 140.16-52.48 27.52 70.528 10.24 122.581333 5.12 135.509333 32.64 35.84 52.48 81.493333 52.48 137.386667 0 196.693333-119.68 240-233.6 252.586667 17.92 15.36 34.56 46.762667 34.56 94.72 0 68.522667-0.64 123.562667-0.64 140.202666 0 13.44 8.96 29.44 35.2 24.32C877.44 942.592 1024 750.592 1024 524.672c0-282.752-229.248-512-512-512"></path>
+</svg>
+
+    </a>
+  
+    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
+      title="weibo"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M385.714286 733.714286q12-19.428571 6.285714-39.428571t-25.714286-28.571429q-19.428571-8-41.714286-0.571429t-34.285714 26.285714q-12.571429 19.428571-7.428571 39.142857t24.571429 28.857143 42.571429 1.428571 35.714286-27.142857zm53.714286-69.142857q4.571429-7.428571 2-15.142857t-10-10.571429q-8-2.857143-16.285714 2.857143t-12.285714 10.571429q-9.714286 17.714286 7.428571 25.714286 8 2.857143 16.571429 2.857143t12.571429-10.571429zm99.428571 61.142857q-25.714286 58.285714-90.285714 85.714286t-128 6.857143q-61.142857-19.428571-84.285714-72.285714t3.714286-107.142857q26.857143-53.142857 86.571429-79.428571t120.285714-10.857143q63.428571 16.571429 90.571429 68.285714t1.428571 108.857143zm178.285714-91.428571q-5.142857-54.857143-50.857143-97.142857t-119.142857-62.285714-156.857143-12q-127.428571 13.142857-211.142857 80.857143t-75.714286 151.142857q5.142857 54.857143 50.857143 97.142857t119.142857 62.285714 156.857143 12q127.428571-13.142857 211.142857-80.857143t75.714286-151.142857zm176 2.285714q0 38.857143-21.142857 79.714286t-62.285714 78.285714-96.285714 67.142857-129.142857 47.428571-154.571429 17.714286-157.142857-19.142857-137.428571-53.142857-98-86.285714-37.142857-114q0-65.714286 39.714286-140t112.857143-147.428571q96.571429-96.571429 195.142857-134.857143t140.857143 4q37.142857 36.571429 11.428571 119.428571-2.285714 8-0.571429 11.428571t5.714286 4 8.285714 2.857143 7.714286-2l3.428571-1.142857q79.428571-33.714286 140.571429-33.714286t87.428571 34.857143q25.714286 36 0 101.714286-1.142857 7.428571-2.571429 11.428571t2.571429 7.142857 6.857143 4.285714 9.714286 3.428571q32.571429 10.285714 58.857143 26.857143t45.714286 46.571429 19.428571 66.571429zm-42.285714-356.571429q24 26.857143 31.142857 62t-3.714286 67.142857q-4.571429 13.142857-16.857143 19.428571t-25.428571 2.285714q-13.142857-4.571429-19.428571-16.857143t-2.285714-25.428571q11.428571-36-13.714286-63.428571t-61.142857-20q-13.714286 2.857143-25.714286-4.571429t-14.285714-21.142857q-2.857143-13.714286 4.571429-25.428571t21.142857-14.571429q34.285714-7.428571 68 3.142857t57.714286 37.428571zm103.428571-93.142857q49.714286 54.857143 64.285714 127.142857t-7.714286 138q-5.142857 15.428571-19.428571 22.857143t-29.714286 2.285714-22.857143-19.428571-2.857143-29.714286q16-46.857143 5.714286-98.285714t-45.714286-90.285714q-35.428571-39.428571-84.571429-54.571429t-98.857143-4.857143q-16 3.428571-29.714286-5.428571t-17.142857-24.857143 5.428571-29.428571 24.857143-16.857143q70.285714-14.857143 139.428571 6.571429t118.857143 76.857143z"></path>
+</svg>
+
+    </a>
+  
+    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
+      title="zhihu"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M351.791182 562.469462l192.945407 0c0-45.367257-21.3871-71.939449-21.3871-71.939449L355.897709 490.530013c3.977591-82.182744 7.541767-187.659007 8.816806-226.835262l159.282726 0c0 0-0.86367-67.402109-18.578124-67.402109s-279.979646 0-279.979646 0 16.850783-88.141456 39.318494-127.053698c0 0-83.60514-4.510734-112.121614 106.962104S81.344656 355.077018 76.80834 367.390461c-4.536316 12.313443 24.62791 5.832845 36.941354 0 12.313443-5.832845 68.050885-25.924439 84.252893-103.69571l86.570681 0c1.165546 49.28652 4.596691 200.335724 3.515057 226.835262L109.86113 490.530013c-25.275663 18.147312-33.701566 71.939449-33.701566 71.939449L279.868105 562.469462c-8.497535 56.255235-23.417339 128.763642-44.275389 167.210279-33.05279 60.921511-50.55235 116.65793-169.802314 212.576513 0 0-19.442818 14.257725 40.829917 9.073656 60.273758-5.185093 117.305683-20.739347 156.840094-99.807147 20.553105-41.107233 41.805128-93.250824 58.386782-146.138358l-0.055259 0.185218 167.855986 193.263655c0 0 22.035876-51.847855 5.832845-108.880803L371.045711 650.610918l-42.1244 31.157627-0.045025 0.151449c11.69946-41.020252 20.11206-81.5749 22.726607-116.858498C351.665315 564.212152 351.72876 563.345412 351.791182 562.469462z"></path>
+  <path d="M584.918753 182.033893l0 668.840094 70.318532 0 28.807093 80.512708 121.875768-80.512708 153.600307 0L959.520453 182.033893 584.918753 182.033893zM887.150192 778.934538l-79.837326 0-99.578949 65.782216-23.537066-65.782216-24.855084 0L659.341766 256.673847l227.807403 0L887.149169 778.934538z"></path>
+</svg>
+
+    </a>
+  
+    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
+      title="douban"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M926.917973 37.80608C959.65184 37.80608 986.19392 64.34816 986.19392 97.082027L986.19392 926.917973C986.19392 959.65184 959.65184 986.19392 926.917973 986.19392L97.082027 986.19392C64.34816 986.19392 37.80608 959.65184 37.80608 926.917973L37.80608 97.082027C37.80608 64.34816 64.34816 37.80608 97.082027 37.80608zM176.653653 176.19968 176.653653 252.678827 825.658027 252.678827 825.658027 176.19968zM217.719467 316.146347 217.719467 628.08064 273.524053 628.08064 341.292373 770.39616 157.259093 770.39616 157.259093 845.417813 842.949973 845.417813 842.949973 770.39616 654.226773 770.39616 722.899627 628.08064 783.67744 628.08064 783.67744 316.146347zM684.885333 392.891733 684.885333 553.987413 312.576 553.987413 312.576 392.891733zM570.770773 770.39616 426.653013 770.39616 359.621973 628.08064 639.443627 628.08064z"></path>
+</svg>
+
+    </a>
+  
+    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
+      title="pocket"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M912.569234 73.142857a88.429714 88.429714 0 0 1 88.576 89.161143v296.557714C1001.145234 732.562286 782.301806 950.857143 510.28352 950.857143A489.837714 489.837714 0 0 1 18.288091 458.861714V162.304A90.002286 90.002286 0 0 1 107.449234 73.142857h805.156572z m-402.285714 608a68.388571 68.388571 0 0 0 46.848-18.870857l230.838857-221.696a68.022857 68.022857 0 0 0 21.138286-48.566857 67.547429 67.547429 0 0 0-114.285714-48.566857l-184.576 177.152-184.576-177.152a67.328 67.328 0 0 0-46.299429-18.870857 67.547429 67.547429 0 0 0-46.884571 116.004571l231.424 221.696c11.995429 11.995429 29.147429 18.870857 46.299428 18.870857z"></path>
+</svg>
+
+    </a>
+  
+    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
+      title="tumblr"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M556.716946 378.027729l133.939525 0 0 89.307002L556.716946 467.334731 556.716946 601.318258c0 58.898435 8.290827 92.557022 53.140291 89.809445 10.382465-0.677429 22.25077-1.855254 35.687804-5.586229 13.437034-3.729951 24.257473-7.458879 32.372292-11.190877l12.739139-5.606695 0 82.546018c-3.403516 2.070148-8.463766 4.820796-15.007809 8.048303-6.631024 3.338025-21.029966 7.656377-43.016723 13.045107-21.988804 5.41022-44.937468 8.070816-68.844971 8.070816-51.395554 0-89.177042-10.994402-113.608477-33.17968-24.343431-22.097274-27.572986-56.147788-27.572986-101.195773L422.605505 467.334731l-89.263 0-0.435928-66.64077c38.480406-12.369725 67.798129-29.734208 88.128153-52.114938 20.332071-22.273283 33.333176-57.021691 38.829354-104.22783l96.853885-0.393973L556.717969 378.027729zM958.70846 243.958244l0 536.105001c0 98.730629-80.013335 178.722474-178.615027 178.722474L243.991502 958.785719c-98.774631 0-178.700985-79.991846-178.700985-178.722474L65.290517 243.958244c0-98.642624 79.925331-178.744987 178.700985-178.744987l536.102954 0C878.695125 65.213257 958.70846 145.31562 958.70846 243.958244zM869.44546 288.612257c0-74.015737-60.033281-133.961014-134.027529-133.961014L288.667004 154.651242c-73.994248 0-134.115534 59.945277-134.115534 133.961014l0 446.775486c0 74.015737 60.121286 133.983527 134.115534 133.983527l446.750927 0c73.994248 0 134.027529-59.96779 134.027529-133.983527L869.44546 288.612257z"></path>
+</svg>
+
+    </a>
+  
+    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
+      title="instagram"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M853.333333 277.333333C853.333333 289.28 843.946667 298.666667 832 298.666667L746.666667 298.666667C734.72 298.666667 725.333333 289.28 725.333333 277.333333L725.333333 192C725.333333 180.053333 734.72 170.666667 746.666667 170.666667L832 170.666667C843.946667 170.666667 853.333333 180.053333 853.333333 192M192 853.333333C180.053333 853.333333 170.666667 843.946667 170.666667 832L170.666667 469.333333 259.84 469.333333C257.28 482.986667 256 497.493333 256 512 256 653.226667 370.773333 768 512 768 653.226667 768 768 653.226667 768 512 768 497.493333 766.293333 482.986667 764.16 469.333333L853.333333 469.333333 853.333333 832C853.333333 843.946667 843.946667 853.333333 832 853.333333M512 341.333333C606.293333 341.333333 682.666667 417.706667 682.666667 512 682.666667 606.293333 606.293333 682.666667 512 682.666667 417.706667 682.666667 341.333333 606.293333 341.333333 512 341.333333 417.706667 417.706667 341.333333 512 341.333333M853.333333 85.333333 170.666667 85.333333C123.306667 85.333333 85.333333 123.306667 85.333333 170.666667L85.333333 853.333333C85.333333 900.266667 123.733333 938.666667 170.666667 938.666667L853.333333 938.666667C900.266667 938.666667 938.666667 900.266667 938.666667 853.333333L938.666667 170.666667C938.666667 123.306667 900.266667 85.333333 853.333333 85.333333Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
+      title="gitlab"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M59.544137 403.419429L512.115566 983.405714 16.09728 623.396571a39.936 39.936 0 0 1-14.299429-43.995428l57.709715-176.018286z m264.009143 0h377.161143L512.152137 983.405714zM210.40128 53.723429l113.152 349.696H59.544137l113.152-349.696a20.041143 20.041143 0 0 1 37.705143 0z m754.285714 349.696l57.709715 176.018285a39.862857 39.862857 0 0 1-14.299429 43.995429l-496.018286 360.009143 452.571429-579.986286z m0 0h-264.009143l113.152-349.696a20.041143 20.041143 0 0 1 37.705143 0z"></path>
+</svg>
+
+    </a>
+  
+    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
+      title="goodreads"  target="_blank"
+      >
+      <svg viewBox="0 0 128 128" version="1.1"
+  width="32" height="32">
+  <path d="M 85.685714,45.48571 C 87.142857,56.14286 84.342857,68.05714 75.428571,74.25714 69.057143,78.68571 60.342857,78.28571 55.2,75.88571 44.6,70.94286 41.057143,59.14286 41.828571,48.11429 c 1.228572,-17.4 11.685715,-25.11429 21.514286,-25 13.4,-0.0571 20.514286,9.08571 22.342857,22.37142 z M 128,16 v 96 c 0,8.82857 -7.17143,16 -16,16 H 16 C 7.1714286,128 0,120.82857 0,112 V 16 C 0,7.17143 7.1714286,0 16,0 h 96 c 8.82857,0 16,7.17143 16,16 z M 94.285714,80.34286 c 0,0 -0.02857,-9.71429 -0.02857,-62.08572 H 85.97143 V 29.77143 C 85.742858,29.85713 85.628572,29.62857 85.514287,29.42857 82.771429,23.51429 75.257143,16.2 63.8,16.28571 48.971429,16.4 38.885714,25.2 35.057143,38.51429 33.828571,42.77143 33.4,47.11429 33.485714,51.54286 33.971429,73.8 46.371429,85.2 65.6,84.45714 73.857143,84.14286 81.171429,79.6 85.314286,71.54286 85.457143,71.25714 85.628571,71 85.8,70.71429 c 0.05714,0.0286 0.114286,0.0286 0.171429,0.0571 0.08571,1.08571 0.05714,8.77143 0.02857,9.85714 -0.05714,4.22857 -0.571429,8.42857 -2.057143,12.42857 -2.228571,6 -6.371428,9.91429 -12.714286,11.28572 -5.085714,1.11428 -10.171428,1.08571 -15.2,-0.34286 C 49.885714,102.25714 45.6,98.57143 44.285714,92.05714 44.2,91.6 43.914286,91.68571 43.628571,91.68571 H 35.971429 C 36.2,94.71429 36.885714,97.48571 38.4,100.02857 45.314286,111.6 62.028571,113.88571 75.028571,110.71429 89.285714,107.2 94.257143,95.02857 94.285714,80.34286 Z" />
+</svg>
+
+    </a>
+  
+    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
+      title="coding"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  width="36" height="36">
+  <path
+      d="m 313.5359,557.51414 c 9.229,0 16.57801,8.88719 16.57801,19.99616 0,11.10899 -7.34901,19.99617 -16.57801,19.99617 -9.229,0 -16.57801,-8.88718 -16.57801,-19.99617 0,-11.10897 7.34901,-19.99616 16.57801,-19.99616 z m 393.7706,0 c 9.22899,0 16.57802,8.88719 16.57802,19.99616 0,11.10899 -7.34903,19.99617 -16.57802,19.99617 -9.229,0 -16.57802,-8.88718 -16.57802,-19.99617 0,-11.10897 7.34902,-19.99616 16.57802,-19.99616 z"
+      id="path6"/>
+  <path
+      d="m 945.8932,448.98796 c -27.17427,0 -51.1013,17.26164 -64.43208,43.23957 C 836.17066,393.44306 741.8298,302.00762 625.27096,264.23708 562.37704,239.1137 518.28294,190.57601 512.8139,134.17657 507.34486,190.74691 463.25077,239.1137 400.35685,264.23708 283.79802,301.83671 189.45714,393.44306 144.16669,492.22753 130.83591,466.2496 107.07979,448.98796 79.734607,448.98796 c -41.701401,0 -75.541066,40.84686 -75.541066,91.26454 0,50.41768 33.839665,91.26454 75.541066,91.26454 12.64715,0 24.610663,-3.75996 35.206923,-10.42536 3.58906,163.55837 180.30728,269.69186 397.87237,270.03367 217.5651,-0.34181 394.28332,-106.4753 397.87238,-270.03367 10.42535,6.6654 22.55977,10.42536 35.20692,10.42536 41.7014,0 75.541,-40.84686 75.541,-91.26454 0.171,-50.41768 -33.6687,-91.26454 -75.541,-91.26454 z M 114.2579,568.79403 c -3.58906,13.15987 -19.312535,18.79981 -35.206921,12.47625 -15.894385,-6.15267 -25.977916,-21.87616 -22.388867,-35.03602 3.58906,-13.15987 19.312533,-18.79981 35.206919,-12.47624 15.894389,6.15267 25.807019,21.87614 22.388869,35.03601 z m 398.556,276.69904 C 338.31748,845.15126 196.97707,762.603 196.97707,644.33509 c 0,-2.56361 0.1709,-4.95631 0.1709,-7.34902 0,-0.85453 0,-1.53817 0.17092,-2.3927 0.1709,-1.70908 0.34181,-3.41814 0.34181,-4.95631 0.1709,-2.22179 0.51273,-4.44359 0.85454,-6.6654 0,-0.1709 0,-0.51271 0.1709,-0.68362 3.58906,-23.2434 12.47624,-58.79214 26.14883,-79.13012 32.64331,-47.51224 90.92273,-78.9592 157.23479,-78.9592 51.1013,0 97.41721,18.79981 130.91506,49.05041 33.49784,-30.2506 79.64283,-49.05041 130.91504,-49.05041 66.48298,0 124.59148,31.61786 157.23479,78.9592 13.67259,20.50889 22.55977,55.88672 26.14883,79.13012 0,0.17091 0,0.51272 0.17091,0.68362 0.34182,2.22181 0.51272,4.44361 0.85453,6.6654 0.17091,1.70907 0.34181,3.24723 0.34181,4.95631 0,0.85453 0.17092,1.53817 0.17092,2.3927 0.17091,2.39271 0.17091,4.95631 0.17091,7.34902 C 828.82165,762.603 687.48124,845.15126 512.8139,845.49307 Z M 946.74774,581.27028 c -15.89439,6.15265 -31.61787,0.68362 -35.20692,-12.47625 -3.58906,-13.15987 6.49448,-28.88334 22.38887,-35.03601 15.89438,-6.15267 31.61786,-0.68363 35.20692,12.47624 3.41815,12.98896 -6.49448,28.71243 -22.38887,35.03602 z"
+      id="path8"/>
+</svg>
+
+    </a>
+  
+    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
+      title="bilibili"  target="_blank"
+      >
+      <svg
+  class="icon" style="" viewBox="0 0 1024 1024" version="1.1" width="36"
+  height="36" id="svg8">
+  <path
+      style=""
+      d="M 744.60599,0.00486267 A 41.779915,41.779915 0 0 0 710.4184,18.673394 L 548.5048,255.32642 h -11.70046 a 41.779915,41.779915 0 0 0 -10.80295,-7.84928 L 235.66,97.084498 a 41.779915,41.779915 0 0 0 -20.07193,-4.960864 41.779915,41.779915 0 0 0 -18.3748,79.145436 L 359.4859,255.32642 H 128.16909 c -49.458302,0 -89.27932,39.82105 -89.27932,89.27932 v 508.65224 c 0,49.4583 39.821018,89.27934 89.27932,89.27934 h 19.48445 C 149.12802,984.5043 179.92773,1024 224.79179,1024 c 44.86407,0 75.66379,-39.4957 77.13826,-81.46268 H 719.98116 C 721.45559,984.5043 752.25533,1024 797.1194,1024 c 44.86406,0 75.6638,-39.4957 77.13824,-81.46268 h 21.57323 c 49.45831,0 89.27936,-39.82104 89.27936,-89.27934 V 344.60574 c 0,-49.45827 -39.82105,-89.27932 -89.27936,-89.27932 H 649.74567 L 779.38103,65.866924 A 41.779915,41.779915 0 0 0 744.60599,0.00486267 Z M 644.49108,418.70871 c 6.29985,0.21538 12.44451,2.01107 17.86888,5.22196 l 171.36218,98.10771 c 18.23417,10.21935 24.63334,33.34627 14.24614,51.48533 -10.38726,18.13909 -33.57344,24.32718 -51.61587,13.77296 L 624.9903,489.18895 c -15.21356,-8.41858 -22.66871,-26.1765 -18.03211,-42.93436 4.63664,-16.75784 20.15573,-28.14465 37.53289,-27.54588 z M 350.2006,432.31846 c 16.89952,0.0317 31.69582,11.33328 36.17844,27.62747 4.48262,16.2942 -2.44981,33.57765 -16.95507,42.24898 l -140.7157,86.91312 c -17.68528,11.18244 -41.09629,5.77692 -52.08912,-12.02686 -10.99282,-17.80373 -5.33855,-41.15658 12.58167,-51.95857 L 329.9002,438.2095 c 6.0643,-3.86439 13.10951,-5.90891 20.3004,-5.89104 z M 501.605,641.53985 c 3.75002,-0.15248 7.48645,0.53903 10.93349,2.0235 0.15842,0.0637 0.31618,0.12888 0.47325,0.19582 0.59328,0.27092 1.17574,0.56489 1.74609,0.88121 0.15868,0.0854 0.31643,0.17233 0.47325,0.2611 0.55694,0.32165 1.10131,0.66458 1.63185,1.02807 0.16455,0.1123 0.32777,0.2265 0.48956,0.34269 0.50382,0.36781 0.99371,0.75428 1.46868,1.15864 0.18724,0.15504 0.37218,0.31282 0.55484,0.47323 0.43271,0.38784 0.8518,0.79061 1.25653,1.20756 0.15449,0.16114 0.30679,0.32437 0.45693,0.48959 0.40798,0.44266 0.79989,0.89988 1.17494,1.37076 0.17799,0.22544 0.35205,0.45395 0.5222,0.68538 0.25932,0.34701 0.50964,0.70071 0.75064,1.06071 0.26712,0.39516 0.52286,0.79784 0.76699,1.20757 0.16907,0.29043 0.33231,0.58424 0.48957,0.88123 0.21836,0.41297 0.42513,0.83199 0.62009,1.25653 0.14836,0.32333 0.28983,0.64976 0.42429,0.97911 0.21319,0.51552 0.40915,1.03801 0.58747,1.5666 0.0677,0.19499 0.13296,0.39085 0.19582,0.58748 0.18652,0.60823 0.34984,1.22334 0.48957,1.84399 0.0397,0.16277 0.0779,0.32601 0.11423,0.48957 0.1436,0.69112 0.25788,1.38801 0.34269,2.08877 0.005,0.0381 0.0111,0.0761 0.0163,0.11424 0.0857,0.78056 0.13474,1.56471 0.14687,2.34988 0.005,0.0543 0.0111,0.10879 0.0163,0.1632 0,0 -0.008,1.12132 0,1.45234 0,0 -0.14697,17.84761 5.89102,34.12231 3.01902,8.13734 7.33278,15.10615 12.61433,19.61501 5.28157,4.50889 11.42894,7.62081 23.64572,7.62081 12.2168,0 18.36416,-3.11192 23.64573,-7.62081 5.28154,-4.50886 9.5953,-11.47767 12.6143,-19.61501 6.03799,-16.2747 5.89103,-34.12231 5.89103,-34.12231 -0.44885,-13.87045 10.45922,-25.46302 24.3311,-25.86506 13.87189,-0.40201 25.42828,10.53953 25.78348,24.41272 0,0 1.11929,25.7226 -9.00791,53.01927 -5.06359,13.64832 -13.1986,28.46036 -27.05631,40.29073 -13.85772,11.83039 -33.5454,19.63135 -56.20142,19.63135 -22.65603,0 -42.34371,-7.80096 -56.20141,-19.63135 -4.1801,-3.56856 -7.78733,-7.42433 -10.99878,-11.42303 -3.21235,4.00037 -6.81703,7.85309 -10.99876,11.42303 -13.85773,11.83039 -33.5454,19.63135 -56.20144,19.63135 -22.65601,0 -42.3437,-7.80096 -56.2014,-19.63135 -13.85775,-11.83037 -21.99272,-26.64241 -27.05632,-40.29073 -10.12725,-27.29667 -9.00789,-53.01928 -9.00789,-53.01927 0.20714,-13.83687 11.58744,-24.88848 25.42444,-24.69013 14.1263,0.19991 25.2971,12.0278 24.69011,26.14247 0,0 -0.14697,17.84761 5.89103,34.12231 3.01902,8.13734 7.31646,15.10615 12.598,19.61501 5.28155,4.50889 11.44526,7.62081 23.66203,7.62081 12.21681,0 18.36418,-3.11192 23.64573,-7.62081 5.28154,-4.50886 9.57899,-11.47767 12.598,-19.61501 5.76352,-15.53489 5.89112,-32.05691 5.89103,-33.56746 0.006,-0.37466 0.0111,-1.05336 0.0163,-1.20759 -0.0117,-0.74583 0.0105,-1.49177 0.0652,-2.23565 0.009,-0.15784 0.0204,-0.31561 0.0327,-0.47324 0.14204,-1.56859 0.43163,-3.12027 0.86487,-4.63449 0.0213,-0.0763 0.0433,-0.15244 0.0652,-0.22848 3.0335,-10.25748 12.24157,-17.46007 22.92769,-17.93417 z"
+      id="rect824"/>
+</svg>
+
+    </a>
+  
+    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
+      title="codeforces"  target="_blank"
+      >
+      <svg width="36" height="36" class="icon" style="" version="1.1" viewBox="0 0 1024 1024">
+<path d="M 192 334.2 C 227.3 334.2 256 369.2 256 412.4 v 547.5 C 256 1003.2 227.3 1038.2 192 1038.2 H 64 C 28.7 1038.2 0 1003.2 0 960 V 412.4 C 0 369.2 28.7 334.2 64 334.2 h 128 z m 384 -234.7 C 611.3 99.6 640 134.5 640 177.8 v 782.2 C 640 1003.2 611.3 1038.2 576 1038.2 H 448 C 412.7 1038.2 384 1003.2 384 960 V 177.8 C 384 134.5 412.7 99.6 448 99.6 h 128 z m 384 391.1 C 995.3 490.6 1024 525.7 1024 568.9 v 391.1 C 1024 1003.2 995.3 1038.2 960 1038.2 h -128 C 796.7 1038.2 768 1003.2 768 960 V 568.9 C 768 525.7 796.7 490.6 832 490.6 h 128 z" />
+</svg>
+
+    </a>
+  
+    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
+      title="mastodon"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 448 512" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36"><path fill="currentColor" d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"></path></svg>
+    </a>
+
+
+<a href="https://jianzuoyi.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+   
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2020
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        xianmin
+        
+      </span></span>
+
+  
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
