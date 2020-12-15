@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>markdown · Jane - A super concise theme for Hugo</title>
+  <title>Jane - A super concise theme for Hugo</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -34,8 +34,8 @@
 <meta name="generator" content="Hugo 0.79.0" />
 
 
-<link rel="canonical" href="https://jianzuoyi.github.io/tags/markdown/" />
-<link href="/tags/markdown/index.xml" rel="alternate" type="application/rss+xml" title="Jane - A super concise theme for Hugo" />
+<link rel="canonical" href="https://jianzuoyi.github.io/" />
+<link href="/index.xml" rel="alternate" type="application/rss+xml" title="Jane - A super concise theme for Hugo" />
 
 
 
@@ -58,15 +58,15 @@
 
 
 
-<meta property="og:title" content="markdown" />
+<meta property="og:title" content="Jane - A super concise theme for Hugo" />
 <meta property="og:description" content="Hugo theme jane example site." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://jianzuoyi.github.io/tags/markdown/" />
-<meta property="og:updated_time" content="2018-03-01T16:01:23+08:00" />
-<meta itemprop="name" content="markdown">
+<meta property="og:url" content="https://jianzuoyi.github.io/" />
+<meta property="og:updated_time" content="2019-03-05T16:01:23+08:00" />
+<meta itemprop="name" content="Jane - A super concise theme for Hugo">
 <meta itemprop="description" content="Hugo theme jane example site.">
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="markdown"/>
+<meta name="twitter:title" content="Jane - A super concise theme for Hugo"/>
 <meta name="twitter:description" content="Hugo theme jane example site."/>
 
 <!--[if lte IE 9]>
@@ -267,7 +267,7 @@
   <ul id="menu" class="menu">
     
     
-        <li class="menu-item">
+        <li class="menu-item active">
         
           
           
@@ -392,27 +392,89 @@
       <div class="content-wrapper">
         <div id="content" class="content container">
           
-
-<section id="archive" class="archive">
+<section id="posts" class="posts">
+  
   
     
-      <div class="archive-title tag">
-        <h2 class="archive-name">Tag: markdown</h2>
-      </div>
+  
+  
+  
+    <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      <a class="post-link" href="/post/migrate-from-jekyll/">Migrate to Hugo from Jekyll</a>
+    </h1>
     
-  
-
-  
-    <div class="archive-post">
-      <time datetime="2018-03-01" class="archive-post-time">
-        2018-03-01
+    <div class="post-meta">
+      <time datetime="2014-03-10" class="post-time">
+        2014-03-10
       </time>
-      <span class="archive-post-title">
-        <a href="/post/doc-footnote-preview/" class="archive-post-link">
-          Jane-Theme Footnote Preview
-        </a>
-      </span>
+      <div class="post-category">
+          <a href="https://jianzuoyi.github.io/categories/development/"> Development </a>
+          <a href="https://jianzuoyi.github.io/categories/golang/"> golang </a>
+          <a href="https://jianzuoyi.github.io/categories/index/"> index </a>
+          
+        </div>
+      
+      
+      
     </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
+▾ &lt;root&gt;/ ▾ images/ logo.png  should become
+▾ &lt;root&gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.
+    </div>
+    <div class="read-more">
+      <a href="/post/migrate-from-jekyll/" class="read-more-link">Read more</a>
+    </div>
+    
+  </div>
+</article>
+
+  
+    <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      <a class="post-link" href="/post/syntax-highlighting/">Syntax Highlighting</a>
+    </h1>
+    
+    <div class="post-meta">
+      <time datetime="2011-08-30" class="post-time">
+        2011-08-30
+      </time>
+      <div class="post-category">
+          <a href="https://jianzuoyi.github.io/categories/syntax-highlighting/"> Syntax Highlighting </a>
+          <a href="https://jianzuoyi.github.io/categories/index/"> index </a>
+          
+        </div>
+      
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      <p>More detail: <a href="https://gohugo.io/content-management/syntax-highlighting/">Syntax Highlighting | Hugo</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">helloWorld</span> () {
+  <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;Hello, World!&#34;</span>)
+}
+</code></pre></div>
+    </div>
+    <div class="read-more">
+      <a href="/post/syntax-highlighting/" class="read-more-link">Read more</a>
+    </div>
+    
+  </div>
+</article>
+
   
 </section>
 
@@ -433,6 +495,34 @@
 
   
   
+
+  
+  
+  <nav class="pagination">
+    <ul>
+      
+      <li >
+        <a href="/">1</a>
+      </li>
+      
+      <li >
+        <a href="/page/2/">2</a>
+      </li>
+      
+      <li >
+        <a href="/page/3/">3</a>
+      </li>
+      
+      <li >
+        <a href="/page/4/">4</a>
+      </li>
+      
+      <li  class="active" >
+        <a href="/page/5/">5</a>
+      </li>
+      
+    </ul>
+  </nav>
 
   
   
