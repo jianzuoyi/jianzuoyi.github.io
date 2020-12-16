@@ -69,7 +69,7 @@
 <meta itemprop="description" content="在字符串中查找子串是一个常见问题。子串在字符串中可能是唯一的，比如特定的基因序列；也有可能有多个拷贝，比如基因组中的重复序列。这些重复序列可">
 <meta itemprop="datePublished" content="2020-12-07T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-12-07T00:00:00+00:00" />
-<meta itemprop="wordCount" content="353">
+<meta itemprop="wordCount" content="379">
 
 
 
@@ -394,36 +394,80 @@
 <p><strong>给定：</strong> 两个DNA序列<em>s</em>和<em>t</em>（长度都不超过1kb）。</p>
 <p><strong>需得：</strong> <em>t</em>在<em>s</em>中的所有位置。</p>
 <h2 id="示例数据">示例数据</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">GATATATGCATATACTT
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">GATATATGCATATACTT
 ATAT
-</code></pre></div><h2 id="示例结果">示例结果</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ae81ff">2</span> <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">10</span>
-</code></pre></div><h2 id="python实现">Python实现</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="示例结果">示例结果</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="m">2</span> <span class="m">4</span> <span class="m">10</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="python实现">Python实现</h2>
 <p>Finding_a_Motif_in_DNA.py</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> sys
-<span style="color:#f92672">import</span> re
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">re</span>
 
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">find_motif</span>(s, t):
-    ret <span style="color:#f92672">=</span> []
-    pos <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span>find(t)
-    <span style="color:#66d9ef">while</span> pos <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>:
-        ret<span style="color:#f92672">.</span>append(pos<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
-        pos <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span>find(t, pos<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
-    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39; &#39;</span><span style="color:#f92672">.</span>join([str(n) <span style="color:#66d9ef">for</span> n <span style="color:#f92672">in</span> ret])
+<span class="k">def</span> <span class="nf">find_motif</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">pos</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">pos</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">ret</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pos</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">pos</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">pos</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">ret</span><span class="p">])</span>
 
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test</span>():
-    <span style="color:#66d9ef">return</span> find_motif(<span style="color:#e6db74">&#39;GATATATGCATATACTT&#39;</span>, <span style="color:#e6db74">&#39;ATAT&#39;</span>) <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;2 4 10&#39;</span>
+<span class="k">def</span> <span class="nf">test</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">find_motif</span><span class="p">(</span><span class="s1">&#39;GATATATGCATATACTT&#39;</span><span class="p">,</span> <span class="s1">&#39;ATAT&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;2 4 10&#39;</span>
 
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
-    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> test():
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;find_motif: Failed&#34;</span>)
-        sys<span style="color:#f92672">.</span>exit(<span style="color:#ae81ff">1</span>)
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">test</span><span class="p">():</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&#34;find_motif: Failed&#34;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
-    <span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;rosalind_subs.txt&#39;</span>) <span style="color:#66d9ef">as</span> fh:
-        s <span style="color:#f92672">=</span> fh<span style="color:#f92672">.</span>readline()<span style="color:#f92672">.</span>rstrip()
-        t <span style="color:#f92672">=</span> fh<span style="color:#f92672">.</span>readline()<span style="color:#f92672">.</span>rstrip()
-        <span style="color:#66d9ef">print</span>(find_motif(s, t))
-</code></pre></div><ul>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;rosalind_subs.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">fh</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">fh</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">find_motif</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>注意找到一个位置后，再次查找需要从下一个位置（pos+1）开始，以防止重复查找。</li>
 </ul>
 <p><strong><a href="https://www.zhihu.com/people/jianzuoyi">学生信欢迎关注我的知乎</a>，请“点赞”为爱发电，只“收藏”不点赞都是耍流氓。</strong></p>
@@ -510,7 +554,33 @@ ATAT
 
   
 
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    显示 Disqus 评论
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "https://jianzuoyi.github.io/post/rosalind/2020-12-07-rosalind-009-dna-motif/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'jianzuoyi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
   
+  </div>
 
     
 

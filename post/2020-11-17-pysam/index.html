@@ -69,7 +69,7 @@
 <meta itemprop="description" content="Pysam是一个Python模块，它打包了高通量测序库htslib的C-API，可用于读写基因组相关文件，如Fasta/Fastq，SAM/">
 <meta itemprop="datePublished" content="2020-11-17T00:00:00+08:00" />
 <meta itemprop="dateModified" content="2020-11-17T00:00:00+08:00" />
-<meta itemprop="wordCount" content="817">
+<meta itemprop="wordCount" content="877">
 
 
 
@@ -400,40 +400,96 @@
     <div class="post-content">
       <p><a href="https://pysam.readthedocs.io/en/latest/index.html">Pysam</a>是一个Python模块，它打包了高通量测序库<a href="http://www.htslib.org/">htslib</a>的C-API，可用于读写基因组相关文件，如Fasta/Fastq，SAM/BAM/CRAM，VCF等。本文以Fasta/Fastq文件的读写为例，介绍Pysam的用法，详细教程请查看官网。</p>
 <h2 id="install">Install</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pip install pysam
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">pip install pysam
 或者
 conda install pysam
-</code></pre></div><h2 id="fasta-files">Fasta files</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="fasta-files">Fasta files</h2>
 <p>对于Fasta文件，可以实现随机访问，前提是要先创建faidx索引。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pysam
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pysam</span>
 
-<span style="color:#75715e"># 构建FastaFile对象，随机访问需要先创建faidx，没有的话在这里会自动创建faidx</span>
-fa <span style="color:#f92672">=</span> pysam<span style="color:#f92672">.</span>FastaFile(<span style="color:#e6db74">&#34;ex1.fa&#34;</span>)
+<span class="c1"># 构建FastaFile对象，随机访问需要先创建faidx，没有的话在这里会自动创建faidx</span>
+<span class="n">fa</span> <span class="o">=</span> <span class="n">pysam</span><span class="o">.</span><span class="n">FastaFile</span><span class="p">(</span><span class="s2">&#34;ex1.fa&#34;</span><span class="p">)</span>
 
-<span style="color:#75715e"># Fasta文件中序列的数量，结果是一个整数</span>
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;number of reference sequences: </span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> fa<span style="color:#f92672">.</span>nreferences)
+<span class="c1"># Fasta文件中序列的数量，结果是一个整数</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&#34;number of reference sequences: </span><span class="si">%d</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">fa</span><span class="o">.</span><span class="n">nreferences</span><span class="p">)</span>
 
-<span style="color:#75715e"># Fasta文件中序列的名称，结果是一个列表</span>
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;names of reference sequences: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;,&#34;</span><span style="color:#f92672">.</span>join(fa<span style="color:#f92672">.</span>references))
+<span class="c1"># Fasta文件中序列的名称，结果是一个列表</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&#34;names of reference sequences: &#34;</span> <span class="o">+</span> <span class="s2">&#34;,&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">fa</span><span class="o">.</span><span class="n">references</span><span class="p">))</span>
 
-<span style="color:#75715e"># Fasta文件中序列的长度，结果是一个列表</span>
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;lengths of reference sequences: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;,&#34;</span><span style="color:#f92672">.</span>join([str(i) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> fa<span style="color:#f92672">.</span>lengths]))
+<span class="c1"># Fasta文件中序列的长度，结果是一个列表</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&#34;lengths of reference sequences: &#34;</span> <span class="o">+</span> <span class="s2">&#34;,&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">fa</span><span class="o">.</span><span class="n">lengths</span><span class="p">]))</span>
 
-<span style="color:#75715e"># 这里是关键，用fetch函数随机读取序列</span>
-<span style="color:#75715e"># 1. 提取整条序列</span>
-chr2 <span style="color:#f92672">=</span> fa<span style="color:#f92672">.</span>fetch(<span style="color:#e6db74">&#34;chr2&#34;</span>)
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Random fetch chr2 sequence:</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> chr2)
+<span class="c1"># 这里是关键，用fetch函数随机读取序列</span>
+<span class="c1"># 1. 提取整条序列</span>
+<span class="n">chr2</span> <span class="o">=</span> <span class="n">fa</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s2">&#34;chr2&#34;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&#34;Random fetch chr2 sequence:</span><span class="se">\n</span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">chr2</span><span class="p">)</span>
 
-<span style="color:#75715e"># 2. Python风格半开区间：提取chr2位置11-20之间的碱基</span>
-<span style="color:#75715e"># 半开区间碱基位置编号从0开始,（10, 20），其中包含位置10，不包含位置20</span>
-front1 <span style="color:#f92672">=</span> fa<span style="color:#f92672">.</span>fetch(<span style="color:#e6db74">&#34;chr2&#34;</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">20</span>)
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Python style region(chr2, 10, 20): </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> front1)
+<span class="c1"># 2. Python风格半开区间：提取chr2位置11-20之间的碱基</span>
+<span class="c1"># 半开区间碱基位置编号从0开始,（10, 20），其中包含位置10，不包含位置20</span>
+<span class="n">front1</span> <span class="o">=</span> <span class="n">fa</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s2">&#34;chr2&#34;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&#34;Python style region(chr2, 10, 20): </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">front1</span><span class="p">)</span>
 
-<span style="color:#75715e"># 3. Samtools风格闭区间：提取chr2位置11-20之间的碱基，碱基位置编号从1开始</span>
-front2 <span style="color:#f92672">=</span> fa<span style="color:#f92672">.</span>fetch(region<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;chr2:11-20&#34;</span>)
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;samtools style region(chr2:11-20): </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> front2)
-</code></pre></div><p>结果显示：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">number of reference sequences: <span style="color:#ae81ff">2</span>
+<span class="c1"># 3. Samtools风格闭区间：提取chr2位置11-20之间的碱基，碱基位置编号从1开始</span>
+<span class="n">front2</span> <span class="o">=</span> <span class="n">fa</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="s2">&#34;chr2:11-20&#34;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&#34;samtools style region(chr2:11-20): </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">front2</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>结果显示：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">number of reference sequences: <span class="m">2</span>
 names of reference sequences: chr1,chr2
 lengths of reference sequences: 1575,1584
 Random fetch chr2 sequence:
@@ -441,24 +497,56 @@ TTCAAATGAACTTCTGTAATTGAAAAATTCATTTAAGAAATTACAAAATATAGTTGAAAG
 CTCTAACAATAGACTAAACCAAGCAGAAGAAAGAGGTTCAGAACTTGAAGACAAGTCTCT
 ...
 
-Python style region<span style="color:#f92672">(</span>chr2, 10, 20<span style="color:#f92672">)</span>: CTTCTGTAAT
-samtools style region<span style="color:#f92672">(</span>chr2:11-20<span style="color:#f92672">)</span>: CTTCTGTAAT
-</code></pre></div><h2 id="fastx-files">Fastx files</h2>
+Python style region<span class="o">(</span>chr2, 10, 20<span class="o">)</span>: CTTCTGTAAT
+samtools style region<span class="o">(</span>chr2:11-20<span class="o">)</span>: CTTCTGTAAT
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="fastx-files">Fastx files</h2>
 <p>顺序访问Fasta/Fastq文件。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pysam
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pysam</span>
 
-<span style="color:#66d9ef">with</span> pysam<span style="color:#f92672">.</span>FastxFile(<span style="color:#e6db74">&#34;ex1.fa&#34;</span>) <span style="color:#66d9ef">as</span> fh:
-    <span style="color:#66d9ef">for</span> record <span style="color:#f92672">in</span> fh:
-        <span style="color:#66d9ef">print</span>(record<span style="color:#f92672">.</span>name)
-        <span style="color:#66d9ef">print</span>(record<span style="color:#f92672">.</span>sequence)
-        <span style="color:#66d9ef">print</span>(record<span style="color:#f92672">.</span>comment)
-        <span style="color:#66d9ef">print</span>(record<span style="color:#f92672">.</span>quality)
+<span class="k">with</span> <span class="n">pysam</span><span class="o">.</span><span class="n">FastxFile</span><span class="p">(</span><span class="s2">&#34;ex1.fa&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">fh</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">sequence</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">comment</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">quality</span><span class="p">)</span>
 
-<span style="color:#66d9ef">with</span> pysam<span style="color:#f92672">.</span>FastxFile(<span style="color:#e6db74">&#34;ex1.fa&#34;</span>) <span style="color:#66d9ef">as</span> fin, open(<span style="color:#e6db74">&#34;out.fa&#34;</span>, <span style="color:#e6db74">&#39;w&#39;</span>) <span style="color:#66d9ef">as</span> fout:
-    <span style="color:#66d9ef">for</span> record <span style="color:#f92672">in</span> fin:
-        fout<span style="color:#f92672">.</span>write(str(record) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
-</code></pre></div><p>结果如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt;chr1
+<span class="k">with</span> <span class="n">pysam</span><span class="o">.</span><span class="n">FastxFile</span><span class="p">(</span><span class="s2">&#34;ex1.fa&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fin</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;out.fa&#34;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fout</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">fin</span><span class="p">:</span>
+        <span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">record</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>结果如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">&gt;chr1
 CACTAGTGGCTCATTGTAAATGTGTGGTTTAACTCGTCCATGGCCCAGCATTAGGGAGCT
 GTGGACCCTGCAGCCTGGCTGTGGGGGCCGCAGTGGCTGAGGGGTGCAGAGCCGAGTCAC
 ...
@@ -466,7 +554,9 @@ GTGGACCCTGCAGCCTGGCTGTGGGGGCCGCAGTGGCTGAGGGGTGCAGAGCCGAGTCAC
 TTCAAATGAACTTCTGTAATTGAAAAATTCATTTAAGAAATTACAAAATATAGTTGAAAG
 CTCTAACAATAGACTAAACCAAGCAGAAGAAAGAGGTTCAGAACTTGAAGACAAGTCTCT
 ...
-</code></pre></div><h1 id="sambamcram-files">SAM/BAM/CRAM files</h1>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="sambamcram-files">SAM/BAM/CRAM files</h1>
 <p>序列比对文件操作一般用samtools软件。</p>
 <h2 id="vcf-files">VCF files</h2>
 <p>变异文件操作一般用bcftools软件。</p>
@@ -558,7 +648,33 @@ CTCTAACAATAGACTAAACCAAGCAGAAGAAAGAGGTTCAGAACTTGAAGACAAGTCTCT
 
   
 
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    显示 Disqus 评论
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "https://jianzuoyi.github.io/post/2020-11-17-pysam/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'jianzuoyi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
   
+  </div>
 
     
 

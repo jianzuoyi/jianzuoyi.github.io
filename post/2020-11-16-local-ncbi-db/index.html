@@ -69,7 +69,7 @@
 <meta itemprop="description" content="一文搞懂NCBI Blast本地数据库（NT/NR等）构建 背景介绍 blast&#43;： ftp://ftp.ncbi.nlm.nih.gov/blast/executables/LATEST blast db：ftp://ftp.ncbi.nlm.nih.gov">
 <meta itemprop="datePublished" content="2020-11-16T00:00:00+08:00" />
 <meta itemprop="dateModified" content="2020-11-16T00:00:00+08:00" />
-<meta itemprop="wordCount" content="653">
+<meta itemprop="wordCount" content="669">
 
 
 
@@ -417,8 +417,15 @@
 <h2 id="下载blast库">下载blast库</h2>
 <p>BLAST+程序包中提供了一个脚本<code>update_blastdb.pl</code>可以方便地下载blast数据库。</p>
 <p>首先用以下命令查看有哪些数据库可供下载：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">perl update_blastdb.pl --showall
-</code></pre></div><blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">perl update_blastdb.pl --showall
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
 <p>16S_ribosomal_RNA
 18S_fungal_sequences
 28S_fungal_sequences
@@ -454,30 +461,81 @@ tsa_nr
 tsa_nt</p>
 </blockquote>
 <p>如要下载nt库，用以下命令：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nohup perl update_blastdb.pl --decompress nt &amp;&gt; update.log &amp;
-</code></pre></div><p>后台下载并自动解压，如果中途断网，重启下载支持断点续传，很方便。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">nohup perl update_blastdb.pl --decompress nt <span class="p">&amp;</span>&gt; update.log <span class="p">&amp;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>后台下载并自动解压，如果中途断网，重启下载支持断点续传，很方便。</p>
 <p>可惜的是，如果网速不好，80多GB的压缩文件，很难下载下来，最好用我们之前介绍过的Aspera软件高速下载，其安装方法见之前文章：<a href="https://zhuanlan.zhihu.com/p/245450890">Aspera：基因组数据高速下载利器，以NCBI和EBI数据下载为例</a></p>
 <p>Aspera下载nt库：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ascp -i ~/.aspera/connect/etc/asperaweb_id_dsa.openssh -l 100M -k <span style="color:#ae81ff">1</span> -T anonftp@ftp.ncbi.nlm.nih.gov:/blast/db/FASTA/nt.gz ./
-</code></pre></div><p>下载完毕，构建数据库索引：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">makeblastdb -dbtype nucl -in nt.fa -out nt.fa
-</code></pre></div><h2 id="测试">测试</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">ascp -i ~/.aspera/connect/etc/asperaweb_id_dsa.openssh -l 100M -k <span class="m">1</span> -T anonftp@ftp.ncbi.nlm.nih.gov:/blast/db/FASTA/nt.gz ./
+</code></pre></td></tr></table>
+</div>
+</div><p>下载完毕，构建数据库索引：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">makeblastdb -dbtype nucl -in nt.fa -out nt.fa
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="测试">测试</h2>
 <p>准备查询文件：test.fa</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt;chr1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">&gt;chr1
 CGATAATTCATCTGGCCGCCTTCCACACCCAGCGCGCGCAAAAAGTGGTGGCGGAAACGATCCGCACTGAAAATACCGTGGAGATAGGTTCCCATGATACGACCATCGGGC
-</code></pre></div><p>测试命令：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">time blastn -query test.fa -db /path/to/nt.fa -num_threads <span style="color:#ae81ff">48</span> -max_target_seqs <span style="color:#ae81ff">5</span> -outfmt <span style="color:#ae81ff">6</span>
-</code></pre></div><p>结果如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chr1    CP046720.1      100.000 <span style="color:#ae81ff">111</span>     <span style="color:#ae81ff">0</span>       <span style="color:#ae81ff">0</span>       <span style="color:#ae81ff">1</span>       <span style="color:#ae81ff">111</span>     <span style="color:#ae81ff">1286985</span> <span style="color:#ae81ff">1287095</span> 1.92e-49        <span style="color:#ae81ff">206</span>
-chr1    CP044338.1      100.000 <span style="color:#ae81ff">111</span>     <span style="color:#ae81ff">0</span>       <span style="color:#ae81ff">0</span>       <span style="color:#ae81ff">1</span>       <span style="color:#ae81ff">111</span>     <span style="color:#ae81ff">1283638</span> <span style="color:#ae81ff">1283748</span> 1.92e-49        <span style="color:#ae81ff">206</span>
-chr1    MK355143.1      100.000 <span style="color:#ae81ff">111</span>     <span style="color:#ae81ff">0</span>       <span style="color:#ae81ff">0</span>       <span style="color:#ae81ff">1</span>       <span style="color:#ae81ff">111</span>     <span style="color:#ae81ff">76</span>      <span style="color:#ae81ff">186</span>     1.92e-49        <span style="color:#ae81ff">206</span>
-chr1    MK355138.1      100.000 <span style="color:#ae81ff">111</span>     <span style="color:#ae81ff">0</span>       <span style="color:#ae81ff">0</span>       <span style="color:#ae81ff">1</span>       <span style="color:#ae81ff">111</span>     <span style="color:#ae81ff">76</span>      <span style="color:#ae81ff">186</span>     1.92e-49        <span style="color:#ae81ff">206</span>
-chr1    MK355136.1      100.000 <span style="color:#ae81ff">111</span>     <span style="color:#ae81ff">0</span>       <span style="color:#ae81ff">0</span>       <span style="color:#ae81ff">1</span>       <span style="color:#ae81ff">111</span>     <span style="color:#ae81ff">76</span>      <span style="color:#ae81ff">186</span>     1.92e-49        <span style="color:#ae81ff">206</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>测试命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">time</span> blastn -query test.fa -db /path/to/nt.fa -num_threads <span class="m">48</span> -max_target_seqs <span class="m">5</span> -outfmt <span class="m">6</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>结果如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">chr1    CP046720.1      100.000 <span class="m">111</span>     <span class="m">0</span>       <span class="m">0</span>       <span class="m">1</span>       <span class="m">111</span>     <span class="m">1286985</span> <span class="m">1287095</span> 1.92e-49        <span class="m">206</span>
+chr1    CP044338.1      100.000 <span class="m">111</span>     <span class="m">0</span>       <span class="m">0</span>       <span class="m">1</span>       <span class="m">111</span>     <span class="m">1283638</span> <span class="m">1283748</span> 1.92e-49        <span class="m">206</span>
+chr1    MK355143.1      100.000 <span class="m">111</span>     <span class="m">0</span>       <span class="m">0</span>       <span class="m">1</span>       <span class="m">111</span>     <span class="m">76</span>      <span class="m">186</span>     1.92e-49        <span class="m">206</span>
+chr1    MK355138.1      100.000 <span class="m">111</span>     <span class="m">0</span>       <span class="m">0</span>       <span class="m">1</span>       <span class="m">111</span>     <span class="m">76</span>      <span class="m">186</span>     1.92e-49        <span class="m">206</span>
+chr1    MK355136.1      100.000 <span class="m">111</span>     <span class="m">0</span>       <span class="m">0</span>       <span class="m">1</span>       <span class="m">111</span>     <span class="m">76</span>      <span class="m">186</span>     1.92e-49        <span class="m">206</span>
 
 real    0m15.609s
 user    1m17.647s
 sys     0m31.350s
-</code></pre></div><p>本地NT库构建成功。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>本地NT库构建成功。</p>
 
     </div>
 
@@ -561,7 +619,33 @@ sys     0m31.350s
 
   
 
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    显示 Disqus 评论
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "https://jianzuoyi.github.io/post/2020-11-16-local-ncbi-db/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'jianzuoyi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
   
+  </div>
 
     
 

@@ -69,7 +69,7 @@
 <meta itemprop="description" content="我在生物信息学：全景一文中，阐述了生物信息学的应用领域非常广泛。但是有一点是很关键的，就是细胞内的生命活动都遵从中心法则，生物信息学很多时候">
 <meta itemprop="datePublished" content="2020-12-05T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-12-05T00:00:00+00:00" />
-<meta itemprop="wordCount" content="790">
+<meta itemprop="wordCount" content="838">
 
 
 
@@ -414,58 +414,124 @@
 <p>**给定：**一条单链的mRNA序列（最长不超过10kb）。</p>
 <p>**需得：**其编码的蛋白质序列。</p>
 <h2 id="示例数据">示例数据</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">AUGGCCAUGGCGCCCAGAACUGAGAUCAAUAGUACCCGUAUUAACGGGUGA
-</code></pre></div><h2 id="示例结果">示例结果</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">MAMAPRTEINSTRING
-</code></pre></div><h2 id="python实现">Python实现</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">AUGGCCAUGGCGCCCAGAACUGAGAUCAAUAGUACCCGUAUUAACGGGUGA
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="示例结果">示例结果</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">MAMAPRTEINSTRING
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="python实现">Python实现</h2>
 <p>Translating_RNA_into_Protein.py</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> sys
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">sys</span>
 
-table <span style="color:#f92672">=</span> {
-<span style="color:#e6db74">&#39;UUU&#39;</span>:<span style="color:#e6db74">&#39;F&#39;</span>,<span style="color:#e6db74">&#39;CUU&#39;</span>:<span style="color:#e6db74">&#39;L&#39;</span>,<span style="color:#e6db74">&#39;AUU&#39;</span>:<span style="color:#e6db74">&#39;I&#39;</span>,<span style="color:#e6db74">&#39;GUU&#39;</span>:<span style="color:#e6db74">&#39;V&#39;</span>,
-<span style="color:#e6db74">&#39;UUC&#39;</span>:<span style="color:#e6db74">&#39;F&#39;</span>,<span style="color:#e6db74">&#39;CUC&#39;</span>:<span style="color:#e6db74">&#39;L&#39;</span>,<span style="color:#e6db74">&#39;AUC&#39;</span>:<span style="color:#e6db74">&#39;I&#39;</span>,<span style="color:#e6db74">&#39;GUC&#39;</span>:<span style="color:#e6db74">&#39;V&#39;</span>,
-<span style="color:#e6db74">&#39;UUA&#39;</span>:<span style="color:#e6db74">&#39;L&#39;</span>,<span style="color:#e6db74">&#39;CUA&#39;</span>:<span style="color:#e6db74">&#39;L&#39;</span>,<span style="color:#e6db74">&#39;AUA&#39;</span>:<span style="color:#e6db74">&#39;I&#39;</span>,<span style="color:#e6db74">&#39;GUA&#39;</span>:<span style="color:#e6db74">&#39;V&#39;</span>,
-<span style="color:#e6db74">&#39;UUG&#39;</span>:<span style="color:#e6db74">&#39;L&#39;</span>,<span style="color:#e6db74">&#39;CUG&#39;</span>:<span style="color:#e6db74">&#39;L&#39;</span>,<span style="color:#e6db74">&#39;AUG&#39;</span>:<span style="color:#e6db74">&#39;M&#39;</span>,<span style="color:#e6db74">&#39;GUG&#39;</span>:<span style="color:#e6db74">&#39;V&#39;</span>,
-<span style="color:#e6db74">&#39;UCU&#39;</span>:<span style="color:#e6db74">&#39;S&#39;</span>,<span style="color:#e6db74">&#39;CCU&#39;</span>:<span style="color:#e6db74">&#39;P&#39;</span>,<span style="color:#e6db74">&#39;ACU&#39;</span>:<span style="color:#e6db74">&#39;T&#39;</span>,<span style="color:#e6db74">&#39;GCU&#39;</span>:<span style="color:#e6db74">&#39;A&#39;</span>,
-<span style="color:#e6db74">&#39;UCC&#39;</span>:<span style="color:#e6db74">&#39;S&#39;</span>,<span style="color:#e6db74">&#39;CCC&#39;</span>:<span style="color:#e6db74">&#39;P&#39;</span>,<span style="color:#e6db74">&#39;ACC&#39;</span>:<span style="color:#e6db74">&#39;T&#39;</span>,<span style="color:#e6db74">&#39;GCC&#39;</span>:<span style="color:#e6db74">&#39;A&#39;</span>,
-<span style="color:#e6db74">&#39;UCA&#39;</span>:<span style="color:#e6db74">&#39;S&#39;</span>,<span style="color:#e6db74">&#39;CCA&#39;</span>:<span style="color:#e6db74">&#39;P&#39;</span>,<span style="color:#e6db74">&#39;ACA&#39;</span>:<span style="color:#e6db74">&#39;T&#39;</span>,<span style="color:#e6db74">&#39;GCA&#39;</span>:<span style="color:#e6db74">&#39;A&#39;</span>,
-<span style="color:#e6db74">&#39;UCG&#39;</span>:<span style="color:#e6db74">&#39;S&#39;</span>,<span style="color:#e6db74">&#39;CCG&#39;</span>:<span style="color:#e6db74">&#39;P&#39;</span>,<span style="color:#e6db74">&#39;ACG&#39;</span>:<span style="color:#e6db74">&#39;T&#39;</span>,<span style="color:#e6db74">&#39;GCG&#39;</span>:<span style="color:#e6db74">&#39;A&#39;</span>,
-<span style="color:#e6db74">&#39;UAU&#39;</span>:<span style="color:#e6db74">&#39;Y&#39;</span>,<span style="color:#e6db74">&#39;CAU&#39;</span>:<span style="color:#e6db74">&#39;H&#39;</span>,<span style="color:#e6db74">&#39;AAU&#39;</span>:<span style="color:#e6db74">&#39;N&#39;</span>,<span style="color:#e6db74">&#39;GAU&#39;</span>:<span style="color:#e6db74">&#39;D&#39;</span>,
-<span style="color:#e6db74">&#39;UAC&#39;</span>:<span style="color:#e6db74">&#39;Y&#39;</span>,<span style="color:#e6db74">&#39;CAC&#39;</span>:<span style="color:#e6db74">&#39;H&#39;</span>,<span style="color:#e6db74">&#39;AAC&#39;</span>:<span style="color:#e6db74">&#39;N&#39;</span>,<span style="color:#e6db74">&#39;GAC&#39;</span>:<span style="color:#e6db74">&#39;D&#39;</span>,
-<span style="color:#e6db74">&#39;UAA&#39;</span>:<span style="color:#e6db74">&#39;Stop&#39;</span>,<span style="color:#e6db74">&#39;CAA&#39;</span>:<span style="color:#e6db74">&#39;Q&#39;</span>,<span style="color:#e6db74">&#39;AAA&#39;</span>:<span style="color:#e6db74">&#39;K&#39;</span>,<span style="color:#e6db74">&#39;GAA&#39;</span>:<span style="color:#e6db74">&#39;E&#39;</span>,
-<span style="color:#e6db74">&#39;UAG&#39;</span>:<span style="color:#e6db74">&#39;Stop&#39;</span>,<span style="color:#e6db74">&#39;CAG&#39;</span>:<span style="color:#e6db74">&#39;Q&#39;</span>,<span style="color:#e6db74">&#39;AAG&#39;</span>:<span style="color:#e6db74">&#39;K&#39;</span>,<span style="color:#e6db74">&#39;GAG&#39;</span>:<span style="color:#e6db74">&#39;E&#39;</span>,
-<span style="color:#e6db74">&#39;UGU&#39;</span>:<span style="color:#e6db74">&#39;C&#39;</span>,<span style="color:#e6db74">&#39;CGU&#39;</span>:<span style="color:#e6db74">&#39;R&#39;</span>,<span style="color:#e6db74">&#39;AGU&#39;</span>:<span style="color:#e6db74">&#39;S&#39;</span>,<span style="color:#e6db74">&#39;GGU&#39;</span>:<span style="color:#e6db74">&#39;G&#39;</span>,
-<span style="color:#e6db74">&#39;UGC&#39;</span>:<span style="color:#e6db74">&#39;C&#39;</span>,<span style="color:#e6db74">&#39;CGC&#39;</span>:<span style="color:#e6db74">&#39;R&#39;</span>,<span style="color:#e6db74">&#39;AGC&#39;</span>:<span style="color:#e6db74">&#39;S&#39;</span>,<span style="color:#e6db74">&#39;GGC&#39;</span>:<span style="color:#e6db74">&#39;G&#39;</span>,
-<span style="color:#e6db74">&#39;UGA&#39;</span>:<span style="color:#e6db74">&#39;Stop&#39;</span>,<span style="color:#e6db74">&#39;CGA&#39;</span>:<span style="color:#e6db74">&#39;R&#39;</span>,<span style="color:#e6db74">&#39;AGA&#39;</span>:<span style="color:#e6db74">&#39;R&#39;</span>,<span style="color:#e6db74">&#39;GGA&#39;</span>:<span style="color:#e6db74">&#39;G&#39;</span>,
-<span style="color:#e6db74">&#39;UGG&#39;</span>:<span style="color:#e6db74">&#39;W&#39;</span>,<span style="color:#e6db74">&#39;CGG&#39;</span>:<span style="color:#e6db74">&#39;R&#39;</span>,<span style="color:#e6db74">&#39;AGG&#39;</span>:<span style="color:#e6db74">&#39;R&#39;</span>,<span style="color:#e6db74">&#39;GGG&#39;</span>:<span style="color:#e6db74">&#39;G&#39;</span>
-}
+<span class="n">table</span> <span class="o">=</span> <span class="p">{</span>
+<span class="s1">&#39;UUU&#39;</span><span class="p">:</span><span class="s1">&#39;F&#39;</span><span class="p">,</span><span class="s1">&#39;CUU&#39;</span><span class="p">:</span><span class="s1">&#39;L&#39;</span><span class="p">,</span><span class="s1">&#39;AUU&#39;</span><span class="p">:</span><span class="s1">&#39;I&#39;</span><span class="p">,</span><span class="s1">&#39;GUU&#39;</span><span class="p">:</span><span class="s1">&#39;V&#39;</span><span class="p">,</span>
+<span class="s1">&#39;UUC&#39;</span><span class="p">:</span><span class="s1">&#39;F&#39;</span><span class="p">,</span><span class="s1">&#39;CUC&#39;</span><span class="p">:</span><span class="s1">&#39;L&#39;</span><span class="p">,</span><span class="s1">&#39;AUC&#39;</span><span class="p">:</span><span class="s1">&#39;I&#39;</span><span class="p">,</span><span class="s1">&#39;GUC&#39;</span><span class="p">:</span><span class="s1">&#39;V&#39;</span><span class="p">,</span>
+<span class="s1">&#39;UUA&#39;</span><span class="p">:</span><span class="s1">&#39;L&#39;</span><span class="p">,</span><span class="s1">&#39;CUA&#39;</span><span class="p">:</span><span class="s1">&#39;L&#39;</span><span class="p">,</span><span class="s1">&#39;AUA&#39;</span><span class="p">:</span><span class="s1">&#39;I&#39;</span><span class="p">,</span><span class="s1">&#39;GUA&#39;</span><span class="p">:</span><span class="s1">&#39;V&#39;</span><span class="p">,</span>
+<span class="s1">&#39;UUG&#39;</span><span class="p">:</span><span class="s1">&#39;L&#39;</span><span class="p">,</span><span class="s1">&#39;CUG&#39;</span><span class="p">:</span><span class="s1">&#39;L&#39;</span><span class="p">,</span><span class="s1">&#39;AUG&#39;</span><span class="p">:</span><span class="s1">&#39;M&#39;</span><span class="p">,</span><span class="s1">&#39;GUG&#39;</span><span class="p">:</span><span class="s1">&#39;V&#39;</span><span class="p">,</span>
+<span class="s1">&#39;UCU&#39;</span><span class="p">:</span><span class="s1">&#39;S&#39;</span><span class="p">,</span><span class="s1">&#39;CCU&#39;</span><span class="p">:</span><span class="s1">&#39;P&#39;</span><span class="p">,</span><span class="s1">&#39;ACU&#39;</span><span class="p">:</span><span class="s1">&#39;T&#39;</span><span class="p">,</span><span class="s1">&#39;GCU&#39;</span><span class="p">:</span><span class="s1">&#39;A&#39;</span><span class="p">,</span>
+<span class="s1">&#39;UCC&#39;</span><span class="p">:</span><span class="s1">&#39;S&#39;</span><span class="p">,</span><span class="s1">&#39;CCC&#39;</span><span class="p">:</span><span class="s1">&#39;P&#39;</span><span class="p">,</span><span class="s1">&#39;ACC&#39;</span><span class="p">:</span><span class="s1">&#39;T&#39;</span><span class="p">,</span><span class="s1">&#39;GCC&#39;</span><span class="p">:</span><span class="s1">&#39;A&#39;</span><span class="p">,</span>
+<span class="s1">&#39;UCA&#39;</span><span class="p">:</span><span class="s1">&#39;S&#39;</span><span class="p">,</span><span class="s1">&#39;CCA&#39;</span><span class="p">:</span><span class="s1">&#39;P&#39;</span><span class="p">,</span><span class="s1">&#39;ACA&#39;</span><span class="p">:</span><span class="s1">&#39;T&#39;</span><span class="p">,</span><span class="s1">&#39;GCA&#39;</span><span class="p">:</span><span class="s1">&#39;A&#39;</span><span class="p">,</span>
+<span class="s1">&#39;UCG&#39;</span><span class="p">:</span><span class="s1">&#39;S&#39;</span><span class="p">,</span><span class="s1">&#39;CCG&#39;</span><span class="p">:</span><span class="s1">&#39;P&#39;</span><span class="p">,</span><span class="s1">&#39;ACG&#39;</span><span class="p">:</span><span class="s1">&#39;T&#39;</span><span class="p">,</span><span class="s1">&#39;GCG&#39;</span><span class="p">:</span><span class="s1">&#39;A&#39;</span><span class="p">,</span>
+<span class="s1">&#39;UAU&#39;</span><span class="p">:</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;CAU&#39;</span><span class="p">:</span><span class="s1">&#39;H&#39;</span><span class="p">,</span><span class="s1">&#39;AAU&#39;</span><span class="p">:</span><span class="s1">&#39;N&#39;</span><span class="p">,</span><span class="s1">&#39;GAU&#39;</span><span class="p">:</span><span class="s1">&#39;D&#39;</span><span class="p">,</span>
+<span class="s1">&#39;UAC&#39;</span><span class="p">:</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;CAC&#39;</span><span class="p">:</span><span class="s1">&#39;H&#39;</span><span class="p">,</span><span class="s1">&#39;AAC&#39;</span><span class="p">:</span><span class="s1">&#39;N&#39;</span><span class="p">,</span><span class="s1">&#39;GAC&#39;</span><span class="p">:</span><span class="s1">&#39;D&#39;</span><span class="p">,</span>
+<span class="s1">&#39;UAA&#39;</span><span class="p">:</span><span class="s1">&#39;Stop&#39;</span><span class="p">,</span><span class="s1">&#39;CAA&#39;</span><span class="p">:</span><span class="s1">&#39;Q&#39;</span><span class="p">,</span><span class="s1">&#39;AAA&#39;</span><span class="p">:</span><span class="s1">&#39;K&#39;</span><span class="p">,</span><span class="s1">&#39;GAA&#39;</span><span class="p">:</span><span class="s1">&#39;E&#39;</span><span class="p">,</span>
+<span class="s1">&#39;UAG&#39;</span><span class="p">:</span><span class="s1">&#39;Stop&#39;</span><span class="p">,</span><span class="s1">&#39;CAG&#39;</span><span class="p">:</span><span class="s1">&#39;Q&#39;</span><span class="p">,</span><span class="s1">&#39;AAG&#39;</span><span class="p">:</span><span class="s1">&#39;K&#39;</span><span class="p">,</span><span class="s1">&#39;GAG&#39;</span><span class="p">:</span><span class="s1">&#39;E&#39;</span><span class="p">,</span>
+<span class="s1">&#39;UGU&#39;</span><span class="p">:</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="s1">&#39;CGU&#39;</span><span class="p">:</span><span class="s1">&#39;R&#39;</span><span class="p">,</span><span class="s1">&#39;AGU&#39;</span><span class="p">:</span><span class="s1">&#39;S&#39;</span><span class="p">,</span><span class="s1">&#39;GGU&#39;</span><span class="p">:</span><span class="s1">&#39;G&#39;</span><span class="p">,</span>
+<span class="s1">&#39;UGC&#39;</span><span class="p">:</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="s1">&#39;CGC&#39;</span><span class="p">:</span><span class="s1">&#39;R&#39;</span><span class="p">,</span><span class="s1">&#39;AGC&#39;</span><span class="p">:</span><span class="s1">&#39;S&#39;</span><span class="p">,</span><span class="s1">&#39;GGC&#39;</span><span class="p">:</span><span class="s1">&#39;G&#39;</span><span class="p">,</span>
+<span class="s1">&#39;UGA&#39;</span><span class="p">:</span><span class="s1">&#39;Stop&#39;</span><span class="p">,</span><span class="s1">&#39;CGA&#39;</span><span class="p">:</span><span class="s1">&#39;R&#39;</span><span class="p">,</span><span class="s1">&#39;AGA&#39;</span><span class="p">:</span><span class="s1">&#39;R&#39;</span><span class="p">,</span><span class="s1">&#39;GGA&#39;</span><span class="p">:</span><span class="s1">&#39;G&#39;</span><span class="p">,</span>
+<span class="s1">&#39;UGG&#39;</span><span class="p">:</span><span class="s1">&#39;W&#39;</span><span class="p">,</span><span class="s1">&#39;CGG&#39;</span><span class="p">:</span><span class="s1">&#39;R&#39;</span><span class="p">,</span><span class="s1">&#39;AGG&#39;</span><span class="p">:</span><span class="s1">&#39;R&#39;</span><span class="p">,</span><span class="s1">&#39;GGG&#39;</span><span class="p">:</span><span class="s1">&#39;G&#39;</span>
+<span class="p">}</span>
 
 
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">translate</span>(rna, table):
-    n <span style="color:#f92672">=</span> len(rna)
-    amino_acids <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
-    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, n, <span style="color:#ae81ff">3</span>):
-        codon <span style="color:#f92672">=</span> rna[i:i<span style="color:#f92672">+</span><span style="color:#ae81ff">3</span>]
-        <span style="color:#66d9ef">if</span> codon <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> table <span style="color:#f92672">or</span> table[codon] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Stop&#34;</span>:
-            <span style="color:#66d9ef">break</span>
-        <span style="color:#66d9ef">else</span>:
-            amino_acids <span style="color:#f92672">+=</span> table[codon]
-    <span style="color:#66d9ef">return</span> amino_acids
+<span class="k">def</span> <span class="nf">translate</span><span class="p">(</span><span class="n">rna</span><span class="p">,</span> <span class="n">table</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">rna</span><span class="p">)</span>
+    <span class="n">amino_acids</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+        <span class="n">codon</span> <span class="o">=</span> <span class="n">rna</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">3</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">codon</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">table</span> <span class="ow">or</span> <span class="n">table</span><span class="p">[</span><span class="n">codon</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&#34;Stop&#34;</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">amino_acids</span> <span class="o">+=</span> <span class="n">table</span><span class="p">[</span><span class="n">codon</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">amino_acids</span>
 
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test</span>():
-    rna <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;AUGGCCAUGGCGCCCAGAACUGAGAUCAAUAGUACCCGUAUUAACGGGUGA&#39;</span>
-    <span style="color:#66d9ef">return</span> translate(rna, table) <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;MAMAPRTEINSTRING&#39;</span>
+<span class="k">def</span> <span class="nf">test</span><span class="p">():</span>
+    <span class="n">rna</span> <span class="o">=</span> <span class="s1">&#39;AUGGCCAUGGCGCCCAGAACUGAGAUCAAUAGUACCCGUAUUAACGGGUGA&#39;</span>
+    <span class="k">return</span> <span class="n">translate</span><span class="p">(</span><span class="n">rna</span><span class="p">,</span> <span class="n">table</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;MAMAPRTEINSTRING&#39;</span>
 
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
-    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> test():
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;translate: Failed&#34;</span>)
-        sys<span style="color:#f92672">.</span>exit(<span style="color:#ae81ff">1</span>)
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">test</span><span class="p">():</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&#34;translate: Failed&#34;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
-    <span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;rosalind_prot.txt&#39;</span>) <span style="color:#66d9ef">as</span> fh:
-        rna <span style="color:#f92672">=</span> fh<span style="color:#f92672">.</span>read()
-        amino_acids <span style="color:#f92672">=</span> translate(rna, table)
-        <span style="color:#66d9ef">print</span>(amino_acids)
-</code></pre></div><ul>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;rosalind_prot.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+        <span class="n">rna</span> <span class="o">=</span> <span class="n">fh</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="n">amino_acids</span> <span class="o">=</span> <span class="n">translate</span><span class="p">(</span><span class="n">rna</span><span class="p">,</span> <span class="n">table</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">amino_acids</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>用一个字典来保存密码子表。Python的字典就是用来保存各种“键=值”对的。</li>
 <li>习题中的密码子表是很简单的，事实上不同物种，不同细胞器，其密码子表可能不一样。比如起始密码子并不是只有常见的ATG，而终止密码子在生物界也不止三个。<code>BioPython</code>中的密码子表搜集得比较全面，是很好的参考。</li>
 <li>翻译过程中循环的退出条件是：出现错误密码子（只有一个碱基，或两个碱基等），或者遇到终止密码子。</li>
@@ -554,7 +620,33 @@ table <span style="color:#f92672">=</span> {
 
   
 
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    显示 Disqus 评论
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "https://jianzuoyi.github.io/post/rosalind/2020-12-05-rosalind-003-translate/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'jianzuoyi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
   
+  </div>
 
     
 

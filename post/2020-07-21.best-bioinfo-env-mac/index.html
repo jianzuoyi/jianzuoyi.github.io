@@ -69,7 +69,7 @@
 <meta itemprop="description" content="日常工作环境的好坏直接影响我们的心情和效率，这篇文章介绍一下我这些年用得顺手的一些工具。 1.本地电脑 平台： Mac电脑，强烈建议搞生信用Mac">
 <meta itemprop="datePublished" content="2020-07-21T00:00:00+08:00" />
 <meta itemprop="dateModified" content="2020-07-21T00:00:00+08:00" />
-<meta itemprop="wordCount" content="703">
+<meta itemprop="wordCount" content="714">
 
 
 
@@ -411,7 +411,22 @@
 <p>以上，就是我的工作环境，供大家参考。</p>
 <p>附：</p>
 <p><code>Anaconda</code>配置文件<code>.condarc</code>文件（位于用户家目录<code>~</code>下）：</p>
-<pre><code>channels:
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">channels:
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda/
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
@@ -422,7 +437,9 @@
   - conda-forge
 show_channel_urls: true
 ssl_verify: false
-</code></pre>
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     
@@ -505,7 +522,33 @@ ssl_verify: false
 
   
 
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    显示 Disqus 评论
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "https://jianzuoyi.github.io/post/2020-07-21.best-bioinfo-env-mac/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'jianzuoyi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
   
+  </div>
 
     
 

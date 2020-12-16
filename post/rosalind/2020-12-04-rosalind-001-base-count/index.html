@@ -69,7 +69,7 @@
 <meta itemprop="description" content="前言 Rosalind is a platform for learning bioinformatics and programming through problem solving. Rosalind是一个通过解决实际生物学问题来学习生物信息和练习编程的平台，类似于IT行业的刷题网站力扣（Lee">
 <meta itemprop="datePublished" content="2020-12-04T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-12-04T00:00:00+00:00" />
-<meta itemprop="wordCount" content="737">
+<meta itemprop="wordCount" content="762">
 
 
 
@@ -411,35 +411,78 @@
 <p><strong>给定：</strong> 一条长度至多1000bp的DNA字符序列。</p>
 <p><strong>需得：</strong> 4个以空格隔开的整数，分别表示4种碱基（A, C, G, T）在字符串中出现的次数。</p>
 <h2 id="示例数据">示例数据</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC
-</code></pre></div><h2 id="示例结果">示例结果</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ae81ff">20</span> <span style="color:#ae81ff">12</span> <span style="color:#ae81ff">17</span> <span style="color:#ae81ff">21</span>
-</code></pre></div><h2 id="python实现">Python实现</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="示例结果">示例结果</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="m">20</span> <span class="m">12</span> <span class="m">17</span> <span class="m">21</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="python实现">Python实现</h2>
 <p>Counting_DNA_Nucleotides.py</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> defaultdict;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span><span class="p">;</span>
 
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">count_dna_nucleotides</span>(dna):
-    d <span style="color:#f92672">=</span> defaultdict(int)
-    <span style="color:#66d9ef">for</span> c <span style="color:#f92672">in</span> dna<span style="color:#f92672">.</span>upper():
-        d[c] <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> </span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> </span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> </span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> (d[<span style="color:#e6db74">&#39;A&#39;</span>], d[<span style="color:#e6db74">&#39;C&#39;</span>], d[<span style="color:#e6db74">&#39;G&#39;</span>], d[<span style="color:#e6db74">&#39;T&#39;</span>])
+<span class="k">def</span> <span class="nf">count_dna_nucleotides</span><span class="p">(</span><span class="n">dna</span><span class="p">):</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">dna</span><span class="o">.</span><span class="n">upper</span><span class="p">():</span>
+        <span class="n">d</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="s2">&#34;</span><span class="si">%d</span><span class="s2"> </span><span class="si">%d</span><span class="s2"> </span><span class="si">%d</span><span class="s2"> </span><span class="si">%d</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;G&#39;</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">])</span>
 
 
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test</span>():
-    dna <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC&#39;</span>
-    ret <span style="color:#f92672">=</span> count_dna_nucleotides(dna)
-    <span style="color:#66d9ef">return</span> ret <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;20 12 17 21&#34;</span>
+<span class="k">def</span> <span class="nf">test</span><span class="p">():</span>
+    <span class="n">dna</span> <span class="o">=</span> <span class="s1">&#39;AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC&#39;</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">count_dna_nucleotides</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ret</span> <span class="o">==</span> <span class="s2">&#34;20 12 17 21&#34;</span>
 
 
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
-    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> test():
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;count_dna_nucleotides: Failed&#34;</span>)
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">test</span><span class="p">():</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&#34;count_dna_nucleotides: Failed&#34;</span><span class="p">)</span>
 
-    <span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;rosalind_dna.txt&#39;</span>) <span style="color:#66d9ef">as</span> fh:
-        dna <span style="color:#f92672">=</span> fh<span style="color:#f92672">.</span>read()
-        ret <span style="color:#f92672">=</span> count_dna_nucleotides(dna)
-        <span style="color:#66d9ef">print</span>(ret)
-</code></pre></div><p>说明：</p>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;rosalind_dna.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+        <span class="n">dna</span> <span class="o">=</span> <span class="n">fh</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">count_dna_nucleotides</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>说明：</p>
 <ul>
 <li>用一个字典保存四种碱基的计数</li>
 <li>用defaultdict而不是普通的dict，defaultdict的好处是任意键都已经默认初始化了一个值，可以直接使用</li>
@@ -530,7 +573,33 @@
 
   
 
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    显示 Disqus 评论
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "https://jianzuoyi.github.io/post/rosalind/2020-12-04-rosalind-001-base-count/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'jianzuoyi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
   
+  </div>
 
     
 

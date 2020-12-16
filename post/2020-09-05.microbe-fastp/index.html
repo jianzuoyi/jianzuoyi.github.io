@@ -69,7 +69,7 @@
 <meta itemprop="description" content="接上一篇，数据拆分完成后，得到FASTQ文件，下面对数据进行质控。 当前主流测序平台的数据存储格式无外乎两种，FASTQ（Illumina, M">
 <meta itemprop="datePublished" content="2020-09-05T00:00:00+08:00" />
 <meta itemprop="dateModified" content="2020-09-05T00:00:00+08:00" />
-<meta itemprop="wordCount" content="2556">
+<meta itemprop="wordCount" content="2585">
 
 
 
@@ -391,22 +391,43 @@
       <p>接上一篇，数据拆分完成后，得到FASTQ文件，下面对数据进行质控。</p>
 <p>当前主流测序平台的数据存储格式无外乎两种，FASTQ（Illumina, MGI），BAM（Life Ion Torrent，PacBio），对于BAM文件，通常也需要先转换成FASTQ文件后再进行质控处理。</p>
 <p>质控软件非常多，有FastQC，Cutadapt， Trimomatic等，通常需要多款软件共同配合使用，这难免过于繁琐，在实际项目中，推荐用<a href="https://github.com/OpenGene/fastp">fastp</a>，根据官网介绍，这是一款处理FASTQ文件的all-in-one软件，质控用它就够了，下面是扩增子数据的质控命令。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/path/to/fastp -i $fq1 -I $fq2 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>-h <span style="color:#e6db74">${</span>outdir<span style="color:#e6db74">}</span>/<span style="color:#e6db74">${</span>sample<span style="color:#e6db74">}</span>_merge_clean.html <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>-j <span style="color:#e6db74">${</span>outdir<span style="color:#e6db74">}</span>/<span style="color:#e6db74">${</span>sample<span style="color:#e6db74">}</span>_merge_clean.json <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>-m --merged_out <span style="color:#e6db74">${</span>outdir<span style="color:#e6db74">}</span>/<span style="color:#e6db74">${</span>sample<span style="color:#e6db74">}</span>_merge_clean.fastq.gz <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--failed_out <span style="color:#e6db74">${</span>outdir<span style="color:#e6db74">}</span>/<span style="color:#e6db74">${</span>sample<span style="color:#e6db74">}</span>_failed.fastq.gz <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--include_unmerged <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--overlap_len_require <span style="color:#ae81ff">6</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--overlap_diff_percent_limit <span style="color:#ae81ff">20</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--detect_adapter_for_pe <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>-5 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>-r <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>-l <span style="color:#ae81ff">20</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>-n 5<span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>-y <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--thead <span style="color:#ae81ff">10</span>
-</code></pre></div><p>参数解释：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">/path/to/fastp -i <span class="nv">$fq1</span> -I <span class="nv">$fq2</span> <span class="se">\
+</span><span class="se"></span>-h <span class="si">${</span><span class="nv">outdir</span><span class="si">}</span>/<span class="si">${</span><span class="nv">sample</span><span class="si">}</span>_merge_clean.html <span class="se">\
+</span><span class="se"></span>-j <span class="si">${</span><span class="nv">outdir</span><span class="si">}</span>/<span class="si">${</span><span class="nv">sample</span><span class="si">}</span>_merge_clean.json <span class="se">\
+</span><span class="se"></span>-m --merged_out <span class="si">${</span><span class="nv">outdir</span><span class="si">}</span>/<span class="si">${</span><span class="nv">sample</span><span class="si">}</span>_merge_clean.fastq.gz <span class="se">\
+</span><span class="se"></span>--failed_out <span class="si">${</span><span class="nv">outdir</span><span class="si">}</span>/<span class="si">${</span><span class="nv">sample</span><span class="si">}</span>_failed.fastq.gz <span class="se">\
+</span><span class="se"></span>--include_unmerged <span class="se">\
+</span><span class="se"></span>--overlap_len_require <span class="m">6</span> <span class="se">\
+</span><span class="se"></span>--overlap_diff_percent_limit <span class="m">20</span> <span class="se">\
+</span><span class="se"></span>--detect_adapter_for_pe <span class="se">\
+</span><span class="se"></span>-5 <span class="se">\
+</span><span class="se"></span>-r <span class="se">\
+</span><span class="se"></span>-l <span class="m">20</span> <span class="se">\
+</span><span class="se"></span>-n 5<span class="se">\
+</span><span class="se"></span>-y <span class="se">\
+</span><span class="se"></span>--thead <span class="m">10</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>参数解释：</p>
 <p><code>-i $fq1</code>，输入样本的FASTQ1文件，可以是gz压缩格式；</p>
 <p><code>-I $fq2</code>，输入样本的FASTQ2文件，可以是gz压缩格式；</p>
 <p><code>-h ${outdir}/${sample}_merge_clean.html</code>，输出html格式的质控报告；</p>
@@ -425,12 +446,23 @@
 <p><code>-y</code>，低复杂度过滤；</p>
 <p><code>--thead 10</code>，指定10条工作线程；</p>
 <p>以上命令除了常规的剪切、过滤操作外，还进行了双端reads的合并，最终结果如下 ：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wenku1
-|___wenku1_failed.fastq.gz        被过滤掉的reads结果文件
-|___wenku1_merge_clean.fastq.gz   通过质控的reads结果文件
-|___wenku1_merge_clean.html       html质控报告
-|___wenku1_merge_clean.json       json质控报告
-</code></pre></div><p>通过html质控报告，可以直观地看出很多指标，如过滤前后的reads数、bases数、碱基质量、插入片段长度、碱基组成、GC含量、接头类别等，如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">wenku1
+<span class="p">|</span>___wenku1_failed.fastq.gz        被过滤掉的reads结果文件
+<span class="p">|</span>___wenku1_merge_clean.fastq.gz   通过质控的reads结果文件
+<span class="p">|</span>___wenku1_merge_clean.html       html质控报告
+<span class="p">|</span>___wenku1_merge_clean.json       json质控报告
+</code></pre></td></tr></table>
+</div>
+</div><p>通过html质控报告，可以直观地看出很多指标，如过滤前后的reads数、bases数、碱基质量、插入片段长度、碱基组成、GC含量、接头类别等，如：</p>
 <p><img src="img/10.phred.png" alt=""></p>
 <!-- raw HTML omitted -->
 <p><img src="img/10.ATGC.png" alt=""></p>
@@ -439,11 +471,21 @@
 <h2 id="质控知识小结">质控知识小结</h2>
 <p>数据质控的目的是为了过滤掉那些不好的序列，从而减小对下游数据分析的干扰。</p>
 <p>下面是一条FASTQ格式的序列，我们能对它进行些什么操作呢？主要有剪切、过滤、碱基质量校正等。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">@M06862:6:000000000-C9TL7:1:1102:17871:1939 1:N:0:ATTACTCG+GGCTCTGA
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">@M06862:6:000000000-C9TL7:1:1102:17871:1939 1:N:0:ATTACTCG+GGCTCTGA
 GCCCTCTTTGTCCTCCTTGGTGAGAACCAGGGCCTCGACCTCATCGCCCACGGAAACGACCTCGTTGGGGTCGA
 +
 1111&gt;&gt;CFF3F@EGEEGGB1G1BGHGHHGFA0AAFF0EEGGHGHHBEEE?FGCEGGHFCEEGHAHGHFC?GG??
-</code></pre></div><p>为什么要剪切read，无非是因为read中要么含有接头，要么含有低质量序列，这些信息对我们没用，甚至对分析结果造成干扰。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>为什么要剪切read，无非是因为read中要么含有接头，要么含有低质量序列，这些信息对我们没用，甚至对分析结果造成干扰。</p>
 <p><strong>1.接头序列剪切</strong></p>
 <p>如果read中含有接头序列，则从接头开始的地方删除至read末尾。接头序列的来源可能是因为测序片段的长度低于测序的读长，从而被测通导致的，另外也不排除接头之间形成了二聚体，测出来的只有接头序列。</p>
 <p><strong>2.低质量序列剪切</strong></p>
@@ -476,12 +518,23 @@ GCCCTCTTTGTCCTCCTTGGTGAGAACCAGGGCCTCGACCTCATCGCCCACGGAAACGACCTCGTTGGGGTCGA
 <p>测序过程中某个碱基无法识别时，体现在read中可能是一个大写N字母，当这样的N碱基过多时，则过滤掉该read。</p>
 <p><strong>3.低复杂度过滤</strong></p>
 <p>复杂度的定义是read中与下一个碱基不同的碱基的百分比（base[i] != base[i+1]）。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># a 51-bp sequence, with 3 bases that is different from its next base</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># a 51-bp sequence, with 3 bases that is different from its next base</span>
 
-seq <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;AAAATTTTTTTTTTTTTTTTTTTTTGGGGGGGGGGGGGGGGGGGGGGCCCC&#39;</span>
+<span class="nv">seq</span> <span class="o">=</span><span class="s1">&#39;AAAATTTTTTTTTTTTTTTTTTTTTGGGGGGGGGGGGGGGGGGGGGGCCCC&#39;</span>
 
-complexity <span style="color:#f92672">=</span> 3/<span style="color:#f92672">(</span>51-1<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> 6%
-</code></pre></div><p>这样的序列在靶向测序中，通常是不应该存在的，因此需要去除。</p>
+<span class="nv">complexity</span> <span class="o">=</span> 3/<span class="o">(</span>51-1<span class="o">)</span> <span class="o">=</span> 6%
+</code></pre></td></tr></table>
+</div>
+</div><p>这样的序列在靶向测序中，通常是不应该存在的，因此需要去除。</p>
 <p><strong>4.长度过滤</strong></p>
 <p>过滤掉太短或太长的序列：</p>
 <ul>
@@ -580,7 +633,33 @@ complexity <span style="color:#f92672">=</span> 3/<span style="color:#f92672">(<
 
   
 
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    显示 Disqus 评论
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "https://jianzuoyi.github.io/post/2020-09-05.microbe-fastp/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'jianzuoyi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
   
+  </div>
 
     
 

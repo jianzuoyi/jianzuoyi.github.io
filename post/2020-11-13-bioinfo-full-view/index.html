@@ -69,7 +69,7 @@
 <meta itemprop="description" content="生物信息学：全景 生物信息学应用领域非常广泛，从学科划分来说，生物科学、农学、林学、医学等所有涉及生命的领域，都有生物信息学的身影。我们可以从">
 <meta itemprop="datePublished" content="2020-11-13T00:00:00+08:00" />
 <meta itemprop="dateModified" content="2020-11-13T00:00:00+08:00" />
-<meta itemprop="wordCount" content="989">
+<meta itemprop="wordCount" content="995">
 
 
 
@@ -416,20 +416,38 @@
 <ol>
 <li>
 <p>分子生物学中心法则</p>
-<pre><code class="language-mermaid" data-lang="mermaid">graph LR
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">graph LR
      
 DNA  --&gt; RNA --&gt; 蛋白质 --&gt; 细胞表型
-</code></pre></li>
+</code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>基因组中心法则</p>
 </li>
 </ol>
 </li>
 </ul>
-<pre><code class="language-mermaid" data-lang="mermaid">graph LR
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">graph LR
 
 基因组 --&gt; 转录组 --&gt; 蛋白质组 --&gt; 细胞表型
-</code></pre><p>当分子序列数据出现并开始改变传统生物学之时，生物信息学应运而生，其主要任务是聚焦于海量分子序列的分析。而基因组学和功能基因组学为两个紧密关联的学科。基因组学的目标是研究一个生物体的全部DNA序列，即基因组。功能基因组学致力于使用全基因组实验方法来研究基因和蛋白质功能。这体现了生物信息学的本质：生物学问题可以从多个层面来进行研究；从小到单个基因和蛋白质，大到细胞内通路和网络，甚至全基因组应答。我们的目标是利用计算机算法和数据库来助力生命科学的研究。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>当分子序列数据出现并开始改变传统生物学之时，生物信息学应运而生，其主要任务是聚焦于海量分子序列的分析。而基因组学和功能基因组学为两个紧密关联的学科。基因组学的目标是研究一个生物体的全部DNA序列，即基因组。功能基因组学致力于使用全基因组实验方法来研究基因和蛋白质功能。这体现了生物信息学的本质：生物学问题可以从多个层面来进行研究；从小到单个基因和蛋白质，大到细胞内通路和网络，甚至全基因组应答。我们的目标是利用计算机算法和数据库来助力生命科学的研究。</p>
 <h2 id="二从生物体角度认识生物信息学">二、从生物体角度认识生物信息学</h2>
 <p>在细胞之后，认识生物信息学的第二个视角是单个生物体。多细胞生物体在不同发育阶段、不同身体部位或不同的生理状态下都在发生变化，这是因为基因在不同时间和空间、不同生理状态下受到动态调控，基因的表达会动态变化。目前功能基因组学最强大的应用就是使用DNA芯片或RNA测序来测量生物样本中数以千计的基因表达水平。</p>
 <h2 id="三从生命之树角度认识生物信息学">三、从生命之树角度认识生物信息学</h2>
@@ -517,7 +535,33 @@ DNA  --&gt; RNA --&gt; 蛋白质 --&gt; 细胞表型
 
   
 
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    显示 Disqus 评论
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "https://jianzuoyi.github.io/post/2020-11-13-bioinfo-full-view/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'jianzuoyi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
   
+  </div>
 
     
 

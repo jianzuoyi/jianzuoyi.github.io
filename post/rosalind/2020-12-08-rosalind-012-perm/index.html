@@ -69,7 +69,7 @@
 <meta itemprop="description" content="点突变只能使同一个物种内的个体得到变异，而要产生新物种，则需要更大规模的改变，这就是基因组重排。如果我们比较相邻物种的基因组，会发现它们的染">
 <meta itemprop="datePublished" content="2020-12-08T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-12-08T00:00:00+00:00" />
-<meta itemprop="wordCount" content="427">
+<meta itemprop="wordCount" content="459">
 
 
 
@@ -395,42 +395,92 @@
 <p><strong>给定：</strong> 一个正整数，代表一个集合的元素个数。</p>
 <p><strong>需得：</strong> 该集合所有排列的总数（全排列），并且给出排列的列表（顺序不限）。</p>
 <h2 id="示例数据">示例数据</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ae81ff">3</span>
-</code></pre></div><h2 id="示例结果">示例结果</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ae81ff">6</span>
-<span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span>
-<span style="color:#ae81ff">1</span> <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">2</span>
-<span style="color:#ae81ff">2</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">3</span>
-<span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">1</span>
-<span style="color:#ae81ff">3</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span>
-<span style="color:#ae81ff">3</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">1</span>
-</code></pre></div><h2 id="python实现">Python实现</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="m">3</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="示例结果">示例结果</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="m">6</span>
+<span class="m">1</span> <span class="m">2</span> <span class="m">3</span>
+<span class="m">1</span> <span class="m">3</span> <span class="m">2</span>
+<span class="m">2</span> <span class="m">1</span> <span class="m">3</span>
+<span class="m">2</span> <span class="m">3</span> <span class="m">1</span>
+<span class="m">3</span> <span class="m">1</span> <span class="m">2</span>
+<span class="m">3</span> <span class="m">2</span> <span class="m">1</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="python实现">Python实现</h2>
 <p>Enumerating_Gene_Orders.py</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> sys
-<span style="color:#f92672">import</span> itertools
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">itertools</span>
 
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">factorial</span>(n):
-    <span style="color:#66d9ef">if</span> n<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span> <span style="color:#f92672">or</span> n<span style="color:#f92672">==</span><span style="color:#ae81ff">1</span>:
-        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
-    <span style="color:#66d9ef">else</span>:
-        <span style="color:#66d9ef">return</span> n <span style="color:#f92672">*</span> factorial(n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+<span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span><span class="o">==</span><span class="mi">0</span> <span class="ow">or</span> <span class="n">n</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">perm</span>(n):
-    seq <span style="color:#f92672">=</span> [str(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(n)]
-    <span style="color:#66d9ef">return</span> factorial(n), itertools<span style="color:#f92672">.</span>permutations(seq, n)
+<span class="k">def</span> <span class="nf">perm</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">seq</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">itertools</span><span class="o">.</span><span class="n">permutations</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
 
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test</span>():
-    <span style="color:#66d9ef">return</span> perm(<span style="color:#ae81ff">3</span>)[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">6</span>
+<span class="k">def</span> <span class="nf">test</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">perm</span><span class="p">(</span><span class="mi">3</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">6</span>
 
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
-    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> test():
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;perm: Failed&#34;</span>)
-        sys<span style="color:#f92672">.</span>exit(<span style="color:#ae81ff">1</span>)
-    n, p <span style="color:#f92672">=</span> perm(<span style="color:#ae81ff">7</span>)
-    <span style="color:#66d9ef">print</span>(n)
-    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> p:
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">.</span>join(i))
-</code></pre></div><ul>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">test</span><span class="p">():</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&#34;perm: Failed&#34;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">n</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">perm</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">p</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>全排列的数量，等于序列的长度的阶乘</li>
 <li>全排列，通过Python的itertools.permutations模块计算</li>
 </ul>
@@ -518,7 +568,33 @@
 
   
 
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    显示 Disqus 评论
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "https://jianzuoyi.github.io/post/rosalind/2020-12-08-rosalind-012-perm/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'jianzuoyi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
   
+  </div>
 
     
 

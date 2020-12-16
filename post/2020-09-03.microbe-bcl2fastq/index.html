@@ -69,7 +69,7 @@
 <meta itemprop="description" content="懂得了那么多道理，却依然过不好这一生。 所以理论归理论，最终要落实到分析代码上，咱们从这一篇开始，介绍一套扩增子数据分析流程。 闲话少叙，首先介">
 <meta itemprop="datePublished" content="2020-09-03T00:00:00+08:00" />
 <meta itemprop="dateModified" content="2020-09-03T00:00:00+08:00" />
-<meta itemprop="wordCount" content="1470">
+<meta itemprop="wordCount" content="1540">
 
 
 
@@ -399,15 +399,58 @@
 </ol>
 <p>测序仪运行结束，就完成了生物样本的数字化过程，但此时核酸的信息，具体来说是DNA的序列信息（RNA样本的话会先反转录成DNA再测序），是保存在称为BCL（Binary Base Call）的文件中的，而生物信息分析工作即是从这里开始。</p>
 <p>首先，要将BCL文件转化成FASTQ文件格式，过程并不复杂，一条命令就够了。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/path-to/bcl2fastq_V219 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>-R /path-to/200821_M06862_0006_000000000-C9TL7 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--sample-sheet /path-to/SampleSheet.csv <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--output-dir /path-to/Demultiplexed <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--barcode-mismatches <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--use-bases-mask Y75n,I8,I8,Y75n
-</code></pre></div><p><a href="https://support.illumina.com/sequencing/sequencing_software/bcl2fastq-conversion-software/downloads.html">bcl2fastq_V219</a>，是illumina官方提供的BCL转FASTQ格式的软件，这里用的版本是v2.19。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">/path-to/bcl2fastq_V219 <span class="se">\
+</span><span class="se"></span>-R /path-to/200821_M06862_0006_000000000-C9TL7 <span class="se">\
+</span><span class="se"></span>--sample-sheet /path-to/SampleSheet.csv <span class="se">\
+</span><span class="se"></span>--output-dir /path-to/Demultiplexed <span class="se">\
+</span><span class="se"></span>--barcode-mismatches <span class="m">1</span> <span class="se">\
+</span><span class="se"></span>--use-bases-mask Y75n,I8,I8,Y75n
+</code></pre></td></tr></table>
+</div>
+</div><p><a href="https://support.illumina.com/sequencing/sequencing_software/bcl2fastq-conversion-software/downloads.html">bcl2fastq_V219</a>，是illumina官方提供的BCL转FASTQ格式的软件，这里用的版本是v2.19。</p>
 <p><code>-R参数</code>，是下机数据所在的目录，内容如下，其中的RunInfo.xml文件记录了测序的一些重要信息，如总共运行了多少个循环等。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">200821_M06862_0006_000000000-C9TL7
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">200821_M06862_0006_000000000-C9TL7
 ├── AnalysisError.txt
 ├── AnalysisLog.txt
 ├── Basecalling_Netcopy_complete_Read1.txt
@@ -434,41 +477,90 @@
 ├── runParameters.xml
 ├── SampleSheet.csv
 └── Thumbnail_Images
-</code></pre></div><p><code>--sample-sheet参数</code>，样本清单，内容如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>Header<span style="color:#f92672">]</span>,,,,,,,,,
+</code></pre></td></tr></table>
+</div>
+</div><p><code>--sample-sheet参数</code>，样本清单，内容如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>Header<span class="o">]</span>,,,,,,,,,
 IEMFileVersion,5,,,,,,,,
 Date,7/30/2020,,,,,,,,
 Workflow,GenerateFASTQ,,,,,,,,
 Application,FASTQ Only,,,,,,,,
 Instrument Type,MiSeq,,,,,,,,
 Assay,Nextera DNA,,,,,,,,
-Index Adapters,<span style="color:#e6db74">&#34;Nextera Index Kit (24 Indexes, 96 Samples)&#34;</span>,,,,,,,,
+Index Adapters,<span class="s2">&#34;Nextera Index Kit (24 Indexes, 96 Samples)&#34;</span>,,,,,,,,
 Description,,,,,,,,,
 Chemistry,Amplicon,,,,,,,,
 ,,,,,,,,,
-<span style="color:#f92672">[</span>Reads<span style="color:#f92672">]</span>,,,,,,,,,
+<span class="o">[</span>Reads<span class="o">]</span>,,,,,,,,,
 76,,,,,,,,,
 76,,,,,,,,,
 ,,,,,,,,,
-<span style="color:#f92672">[</span>Settings<span style="color:#f92672">]</span>,,,,,,,,,
+<span class="o">[</span>Settings<span class="o">]</span>,,,,,,,,,
 ReverseComplement,0,,,,,,,,
 Adapter,CTGTCTCTTATACACATCT,,,,,,,,
 ,,,,,,,,,
-<span style="color:#f92672">[</span>Data<span style="color:#f92672">]</span>,,,,,,,,,
+<span class="o">[</span>Data<span class="o">]</span>,,,,,,,,,
 Sample_ID,Sample_Name,Sample_Plate,Sample_Well,I7_Index_ID,index,I5_Index_ID,index2,Sample_Project,Description
 wenku1,,,,D701,ATTACTCG,D504,GGCTCTGA,,
 wenku2,,,,D702,TCCGGAGA,D504,GGCTCTGA,,
 wenku3,,,,D703,CGCTCATT,D504,GGCTCTGA,,
 wenku4,,,,D704,GAGATTCC,D504,GGCTCTGA,,
 wenku5,,,,D705,ATTCAGAA,D504,GGCTCTGA,,
-</code></pre></div><p>这是一个每行都用逗号<code>,</code>隔开的<a href="https://github.com/jianzuoyi/share/blob/master/SampleSheet.csv">SampleSheet.csv</a>文件，可以用Excel或WPS软件编辑成新的，也可以用<a href="https://support.illumina.com/sequencing/sequencing_software/experiment_manager/downloads.html">Illumina Experiment Manager</a>软件来制作清单文件。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>这是一个每行都用逗号<code>,</code>隔开的<a href="https://github.com/jianzuoyi/share/blob/master/SampleSheet.csv">SampleSheet.csv</a>文件，可以用Excel或WPS软件编辑成新的，也可以用<a href="https://support.illumina.com/sequencing/sequencing_software/experiment_manager/downloads.html">Illumina Experiment Manager</a>软件来制作清单文件。</p>
 <p>由于测序仪的通量比较大，如果一次只测一个样本，会造成非常大的浪费，因此实际测序过程中都是多个样本混合在一起测，那么后期怎么把各个样本的数据（即大量的reads）分开呢，这就要涉及到建库的原理了，需要较大的篇幅才能说清，在此不便展开。</p>
 <p>简单来说，就是各个样本都加了自己特有的条码（barcode），就是SampleSheet文件中的index和index2序列，如wenku1的index序列<code>ATTACTCG</code>，以及index2序列<code>GGCTCTGA</code>，它们的组合与其他所有文库的都不一样，依据这些条码就能实现数据的拆分，[Data]部分一行是一个样本，每行最低限度只需要填写Sample_ID和index就可以了，如果是双端index测序，再填上index2即可。</p>
 <p><code>--output-dir参数</code>，结果文件保存的目录。</p>
 <p><code>--barcode-mismatches参数</code>，拆分时允许上述index序列错配的碱基个数，通常设为1。</p>
 <p><code>--use-bases-mask参数</code>，用于指导哪些测序循环的数据要保留，哪些要丢弃，示例中<code>Y75n,I8,I8,Y75n</code>的含义是：第一轮测序的前75个循环要保留，之后的循环丢弃，index的8个循环全部保留，index2的8个循环全部保留，第四轮测序的前75个循环要保留，之后的循环丢弃，这样我们拆分出的数据是双端75bp，当然这个参数并非必需。</p>
 <p>以上，就是illumina数据拆分的基本过程，结果得到FASTQ文件（每个样本2个），后续分析都是基于这些文件的。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Demultiplexed/
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">Demultiplexed/
 ├── wenku1_S1_L001_R1_001.fastq.gz
 ├── wenku1_S1_L001_R2_001.fastq.gz
 ├── wenku2_S2_L001_R1_001.fastq.gz
@@ -479,7 +571,9 @@ wenku5,,,,D705,ATTCAGAA,D504,GGCTCTGA,,
 ├── wenku4_S4_L001_R2_001.fastq.gz
 ├── wenku5_S5_L001_R1_001.fastq.gz
 └── wenku5_S5_L001_R2_001.fastq.gz
-</code></pre></div><p>数据分析任重道远，正如莎士比亚的咏叹：</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>数据分析任重道远，正如莎士比亚的咏叹：</p>
 <blockquote>
 <p>自然啊，你是充满无穷神秘的书！而我，只能读懂些许部分！</p>
 </blockquote>
@@ -567,7 +661,33 @@ wenku5,,,,D705,ATTCAGAA,D504,GGCTCTGA,,
 
   
 
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    显示 Disqus 评论
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "https://jianzuoyi.github.io/post/2020-09-03.microbe-bcl2fastq/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'jianzuoyi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
   
+  </div>
 
     
 

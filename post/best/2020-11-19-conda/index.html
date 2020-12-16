@@ -69,7 +69,7 @@
 <meta itemprop="description" content="Conda是一个包管理器，类似于手机上的AppStore或电脑上的软件管家，可以方便地安装各种软件，并且能够为每一个软件创建自己的运行环境，">
 <meta itemprop="datePublished" content="2020-11-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-11-19T00:00:00+00:00" />
-<meta itemprop="wordCount" content="785">
+<meta itemprop="wordCount" content="820">
 
 
 
@@ -394,19 +394,52 @@
 <p>Conda有两个版本：Anaconda和Miniconda，通过名字可以看出，前者比较全，但安装文件大。后者比较轻量级，安装文件小。我之前通过Miniconda安装有些软件缺少相关依赖无法运行，用Anaconda就没有问题。因此之后都尽量用Anaconda。</p>
 <p>Anaconda主页：https://www.anaconda.com</p>
 <p>Linux平台下载命令：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget https://repo.anaconda.com/archive/Anaconda3-2020.07-Linux-x86_64.sh
-</code></pre></div><h2 id="一安装">一、安装</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">1. bash Anaconda3-2020.07-Linux-x86_64.sh
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">wget https://repo.anaconda.com/archive/Anaconda3-2020.07-Linux-x86_64.sh
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="一安装">一、安装</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">1. bash Anaconda3-2020.07-Linux-x86_64.sh
 2. 回车继续
 3. 按几次空格，直到出现：
-   Do you accept the license terms? <span style="color:#f92672">[</span>yes|no<span style="color:#f92672">]</span>
-   <span style="color:#f92672">[</span>no<span style="color:#f92672">]</span> &gt;&gt;&gt; yes
+   Do you accept the license terms? <span class="o">[</span>yes<span class="p">|</span>no<span class="o">]</span>
+   <span class="o">[</span>no<span class="o">]</span> &gt;&gt;&gt; yes
    输入yes继续
 4. 输入anaconda的安装路径，默认安装在用户的HOME目录下：/home/username/anaconda3，回车
 5. 最后询问是否将anaconda的程序路径加入环境变量中，输入yes，完成安装
-</code></pre></div><h2 id="二添加镜像源">二、添加镜像源</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="二添加镜像源">二、添加镜像源</h2>
 <p>因为conda默认的镜像源都在国外，安装软件可能比较慢。因此使用conda之前，最好首先添加国内的镜像源，很简单，在HOME目录下创建一个<code>.condarc</code>文件，注意前面有一个点<code>.</code>开头，表明这是一个隐藏文件。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">show_channel_urls: true
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">show_channel_urls: <span class="nb">true</span>
 channels:
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
@@ -414,31 +447,69 @@ channels:
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
-</code></pre></div><p>这里添加的是清华大学的镜像源，也可以用其他的，如中山大学，豆瓣等。需要说明的是<code>bioconda</code>，这是一个专门存储生物信息学软件的频道，是生信软件的AppStore。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>这里添加的是清华大学的镜像源，也可以用其他的，如中山大学，豆瓣等。需要说明的是<code>bioconda</code>，这是一个专门存储生物信息学软件的频道，是生信软件的AppStore。</p>
 <h2 id="三使用">三、使用</h2>
 <p>Conda的命令很多，下面列举一些常用的。</p>
 <p>安装、卸载：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">conda install bwa
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">conda install bwa
 conda remove bwa
-</code></pre></div><p>创建环境：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 创建bwa独立的安装环境</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>创建环境：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 创建bwa独立的安装环境</span>
 conda create -n mybwa
-<span style="color:#75715e"># 激活刚创建的环境</span>
+<span class="c1"># 激活刚创建的环境</span>
 conda activate mybwa
-<span style="color:#75715e"># 安装bwa</span>
+<span class="c1"># 安装bwa</span>
 conda install bwa
-<span style="color:#75715e"># 验证一下bwa的安装位置</span>
+<span class="c1"># 验证一下bwa的安装位置</span>
 which bwa
-<span style="color:#75715e"># 退出新环境到默认环境base</span>
+<span class="c1"># 退出新环境到默认环境base</span>
 conda deactivate
-</code></pre></div><p>其他命令：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 查看conda安装了哪些软件包</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>其他命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 查看conda安装了哪些软件包</span>
 conda list
-<span style="color:#75715e"># 查看conda管理了哪些环境，其中带*号的是当前激活的环境</span>
+<span class="c1"># 查看conda管理了哪些环境，其中带*号的是当前激活的环境</span>
 conda env list
-<span style="color:#75715e"># 搜索是否有可供安装的软件包</span>
+<span class="c1"># 搜索是否有可供安装的软件包</span>
 conda search bwa
-</code></pre></div>
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     
@@ -521,7 +592,33 @@ conda search bwa
 
   
 
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    显示 Disqus 评论
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "https://jianzuoyi.github.io/post/best/2020-11-19-conda/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'jianzuoyi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
   
+  </div>
 
     
 

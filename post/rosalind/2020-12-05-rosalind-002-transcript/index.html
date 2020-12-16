@@ -69,7 +69,7 @@
 <meta itemprop="description" content="我在生物信息学：全景一文中，阐述了生物信息学的应用领域非常广泛。但是有一点是很关键的，就是细胞内的生命活动都遵从中心法则，生物信息学很多时候">
 <meta itemprop="datePublished" content="2020-12-05T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-12-05T00:00:00+00:00" />
-<meta itemprop="wordCount" content="490">
+<meta itemprop="wordCount" content="510">
 
 
 
@@ -403,30 +403,68 @@
 <p><strong>给定</strong>：一条长度至多1000bp的DNA序列。</p>
 <p>**需得：**其转录的RNA序列。</p>
 <h2 id="示例数据">示例数据</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">GATGGAACTTGACTACGTAAATT
-</code></pre></div><h2 id="示例结果">示例结果</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">GAUGGAACUUGACUACGUAAAUU
-</code></pre></div><h2 id="python实现">Python实现</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">GATGGAACTTGACTACGTAAATT
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="示例结果">示例结果</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">GAUGGAACUUGACUACGUAAAUU
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="python实现">Python实现</h2>
 <p>Transcribing_DNA_into_RNA.py</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> sys
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">sys</span>
 
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">transcript</span>(dna):
-    <span style="color:#66d9ef">return</span> dna<span style="color:#f92672">.</span>upper()<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;T&#39;</span>, <span style="color:#e6db74">&#39;U&#39;</span>)
+<span class="k">def</span> <span class="nf">transcript</span><span class="p">(</span><span class="n">dna</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">dna</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;U&#39;</span><span class="p">)</span>
 
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test</span>():
-    dna  <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;GATGGAACTTGACTACGTAAATT&#39;</span>
-    <span style="color:#66d9ef">return</span> transcript(dna) <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;GAUGGAACUUGACUACGUAAAUU&#39;</span>
+<span class="k">def</span> <span class="nf">test</span><span class="p">():</span>
+    <span class="n">dna</span>  <span class="o">=</span> <span class="s1">&#39;GATGGAACTTGACTACGTAAATT&#39;</span>
+    <span class="k">return</span> <span class="n">transcript</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;GAUGGAACUUGACUACGUAAAUU&#39;</span>
 
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
-    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> test():
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;transcript: Failed&#34;</span>)
-        sys<span style="color:#f92672">.</span>exit(<span style="color:#ae81ff">1</span>)
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">test</span><span class="p">():</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&#34;transcript: Failed&#34;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
-    <span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;rosalind_rna.txt&#39;</span>) <span style="color:#66d9ef">as</span> fh:
-        dna <span style="color:#f92672">=</span> fh<span style="color:#f92672">.</span>read()
-        rna <span style="color:#f92672">=</span> transcript(dna)
-        <span style="color:#66d9ef">print</span>(rna)
-</code></pre></div><ul>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;rosalind_rna.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+        <span class="n">dna</span> <span class="o">=</span> <span class="n">fh</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="n">rna</span> <span class="o">=</span> <span class="n">transcript</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">rna</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>只需要将<code>T</code>替换成<code>U</code>就可以了；替换前先用upper()是为了提高程序的健壮性，使得输入序列中含有小写字母时也能转换成功。</li>
 </ul>
 <p><strong><a href="https://www.zhihu.com/people/jianzuoyi">学生信欢迎关注我的知乎</a>，请“点赞”为爱发电，只“收藏”不点赞都是耍流氓。</strong></p>
@@ -513,7 +551,33 @@
 
   
 
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    显示 Disqus 评论
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "https://jianzuoyi.github.io/post/rosalind/2020-12-05-rosalind-002-transcript/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'jianzuoyi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
   
+  </div>
 
     
 

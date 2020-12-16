@@ -69,7 +69,7 @@
 <meta itemprop="description" content="作为半个IT人，写代码是工作日常，如何进行代码版本控制及托管，本文介绍一下我的最佳实践，其实很容易。 工作或学习过程中写的代码，存在本地的话容">
 <meta itemprop="datePublished" content="2020-11-09T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-11-09T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2894">
+<meta itemprop="wordCount" content="2921">
 
 
 
@@ -416,12 +416,23 @@
 <li><code>git push</code>，代码推送到远程仓库，至此就完成了简单的代码版本控制和远程托管，非常简单</li>
 </ol>
 <p>可见，git常用的命令也就是：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">git clone
 git status
 git add
 git commit
 git push
-</code></pre></div><p>当代码仓库已经存在于本地，要继续工作时，先<code>git pull</code>将远程仓库的最新版本拉到本地，修改后再<code>git status</code>, <code>git add</code>, <code>git commit</code>, <code>git push</code></p>
+</code></pre></td></tr></table>
+</div>
+</div><p>当代码仓库已经存在于本地，要继续工作时，先<code>git pull</code>将远程仓库的最新版本拉到本地，修改后再<code>git status</code>, <code>git add</code>, <code>git commit</code>, <code>git push</code></p>
 <p>熟练掌握这几个命令，已经能应付80%的工作需求了，这也符合二八法则，即掌握20%的命令，完成80%的工作，其他命令需要时再去查。</p>
 <p>下面我们再来简单介绍一下Git进行版本控制的三个核心概念：工作区、暂存区和版本库。</p>
 <ol>
@@ -464,20 +475,59 @@ git push
 <h3 id="二版本回退">二、版本回退</h3>
 <p>以上介绍的都是工作一帆风顺的情形，但是有些时候，我们发现文件修改错了，想退回到修改前的版本，这要分多情况。</p>
 <p><strong>情况1：工作区修改了，还没add到暂存区，需要放弃修改，直接恢复为版本库中的版本</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout -- &lt;file&gt;
-</code></pre></div><p><strong>情况2：工作区修改了，已经add到暂存区，又再次修改了，需要恢复成暂存区的版本</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout -- &lt;file&gt;　<span style="color:#75715e"># 将工作区的内容恢复为最近的版本：暂存区的（如果有的话）或版本库中的</span>
-</code></pre></div><p><strong>情况3：工作区修改了，已经add到暂存区，还没commit，需要恢复成版本库中的版本</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git restore --staged &lt;file&gt;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">git checkout -- &lt;file&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>情况2：工作区修改了，已经add到暂存区，又再次修改了，需要恢复成暂存区的版本</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">git checkout -- &lt;file&gt;　<span class="c1"># 将工作区的内容恢复为最近的版本：暂存区的（如果有的话）或版本库中的</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>情况3：工作区修改了，已经add到暂存区，还没commit，需要恢复成版本库中的版本</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">git restore --staged &lt;file&gt;
 git checkout -- &lt;file&gt;
-<span style="color:#75715e"># 分两步，先撤销暂存，再回到最新版本。如果不先撤销暂存，只checkout，则只会恢复成用暂存区</span>
-</code></pre></div><p><strong>情况4：工作区修改了，已经commit到版本库，需要恢复成commit前的版本</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git reset HEAD^ &lt;file&gt;	<span style="color:#75715e"># 将上一个版本库中的内容放入暂存区</span>
-git checkout -- &lt;file&gt;  <span style="color:#75715e"># 从暂存区恢复到工作区</span>
-</code></pre></div><p><strong>情况5：在版本之间切换</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git reset --hard HEAD^	<span style="color:#75715e"># HEAD^， HEAD^^， HEAD~3</span>
-git reset --hard commit_id	<span style="color:#75715e"># 在任意版本之间切换</span>
-</code></pre></div><p>HEAD指向的版本就是当前版本，Git允许在任意版本之间切换</p>
+<span class="c1"># 分两步，先撤销暂存，再回到最新版本。如果不先撤销暂存，只checkout，则只会恢复成用暂存区</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>情况4：工作区修改了，已经commit到版本库，需要恢复成commit前的版本</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">git reset HEAD^ &lt;file&gt;	<span class="c1"># 将上一个版本库中的内容放入暂存区</span>
+git checkout -- &lt;file&gt;  <span class="c1"># 从暂存区恢复到工作区</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>情况5：在版本之间切换</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">git reset --hard HEAD^	<span class="c1"># HEAD^， HEAD^^， HEAD~3</span>
+git reset --hard commit_id	<span class="c1"># 在任意版本之间切换</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>HEAD指向的版本就是当前版本，Git允许在任意版本之间切换</p>
 <h3 id="三远程仓库">三、远程仓库</h3>
 <p>版本管理的最佳实践就是先创建远程仓库，再克隆到本地进行修改，然后push到远程仓库。</p>
 <p>但是有些时候代码已经存在本地了，需要将其推送到远程仓库，我通常是这样做的：</p>
@@ -487,14 +537,27 @@ git reset --hard commit_id	<span style="color:#75715e"># 在任意版本之间�
 </li>
 <li>
 <p>这样会在弹出的页面中显示如下命令</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;# learngit&#34;</span> &gt;&gt; README.md
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s2">&#34;# learngit&#34;</span> &gt;&gt; README.md
 git init
 git add README.md
-git commit -m <span style="color:#e6db74">&#34;first commit&#34;</span>
+git commit -m <span class="s2">&#34;first commit&#34;</span>
 git branch -M main
 git remote add origin git@github.com:jianzuoyi/learngit.git
 git push -u origin main
-</code></pre></div></li>
+</code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>切换到本地的代码目录，运行上述命令，就可以在当前目录创建代码仓库，并与远程仓库进行关联</p>
 </li>
@@ -512,13 +575,25 @@ git push -u origin main
 <h3 id="五解决冲突">五、解决冲突</h3>
 <p>有时候从远程库pull时，可能会存在冲突，因为Git是一个分布式管理系统，你在公司电脑上有一份克隆，修改提交后push到了Github，然后你家里电脑也有一份克隆，当你要继续进行工作时，需要先运行<code>git pull</code>命令同步Github的最新版本，发现本地仓库已经有了更新，这时可能就会出现合并冲突。</p>
 <p>这时你可以：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git stash，暂时清空工作区
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">git stash，暂时清空工作区
 git pull，执行合并
 git stash pop，弹出暂存的工作区内容
 git status，查看工作区状态
-git diff &lt;file&gt;，查看具体文件的修改，从而决定是否用新版本，如果要保存新版本，则执行<span style="color:#e6db74">`</span>git add, git commit<span style="color:#e6db74">`</span>流程
+git diff &lt;file&gt;，查看具体文件的修改，从而决定是否用新版本，如果要保存新版本，则执行<span class="sb">`</span>git add, git commit<span class="sb">`</span>流程
 git checkout -- &lt;file&gt;，如果要放弃文件的修改，则执行此命令
-</code></pre></div><p>掌握以上这些命令，基本上就够用了。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>掌握以上这些命令，基本上就够用了。</p>
 
     </div>
 
@@ -602,7 +677,33 @@ git checkout -- &lt;file&gt;，如果要放弃文件的修改，则执行此命�
 
   
 
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    显示 Disqus 评论
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "https://jianzuoyi.github.io/post/best/2020-11-09.git/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'jianzuoyi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
   
+  </div>
 
     
 

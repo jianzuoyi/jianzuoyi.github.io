@@ -69,7 +69,7 @@
 <meta itemprop="description" content="病原微生物基因检测的两大核心任务是物种组成和功能组成的鉴定，而扩增子测序的首要目的是找到致病的细菌或者病毒，即鉴定物种组成。 经过质量控制，测">
 <meta itemprop="datePublished" content="2020-09-14T00:00:00+08:00" />
 <meta itemprop="dateModified" content="2020-09-14T00:00:00+08:00" />
-<meta itemprop="wordCount" content="2782">
+<meta itemprop="wordCount" content="2789">
 
 
 
@@ -410,8 +410,15 @@
 </ul>
 <p>可以看出，这三种模式的严格程度依次是：一致模式 &gt; 全长模式 &gt; 前缀模式。</p>
 <p>我们用全长模式去除冗余：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vsearch --derep_fulllength <span style="color:#e6db74">${</span>outdir<span style="color:#e6db74">}</span>/<span style="color:#e6db74">${</span>sample<span style="color:#e6db74">}</span>_merge.fastq.gz --output <span style="color:#e6db74">${</span>outdir<span style="color:#e6db74">}</span>/<span style="color:#e6db74">${</span>sample<span style="color:#e6db74">}</span>_derep.fa --minuniquesize <span style="color:#ae81ff">8</span> --minseqlength <span style="color:#ae81ff">100</span> --strand both --sizeout --fasta_width <span style="color:#ae81ff">0</span> 
-</code></pre></div><p><code>--derep_fulllength</code>，后面跟通过质控的fastq文件；</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">vsearch --derep_fulllength <span class="si">${</span><span class="nv">outdir</span><span class="si">}</span>/<span class="si">${</span><span class="nv">sample</span><span class="si">}</span>_merge.fastq.gz --output <span class="si">${</span><span class="nv">outdir</span><span class="si">}</span>/<span class="si">${</span><span class="nv">sample</span><span class="si">}</span>_derep.fa --minuniquesize <span class="m">8</span> --minseqlength <span class="m">100</span> --strand both --sizeout --fasta_width <span class="m">0</span> 
+</code></pre></td></tr></table>
+</div>
+</div><p><code>--derep_fulllength</code>，后面跟通过质控的fastq文件；</p>
 <p><code>--output</code>，输出文件，fasta格式；</p>
 <p><code>--minuniquesize</code>，最低丰度值，低于该丰度的序列会被过滤掉；</p>
 <p><code>--minseqlength</code>，最低长度值，低于该长度的序列会被过滤掉；</p>
@@ -420,8 +427,15 @@
 <p><code>--fasta_width</code>，限定fasta结果文件中每条序列在一行中最多显示的字符数，默认是80，0表示不做限制；</p>
 <h4 id="2降噪denoise">2.降噪（denoise）</h4>
 <p>按97%相似度对序列进行聚类曾经是扩增子序列分析的金标准，但这有一个问题，就是物种只能鉴定到属或种，因为有些物种之间的相似度接近99%，甚至有的菌株之间只有SNP的差别。因此现在流行的做法是进行降噪处理，通俗地说就是按100%相似度进行聚类，从而使鉴定达到种或株的水平。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vsearch --cluster_unoise <span style="color:#e6db74">${</span>outdir<span style="color:#e6db74">}</span>/<span style="color:#e6db74">${</span>sample<span style="color:#e6db74">}</span>_derep.fa --centroids <span style="color:#e6db74">${</span>outdir<span style="color:#e6db74">}</span>/<span style="color:#e6db74">${</span>sample<span style="color:#e6db74">}</span>_cent.fa --consout <span style="color:#e6db74">${</span>outdir<span style="color:#e6db74">}</span>/<span style="color:#e6db74">${</span>sample<span style="color:#e6db74">}</span>_cons.fa --minsize <span style="color:#ae81ff">8</span> --strand both --sizeout --fasta_width <span style="color:#ae81ff">0</span> --clusterout_sort
-</code></pre></div><p><code>--cluster_unoise</code>，上一步去重后的fasta文件；</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">vsearch --cluster_unoise <span class="si">${</span><span class="nv">outdir</span><span class="si">}</span>/<span class="si">${</span><span class="nv">sample</span><span class="si">}</span>_derep.fa --centroids <span class="si">${</span><span class="nv">outdir</span><span class="si">}</span>/<span class="si">${</span><span class="nv">sample</span><span class="si">}</span>_cent.fa --consout <span class="si">${</span><span class="nv">outdir</span><span class="si">}</span>/<span class="si">${</span><span class="nv">sample</span><span class="si">}</span>_cons.fa --minsize <span class="m">8</span> --strand both --sizeout --fasta_width <span class="m">0</span> --clusterout_sort
+</code></pre></td></tr></table>
+</div>
+</div><p><code>--cluster_unoise</code>，上一步去重后的fasta文件；</p>
 <p><code>--centroids</code>，fasta结果文件，包含每一个聚类中的种子序列；</p>
 <p><code>--consout</code>，fasta结果文件，包含每一个聚类的一致性序列；</p>
 <p><code>--minsize</code>，降噪最低的序列丰度要求，默认是8条；</p>
@@ -433,8 +447,15 @@
 <p>测序数据中可能存在嵌合体序列，每个嵌合体至少来源于两个或两个以上的扩增子模板，因而需要事先去除。</p>
 <p>去嵌合体有两种方法：一是基于参考数据库，一是基于无参考数据库的denovo方法。</p>
 <p>vsearch基于denovo方法去除嵌合体的命令：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vsearch --uchime3_denovo <span style="color:#e6db74">${</span>outdir<span style="color:#e6db74">}</span>/<span style="color:#e6db74">${</span>sample<span style="color:#e6db74">}</span>_cons.fa --nonchimeras <span style="color:#e6db74">${</span>outdir<span style="color:#e6db74">}</span>/<span style="color:#e6db74">${</span>sample<span style="color:#e6db74">}</span>_nochimeras.fa --chimeras <span style="color:#e6db74">${</span>outdir<span style="color:#e6db74">}</span>/<span style="color:#e6db74">${</span>sample<span style="color:#e6db74">}</span>_chimeras.fa --uchimealns <span style="color:#e6db74">${</span>outdir<span style="color:#e6db74">}</span>/<span style="color:#e6db74">${</span>sample<span style="color:#e6db74">}</span>_chimeras.aln --sizeout --fasta_width <span style="color:#ae81ff">0</span>
-</code></pre></div><p><code>--uchime3_denovo</code>，上一步去重后获得的一致性序列文件；</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">vsearch --uchime3_denovo <span class="si">${</span><span class="nv">outdir</span><span class="si">}</span>/<span class="si">${</span><span class="nv">sample</span><span class="si">}</span>_cons.fa --nonchimeras <span class="si">${</span><span class="nv">outdir</span><span class="si">}</span>/<span class="si">${</span><span class="nv">sample</span><span class="si">}</span>_nochimeras.fa --chimeras <span class="si">${</span><span class="nv">outdir</span><span class="si">}</span>/<span class="si">${</span><span class="nv">sample</span><span class="si">}</span>_chimeras.fa --uchimealns <span class="si">${</span><span class="nv">outdir</span><span class="si">}</span>/<span class="si">${</span><span class="nv">sample</span><span class="si">}</span>_chimeras.aln --sizeout --fasta_width <span class="m">0</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><code>--uchime3_denovo</code>，上一步去重后获得的一致性序列文件；</p>
 <p><code>--nonchimeras</code>，不含有嵌合体的结果文件；</p>
 <p><code>--chimeras</code>，含有嵌合体的结果文件；</p>
 <p><code>--uchimealns</code>，以人类易于阅读的形式呈现嵌合体与其两个亲本进行比对的结果文件；</p>
@@ -443,12 +464,33 @@
 <h4 id="4创建otu表">4.创建OTU表</h4>
 <p>OTU（operational taxonomic units），即可操作分类单元，通过vsearch创建OTU表，可以看到每个OTU的丰度情况。</p>
 <p>a.拷贝OTU文件：经过去重、降噪、去嵌合体之后，获得的无嵌合体的fasta文件可作为最终OTU结果</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cp <span style="color:#e6db74">${</span>outdir<span style="color:#e6db74">}</span>/<span style="color:#e6db74">${</span>sample<span style="color:#e6db74">}</span>_nochimeras.fa <span style="color:#e6db74">${</span>outdir<span style="color:#e6db74">}</span>/<span style="color:#e6db74">${</span>sample<span style="color:#e6db74">}</span>_otu.fa
-</code></pre></div><p>b.格式转换：将fastq格式的质控文件转换成fasta格式，以下命令只做格式转换，没有进行任何过滤操作</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vsearch --fastx_filter <span style="color:#e6db74">${</span>outdir<span style="color:#e6db74">}</span>/<span style="color:#e6db74">${</span>sample<span style="color:#e6db74">}</span>_merge_clean_final.fastq.gz --fastaout <span style="color:#e6db74">${</span>outdir<span style="color:#e6db74">}</span>/<span style="color:#e6db74">${</span>sample<span style="color:#e6db74">}</span>_merge_clean_final.fa
-</code></pre></div><p>c.创建OTU表：本质上是将经过质控的序列比对到OTU序列上，从而可以得出每一个OTU序列的丰度</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vsearch --usearch_global <span style="color:#e6db74">${</span>outdir<span style="color:#e6db74">}</span>/<span style="color:#e6db74">${</span>sample<span style="color:#e6db74">}</span>_merge_clean.fa --db <span style="color:#e6db74">${</span>outdir<span style="color:#e6db74">}</span>/<span style="color:#e6db74">${</span>sample<span style="color:#e6db74">}</span>_otu.fa --id 0.97 --query_cov 0.97 --strand both --otutabout <span style="color:#e6db74">${</span>outdir<span style="color:#e6db74">}</span>/<span style="color:#e6db74">${</span>sample<span style="color:#e6db74">}</span>_otutab.txt --samheader --samout <span style="color:#e6db74">${</span>outdir<span style="color:#e6db74">}</span>/<span style="color:#e6db74">${</span>sample<span style="color:#e6db74">}</span>.sam
-</code></pre></div><p><code>--usearch_global</code>，后面跟经过质控的fastq文件，fasta格式；</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">cp <span class="si">${</span><span class="nv">outdir</span><span class="si">}</span>/<span class="si">${</span><span class="nv">sample</span><span class="si">}</span>_nochimeras.fa <span class="si">${</span><span class="nv">outdir</span><span class="si">}</span>/<span class="si">${</span><span class="nv">sample</span><span class="si">}</span>_otu.fa
+</code></pre></td></tr></table>
+</div>
+</div><p>b.格式转换：将fastq格式的质控文件转换成fasta格式，以下命令只做格式转换，没有进行任何过滤操作</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">vsearch --fastx_filter <span class="si">${</span><span class="nv">outdir</span><span class="si">}</span>/<span class="si">${</span><span class="nv">sample</span><span class="si">}</span>_merge_clean_final.fastq.gz --fastaout <span class="si">${</span><span class="nv">outdir</span><span class="si">}</span>/<span class="si">${</span><span class="nv">sample</span><span class="si">}</span>_merge_clean_final.fa
+</code></pre></td></tr></table>
+</div>
+</div><p>c.创建OTU表：本质上是将经过质控的序列比对到OTU序列上，从而可以得出每一个OTU序列的丰度</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">vsearch --usearch_global <span class="si">${</span><span class="nv">outdir</span><span class="si">}</span>/<span class="si">${</span><span class="nv">sample</span><span class="si">}</span>_merge_clean.fa --db <span class="si">${</span><span class="nv">outdir</span><span class="si">}</span>/<span class="si">${</span><span class="nv">sample</span><span class="si">}</span>_otu.fa --id 0.97 --query_cov 0.97 --strand both --otutabout <span class="si">${</span><span class="nv">outdir</span><span class="si">}</span>/<span class="si">${</span><span class="nv">sample</span><span class="si">}</span>_otutab.txt --samheader --samout <span class="si">${</span><span class="nv">outdir</span><span class="si">}</span>/<span class="si">${</span><span class="nv">sample</span><span class="si">}</span>.sam
+</code></pre></td></tr></table>
+</div>
+</div><p><code>--usearch_global</code>，后面跟经过质控的fastq文件，fasta格式；</p>
 <p><code>--db</code>，OTU文件，fasta格式；</p>
 <p><code>--id</code>，相似度阈值：当查询序列与目标序列之间的相似度达到多少时，才算比对上；</p>
 <p><code>--query_cov</code>，覆盖度：满足相似度的情况下，同时要求查询序列的覆盖度达到多少；</p>
@@ -458,8 +500,15 @@
 <p><code>--samout</code>，输出比对的SAM格式结果文件，可用于后续IGV软件可视化查看比对情况。</p>
 <h4 id="5物种鉴定">5.物种鉴定</h4>
 <p>有了样本的代表性序列后，想知道样本的物种组成，可将这些序列比对到参考数据库，通过相似性及覆盖度进行判断。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vsearch --usearch_global <span style="color:#e6db74">${</span>outdir<span style="color:#e6db74">}</span>/<span style="color:#e6db74">${</span>sample<span style="color:#e6db74">}</span>_otu.fa -db $DB/amplicon.fa --id 0.97 --query_cov 0.97 --strand both --biomout <span style="color:#e6db74">${</span>outdir<span style="color:#e6db74">}</span>/<span style="color:#e6db74">${</span>sample<span style="color:#e6db74">}</span>_otu_tax.txt --alnout <span style="color:#e6db74">${</span>outdir<span style="color:#e6db74">}</span>/<span style="color:#e6db74">${</span>sample<span style="color:#e6db74">}</span>.aln --blast6out <span style="color:#e6db74">${</span>outdir<span style="color:#e6db74">}</span>/<span style="color:#e6db74">${</span>sample<span style="color:#e6db74">}</span>_blast.xls --fastapairs <span style="color:#e6db74">${</span>outdir<span style="color:#e6db74">}</span>/<span style="color:#e6db74">${</span>sample<span style="color:#e6db74">}</span>_pairs.fa --notmatched <span style="color:#e6db74">${</span>outdir<span style="color:#e6db74">}</span>/<span style="color:#e6db74">${</span>sample<span style="color:#e6db74">}</span>_notmatched.fa --userfields query+target+id+qcov+tcov --userout <span style="color:#e6db74">${</span>outdir<span style="color:#e6db74">}</span>/<span style="color:#e6db74">${</span>sample<span style="color:#e6db74">}</span>_stat.xls
-</code></pre></div><p><code>--usearch_global</code>，OTU文件，fasta格式；</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">vsearch --usearch_global <span class="si">${</span><span class="nv">outdir</span><span class="si">}</span>/<span class="si">${</span><span class="nv">sample</span><span class="si">}</span>_otu.fa -db <span class="nv">$DB</span>/amplicon.fa --id 0.97 --query_cov 0.97 --strand both --biomout <span class="si">${</span><span class="nv">outdir</span><span class="si">}</span>/<span class="si">${</span><span class="nv">sample</span><span class="si">}</span>_otu_tax.txt --alnout <span class="si">${</span><span class="nv">outdir</span><span class="si">}</span>/<span class="si">${</span><span class="nv">sample</span><span class="si">}</span>.aln --blast6out <span class="si">${</span><span class="nv">outdir</span><span class="si">}</span>/<span class="si">${</span><span class="nv">sample</span><span class="si">}</span>_blast.xls --fastapairs <span class="si">${</span><span class="nv">outdir</span><span class="si">}</span>/<span class="si">${</span><span class="nv">sample</span><span class="si">}</span>_pairs.fa --notmatched <span class="si">${</span><span class="nv">outdir</span><span class="si">}</span>/<span class="si">${</span><span class="nv">sample</span><span class="si">}</span>_notmatched.fa --userfields query+target+id+qcov+tcov --userout <span class="si">${</span><span class="nv">outdir</span><span class="si">}</span>/<span class="si">${</span><span class="nv">sample</span><span class="si">}</span>_stat.xls
+</code></pre></td></tr></table>
+</div>
+</div><p><code>--usearch_global</code>，OTU文件，fasta格式；</p>
 <p><code>--db</code>，参考序列库，fasta格式；</p>
 <p><code>--id</code>，相似度阈值：当查询序列与目标序列之间的相似度达到多少时，才算比对上；</p>
 <p><code>--query_cov</code>，覆盖度：满足相似度的情况下，同时要求查询序列的覆盖度达到多少；</p>
@@ -560,7 +609,33 @@
 
   
 
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    显示 Disqus 评论
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "https://jianzuoyi.github.io/post/2020-09-14.microbe-vsearch/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'jianzuoyi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
   
+  </div>
 
     
 

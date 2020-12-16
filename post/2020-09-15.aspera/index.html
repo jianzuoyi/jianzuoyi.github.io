@@ -69,7 +69,7 @@
 <meta itemprop="description" content="我们通常用wget或curl下载文件，然而由于NCBI和EBI网站都在国外，有时候下载速度非常慢，如果文件特别大，就可能非常难受甚至是不可能">
 <meta itemprop="datePublished" content="2020-09-15T00:00:00+08:00" />
 <meta itemprop="dateModified" content="2020-09-15T00:00:00+08:00" />
-<meta itemprop="wordCount" content="1184">
+<meta itemprop="wordCount" content="1210">
 
 
 
@@ -396,42 +396,104 @@
       <p>我们通常用<code>wget</code>或<code>curl</code>下载文件，然而由于NCBI和EBI网站都在国外，有时候下载速度非常慢，如果文件特别大，就可能非常难受甚至是不可能完全的任务了，这时可用aspera进行高速下载。</p>
 <h2 id="安装aspera">安装Aspera</h2>
 <p>首先进入<a href="https://www.ibm.com/products/aspera/downloads?list">aspera官方网站</a>，找到<strong>IBM Aspera Connect</strong>，进入下载页面，找到对应的版本与平台，这里以Linux平台最新的3.10.0版本为例进行介绍。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 下载</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 下载</span>
 wget https://ak-delivery04-mul.dhe.ibm.com/sar/CMA/OSA/092u0/0/ibm-aspera-connect-3.10.0.180973-linux-g2.12-64.tar.gz
 
-<span style="color:#75715e"># 解压</span>
+<span class="c1"># 解压</span>
 tar xvf ibm-aspera-connect-3.10.0.180973-linux-g2.12-64.tar.gz
 
-<span style="color:#75715e"># 解压后得到一个脚本文件，运行该脚本，即可完成自动安装</span>
+<span class="c1"># 解压后得到一个脚本文件，运行该脚本，即可完成自动安装</span>
 sh ibm-aspera-connect-3.10.0.180973-linux-g2.12-64.sh
 
-<span style="color:#75715e"># 所有安装文件都在~/.aspera/connect目录下，添加环境变量</span>
-echo <span style="color:#e6db74">&#39;export PATH=~/.aspera/connect/bin/:$PATH&#39;</span> &gt;&gt; ~/.bashrc
+<span class="c1"># 所有安装文件都在~/.aspera/connect目录下，添加环境变量</span>
+<span class="nb">echo</span> <span class="s1">&#39;export PATH=~/.aspera/connect/bin/:$PATH&#39;</span> &gt;&gt; ~/.bashrc
 
-<span style="color:#75715e"># 使环境变量生效</span>
-source ~/.bashrc
+<span class="c1"># 使环境变量生效</span>
+<span class="nb">source</span> ~/.bashrc
 
-<span style="color:#75715e"># 查看ascp可执行文件所在的路径，应该是：~/.aspera/connect/bin/ascp</span>
+<span class="c1"># 查看ascp可执行文件所在的路径，应该是：~/.aspera/connect/bin/ascp</span>
 which ascp
 
-<span style="color:#75715e"># 看程序是否能正常运行</span>
+<span class="c1"># 看程序是否能正常运行</span>
 ascp -h
-</code></pre></div><h2 id="高速下载">高速下载</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="高速下载">高速下载</h2>
 <h4 id="1-ncbi数据下载">1. NCBI数据下载</h4>
 <p>NCBI中数据的下载链接通常为</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://ftp.ncbi.nlm.nih.gov/refseq/release/viral/viral.2.1.genomic.fna.gz
-</code></pre></div><p>需要去除前面的域名，用如下命令下载，注意最后有一个点<code>.</code>，表示文件下载到当前目录并且保持原文件名</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ascp -i ~/.aspera/connect/etc/asperaweb_id_dsa.openssh -l 100M -k <span style="color:#ae81ff">1</span> -T anonftp@ftp.ncbi.nlm.nih.gov:/refseq/release/viral/viral.2.1.genomic.fna.gz .
-</code></pre></div><h4 id="2ebi数据下载">2.EBI数据下载</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">https://ftp.ncbi.nlm.nih.gov/refseq/release/viral/viral.2.1.genomic.fna.gz
+</code></pre></td></tr></table>
+</div>
+</div><p>需要去除前面的域名，用如下命令下载，注意最后有一个点<code>.</code>，表示文件下载到当前目录并且保持原文件名</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">ascp -i ~/.aspera/connect/etc/asperaweb_id_dsa.openssh -l 100M -k <span class="m">1</span> -T anonftp@ftp.ncbi.nlm.nih.gov:/refseq/release/viral/viral.2.1.genomic.fna.gz .
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="2ebi数据下载">2.EBI数据下载</h4>
 <p>同理，从EBI网站下载千人基因组数据</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ascp -i ~/.aspera/connect/etc/asperaweb_id_dsa.openssh -l 100M -T -P33001 fasp-g1k@fasp.1000genomes.ebi.ac.uk:vol1/ftp/release/20100804/ALL.2of4intersection.20100804.genotypes.vcf.gz .
-</code></pre></div><h4 id="3批量下载">3.批量下载</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">ascp -i ~/.aspera/connect/etc/asperaweb_id_dsa.openssh -l 100M -T -P33001 fasp-g1k@fasp.1000genomes.ebi.ac.uk:vol1/ftp/release/20100804/ALL.2of4intersection.20100804.genotypes.vcf.gz .
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="3批量下载">3.批量下载</h4>
 <p>先将要下载的文件的路径放入一个文件<code>file.lst</code>中，比如</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/refseq/release/viral/viral.1.1.genomic.fna.gz
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">/refseq/release/viral/viral.1.1.genomic.fna.gz
 /refseq/release/viral/viral.2.1.genomic.fna.gz
-</code></pre></div><p>然后使用命令</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ascp -i ~/.aspera/connect/etc/asperaweb_id_dsa.openssh -l 100M -T -k1 --mode recv --host ftp.ncbi.nlm.nih.gov --user anonftp --file-list file.lst .
-</code></pre></div><p><strong>主要参数</strong></p>
+</code></pre></td></tr></table>
+</div>
+</div><p>然后使用命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">ascp -i ~/.aspera/connect/etc/asperaweb_id_dsa.openssh -l 100M -T -k1 --mode recv --host ftp.ncbi.nlm.nih.gov --user anonftp --file-list file.lst .
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>主要参数</strong></p>
 <blockquote>
 <p>-i    免密从NCBI或EBI下载的私钥，安装完成就有，位于<code>~/.aspera/connect/etc/asperaweb_id_dsa.openssh</code></p>
 <p>-l    最大下载速度，如100M</p>
@@ -535,7 +597,33 @@ ascp -h
 
   
 
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    显示 Disqus 评论
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "https://jianzuoyi.github.io/post/2020-09-15.aspera/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'jianzuoyi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
   
+  </div>
 
     
 

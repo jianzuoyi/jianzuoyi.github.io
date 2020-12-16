@@ -69,7 +69,7 @@
 <meta itemprop="description" content="看透了如此多的秘密，我们已停止相信尚有不可知之物。然而，那不可知之物却仍然坐在那里，冷静地舔着自己的嘴唇。 ​ ——H.L. Mencken 尽管人类已把航天器">
 <meta itemprop="datePublished" content="2020-11-23T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-11-23T00:00:00+00:00" />
-<meta itemprop="wordCount" content="6072">
+<meta itemprop="wordCount" content="6082">
 
 
 
@@ -407,7 +407,21 @@
 <h2 id="一生物信息学源起">一、生物信息学：源起</h2>
 <p>人类基因组计划（Human Genome Project，HGP），是人类下定决心认识自己的开始。这是一项可与阿波罗登月媲美的宏伟工程，它的目标，就是测定人类的基因组序列。随着计划的开展，产生大量的基因组数据面临分析困难，计算机辅助分析的手段不断被开发出来，进而形成了一门专业的学问——生物信息学。</p>
 <p>下面是人类血红蛋白的一个beta亚基（HBB）的基因序列。这种序列类似于一副扑克牌，但只有不同的4张，分别是A、T、C、G。所有核酸都是由这4张牌不同的排列组合而成。比如人类基因组中这样的牌有30亿张。生物信息学是处理海量序列数据的利刃，是遨游数据海洋的一叶扁舟。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt;NM_000518.4 Homo sapiens hemoglobin subunit beta <span style="color:#f92672">(</span>HBB<span style="color:#f92672">)</span>, mRNA
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">&gt;NM_000518.4 Homo sapiens hemoglobin subunit beta <span class="o">(</span>HBB<span class="o">)</span>, mRNA
 ACATTTGCTTCTGACACAACTGTGTTCACTAGCAACCTCAAACAGACACCATGGTGCATCTGACTCCTGA
 GGAGAAGTCTGCCGTTACTGCCCTGTGGGGCAAGGTGAACGTGGATGAAGTTGGTGGTGAGGCCCTGGGC
 AGGCTGCTGGTGGTCTACCCTTGGACCCAGAGGTTCTTTGAGTCCTTTGGGGATCTGTCCACTCCTGATG
@@ -417,7 +431,9 @@ CCTGAGAACTTCAGGCTCCTGGGCAACGTGCTGGTCTGTGTGCTGGCCCATCACTTTGGCAAAGAATTCA
 CCCCACCAGTGCAGGCTGCCTATCAGAAAGTGGTGGCTGGTGTGGCTAATGCCCTGGCCCACAAGTATCA
 CTAAGCTCGCTTTCTTGCTGTCCAATTTCTATTAAAGGTTCCTTTGTTCCCTAAGTCCAACTACTAAACT
 GGGGGATATTATGAAGGGCCTTGAGCATCTGGATTCTGCCTAATAAAAAACATTTATTTTCATTGC
-</code></pre></div><p>参考：<a href="https://zhuanlan.zhihu.com/p/303281426">为什么说生物信息学是真正的大数据专业？</a></p>
+</code></pre></td></tr></table>
+</div>
+</div><p>参考：<a href="https://zhuanlan.zhihu.com/p/303281426">为什么说生物信息学是真正的大数据专业？</a></p>
 <h2 id="二生物信息学全景">二、生物信息学：全景</h2>
 <p>生物信息学的应用领域非常广泛。小到细胞，大到生命之树，只要是生命，就有核酸，只要有核酸，就有测定序列的需求。</p>
 <blockquote>
@@ -761,7 +777,33 @@ GGGGGATATTATGAAGGGCCTTGAGCATCTGGATTCTGCCTAATAAAAAACATTTATTTTCATTGC
 
   
 
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    显示 Disqus 评论
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "https://jianzuoyi.github.io/post/best/2020-11-23-learn-bioinfomatics/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'jianzuoyi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
   
+  </div>
 
     
 
