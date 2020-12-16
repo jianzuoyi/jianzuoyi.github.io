@@ -63,19 +63,19 @@
     
     <item>
       <title>01 如何自学生物信息学：从菜鸟到专家</title>
-      <link>https://jianzuoyi.github.io/post/2020-11-23-learn-bioinfomatics/</link>
+      <link>https://jianzuoyi.github.io/post/best/2020-11-23-learn-bioinfomatics/</link>
       <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jianzuoyi.github.io/post/2020-11-23-learn-bioinfomatics/</guid>
+      <guid>https://jianzuoyi.github.io/post/best/2020-11-23-learn-bioinfomatics/</guid>
       <description>看透了如此多的秘密，我们已停止相信尚有不可知之物。然而，那不可知之物却仍然坐在那里，冷静地舔着自己的嘴唇。 ​ ——H.L. Mencken 尽管人类已把航天器</description>
     </item>
     
     <item>
       <title>02 生信人的自我修养：Linux 命令速查手册</title>
-      <link>https://jianzuoyi.github.io/post/2020-11-20.linux/</link>
+      <link>https://jianzuoyi.github.io/post/best/2020-11-20.linux/</link>
       <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jianzuoyi.github.io/post/2020-11-20.linux/</guid>
+      <guid>https://jianzuoyi.github.io/post/best/2020-11-20.linux/</guid>
       <description>标题：生信人的自我修养：Linux命令速查手册 目标：致力于为生信人打造一个完整的Linux命令速查手册 作者：简佐义（jianzuoyi@qq</description>
     </item>
     
@@ -90,10 +90,10 @@
     
     <item>
       <title>03 生物信息基础：conda包管理器安装及使用</title>
-      <link>https://jianzuoyi.github.io/post/2020-11-19-conda/</link>
+      <link>https://jianzuoyi.github.io/post/best/2020-11-19-conda/</link>
       <pubDate>Thu, 19 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jianzuoyi.github.io/post/2020-11-19-conda/</guid>
+      <guid>https://jianzuoyi.github.io/post/best/2020-11-19-conda/</guid>
       <description>Conda是一个包管理器，类似于手机上的AppStore或电脑上的软件管家，可以方便地安装各种软件，并且能够为每一个软件创建自己的运行环境，</description>
     </item>
     
@@ -171,10 +171,10 @@
     
     <item>
       <title>04 代码版本控制及托管：我的最佳实践</title>
-      <link>https://jianzuoyi.github.io/post/2020-11-09.git/</link>
+      <link>https://jianzuoyi.github.io/post/best/2020-11-09.git/</link>
       <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jianzuoyi.github.io/post/2020-11-09.git/</guid>
+      <guid>https://jianzuoyi.github.io/post/best/2020-11-09.git/</guid>
       <description>作为半个IT人，写代码是工作日常，如何进行代码版本控制及托管，本文介绍一下我的最佳实践，其实很容易。 工作或学习过程中写的代码，存在本地的话容</description>
     </item>
     
