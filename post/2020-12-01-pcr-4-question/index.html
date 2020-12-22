@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="zh-cn" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>从零开始学PCR技术（四）：常见问题 - 简佐义的博客</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="简佐义" />
+  <meta name="description" content="从零开始学PCR技术（四）：常见问题 PCR反应可能存在问题，比如无扩增条带、有扩增条带但是假阳性、出现非特异性条带或者条带出现拖尾现象，这是" />
+
+  <meta name="keywords" content="生物信息学, 自学生物信息学, 生物信息学学习, 生物学, linux, python, R, 简佐义, 博客, 笔记" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.79.0" />
+
+
+<link rel="canonical" href="https://jianzuoyi.github.io/post/2020-12-01-pcr-4-question/" />
+
+
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.b3a8813c06e6d785beba22bf8264e174fa2cb3a396b22f9ba24e2c00c18aaf7f.css" integrity="sha256-s6iBPAbm14W&#43;uiK/gmThdPoss6OWsi&#43;bok4sAMGKr38=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+<meta property="og:title" content="从零开始学PCR技术（四）：常见问题" />
+<meta property="og:description" content="从零开始学PCR技术（四）：常见问题 PCR反应可能存在问题，比如无扩增条带、有扩增条带但是假阳性、出现非特异性条带或者条带出现拖尾现象，这是" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jianzuoyi.github.io/post/2020-12-01-pcr-4-question/" />
+<meta property="article:published_time" content="2020-12-01T00:00:00+08:00" />
+<meta property="article:modified_time" content="2020-12-01T00:00:00+08:00" />
+<meta itemprop="name" content="从零开始学PCR技术（四）：常见问题">
+<meta itemprop="description" content="从零开始学PCR技术（四）：常见问题 PCR反应可能存在问题，比如无扩增条带、有扩增条带但是假阳性、出现非特异性条带或者条带出现拖尾现象，这是">
+<meta itemprop="datePublished" content="2020-12-01T00:00:00+08:00" />
+<meta itemprop="dateModified" content="2020-12-01T00:00:00+08:00" />
+<meta itemprop="wordCount" content="2568">
+
+
+
+<meta itemprop="keywords" content="PCR," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="从零开始学PCR技术（四）：常见问题"/>
+<meta name="twitter:description" content="从零开始学PCR技术（四）：常见问题 PCR反应可能存在问题，比如无扩增条带、有扩增条带但是假阳性、出现非特异性条带或者条带出现拖尾现象，这是"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">简佐义的博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/">首页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/categories/">分类</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/post/">归档</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/about/">关于</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://jianzuoyi.github.io/">
+              精选&#43;
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://jianzuoyi.github.io/post/best/2020-11-23-learn-bioinfomatics/">01 如何自学生物信息学：从菜鸟到专家</a>
+              </li>
+            
+              <li>
+                <a href="https://jianzuoyi.github.io/post/best/2020-11-20.linux/">02 生信人的自我修养：Linux 命令速查手册</a>
+              </li>
+            
+              <li>
+                <a href="https://jianzuoyi.github.io/post/best/2020-11-19-conda/">03 生物信息基础：conda包管理器安装及使用</a>
+              </li>
+            
+              <li>
+                <a href="https://jianzuoyi.github.io/post/best/2020-11-09.git/">04 代码版本控制及托管：我的最佳实践</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      简佐义的博客
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/">首页</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/categories/">分类</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/post/">归档</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/about/">关于</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="https://jianzuoyi.github.io/">精选&#43;</a>
+          <ul class="submenu">
+            
+              <li>
+                <a href="https://jianzuoyi.github.io/post/best/2020-11-23-learn-bioinfomatics/">01 如何自学生物信息学：从菜鸟到专家</a>
+              </li>
+            
+              <li>
+                <a href="https://jianzuoyi.github.io/post/best/2020-11-20.linux/">02 生信人的自我修养：Linux 命令速查手册</a>
+              </li>
+            
+              <li>
+                <a href="https://jianzuoyi.github.io/post/best/2020-11-19-conda/">03 生物信息基础：conda包管理器安装及使用</a>
+              </li>
+            
+              <li>
+                <a href="https://jianzuoyi.github.io/post/best/2020-11-09.git/">04 代码版本控制及托管：我的最佳实践</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+
+    
+    
+
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">从零开始学PCR技术（四）：常见问题</h1>
+      
+      <div class="post-meta">
+        <time datetime="2020-12-01" class="post-time">
+          2020-12-01
+        </time>
+        <div class="post-category">
+            <a href="https://jianzuoyi.github.io/categories/pcr/"> PCR </a>
+            
+          </div>
+        
+
+        
+        
+          <span id="busuanzi_container_page_pv">
+            | 阅读 <span id="busuanzi_value_page_pv"></span>
+          </span>
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#pcr常见的四种问题">PCR常见的四种问题</a>
+      <ul>
+        <li><a href="#问题一假阴性">问题一：假阴性</a></li>
+        <li><a href="#问题二假阳性">问题二：假阳性</a></li>
+        <li><a href="#问题三非特异性扩增">问题三：非特异性扩增</a></li>
+        <li><a href="#问题四拖尾">问题四：拖尾</a></li>
+      </ul>
+    </li>
+    <li><a href="#提高pcr特异性的四种策略">提高PCR特异性的四种策略</a>
+      <ul>
+        <li><a href="#策略一巢式pcrnest-pcr">策略一：巢式PCR（Nest-PCR）</a></li>
+        <li><a href="#策略二递减pcrtouchdown-pcr">策略二：递减PCR（TouchDown PCR）</a></li>
+        <li><a href="#策略三热启动pcrhotstart-pcr">策略三：热启动PCR（HotStart PCR）</a></li>
+        <li><a href="#策略四使用pcr增强剂">策略四：使用PCR增强剂</a></li>
+      </ul>
+    </li>
+    <li><a href="#参考文献">参考文献</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <h1 id="从零开始学pcr技术四常见问题">从零开始学PCR技术（四）：常见问题</h1>
+<p>PCR反应可能存在问题，比如无扩增条带、有扩增条带但是假阳性、出现非特异性条带或者条带出现拖尾现象，这是因为PCR反应存在多个关键环节：1、模板核酸的制备；2、引物的质量与特异性；3、酶的质量；4、PCR循环条件。任何一个环节出现差错都会导致PCR失败。</p>
+<h2 id="pcr常见的四种问题">PCR常见的四种问题</h2>
+<h3 id="问题一假阴性">问题一：假阴性</h3>
+<p><strong>现象：无扩增条带。</strong></p>
+<p><strong>原因：</strong></p>
+<p><strong>1.模板</strong></p>
+<ul>
+<li>
+<p>模板中含有杂蛋白质、Taq酶抑制剂，模板上样量低或模板降解；</p>
+</li>
+<li>
+<p>在提取制备模板时丢失过多，或吸入酚。</p>
+</li>
+<li>
+<p>模板核酸变性不彻底。在酶和引物质量好时，不出现扩增带，极有可能是标本的消化处理，模板核酸提取过程出了毛病，因而要配制有效而稳定的消化处理液，其程序亦应固定不宜随意更改。</p>
+</li>
+</ul>
+<p><strong>2.引物</strong></p>
+<ul>
+<li>引物质量、引物的浓度、两条引物的浓度是否对称，是PCR失败或扩增条带不理想、容易弥散的常见原因;</li>
+<li>有些批号的引物质量有问题，两条引物一条浓度高，一条浓度低，造成低效率的不对称扩增;</li>
+<li>对策：①选定一个好的引物合成单位。②引物的浓度不仅要看OD值，更要注重引物原液做琼脂糖凝胶电泳，一定要有引物条带出现，而且两引物带的亮度应大体一致。如一条引物亮度高，一条亮度低，在稀释引物时要平衡其浓度。③引物应高浓度小量分装保存，防止多次冻融或长期放冰箱冷藏部分，导致引物变质降解失效。④引物设计不合理，如引物长度不够，引物之间形成二聚体等。</li>
+</ul>
+<p><strong>3.酶</strong></p>
+<ul>
+<li>酶失活，需更换新酶，或新旧两种酶同时使用，以分析是否因酶的活性丧失或不够而导致假阴性。需注意的是有时忘加Taq酶或溴乙锭。</li>
+</ul>
+<p><strong>4.Mg2+浓度</strong></p>
+<ul>
+<li>Mg2+离子浓度对PCR扩增效率影响很大，浓度过高可降低PCR扩增的特异性，浓度过低则影响PCR扩增产量甚至使PCR扩增失败而不出扩增条带。</li>
+</ul>
+<p><strong>5.反应程序</strong></p>
+<ul>
+<li>模板变性不彻底。如变性温度低，变性时间短，极有可能出现假阴性；</li>
+<li>退火温度不合适。退火温度过低，可致非特异性扩增而降低特异性扩增效率，退火温度过高影响引物与模板的结合而降低PCR扩增效率；</li>
+<li>延伸时间不够，每种酶的能力与性质不同，需要根据每种酶的特点设定合适的延伸时间。</li>
+<li>酶是否需要热启动等特殊程序。</li>
+</ul>
+<p><strong>6.靶序列变异</strong></p>
+<ul>
+<li>如靶序列发生突变或缺失，影响引物与模板特异性结合，或因靶序列某段缺失使引物与模板失去互补序列，其PCR扩增是不会成功的。</li>
+</ul>
+<p><strong>7.反应体积的改变</strong></p>
+<ul>
+<li>通常进行PCR扩增采用的体积为20ul、30ul、50ul或100ul，应用多大体积进行PCR扩增，是根据科研和临床检测不同目的而设定，在做小体积如20ul后，再做大体积时，一定要摸索条件，否则容易失败。</li>
+</ul>
+<h3 id="问题二假阳性">问题二：假阳性</h3>
+<p><strong>现象：出现与目的扩增条带一致的条带。</strong></p>
+<p><strong>原因：</strong></p>
+<ul>
+<li>
+<p>靶序列或扩增产物的交叉污染：这种污染有两种原因：一是整个基因组或大片段的交叉污染，导致假阳性。这种假阳性可用以下方法解决：①操作时应小心轻柔，防止将靶序列吸入加样枪内或溅出离心管外。②除酶及不能耐高温的物质外，所有试剂或 器材均应高压消毒。所用离心管及进样枪头等均应一次性使用。③必要时，在加标本前，反应管和试剂用紫外线照射，以破坏存在的核酸。二是空气中的小片段核酸污染，这些小片段比靶序列短，但有一定的同源性。可互相拼接，与引物互补后，可扩增出PCR产物，而导致假阳性的产生，可用巢式PCR方法来减轻或消除。</p>
+</li>
+<li>
+<p>引物设计不合适：选择的扩增序列与非目的扩增序列有同源性，因而在进行PCR扩增时，扩增出的PCR产物为非目的性的序列。靶序列太短或引物太短，容易出现假阳性。需重新设计引物。</p>
+</li>
+</ul>
+<h3 id="问题三非特异性扩增">问题三：非特异性扩增</h3>
+<p><strong>现象：PCR扩增后出现的条带与预计的大小不一致，或大或小，或者同时出现特异性扩增带与非特异性扩增带。</strong></p>
+<p>**原因：**①引物与靶序列不完全互补、或引物聚合形成二聚体; ②Mg2+离子浓度过高、退火温度过低，及PCR循环次数过多有关;③是酶的质和量，往往有些来源的酶易出现非特异条带而有些来源的酶则不出现，酶量过多有时也会出现非特异性扩增;</p>
+<p>**对策：**①必要时重新设计引物。②减低酶量或调换另一来源的酶。③降低引物量，适当增加模板量，减少循环次数。④适当提高退火温度或采用二温度点法(93℃变性，65℃左右退火与延伸)。</p>
+<h3 id="问题四拖尾">问题四：拖尾</h3>
+<p><strong>现象：产物在凝胶上呈涂抹带</strong>。</p>
+<p>**问题：**模板浓度低，酶量过多或酶的质量差，dNTP浓度过高，Mg2+浓度过高，退火温度过低，循环次数过多引起；</p>
+<p>**对策：**①减少或调换另一来源的酶。②减少dNTP的浓度。③适4当降低Mg2+浓度。④增加模板量，减少循环次数。</p>
+<h2 id="提高pcr特异性的四种策略">提高PCR特异性的四种策略</h2>
+<h3 id="策略一巢式pcrnest-pcr">策略一：巢式PCR（Nest-PCR）</h3>
+<ul>
+<li>
+<p>巢式PCR的使用降低了扩增多个靶位点的可能性，因为同多套引物都互补的靶序列很少；</p>
+</li>
+<li>
+<p>巢式PCR可以增加有限量靶序列（如稀有mRNA）的灵敏度，并且提高了困难PCR（如5&rsquo;RACE）的特异性。</p>
+</li>
+</ul>
+<h3 id="策略二递减pcrtouchdown-pcr">策略二：递减PCR（TouchDown PCR）</h3>
+<ul>
+<li>递减PCR通过在PCR的前几个循环使用严谨的退火条件提高特异性。循环设在比估算的T<!-- raw HTML omitted -->m<!-- raw HTML omitted -->高大约5 ℃的退火温度下开始，然后每个循环降低1-2 ℃，直到退火温度低于T<!-- raw HTML omitted -->m<!-- raw HTML omitted -->5 ℃；</li>
+<li>特异性最高的目的模板会被优先扩增，这些产物在随后的循环中继续扩增占据优势；</li>
+<li>递减PCR对于那些不了解引物和目的模板同源性程度的方法更为有用，如AFLP、DNA指纹等。</li>
+</ul>
+<h3 id="策略三热启动pcrhotstart-pcr">策略三：热启动PCR（HotStart PCR）</h3>
+<ul>
+<li>热启动主要是通过抑制一种基本成分延迟DNA合成，直到PCR仪达到变性温度；</li>
+<li>现在有很多公司都有HotStart Taq酶出售，该酶具有热启动的性能，使用简单方便，适合于高通量应用；</li>
+<li>热启动PCR是除了好的引物设计之外，提高PCR特异性最重要的方法之一。</li>
+</ul>
+<h3 id="策略四使用pcr增强剂">策略四：使用PCR增强剂</h3>
+<ul>
+<li>甲酰胺、DMSO、甘油、甜菜碱等都可充当PCR的增强剂；</li>
+<li>其可能的机理是降低熔解温度，从而有助于引物退火并辅助DNA聚合酶延伸通过二级结构区；</li>
+<li>增强剂浓度要适当。</li>
+</ul>
+<h2 id="参考文献">参考文献</h2>
+<p><a href="https://baike.baidu.com/item/%E8%81%9A%E5%90%88%E9%85%B6%E9%93%BE%E5%BC%8F%E5%8F%8D%E5%BA%94/555320?fromtitle=PCR&amp;fromid=9806&amp;fr=aladdin">百度百科：聚合酶链式反应</a></p>
+<p><a href="http://muchong.com/html/200507/103133.html">小木虫：【实验】PCR常见问题总结</a></p>
+<p><a href="https://www.biomart.cn/experiment/430/457/741/36114.htm">丁香通：PCR常见问题及解决方案</a></p>
+<p><a href="http://www.zoonbio.com/molecular/PCR-solutions.html">钟鼎生物：PCR常见问题原因分析及解决方法</a></p>
+<p><strong>从零开始学PCR系列文章：</strong></p>
+<p><a href="https://zhuanlan.zhihu.com/p/319757338">从零开始学PCR技术（一）：PCR技术科普</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/319408322">从零开始学PCR技术（二）：Taq DNA酶</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/322323091">从零开始学PCR技术（三）：PCR引物设计</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/324396902">从零开始学PCR技术（四）：常见问题</a></p>
+<p><strong><a href="https://www.zhihu.com/people/jianzuoyi">觉得内容不错，请点个赞吧!</a></strong> 日拱一卒，功不唐捐，run run run。。。</p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">简佐义</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2020-12-01
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content">本站文章皆为原创，转载需注明作者及文章链接，谢谢！</span>
+  </p>
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://jianzuoyi.github.io/tags/pcr/">PCR</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/2020-12-02-pcr-5-pollution/">
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
+            <span class="prev-text nav-default">从零开始学PCR技术（五）：试验污染</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/2020-11-30-pcr-3-primer-design/">
+            <span class="next-text nav-default">从零开始学PCR技术（三）：PCR引物设计</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    显示 Disqus 评论
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "https://jianzuoyi.github.io/post/2020-12-01-pcr-4-question/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'jianzuoyi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+  
+  </div>
+
+    
+
+  
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+  
+    <a href="mailto:jianzuoyi@qq.com" rel="me noopener" class="iconfont"
+      title="email" >
+      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://github.com/jianzuoyi" rel="me noopener" class="iconfont"
+      title="github"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M512 12.672c-282.88 0-512 229.248-512 512 0 226.261333 146.688 418.133333 350.08 485.76 25.6 4.821333 34.986667-11.008 34.986667-24.618667 0-12.16-0.426667-44.373333-0.64-87.04-142.421333 30.890667-172.458667-68.693333-172.458667-68.693333C188.672 770.986667 155.008 755.2 155.008 755.2c-46.378667-31.744 3.584-31.104 3.584-31.104 51.413333 3.584 78.421333 52.736 78.421333 52.736 45.653333 78.293333 119.850667 55.68 149.12 42.581333 4.608-33.109333 17.792-55.68 32.426667-68.48-113.706667-12.8-233.216-56.832-233.216-253.013333 0-55.893333 19.84-101.546667 52.693333-137.386667-5.76-12.928-23.04-64.981333 4.48-135.509333 0 0 42.88-13.738667 140.8 52.48 40.96-11.392 84.48-17.024 128-17.28 43.52 0.256 87.04 5.888 128 17.28 97.28-66.218667 140.16-52.48 140.16-52.48 27.52 70.528 10.24 122.581333 5.12 135.509333 32.64 35.84 52.48 81.493333 52.48 137.386667 0 196.693333-119.68 240-233.6 252.586667 17.92 15.36 34.56 46.762667 34.56 94.72 0 68.522667-0.64 123.562667-0.64 140.202666 0 13.44 8.96 29.44 35.2 24.32C877.44 942.592 1024 750.592 1024 524.672c0-282.752-229.248-512-512-512"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.zhihu.com/people/jianzuoyi" rel="me noopener" class="iconfont"
+      title="zhihu"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M351.791182 562.469462l192.945407 0c0-45.367257-21.3871-71.939449-21.3871-71.939449L355.897709 490.530013c3.977591-82.182744 7.541767-187.659007 8.816806-226.835262l159.282726 0c0 0-0.86367-67.402109-18.578124-67.402109s-279.979646 0-279.979646 0 16.850783-88.141456 39.318494-127.053698c0 0-83.60514-4.510734-112.121614 106.962104S81.344656 355.077018 76.80834 367.390461c-4.536316 12.313443 24.62791 5.832845 36.941354 0 12.313443-5.832845 68.050885-25.924439 84.252893-103.69571l86.570681 0c1.165546 49.28652 4.596691 200.335724 3.515057 226.835262L109.86113 490.530013c-25.275663 18.147312-33.701566 71.939449-33.701566 71.939449L279.868105 562.469462c-8.497535 56.255235-23.417339 128.763642-44.275389 167.210279-33.05279 60.921511-50.55235 116.65793-169.802314 212.576513 0 0-19.442818 14.257725 40.829917 9.073656 60.273758-5.185093 117.305683-20.739347 156.840094-99.807147 20.553105-41.107233 41.805128-93.250824 58.386782-146.138358l-0.055259 0.185218 167.855986 193.263655c0 0 22.035876-51.847855 5.832845-108.880803L371.045711 650.610918l-42.1244 31.157627-0.045025 0.151449c11.69946-41.020252 20.11206-81.5749 22.726607-116.858498C351.665315 564.212152 351.72876 563.345412 351.791182 562.469462z"></path>
+  <path d="M584.918753 182.033893l0 668.840094 70.318532 0 28.807093 80.512708 121.875768-80.512708 153.600307 0L959.520453 182.033893 584.918753 182.033893zM887.150192 778.934538l-79.837326 0-99.578949 65.782216-23.537066-65.782216-24.855084 0L659.341766 256.673847l227.807403 0L887.149169 778.934538z"></path>
+</svg>
+
+    </a>
+
+
+<a href="https://jianzuoyi.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+   
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    2020
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        简佐义
+        
+      </span></span>
+
+  
+  
+    <span id="busuanzi_container">
+      访客数/访问量：<span id="busuanzi_value_site_uv"></span>/<span id="busuanzi_value_site_pv"></span>
+    </span>
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

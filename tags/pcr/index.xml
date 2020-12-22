@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PCR on 简佐义的博客</title>
+    <link>https://jianzuoyi.github.io/tags/pcr/</link>
+    <description>Recent content in PCR on 简佐义的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 02 Dec 2020 00:00:00 +0800</lastBuildDate><atom:link href="https://jianzuoyi.github.io/tags/pcr/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>从零开始学PCR技术（五）：试验污染</title>
+      <link>https://jianzuoyi.github.io/post/2020-12-02-pcr-5-pollution/</link>
+      <pubDate>Wed, 02 Dec 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-12-02-pcr-5-pollution/</guid>
+      <description>从零开始学PCR技术（五）：试验污染 PCR反应最大的特点是具有较大的扩增能力和极高的灵敏度，正因为如此，极其微量的污染即可造成检测结果的假阳</description>
+    </item>
+    
+    <item>
+      <title>从零开始学PCR技术（四）：常见问题</title>
+      <link>https://jianzuoyi.github.io/post/2020-12-01-pcr-4-question/</link>
+      <pubDate>Tue, 01 Dec 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-12-01-pcr-4-question/</guid>
+      <description>从零开始学PCR技术（四）：常见问题 PCR反应可能存在问题，比如无扩增条带、有扩增条带但是假阳性、出现非特异性条带或者条带出现拖尾现象，这是</description>
+    </item>
+    
+    <item>
+      <title>从零开始学PCR技术（三）：PCR引物设计</title>
+      <link>https://jianzuoyi.github.io/post/2020-11-30-pcr-3-primer-design/</link>
+      <pubDate>Mon, 30 Nov 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-11-30-pcr-3-primer-design/</guid>
+      <description>扩增子测序在临床基因检测中有广泛应用，合理的Panel设计非常重要，而Panel设计最终要落地，精心设计引物就是重中之重了。 本文通过公开资料</description>
+    </item>
+    
+    <item>
+      <title>从零开始学PCR技术（二）：Taq DNA酶</title>
+      <link>https://jianzuoyi.github.io/post/2020-11-29-pcr-2-taq_dna/</link>
+      <pubDate>Sun, 29 Nov 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-11-29-pcr-2-taq_dna/</guid>
+      <description>PCR技术改变了现代分子生物学，而Taq DNA聚合酶改变了PCR。 1986年，Mullis发明了PCR技术，当时使用的是大肠杆菌聚合酶I（K</description>
+    </item>
+    
+    <item>
+      <title>从零开始学PCR技术（零）：PCR技术科普</title>
+      <link>https://jianzuoyi.github.io/post/2020-11-29-pcr-0-kepu/</link>
+      <pubDate>Sun, 29 Nov 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-11-29-pcr-0-kepu/</guid>
+      <description>近日，拿到华大基因CEO尹烨的第二本基因科普书《生命密码2》，其中关于PCR的科普，很精彩。比纯技术文章读起来轻松许多，故摘录在此，与大家分</description>
+    </item>
+    
+    <item>
+      <title>从零开始学PCR技术（一）：PCR技术简介</title>
+      <link>https://jianzuoyi.github.io/post/2020-11-27-pcr-1-introduction/</link>
+      <pubDate>Fri, 27 Nov 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-11-27-pcr-1-introduction/</guid>
+      <description>PCR可能是分子生物学中使用最广泛的技术。虽然我本科学的是生物科学，提过DNA，也跑过PCR，但现在都快忘了PCR的步骤是三个还是四个了。赶</description>
+    </item>
+    
+  </channel>
+</rss>

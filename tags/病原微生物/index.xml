@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>病原微生物 on 简佐义的博客</title>
+    <link>https://jianzuoyi.github.io/tags/%E7%97%85%E5%8E%9F%E5%BE%AE%E7%94%9F%E7%89%A9/</link>
+    <description>Recent content in 病原微生物 on 简佐义的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 22 Dec 2020 00:00:00 +0800</lastBuildDate><atom:link href="https://jianzuoyi.github.io/tags/%E7%97%85%E5%8E%9F%E5%BE%AE%E7%94%9F%E7%89%A9/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://jianzuoyi.github.io/post/2020-12-22-clinical-microbe-ngs-introduction/</link>
+      <pubDate>Tue, 22 Dec 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-12-22-clinical-microbe-ngs-introduction/</guid>
+      <description>2014年前后，国内肿瘤基因检测才刚起步，但奥巴马总统在2015年1月20日的国情咨文中，提出“精准医疗”这一概念，着实为肿瘤基因检测加了一</description>
+    </item>
+    
+    <item>
+      <title>病原微生物扩增子数据分析实战（三）：vsearch软件鉴定物种组成</title>
+      <link>https://jianzuoyi.github.io/post/2020-09-14.microbe-vsearch/</link>
+      <pubDate>Mon, 14 Sep 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-09-14.microbe-vsearch/</guid>
+      <description>病原微生物基因检测的两大核心任务是物种组成和功能组成的鉴定，而扩增子测序的首要目的是找到致病的细菌或者病毒，即鉴定物种组成。 经过质量控制，测</description>
+    </item>
+    
+    <item>
+      <title>病原微生物扩增子数据分析实战（二）：fastp软件进行质量控制</title>
+      <link>https://jianzuoyi.github.io/post/2020-09-05.microbe-fastp/</link>
+      <pubDate>Sat, 05 Sep 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-09-05.microbe-fastp/</guid>
+      <description>接上一篇，数据拆分完成后，得到FASTQ文件，下面对数据进行质控。 当前主流测序平台的数据存储格式无外乎两种，FASTQ（Illumina, M</description>
+    </item>
+    
+    <item>
+      <title>病原微生物扩增子数据分析实战（一）：bcl2fastq软件完成数据拆分</title>
+      <link>https://jianzuoyi.github.io/post/2020-09-03.microbe-bcl2fastq/</link>
+      <pubDate>Thu, 03 Sep 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-09-03.microbe-bcl2fastq/</guid>
+      <description>懂得了那么多道理，却依然过不好这一生。 所以理论归理论，最终要落实到分析代码上，咱们从这一篇开始，介绍一套扩增子数据分析流程。 闲话少叙，首先介</description>
+    </item>
+    
+  </channel>
+</rss>
