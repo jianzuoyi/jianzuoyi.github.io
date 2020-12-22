@@ -149,29 +149,22 @@
   </url>
   
   <url>
+    <loc>https://jianzuoyi.github.io/tags/pcr/</loc>
+    <lastmod>2020-12-02T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/categories/pcr/</loc>
+    <lastmod>2020-12-02T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://jianzuoyi.github.io/post/2020-12-02-pcr-5-pollution/</loc>
     <lastmod>2020-12-02T00:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://jianzuoyi.github.io/tags/%E7%97%85%E5%8E%9F%E5%BE%AE%E7%94%9F%E7%89%A9%E6%A3%80%E6%B5%8B/</loc>
-    <lastmod>2020-12-02T00:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://jianzuoyi.github.io/categories/%E7%97%85%E5%8E%9F%E5%BE%AE%E7%94%9F%E7%89%A9%E6%A3%80%E6%B5%8B/</loc>
-    <lastmod>2020-12-02T00:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://jianzuoyi.github.io/tags/%E8%87%AA%E5%AD%A6%E7%94%9F%E4%BF%A1/</loc>
-    <lastmod>2020-12-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -214,6 +207,13 @@
   <url>
     <loc>https://jianzuoyi.github.io/post/best/2020-11-23-learn-bioinfomatics/</loc>
     <lastmod>2020-11-23T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/tags/%E8%87%AA%E5%AD%A6%E7%94%9F%E4%BF%A1/</loc>
+    <lastmod>2020-12-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -317,6 +317,34 @@
   </url>
   
   <url>
+    <loc>https://jianzuoyi.github.io/tags/ngs/</loc>
+    <lastmod>2020-09-14T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/tags/%E6%89%A9%E5%A2%9E%E5%AD%90/</loc>
+    <lastmod>2020-09-14T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/categories/%E6%89%A9%E5%A2%9E%E5%AD%90/</loc>
+    <lastmod>2020-09-14T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/tags/%E7%97%85%E5%8E%9F%E5%BE%AE%E7%94%9F%E7%89%A9/</loc>
+    <lastmod>2020-09-14T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://jianzuoyi.github.io/post/2020-09-14.microbe-vsearch/</loc>
     <lastmod>2020-09-14T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -338,7 +366,14 @@
   </url>
   
   <url>
-    <loc>https://jianzuoyi.github.io/post/2020-09-02.ngs-and-micro/</loc>
+    <loc>https://jianzuoyi.github.io/categories/%E7%97%85%E5%8E%9F%E5%BE%AE%E7%94%9F%E7%89%A9/</loc>
+    <lastmod>2020-09-02T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-09-02.clinical-microbe-ngs-1/</loc>
     <lastmod>2020-09-02T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
