@@ -10,14 +10,56 @@
   
   <url>
     <loc>https://jianzuoyi.github.io/categories/</loc>
-    <lastmod>2020-12-21T00:00:00+00:00</lastmod>
+    <lastmod>2020-12-22T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/tags/ngs/</loc>
+    <lastmod>2020-12-22T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://jianzuoyi.github.io/post/</loc>
-    <lastmod>2020-12-21T00:00:00+00:00</lastmod>
+    <lastmod>2020-12-22T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/tags/</loc>
+    <lastmod>2020-12-22T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/tags/%E7%97%85%E5%8E%9F%E5%BE%AE%E7%94%9F%E7%89%A9/</loc>
+    <lastmod>2020-12-22T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/categories/%E7%97%85%E5%8E%9F%E5%BE%AE%E7%94%9F%E7%89%A9/</loc>
+    <lastmod>2020-12-22T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-12-22-clinical-microbe-ngs-introduction/</loc>
+    <lastmod>2020-12-22T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/</loc>
+    <lastmod>2020-12-22T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -39,20 +81,6 @@
   <url>
     <loc>https://jianzuoyi.github.io/post/rosalind/2020-12-09-rosalind-013-prob/</loc>
     <lastmod>2020-12-09T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://jianzuoyi.github.io/tags/</loc>
-    <lastmod>2020-12-21T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://jianzuoyi.github.io/</loc>
-    <lastmod>2020-12-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -310,13 +338,6 @@
   </url>
   
   <url>
-    <loc>https://jianzuoyi.github.io/tags/ngs/</loc>
-    <lastmod>2020-09-14T00:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://jianzuoyi.github.io/tags/%E6%89%A9%E5%A2%9E%E5%AD%90/</loc>
     <lastmod>2020-09-14T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -325,13 +346,6 @@
   
   <url>
     <loc>https://jianzuoyi.github.io/categories/%E6%89%A9%E5%A2%9E%E5%AD%90/</loc>
-    <lastmod>2020-09-14T00:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://jianzuoyi.github.io/tags/%E7%97%85%E5%8E%9F%E5%BE%AE%E7%94%9F%E7%89%A9/</loc>
     <lastmod>2020-09-14T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
