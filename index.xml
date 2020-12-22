@@ -6,7 +6,7 @@
     <description>Recent content on 简佐义的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 22 Dec 2020 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 09 Dec 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://jianzuoyi.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -23,69 +23,6 @@
 &lt;p&gt;知乎：&lt;a href=&#34;https://www.zhihu.com/people/jianzuoyi&#34;&gt;@简佐义&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;公众号：简说基因&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://jianzuoyi.github.io/img/barcode_2d.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://jianzuoyi.github.io/post/2020-12-22-clinical-microbe-ngs-introduction/</link>
-      <pubDate>Tue, 22 Dec 2020 00:00:00 +0800</pubDate>
-      
-      <guid>https://jianzuoyi.github.io/post/2020-12-22-clinical-microbe-ngs-introduction/</guid>
-      
-        <description>&lt;blockquote&gt;
-&lt;p&gt;2014年前后，国内肿瘤基因检测才刚起步，但奥巴马总统在2015年1月20日的国情咨文中，提出“精准医疗”这一概念，着实为肿瘤基因检测加了一把火，这把火迅速烧到国内，因为彼时的“精准医疗”，约等于“肿瘤基因检测”。&lt;/p&gt;
-&lt;p&gt;眼看这火越烧越旺，已经有企业的肿瘤试剂盒报下了证，我也没能把持住，在2018年毅然决定离开熟悉的科研测序服务行业，奔向了医学的新时代。&lt;/p&gt;
-&lt;p&gt;然而过了两年，情况却发生了变化。尽管肿瘤的火依然很旺，但是正如围城，外面的想进来，而城里的，却想出去。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;这两年高通量测序在临床病原微生物检测中的应用热起来了，究其原因：一方面临床有需求，另一方面相关技术也成熟了。&lt;/p&gt;
-&lt;p&gt;临床微生物检测为什么要引入高通量测序？是为了克服传统技术的不足，以及拓展新的诊疗手段。&lt;/p&gt;
-&lt;p&gt;因为一个多世纪以来，传感染病的检测主要靠临床医生的经验判断，或者进行一些实验室检查。通常是一次测试，只能检测一种或少数几种病原体。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;血常规、器官或组织的影像学指标。只能判断感染的可能性，不能作为确认的依据。比如血常规，只能告诉你有没有细菌或病毒感染，但不知道是什么细菌或病毒；&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;实验室检查。如抗原检测、核酸检测、代谢产物检测和毒素检测，是判断感染、指导预后的重要手段；&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;细菌和真菌检测。通常需要先进行分离培养，再结合生化反应进行鉴定，并进一步进行药物敏感性试验，这种模式是临床微生物实验室惯用的经典模式，为临床解决了很多关键问题，然而其周期长、阳性率低、通量低等弊端往往难以满足临床日益增长的需求。&lt;/li&gt;
-&lt;li&gt;病毒、支原体、衣原体检测。难以像细菌一样进行分离培养，通常采用分子生物学方法如聚合酶链式反应（Polymerase Chain Reaction, PCR）测定核酸，灵敏快速，但只限于已知病原体的检测，且检测结果提供的信息相对有限，难以解决由变异带来的医学问题。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;为了克服传统方法的不足，2005年出现的下一代测序技术（next-generation sequencing technology，NGS）在病原微生物检测中的应用具有非常大的优势。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;通量大，一次可检测成百上千个物种，特别是未知的病原，测定其核酸序列是必不可少的手段；&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;直接测定病原微生物的核酸序列，能为临床提供准确的诊断依据，如物种鉴定、分型以及耐药突变等；&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;更低的检测限，即使病原微生物的丰度很低，也能够检测到；&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;疑难微生物，以及难以培养甚至无法分离培养的少见菌属的鉴定，特别是新型病原微生物的暴发流行监测方面，NGS快速、准确和高分辨率的特点，使其成为病毒鉴定的金标准，在流行病学分型中发挥着重要作用。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;当然，NGS的缺点也是有的：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;相对于PCR，时效性处于劣势；&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;成本较高，暂时不会完全取代现行的常规鉴定手段。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;即便有不足，NGS的技术优势更明显。在疑难微生物、难以培养甚至无法分离培养的少见菌属的鉴定，特别是新型传染病爆发流行监测方面，NGS准确和高分辨率的特点，使其成为病原体鉴定的金标准，在流行病学分析中发挥着重要作用。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;参考文献：&lt;/p&gt;
-&lt;p&gt;李金明. 高通量测序技术. 北京：中国科学出版社，2018-11-01.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;如果你想自学生物信息学，可以看&lt;a href=&#34;https://zhuanlan.zhihu.com/p/323951235&#34;&gt;如何自学生物信息学：从菜鸟到专家&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;如果你想快速入门Linux，可以看&lt;a href=&#34;https://zhuanlan.zhihu.com/p/302596162&#34;&gt;如何自学生物信息学：一天入门Linux&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;欢迎关注&lt;a href=&#34;https://www.zhihu.com/people/jianzuoyi&#34;&gt;简说基因&lt;/a&gt;，觉得不错，请点个“赞”吧！&lt;/strong&gt;&lt;/p&gt;
 </description>
       
     </item>
@@ -2132,6 +2069,193 @@ CATCGTAATGACGGCCT
 &lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/322323091&#34;&gt;从零开始学PCR技术（三）：PCR引物设计&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/324396902&#34;&gt;从零开始学PCR技术（四）：常见问题&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://www.zhihu.com/people/jianzuoyi&#34;&gt;觉得内容不错，请点个赞吧!&lt;/a&gt;&lt;/strong&gt; 日拱一卒，功不唐捐，run run run。。。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>从零开始学PCR技术（一）：PCR技术简介</title>
+      <link>https://jianzuoyi.github.io/post/2020-11-27-pcr-1-introduction/</link>
+      <pubDate>Fri, 27 Nov 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-11-27-pcr-1-introduction/</guid>
+      
+        <description>&lt;blockquote&gt;
+&lt;p&gt;PCR可能是分子生物学中使用最广泛的技术。虽然我本科学的是生物科学，提过DNA，也跑过PCR，但现在都快忘了PCR的步骤是三个还是四个了。赶快网络搜索之，整理成一个从零开始学系列。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;聚合酶链式反应（Polymerase Chain Reaction，PCR）是一项利用DNA双链复制原理，在生物体外复制特定DNA片段的的核酸合成技术。可在短时间内大量扩增目的DNA片段，而不必依赖大肠杆菌或酵母菌等生物体。&lt;/p&gt;
+&lt;p&gt;DNA的半保留复制是生物进化和传代的重要途径。双链DNA在多种酶的作用下可以变性解旋成单链，在DNA聚合酶的参与下，根据碱基互补配对原则复制成同样的两分子拷贝。在实验中发现，DNA在高温时也可以发生变性解链，当温度降低后又可以复性成为双链。因此，通过温度变化控制DNA的变性和复性，加入设计引物，DNA聚合酶，dNTP就可以完成特定基因的体外复制，这是PCR的理论基础。&lt;/p&gt;
+&lt;h2 id=&#34;一反应体系&#34;&gt;一、反应体系&lt;/h2&gt;
+&lt;p&gt;PCR反应是在体外模拟DNA的复制过程，因此反应体系中必须具有DNA复制所需的基本要素：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;模板（template），含有需要扩增的DNA片段。&lt;/li&gt;
+&lt;li&gt;引物（primer），一对引物决定了需要扩增的起始和终止位置。&lt;/li&gt;
+&lt;li&gt;聚合酶（polymerase ），DNA聚合酶复制需要扩增的区域。&lt;/li&gt;
+&lt;li&gt;脱氧核苷三磷酸（dNTP），用于构造新的互补链。&lt;/li&gt;
+&lt;li&gt;缓冲液（buffer），提供适合聚合酶行使功能的化学环境。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://jianzuoyi.github.io/img/2020-11-27-pcr.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;二反应步骤&#34;&gt;二、反应步骤&lt;/h2&gt;
+&lt;p&gt;标准PCR过程分为三步：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;变性（Denaturation）：利用高温使DNA双链分离。DNA双链之间的氢键在高温下（93 - 98℃）被打断。&lt;/li&gt;
+&lt;li&gt;退火（Annealing）：在DNA双链分离后，降低温度使得引物可以结合于单链DNA上。&lt;/li&gt;
+&lt;li&gt;延伸（Extension）：DNA聚合酶由降温时结合上的引物处开始沿着DNA链合成互补链。延伸完成，则完成一轮循环，DNA片段数增加一倍。往复循环这三个步骤25-35次，DNA片段数将得到指数级增加。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://jianzuoyi.github.io/img/2020-11-26-PCR-steps.png&#34; alt=&#34;聚合酶链式反应简图&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;三结果检测&#34;&gt;三、结果检测&lt;/h2&gt;
+&lt;p&gt;PCR反应扩增出了高的拷贝数，下一步检测就成了关键。荧光素（溴化乙锭，EB）染色凝胶电泳是最常用的检测手段。电泳法检测特异性是不太高的，因此引物两聚体等非特异性的杂交体很容易引起误判。但因为其简捷易行，成为了主流检测方法。近年来以荧光探针为代表的检测方法，有逐渐取代电泳法的趋势。&lt;/p&gt;
+&lt;h2 id=&#34;四技术特点&#34;&gt;四、技术特点&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;灵敏度高&lt;/p&gt;
+&lt;p&gt;PCR产物的生成量是以指数方式增加的，能将皮克（pg = 10&lt;!-- raw HTML omitted --&gt;-12&lt;!-- raw HTML omitted --&gt;）量级的起始待测模板扩增到微克（μg=-6）水平。能从100万个细胞中检出一个靶细胞；在病毒的检测中，PCR的灵敏度可达3个RFU（空斑形成单位）；在细菌学中最小检出率为3个细菌。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;特异性强&lt;/p&gt;
+&lt;p&gt;PCR反应的特异性决定因素：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;引物与模板DNA特异正确的结合；&lt;/li&gt;
+&lt;li&gt;碱基配对原则；&lt;/li&gt;
+&lt;li&gt;Taq聚合酶合成反应的忠实性；&lt;/li&gt;
+&lt;li&gt;靶基因的特异性与保守性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;简便、快速&lt;/p&gt;
+&lt;p&gt;只需要一次性将反应液加好后，就可以进行扩增。一般2~4小时完成扩增反应。扩增产物一般用电泳分析，不一定要用同位素，无放射性污染、易推广。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;纯度要求低&lt;/p&gt;
+&lt;p&gt;不需要分离病毒或细菌及培养细胞，DNA粗制品及RNA均可作为扩增模板。可直接用临床标本如血液、体腔液、洗漱液、毛发、细胞、活组织等DNA扩增检测。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;五发展历史&#34;&gt;五、发展历史&lt;/h2&gt;
+&lt;p&gt;1971年，Khorana等最早提出核酸体外扩增的设想：经DNA变性，与合适的引物杂交，用DNA聚合酶延伸引物，并不断重复该过程便可合成tRNA基因。但由于当时基因序列分析方法尚未成熟，热稳定DNA聚合酶尚未报道以及引物合成困难，这种想法似乎没有实际意义。&lt;/p&gt;
+&lt;p&gt;1983年，Kary Mullis首先提出设想。&lt;/p&gt;
+&lt;p&gt;1985年，Kary Mullis在Cetus公司工作期间，发明了PCR，即简易DNA扩增法。&lt;/p&gt;
+&lt;p&gt;1985年10月25日申请了PCR的专利，1987年7月28日批准，Mullis是第一发明人。&lt;/p&gt;
+&lt;p&gt;1985年12月20日在Science杂志上发表了第一篇PCR学术论文，Mullis是共同作者。&lt;/p&gt;
+&lt;p&gt;1986年5月，Mullis在冷泉港实验室做专题报告，全世界从此开始学习PCR的方法。&lt;/p&gt;
+&lt;p&gt;1988年，Saiki等将Taq DNA聚合酶用于PCR技术，成功完成了DNA的自动扩增。&lt;/p&gt;
+&lt;p&gt;1993年10月，Kary Mullis获得了诺贝尔化学奖。&lt;/p&gt;
+&lt;p&gt;从PCR技术发明至今已过30年，技术迭代已到第三代，在过去的30年里PCR技术为生命科学的发展做出了不可磨灭的贡献。&lt;/p&gt;
+&lt;h3 id=&#34;一代pcr&#34;&gt;一代PCR&lt;/h3&gt;
+&lt;p&gt;第一代PCR技术就是最初的PCR，采用普通PCR扩增仪来对靶基因进行扩增，然后采用琼脂糖凝胶电泳对产物进行检测，只能做定性分析。&lt;/p&gt;
+&lt;h4 id=&#34;1-技术应用&#34;&gt;1. 技术应用&lt;/h4&gt;
+&lt;p&gt;能将微量的 DNA 大幅增加。因此对化石中的古生物残骸，犯罪现场的毛发、皮肤碎屑或血液，只要能分离出一丁点的DNA，就能用PCR加以放大，进行比对。&lt;/p&gt;
+&lt;h4 id=&#34;2-技术优势&#34;&gt;2. 技术优势&lt;/h4&gt;
+&lt;p&gt;灵敏度高，特异性强，简单快捷，对样品的纯度要求低等。&lt;/p&gt;
+&lt;h4 id=&#34;3-技术缺点&#34;&gt;3. 技术缺点&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;最初的PCR技术所采用的核酸染料，会对实验人员和环境造成伤害&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;PCR完成之后需要开盖检测，容易发生污染造成假阳性结果&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;检测耗时长，操作麻烦，容易出错&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;只能做定性检测&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;二代pcr&#34;&gt;二代PCR&lt;/h3&gt;
+&lt;p&gt;第二代PCR就是荧光定量PCR技术（Real-Time PCR），也叫做qPCR。荧光定量PCR通过在反应体系中加入能够指示反映进程的荧光探针，通过荧光信号的积累来监测扩增产物的积累。通过荧光曲线来判断结果，并可以借助Cq值和标准曲线来定量。&lt;/p&gt;
+&lt;h4 id=&#34;1-技术应用-1&#34;&gt;1. 技术应用&lt;/h4&gt;
+&lt;p&gt;用于传染性疾病病原体检测，疾病耐药基因研究，药物疗效考核，遗传疾病诊断。&lt;/p&gt;
+&lt;h4 id=&#34;2-技术优势-1&#34;&gt;2. 技术优势&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;污染风险低&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;操作流程更简单、经济高效&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;需要的DNA和RNA加样量少&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;3-技术缺点-1&#34;&gt;3. 技术缺点&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;不同厂家生产的试剂和设备所产生的Cq值之间存在一定的差异，并不具备可比性&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;存在背景值的影响，结果易产生偏差&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;对于低拷贝的DNA往往难以检测&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;当反应体系中有PCR抑制物存在时，常规的PCR体系经常会受到影响&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;三代pcr&#34;&gt;三代PCR&lt;/h3&gt;
+&lt;p&gt;第三代PCR技术叫做数字PCR（Digital PCR, dPCR, Dig-PCR），这是目前全新的一种PCR检测方式，能对核酸进行检测和定量，采用直接计数目标分子而不依赖任何校准物或者外标，即可确定低至单拷贝的待检靶分子的绝对数目。&lt;/p&gt;
+&lt;h4 id=&#34;1-技术应用-2&#34;&gt;1. 技术应用&lt;/h4&gt;
+&lt;p&gt;用于大量正常细胞群中检测少数含突变的细胞。通过稀释样品DNA到对应的检测孔中，经过PCR扩增之后，向每个孔里加入特异性荧光探针与产物杂交，然后直接计数样本中突变型和野生型等位子的数量。&lt;/p&gt;
+&lt;p&gt;主要应用于突变分析、等位基因缺失、混杂DNA的癌症检测等等。&lt;/p&gt;
+&lt;h4 id=&#34;2-技术优势-2&#34;&gt;2. 技术优势&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;灵敏度更高&lt;/p&gt;
+&lt;p&gt;数字PCR将传统的PCR反应分割成了数万个体系，这些体系独立扩增，独立检测，保证了个位数的模板数量都可以被检测到。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;定量更准确&lt;/p&gt;
+&lt;p&gt;数字PCR通过微体系的荧光计数，直接将反应初始模板数量统计出来，即使某些微滴中的模板数量不止一个，也可以通过泊松分布进行计算。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;抗干扰能力更强&lt;/p&gt;
+&lt;p&gt;数字PCR第一步反应体系的分配过程中，会将模板和抑制物分配到不同的体系，降低抑制物的干扰。并且，与qPCR不同的是，dPCR检测的是终点荧光，即使微体系稍微受到了影响，也不会影响最终结果的判读。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;3-技术缺点-2&#34;&gt;3. 技术缺点&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;模板质量要求较高&lt;/p&gt;
+&lt;p&gt;由于数字PCR将反应拆分成了数万个独立体系，因此其对模板量有比较高的要求，模板量超过微体系量会导致无法定量，过少会导致信号过低，降低定量准确度。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;非特异性产物的判断&lt;/p&gt;
+&lt;p&gt;数字PCR观测的是每个体系中的终点荧光，无论PCR产物是否是特异性产物，只要荧光信号足够强，也是会判读为阳性结果。因此dPCR的引物特异性要求极高。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;pcr各种延伸技术&#34;&gt;PCR各种延伸技术&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.wanweibaike.com/wiki-%E9%81%9E%E6%B8%9BPCR&#34;&gt;递减PCR&lt;/a&gt;（touchdown PCR）：前几循环温度逐渐下降。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.wanweibaike.com/wiki-%E9%80%86%E8%BD%89%E9%8C%84PCR&#34;&gt;逆转录PCR&lt;/a&gt;（RT-PCR）：以由&lt;a href=&#34;https://www.wanweibaike.com/wiki-MRNA&#34;&gt;mRNA&lt;/a&gt;&lt;a href=&#34;https://www.wanweibaike.com/wiki-%E9%80%86%E8%BD%AC%E5%BD%95&#34;&gt;逆转录&lt;/a&gt;而来的cDNA为模板，也因为是从表现型基因来进行增量的，由此产生出来的cDNA产物不带有&lt;a href=&#34;https://www.wanweibaike.com/wiki-%E5%86%85%E5%90%AB%E5%AD%90&#34;&gt;内含子&lt;/a&gt;（基因中不具意义的段落），常应用于&lt;a href=&#34;https://www.wanweibaike.com/wiki-%E5%88%86%E5%AD%90%E5%85%8B%E9%9A%86&#34;&gt;分子克隆&lt;/a&gt;技术。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.wanweibaike.com/wiki-%E7%86%B1%E5%95%9F%E5%8B%95PCR&#34;&gt;热启动PCR&lt;/a&gt;（hot start PCR）：以高热激活型核酸聚合酶进行反应，减少非专一性产物。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.wanweibaike.com/wiki-%E5%8D%B3%E6%99%82PCR&#34;&gt;即时PCR&lt;/a&gt;（real-time PCR）：PCR过程中利用萤光探针或染料定量检测，又称定量PCR（quantitative PCR），可以进行多组对比。&lt;/li&gt;
+&lt;li&gt;巢式PCR（nested PCR）：先用低特异性引物扩增几个循环以增加模板数量，再用高特异性引物扩增。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.wanweibaike.com/wiki-%E5%A4%9A%E9%87%8DPCR&#34;&gt;多重PCR&lt;/a&gt;（multiplex PCR）：在同一个管中使用多组引物。&lt;/li&gt;
+&lt;li&gt;复原条件PCR（reconditioning PCR）：PCR产物稀释10倍后重新放入原浓度的引物和dNTP等循环3次，以消除产物中的异二聚体。&lt;/li&gt;
+&lt;li&gt;dsRNA合成（dsRNA replicator）：合并使用high-fidelity DNA polymersae、&lt;a href=&#34;https://www.wanweibaike.com/wiki-T7RNA%E8%81%9A%E5%90%88%E9%85%B6&#34;&gt;T7RNA聚合酶&lt;/a&gt;与Phi6 RNA replicase；从双股DNA转录为对应的双股RNA（dsRNA）。可应用于&lt;a href=&#34;https://www.wanweibaike.com/wiki-RNAi&#34;&gt;RNAi&lt;/a&gt;实验操作。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wanweibaike.com/wiki-COLD-PCR&#34;&gt;COLD-PCR&lt;/a&gt; (&lt;strong&gt;co&lt;/strong&gt;-amplification at &lt;strong&gt;l&lt;/strong&gt;ower &lt;strong&gt;d&lt;/strong&gt;enaturation temperature-PCR):用以检测突变或特殊等位基因的PCR应用技术。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wanweibaike.com/wiki-Digital_polymerase_chain_reaction&#34;&gt;Digital-PCR&lt;/a&gt;：将标准的PCR反应分割至每一个反应中仅1~2个copy。藉以侦测微小比例的基因差异。应用于：癌症突变基因、病原体检测、借由母血对胎儿做产前检测。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;六应用&#34;&gt;六、应用&lt;/h2&gt;
+&lt;h3 id=&#34;感染性疾病&#34;&gt;感染性疾病&lt;/h3&gt;
+&lt;p&gt;PCR在医学检验中最有价值的应用领域就是对感染性疾病的诊断。理论上，只要样本中有一个病原体存在，PCR就可以检测到。一般实验室也能检出10~100基因拷贝。PCR对病原体的检测解决了免疫学检测的“窗口期”问题，可判断疾病是否处于隐性或亚临床状态。&lt;/p&gt;
+&lt;h3 id=&#34;肿瘤&#34;&gt;肿瘤&lt;/h3&gt;
+&lt;p&gt;癌基因的表达增加和突变，在许多肿瘤早期和良性的阶段就可出现。PCR技术不但能有效的检测基因的突变，而且能准确检测癌基因的表达量，可据此进行肿瘤早期诊断、分型、分期和预后判断。&lt;/p&gt;
+&lt;h3 id=&#34;遗传病&#34;&gt;遗传病&lt;/h3&gt;
+&lt;p&gt;PCR技术首次临床应用就是从检测镰状细胞和β-地中海贫血的基因突变开始的。基因的突变和缺失均会引起各种珠蛋白的表达不平衡，用FQ-PCR检测各种珠蛋白基因表达差异，是地中海贫血诊断的有效手段。&lt;/p&gt;
+&lt;h3 id=&#34;其他&#34;&gt;其他&lt;/h3&gt;
+&lt;p&gt;PCR技术还可以应用于生命科学的方方面面，比如：亲子鉴定，分析远古DNA等。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;一点感想：任何一项技术都不是孤立发展的，需要其他技术的配合。PCR技术也不例外。虽然提出设想很早，但真正变成现实，也是在其他配套技术成熟后才实现的，否则只是空想。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;注：本文由网络资料整理而成。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;后续更新计划，敬请期待吧：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;从零开始学PCR技术（一）：PCR技术简介&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;从零开始学PCR技术（二）：Taq DNA聚合酶的应用与改造历程&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;从零开始学PCR技术（三）：PCR引物设计&lt;/p&gt;
+&lt;p&gt;从零开始学PCR技术（四）：常见问题&lt;/p&gt;
+&lt;p&gt;从零开始学PCR技术（五）：试验污染&lt;/p&gt;
+&lt;p&gt;从零开始学PCR技术（六）：多重PCR的应用&lt;/p&gt;
 </description>
       
     </item>
