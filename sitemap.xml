@@ -16,20 +16,6 @@
   </url>
   
   <url>
-    <loc>https://jianzuoyi.github.io/categories/%E5%85%B3%E4%BA%8E/</loc>
-    <lastmod>2020-12-15T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://jianzuoyi.github.io/</loc>
-    <lastmod>2020-12-21T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://jianzuoyi.github.io/post/</loc>
     <lastmod>2020-12-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -59,6 +45,13 @@
   
   <url>
     <loc>https://jianzuoyi.github.io/tags/</loc>
+    <lastmod>2020-12-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/</loc>
     <lastmod>2020-12-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
