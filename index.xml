@@ -6,7 +6,7 @@
     <description>Recent content on 简佐义的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 22 Dec 2020 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 22 Dec 2020 22:00:00 +0800</lastBuildDate>
     
         <atom:link href="https://jianzuoyi.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -28,9 +28,68 @@
     </item>
     
     <item>
+      <title>病原微生物高通量测序：第二节 应用场景</title>
+      <link>https://jianzuoyi.github.io/post/2020-12-22-clinical-microbe-ngs-application/</link>
+      <pubDate>Tue, 22 Dec 2020 22:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-12-22-clinical-microbe-ngs-application/</guid>
+      
+        <description>&lt;p&gt;临床微生物高通量测序，主要有4个应用场景：感染病原识别、微生物组分析、人宿主免疫应答分析和肿瘤学分析。目的不同，采用的测序策略也不一样。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1.感染病原识别&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;临床微生物高通量测序，第一个重要目的当然是&lt;code&gt;物种鉴定&lt;/code&gt;，找出感染的病原。其次是功能鉴定，如抗生素抗性、病毒抑制剂抗性和毒力因子预测等。&lt;/p&gt;
+&lt;p&gt;测序策略：&lt;/p&gt;
+&lt;p&gt;1.1非靶向测序&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;宏基因组测序；样本：血液（血浆）；用途：培养阴性感染/不明原因的发热/监控免疫受损的病人&lt;/li&gt;
+&lt;li&gt;宏基因组测序；样本：呼吸道分泌物；用途：培养阴性或PCR阴性的急性肺炎&lt;/li&gt;
+&lt;li&gt;宏基因组测序；样本：脑脊液；未确认的脑膜炎或脊髓炎&lt;/li&gt;
+&lt;li&gt;宏基因组测序；样本：粪便；用途：严重腹泻&lt;/li&gt;
+&lt;li&gt;宏基因组测序；样本：感染组织或其他体液；培养阴性感染&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;1.2靶向测序&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;扩增子测序（通用细菌、真菌或寄生虫rRNA测序）；样本：多种体液或组织；用途：多种病原体识别&lt;/li&gt;
+&lt;li&gt;扩增子测序（多重PCR测序）；样本：多种体液或组织；用途：多种病原体识别&lt;/li&gt;
+&lt;li&gt;捕获测序；样本：多种体液或组织；用途：多种病原体识别&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;2.微生物组分析&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;人体不是一座孤岛，除了自身的基因组外，还有大量微生物的基因组。人在疾病状态下，微生物的多样性可能减少。通过宏基因组分析人体内微生物多样性，能够为是否感染提供线索。&lt;/p&gt;
+&lt;p&gt;临床微生物组分析最有价值的应用当属益生菌疗法：从健康人的粪便中获取正常的益生菌，制成药丸给患者服用。除细菌感染外，肥胖、炎症性肠病和糖尿病也是益生菌治疗的潜在应用。&lt;/p&gt;
+&lt;p&gt;测序策略：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;宏基因组测序；样本：粪便；用途：面向消费者的微生物组检测/指导管理和治疗艰难梭酸菌感染/慢性病&lt;/li&gt;
+&lt;li&gt;宏基因组测序；样本：呼吸道分泌物；用途：辅助诊断急性呼吸道感染&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;3.人宿主免疫应答反应分析&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;感染病原体检测，临床上侧重于微生物本身。然而，研究人类宿主对感染的免疫应答反应，即通过基因表达的分析可以作为感染检测的补充。这一方法目前虽然还没有应用于临床，但具有非常大的前景。&lt;/p&gt;
+&lt;p&gt;人类宿主的RNA-Seq分析还可以直接从临床样本中识别新的暂未得到充分重视的宿主-微生物互作关系。随着大规模测序技术在临床应用中的发展，也许会出现由宏基因组检测为主，RNA-Seq分析为辅来提高临床诊断的准确性的应用。&lt;/p&gt;
+&lt;p&gt;测序策略：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;RNA测序；样本：多种样本类型，全血或外周血单核细胞最为常见；用途：辅助感染诊断/疾病预后&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;4.肿瘤学应用&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;肿瘤的全基因组或靶向NGS测序，可以同时检测肿瘤相关的突变和病毒，如疱疹病毒、乳头瘤病毒和多瘤病毒。如果是靶向测序，需要事先加入特定的病毒探针。&lt;/p&gt;
+&lt;p&gt;液体活检样本（如血浆）中获得的细胞游离DNA的宏基因组测序，可能用于同时识别早期癌症和诊断免疫功能低下的患者的感染。&lt;/p&gt;
+&lt;p&gt;测序策略：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;肿瘤全基因组测序；样本：肿瘤组织；用途：鉴定与癌症相关的病毒&lt;/li&gt;
+&lt;li&gt;液态活检测序；样本：无细胞体液；用途：同时进行癌症和传染病检测&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;参考文献：
+Chiu C Y , Miller S A . Clinical metagenomics[J]. Nature Reviews Genetics, 2019.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果你想自学生物信息学，可以看&lt;a href=&#34;https://zhuanlan.zhihu.com/p/323951235&#34;&gt;如何自学生物信息学：从菜鸟到专家&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果你想快速入门Linux，可以看&lt;a href=&#34;https://zhuanlan.zhihu.com/p/302596162&#34;&gt;如何自学生物信息学：一天入门Linux&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;欢迎关注&lt;a href=&#34;https://www.zhihu.com/people/jianzuoyi&#34;&gt;简说基因&lt;/a&gt;，觉得不错，请点个“赞”吧！&lt;/strong&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>病原微生物高通量测序：第一节 概述</title>
       <link>https://jianzuoyi.github.io/post/2020-12-22-clinical-microbe-ngs-introduction/</link>
-      <pubDate>Tue, 22 Dec 2020 00:00:00 +0800</pubDate>
+      <pubDate>Tue, 22 Dec 2020 19:00:00 +0800</pubDate>
       
       <guid>https://jianzuoyi.github.io/post/2020-12-22-clinical-microbe-ngs-introduction/</guid>
       
@@ -82,65 +141,6 @@
 &lt;blockquote&gt;
 &lt;p&gt;参考文献：&lt;/p&gt;
 &lt;p&gt;李金明. 高通量测序技术. 北京：中国科学出版社，2018-11-01.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;如果你想自学生物信息学，可以看&lt;a href=&#34;https://zhuanlan.zhihu.com/p/323951235&#34;&gt;如何自学生物信息学：从菜鸟到专家&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;如果你想快速入门Linux，可以看&lt;a href=&#34;https://zhuanlan.zhihu.com/p/302596162&#34;&gt;如何自学生物信息学：一天入门Linux&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;欢迎关注&lt;a href=&#34;https://www.zhihu.com/people/jianzuoyi&#34;&gt;简说基因&lt;/a&gt;，觉得不错，请点个“赞”吧！&lt;/strong&gt;&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>病原微生物高通量测序：第二节 应用场景</title>
-      <link>https://jianzuoyi.github.io/post/2020-12-22-clinical-microbe-ngs-application/</link>
-      <pubDate>Tue, 22 Dec 2020 00:00:00 +0800</pubDate>
-      
-      <guid>https://jianzuoyi.github.io/post/2020-12-22-clinical-microbe-ngs-application/</guid>
-      
-        <description>&lt;p&gt;临床微生物高通量测序，主要有4个应用场景：感染病原识别、微生物组分析、人宿主免疫应答分析和肿瘤学分析。目的不同，采用的测序策略也不一样。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;1.感染病原识别&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;临床微生物高通量测序，第一个重要目的当然是&lt;code&gt;物种鉴定&lt;/code&gt;，找出感染的病原。其次是功能鉴定，如抗生素抗性、病毒抑制剂抗性和毒力因子预测等。&lt;/p&gt;
-&lt;p&gt;测序策略：&lt;/p&gt;
-&lt;p&gt;1.1非靶向测序&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;宏基因组测序；样本：血液（血浆）；用途：培养阴性感染/不明原因的发热/监控免疫受损的病人&lt;/li&gt;
-&lt;li&gt;宏基因组测序；样本：呼吸道分泌物；用途：培养阴性或PCR阴性的急性肺炎&lt;/li&gt;
-&lt;li&gt;宏基因组测序；样本：脑脊液；未确认的脑膜炎或脊髓炎&lt;/li&gt;
-&lt;li&gt;宏基因组测序；样本：粪便；用途：严重腹泻&lt;/li&gt;
-&lt;li&gt;宏基因组测序；样本：感染组织或其他体液；培养阴性感染&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;1.2靶向测序&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;扩增子测序（通用细菌、真菌或寄生虫rRNA测序）；样本：多种体液或组织；用途：多种病原体识别&lt;/li&gt;
-&lt;li&gt;扩增子测序（多重PCR测序）；样本：多种体液或组织；用途：多种病原体识别&lt;/li&gt;
-&lt;li&gt;捕获测序；样本：多种体液或组织；用途：多种病原体识别&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;2.微生物组分析&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;人体不是一座孤岛，除了自身的基因组外，还有大量微生物的基因组。人在疾病状态下，微生物的多样性可能减少。通过宏基因组分析人体内微生物多样性，能够为是否感染提供线索。&lt;/p&gt;
-&lt;p&gt;临床微生物组分析最有价值的应用当属益生菌疗法：从健康人的粪便中获取正常的益生菌，制成药丸给患者服用。除细菌感染外，肥胖、炎症性肠病和糖尿病也是益生菌治疗的潜在应用。&lt;/p&gt;
-&lt;p&gt;测序策略：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;宏基因组测序；样本：粪便；用途：面向消费者的微生物组检测/指导管理和治疗艰难梭酸菌感染/慢性病&lt;/li&gt;
-&lt;li&gt;宏基因组测序；样本：呼吸道分泌物；用途：辅助诊断急性呼吸道感染&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;3.人宿主免疫应答反应分析&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;感染病原体检测，临床上侧重于微生物本身。然而，研究人类宿主对感染的免疫应答反应，即通过基因表达的分析可以作为感染检测的补充。这一方法目前虽然还没有应用于临床，但具有非常大的前景。&lt;/p&gt;
-&lt;p&gt;人类宿主的RNA-Seq分析还可以直接从临床样本中识别新的暂未得到充分重视的宿主-微生物互作关系。随着大规模测序技术在临床应用中的发展，也许会出现由宏基因组检测为主，RNA-Seq分析为辅来提高临床诊断的准确性的应用。&lt;/p&gt;
-&lt;p&gt;测序策略：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;RNA测序；样本：多种样本类型，全血或外周血单核细胞最为常见；用途：辅助感染诊断/疾病预后&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;4.肿瘤学应用&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;肿瘤的全基因组或靶向NGS测序，可以同时检测肿瘤相关的突变和病毒，如疱疹病毒、乳头瘤病毒和多瘤病毒。如果是靶向测序，需要事先加入特定的病毒探针。&lt;/p&gt;
-&lt;p&gt;液体活检样本（如血浆）中获得的细胞游离DNA的宏基因组测序，可能用于同时识别早期癌症和诊断免疫功能低下的患者的感染。&lt;/p&gt;
-&lt;p&gt;测序策略：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;肿瘤全基因组测序；样本：肿瘤组织；用途：鉴定与癌症相关的病毒&lt;/li&gt;
-&lt;li&gt;液态活检测序；样本：无细胞体液；用途：同时进行癌症和传染病检测&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;参考文献：
-Chiu C Y , Miller S A . Clinical metagenomics[J]. Nature Reviews Genetics, 2019.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;如果你想自学生物信息学，可以看&lt;a href=&#34;https://zhuanlan.zhihu.com/p/323951235&#34;&gt;如何自学生物信息学：从菜鸟到专家&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;如果你想快速入门Linux，可以看&lt;a href=&#34;https://zhuanlan.zhihu.com/p/302596162&#34;&gt;如何自学生物信息学：一天入门Linux&lt;/a&gt;&lt;/p&gt;
