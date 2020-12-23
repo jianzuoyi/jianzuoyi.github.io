@@ -17,6 +17,15 @@
     </item>
     
     <item>
+      <title>病原微生物高通量测序：第二节 应用场景</title>
+      <link>https://jianzuoyi.github.io/post/2020-12-22-clinical-microbe-ngs-application/</link>
+      <pubDate>Tue, 22 Dec 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-12-22-clinical-microbe-ngs-application/</guid>
+      <description>临床微生物高通量测序，主要有4个应用场景：感染病原识别、微生物组分析、人宿主免疫应答分析和肿瘤学分析。目的不同，采用的测序策略也不一样。 1.</description>
+    </item>
+    
+    <item>
       <title>病原微生物扩增子数据分析实战（三）：vsearch软件鉴定物种组成</title>
       <link>https://jianzuoyi.github.io/post/2020-09-14.microbe-vsearch/</link>
       <pubDate>Mon, 14 Sep 2020 00:00:00 +0800</pubDate>

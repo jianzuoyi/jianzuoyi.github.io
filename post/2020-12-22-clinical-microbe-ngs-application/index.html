@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>简佐义的博客</title>
+  <title>病原微生物高通量测序：第二节 应用场景 - 简佐义的博客</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,7 +23,8 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="简佐义" />
-  <meta name="description" content="简说基因，让一部分人先懂生信。" />
+  <meta name="description" content="临床微生物高通量测序，主要有4个应用场景：感染病原识别、微生物组分析、人宿主免疫应答分析和肿瘤学分析。目的不同，采用的测序策略也不一样。 1." />
+
   <meta name="keywords" content="生物信息学, 自学生物信息学, 生物信息学学习, 生物学, linux, python, R, 简佐义, 博客, 笔记" />
 
 
@@ -34,8 +35,8 @@
 <meta name="generator" content="Hugo 0.79.0" />
 
 
-<link rel="canonical" href="https://jianzuoyi.github.io/" />
-<link href="/index.xml" rel="alternate" type="application/rss+xml" title="简佐义的博客" />
+<link rel="canonical" href="https://jianzuoyi.github.io/post/2020-12-22-clinical-microbe-ngs-application/" />
+
 
 
 
@@ -58,16 +59,24 @@
 
 
 
-<meta property="og:title" content="简佐义的博客" />
-<meta property="og:description" content="简说基因，让一部分人先懂生信。" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://jianzuoyi.github.io/" />
-<meta property="og:updated_time" content="2020-12-22T00:00:00+08:00" />
-<meta itemprop="name" content="简佐义的博客">
-<meta itemprop="description" content="简说基因，让一部分人先懂生信。">
+<meta property="og:title" content="病原微生物高通量测序：第二节 应用场景" />
+<meta property="og:description" content="临床微生物高通量测序，主要有4个应用场景：感染病原识别、微生物组分析、人宿主免疫应答分析和肿瘤学分析。目的不同，采用的测序策略也不一样。 1." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jianzuoyi.github.io/post/2020-12-22-clinical-microbe-ngs-application/" />
+<meta property="article:published_time" content="2020-12-22T00:00:00+08:00" />
+<meta property="article:modified_time" content="2020-12-22T00:00:00+08:00" />
+<meta itemprop="name" content="病原微生物高通量测序：第二节 应用场景">
+<meta itemprop="description" content="临床微生物高通量测序，主要有4个应用场景：感染病原识别、微生物组分析、人宿主免疫应答分析和肿瘤学分析。目的不同，采用的测序策略也不一样。 1.">
+<meta itemprop="datePublished" content="2020-12-22T00:00:00+08:00" />
+<meta itemprop="dateModified" content="2020-12-22T00:00:00+08:00" />
+<meta itemprop="wordCount" content="1245">
+
+
+
+<meta itemprop="keywords" content="病原微生物,NGS," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="简佐义的博客"/>
-<meta name="twitter:description" content="简说基因，让一部分人先懂生信。"/>
+<meta name="twitter:title" content="病原微生物高通量测序：第二节 应用场景"/>
+<meta name="twitter:description" content="临床微生物高通量测序，主要有4个应用场景：感染病原识别、微生物组分析、人宿主免疫应答分析和肿瘤学分析。目的不同，采用的测序策略也不一样。 1."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -244,7 +253,7 @@
   <ul id="menu" class="menu">
     
     
-        <li class="menu-item active">
+        <li class="menu-item">
         
           
           
@@ -341,254 +350,207 @@
     <main id="main" class="main bg-llight">
       <div class="content-wrapper">
         <div id="content" class="content container">
-          
-<section id="posts" class="posts">
-  
-  
+          <article class="post bg-white">
     
-  
-  
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
+    <header class="post-header">
+      <h1 class="post-title">病原微生物高通量测序：第二节 应用场景</h1>
       
-      <a class="post-link" href="/post/2020-11-17-pysam/">生物信息基础：基因组文件读写（pysam）</a>
-    </h1>
+      <div class="post-meta">
+        <time datetime="2020-12-22" class="post-time">
+          2020-12-22
+        </time>
+        <div class="post-category">
+            <a href="https://jianzuoyi.github.io/categories/%E7%97%85%E5%8E%9F%E5%BE%AE%E7%94%9F%E7%89%A9/"> 病原微生物 </a>
+            
+          </div>
+        
+
+        
+        
+          <span id="busuanzi_container_page_pv">
+            | 阅读 <span id="busuanzi_value_page_pv"></span>
+          </span>
+        
+
+        
+        
+      </div>
+    </header>
+
     
-    <div class="post-meta">
-      <time datetime="2020-11-17" class="post-time">
-        2020-11-17
-      </time>
-      <div class="post-category">
-          <a href="https://jianzuoyi.github.io/categories/%E8%87%AA%E5%AD%A6%E7%94%9F%E4%BF%A1/"> 自学生信 </a>
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents"></nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p>临床微生物高通量测序，主要有4个应用场景：感染病原识别、微生物组分析、人宿主免疫应答分析和肿瘤学分析。目的不同，采用的测序策略也不一样。</p>
+<p><strong>1.感染病原识别</strong></p>
+<p>临床微生物高通量测序，第一个重要目的当然是<code>物种鉴定</code>，找出感染的病原。其次是功能鉴定，如抗生素抗性、病毒抑制剂抗性和毒力因子预测等。</p>
+<p>测序策略：</p>
+<p>1.1非靶向测序</p>
+<ul>
+<li>宏基因组测序；样本：血液（血浆）；用途：培养阴性感染/不明原因的发热/监控免疫受损的病人</li>
+<li>宏基因组测序；样本：呼吸道分泌物；用途：培养阴性或PCR阴性的急性肺炎</li>
+<li>宏基因组测序；样本：脑脊液；未确认的脑膜炎或脊髓炎</li>
+<li>宏基因组测序；样本：粪便；用途：严重腹泻</li>
+<li>宏基因组测序；样本：感染组织或其他体液；培养阴性感染</li>
+</ul>
+<p>1.2靶向测序</p>
+<ul>
+<li>扩增子测序（通用细菌、真菌或寄生虫rRNA测序）；样本：多种体液或组织；用途：多种病原体识别</li>
+<li>扩增子测序（多重PCR测序）；样本：多种体液或组织；用途：多种病原体识别</li>
+<li>捕获测序；样本：多种体液或组织；用途：多种病原体识别</li>
+</ul>
+<p><strong>2.微生物组分析</strong></p>
+<p>人体不是一座孤岛，除了自身的基因组外，还有大量微生物的基因组。人在疾病状态下，微生物的多样性可能减少。通过宏基因组分析人体内微生物多样性，能够为是否感染提供线索。</p>
+<p>临床微生物组分析最有价值的应用当属益生菌疗法：从健康人的粪便中获取正常的益生菌，制成药丸给患者服用。除细菌感染外，肥胖、炎症性肠病和糖尿病也是益生菌治疗的潜在应用。</p>
+<p>测序策略：</p>
+<ul>
+<li>宏基因组测序；样本：粪便；用途：面向消费者的微生物组检测/指导管理和治疗艰难梭酸菌感染/慢性病</li>
+<li>宏基因组测序；样本：呼吸道分泌物；用途：辅助诊断急性呼吸道感染</li>
+</ul>
+<p><strong>3.人宿主免疫应答反应分析</strong></p>
+<p>感染病原体检测，临床上侧重于微生物本身。然而，研究人类宿主对感染的免疫应答反应，即通过基因表达的分析可以作为感染检测的补充。这一方法目前虽然还没有应用于临床，但具有非常大的前景。</p>
+<p>人类宿主的RNA-Seq分析还可以直接从临床样本中识别新的暂未得到充分重视的宿主-微生物互作关系。随着大规模测序技术在临床应用中的发展，也许会出现由宏基因组检测为主，RNA-Seq分析为辅来提高临床诊断的准确性的应用。</p>
+<p>测序策略：</p>
+<ul>
+<li>RNA测序；样本：多种样本类型，全血或外周血单核细胞最为常见；用途：辅助感染诊断/疾病预后</li>
+</ul>
+<p><strong>4.肿瘤学应用</strong></p>
+<p>肿瘤的全基因组或靶向NGS测序，可以同时检测肿瘤相关的突变和病毒，如疱疹病毒、乳头瘤病毒和多瘤病毒。如果是靶向测序，需要事先加入特定的病毒探针。</p>
+<p>液体活检样本（如血浆）中获得的细胞游离DNA的宏基因组测序，可能用于同时识别早期癌症和诊断免疫功能低下的患者的感染。</p>
+<p>测序策略：</p>
+<ul>
+<li>肿瘤全基因组测序；样本：肿瘤组织；用途：鉴定与癌症相关的病毒</li>
+<li>液态活检测序；样本：无细胞体液；用途：同时进行癌症和传染病检测</li>
+</ul>
+<blockquote>
+<p>参考文献：
+Chiu C Y , Miller S A . Clinical metagenomics[J]. Nature Reviews Genetics, 2019.</p>
+</blockquote>
+<p>如果你想自学生物信息学，可以看<a href="https://zhuanlan.zhihu.com/p/323951235">如何自学生物信息学：从菜鸟到专家</a></p>
+<p>如果你想快速入门Linux，可以看<a href="https://zhuanlan.zhihu.com/p/302596162">如何自学生物信息学：一天入门Linux</a></p>
+<p><strong>欢迎关注<a href="https://www.zhihu.com/people/jianzuoyi">简说基因</a>，觉得不错，请点个“赞”吧！</strong></p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">简佐义</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2020-12-22
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content">本站文章皆为原创，转载需注明作者及文章链接，谢谢！</span>
+  </p>
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://jianzuoyi.github.io/tags/%E7%97%85%E5%8E%9F%E5%BE%AE%E7%94%9F%E7%89%A9/">病原微生物</a>
+          <a href="https://jianzuoyi.github.io/tags/ngs/">NGS</a>
           
         </div>
+
       
-      
-      
-    </div>
-  </header>
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/2020-12-22-clinical-microbe-ngs-introduction/">
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
+            <span class="prev-text nav-default">病原微生物高通量测序：第一节 概述</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/rosalind/2020-12-09-rosalind-013-prob/">
+            <span class="next-text nav-default">Rosalind刷题笔记：013 随机DNA序列</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
   
-  <div class="post-content">
-    
-    <div class="post-summary">
-      Pysam是一个Python模块，它打包了高通量测序库htslib的C-API，可用于读写基因组相关文件，如Fasta/Fastq，SAM/
-    </div>
-    <div class="read-more">
-      <a href="/post/2020-11-17-pysam/" class="read-more-link">阅读全文</a>
-    </div>
-    
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    显示 Disqus 评论
   </div>
-</article>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "https://jianzuoyi.github.io/post/2020-12-22-clinical-microbe-ngs-application/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
 
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'jianzuoyi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
   
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/2020-11-16-local-ncbi-db/">一文搞懂NCBI Blast本地数据库（NT/NR等）构建</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2020-11-16" class="post-time">
-        2020-11-16
-      </time>
-      <div class="post-category">
-          <a href="https://jianzuoyi.github.io/categories/%E8%87%AA%E5%AD%A6%E7%94%9F%E4%BF%A1/"> 自学生信 </a>
-          
-        </div>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      一文搞懂NCBI Blast本地数据库（NT/NR等）构建 背景介绍 blast+： ftp://ftp.ncbi.nlm.nih.gov/blast/executables/LATEST blast db：ftp://ftp.ncbi.nlm.nih.gov
-    </div>
-    <div class="read-more">
-      <a href="/post/2020-11-16-local-ncbi-db/" class="read-more-link">阅读全文</a>
-    </div>
-    
   </div>
-</article>
 
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/2020-11-14-online-learning/">在线学习的十条规则</a>
-    </h1>
     
-    <div class="post-meta">
-      <time datetime="2020-11-14" class="post-time">
-        2020-11-14
-      </time>
-      <div class="post-category">
-          <a href="https://jianzuoyi.github.io/categories/%E8%87%AA%E5%AD%A6%E7%94%9F%E4%BF%A1/"> 自学生信 </a>
-          
-        </div>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      人类已经度过了知识匮乏时代。互联网的发展，获取各种知识非常容易。搜索引擎、百科图书以及种类繁多的公开课，如一道道美餐显现在人们面前。 如何高效
-    </div>
-    <div class="read-more">
-      <a href="/post/2020-11-14-online-learning/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
 
   
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/2020-11-14-bioinfo-competition/">生物信息学中重要的评价竞赛</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2020-11-14" class="post-time">
-        2020-11-14
-      </time>
-      <div class="post-category">
-          <a href="https://jianzuoyi.github.io/categories/%E8%87%AA%E5%AD%A6%E7%94%9F%E4%BF%A1/"> 自学生信 </a>
-          
-        </div>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      生物信息学是一门发展非常迅速的新兴学科，其分析软件和流程在不断完善当中。业内经常举办一些“竞赛”。组织者获得一些问题的金标准“真相”，如组装
-    </div>
-    <div class="read-more">
-      <a href="/post/2020-11-14-bioinfo-competition/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/2020-11-13-bioinfo-full-view/">生物信息学：全景</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2020-11-13" class="post-time">
-        2020-11-13
-      </time>
-      <div class="post-category">
-          <a href="https://jianzuoyi.github.io/categories/%E8%87%AA%E5%AD%A6%E7%94%9F%E4%BF%A1/"> 自学生信 </a>
-          
-        </div>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      生物信息学：全景 生物信息学应用领域非常广泛，从学科划分来说，生物科学、农学、林学、医学等所有涉及生命的领域，都有生物信息学的身影。我们可以从
-    </div>
-    <div class="read-more">
-      <a href="/post/2020-11-13-bioinfo-full-view/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
-
-  
-</section>
-
-
-
-
-
-
-  
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-  <nav class="pagination">
-    <ul>
-      
-      <li >
-        <a href="/">1</a>
-      </li>
-      
-      <li >
-        <a href="/page/2/">2</a>
-      </li>
-      
-      <li >
-        <a href="/page/3/">3</a>
-      </li>
-      
-      <li >
-        <a href="/page/4/">4</a>
-      </li>
-      
-      <li >
-        <a href="/page/5/">5</a>
-      </li>
-      
-      <li  class="active" >
-        <a href="/page/6/">6</a>
-      </li>
-      
-      <li >
-        <a href="/page/7/">7</a>
-      </li>
-      
-      <li >
-        <a href="/page/8/">8</a>
-      </li>
-      
-      <li >
-        <a href="/page/9/">9</a>
-      </li>
-      
-    </ul>
-  </nav>
-
-  
-  
-
-
-
-
 
         </div>
       </div>

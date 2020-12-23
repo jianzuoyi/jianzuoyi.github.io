@@ -44,21 +44,21 @@
     </item>
     
     <item>
-      <title>从零开始学PCR技术（零）：PCR技术科普</title>
-      <link>https://jianzuoyi.github.io/post/2020-11-29-pcr-0-kepu/</link>
-      <pubDate>Sun, 29 Nov 2020 00:00:00 +0800</pubDate>
-      
-      <guid>https://jianzuoyi.github.io/post/2020-11-29-pcr-0-kepu/</guid>
-      <description>近日，拿到华大基因CEO尹烨的第二本基因科普书《生命密码2》，其中关于PCR的科普，很精彩。比纯技术文章读起来轻松许多，故摘录在此，与大家分</description>
-    </item>
-    
-    <item>
       <title>从零开始学PCR技术（一）：PCR技术简介</title>
       <link>https://jianzuoyi.github.io/post/2020-11-27-pcr-1-introduction/</link>
       <pubDate>Fri, 27 Nov 2020 00:00:00 +0800</pubDate>
       
       <guid>https://jianzuoyi.github.io/post/2020-11-27-pcr-1-introduction/</guid>
       <description>PCR可能是分子生物学中使用最广泛的技术。虽然我本科学的是生物科学，提过DNA，也跑过PCR，但现在都快忘了PCR的步骤是三个还是四个了。赶</description>
+    </item>
+    
+    <item>
+      <title>从零开始学PCR技术（零）：PCR技术科普</title>
+      <link>https://jianzuoyi.github.io/post/2020-11-29-pcr-0-kepu/</link>
+      <pubDate>Thu, 26 Nov 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-11-29-pcr-0-kepu/</guid>
+      <description>近日，拿到华大基因CEO尹烨的第二本基因科普书《生命密码2》，其中关于PCR的科普，很精彩。比纯技术文章读起来轻松许多，故摘录在此，与大家分</description>
     </item>
     
   </channel>
