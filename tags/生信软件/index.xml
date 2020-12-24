@@ -16,5 +16,14 @@
       <description>今天介绍一个同门师兄开发的Python模块：pyfastx，用于快速随机访问基因组序列文件。 师兄任职于成都大学，专注于生物信息学研究，是真正</description>
     </item>
     
+    <item>
+      <title>生信顶刊文章|Pyfastx：一个快速随机读取基因组数据的Python模块</title>
+      <link>https://jianzuoyi.github.io/post/2020-12-23-pyfastx/</link>
+      <pubDate>Thu, 24 Dec 2020 12:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-12-23-pyfastx/</guid>
+      <description>今天介绍一个同门师兄开发的Python模块：pyfastx，用于快速随机访问基因组序列文件。文章已经发表在生信顶刊《Briefings in Bi</description>
+    </item>
+    
   </channel>
 </rss>
