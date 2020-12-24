@@ -6,7 +6,16 @@
     <description>Recent content in Posts on 简佐义的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 22 Dec 2020 22:00:00 +0800</lastBuildDate><atom:link href="https://jianzuoyi.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 Dec 2020 12:00:00 +0800</lastBuildDate><atom:link href="https://jianzuoyi.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pyfastx：一个快速随机读取基因组数据的Python模块</title>
+      <link>https://jianzuoyi.github.io/post/2020-12-24-pyfastx/</link>
+      <pubDate>Thu, 24 Dec 2020 12:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-12-24-pyfastx/</guid>
+      <description>今天介绍一个同门师兄开发的Python模块：pyfastx，用于快速随机访问基因组序列文件。 师兄任职于成都大学，专注于生物信息学研究，是真正</description>
+    </item>
+    
     <item>
       <title>病原微生物高通量测序：第二节 应用场景</title>
       <link>https://jianzuoyi.github.io/post/2020-12-22-clinical-microbe-ngs-application/</link>
@@ -176,15 +185,6 @@
       
       <guid>https://jianzuoyi.github.io/post/2020-11-29-pcr-2-taq_dna/</guid>
       <description>PCR技术改变了现代分子生物学，而Taq DNA聚合酶改变了PCR。 1986年，Mullis发明了PCR技术，当时使用的是大肠杆菌聚合酶I（K</description>
-    </item>
-    
-    <item>
-      <title>从零开始学PCR技术（一）：PCR技术简介</title>
-      <link>https://jianzuoyi.github.io/post/2020-11-27-pcr-1-introduction/</link>
-      <pubDate>Fri, 27 Nov 2020 00:00:00 +0800</pubDate>
-      
-      <guid>https://jianzuoyi.github.io/post/2020-11-27-pcr-1-introduction/</guid>
-      <description>PCR可能是分子生物学中使用最广泛的技术。虽然我本科学的是生物科学，提过DNA，也跑过PCR，但现在都快忘了PCR的步骤是三个还是四个了。赶</description>
     </item>
     
   </channel>

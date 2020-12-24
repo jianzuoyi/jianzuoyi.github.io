@@ -6,7 +6,16 @@
     <description>Recent content in 自学生信 on 简佐义的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 23 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jianzuoyi.github.io/tags/%E8%87%AA%E5%AD%A6%E7%94%9F%E4%BF%A1/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 Dec 2020 12:00:00 +0800</lastBuildDate><atom:link href="https://jianzuoyi.github.io/tags/%E8%87%AA%E5%AD%A6%E7%94%9F%E4%BF%A1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pyfastx：一个快速随机读取基因组数据的Python模块</title>
+      <link>https://jianzuoyi.github.io/post/2020-12-24-pyfastx/</link>
+      <pubDate>Thu, 24 Dec 2020 12:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-12-24-pyfastx/</guid>
+      <description>今天介绍一个同门师兄开发的Python模块：pyfastx，用于快速随机访问基因组序列文件。 师兄任职于成都大学，专注于生物信息学研究，是真正</description>
+    </item>
+    
     <item>
       <title>如何自学生物信息学：从菜鸟到专家</title>
       <link>https://jianzuoyi.github.io/post/best/2020-11-23-learn-bioinfomatics/</link>
@@ -176,15 +185,6 @@
       
       <guid>https://jianzuoyi.github.io/post/2020-07-19.houlang/</guid>
       <description>(图片来源于网络，侵删) 那些口口声声“不会开发工具就不能搞生信”的人，应该看着你们，像我一样 我看着你们，满怀羡慕 行业积累了几十年的财富 所有的</description>
-    </item>
-    
-    <item>
-      <title>重拾写作：从开始到放弃</title>
-      <link>https://jianzuoyi.github.io/post/2020-07-17.markdown/</link>
-      <pubDate>Fri, 17 Jul 2020 00:00:00 +0800</pubDate>
-      
-      <guid>https://jianzuoyi.github.io/post/2020-07-17.markdown/</guid>
-      <description>这是我的第三个公众号了，前两个都无疾而终，所谓事不过三，难的是坚持！！！ 做过网站，建过论坛，玩过博客和微博，每次都虎头蛇尾，坚持不了几天。 这</description>
     </item>
     
   </channel>

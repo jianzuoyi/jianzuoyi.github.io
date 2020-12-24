@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="zh-cn" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Pyfastx：一个快速随机读取基因组数据的Python模块 - 简佐义的博客</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="知乎：简佐义，公众号：简说基因" />
+  <meta name="description" content="今天介绍一个同门师兄开发的Python模块：pyfastx，用于快速随机访问基因组序列文件。 师兄任职于成都大学，专注于生物信息学研究，是真正" />
+
+  <meta name="keywords" content="生物信息学, 自学生物信息学, 生物信息学学习, 生物学, linux, python, R, 简佐义, 博客, 笔记" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.79.0" />
+
+
+<link rel="canonical" href="https://jianzuoyi.github.io/post/2020-12-24-pyfastx/" />
+
+
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.b3a8813c06e6d785beba22bf8264e174fa2cb3a396b22f9ba24e2c00c18aaf7f.css" integrity="sha256-s6iBPAbm14W&#43;uiK/gmThdPoss6OWsi&#43;bok4sAMGKr38=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+<meta property="og:title" content="Pyfastx：一个快速随机读取基因组数据的Python模块" />
+<meta property="og:description" content="今天介绍一个同门师兄开发的Python模块：pyfastx，用于快速随机访问基因组序列文件。 师兄任职于成都大学，专注于生物信息学研究，是真正" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jianzuoyi.github.io/post/2020-12-24-pyfastx/" />
+<meta property="article:published_time" content="2020-12-24T12:00:00+08:00" />
+<meta property="article:modified_time" content="2020-12-24T12:00:00+08:00" />
+<meta itemprop="name" content="Pyfastx：一个快速随机读取基因组数据的Python模块">
+<meta itemprop="description" content="今天介绍一个同门师兄开发的Python模块：pyfastx，用于快速随机访问基因组序列文件。 师兄任职于成都大学，专注于生物信息学研究，是真正">
+<meta itemprop="datePublished" content="2020-12-24T12:00:00+08:00" />
+<meta itemprop="dateModified" content="2020-12-24T12:00:00+08:00" />
+<meta itemprop="wordCount" content="2772">
+
+
+
+<meta itemprop="keywords" content="自学生信,生信软件," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Pyfastx：一个快速随机读取基因组数据的Python模块"/>
+<meta name="twitter:description" content="今天介绍一个同门师兄开发的Python模块：pyfastx，用于快速随机访问基因组序列文件。 师兄任职于成都大学，专注于生物信息学研究，是真正"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">简佐义的博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/">首页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/categories/">分类</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/post/">归档</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/about/">关于</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://jianzuoyi.github.io/">
+              精选&#43;
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://jianzuoyi.github.io/post/best/2020-11-23-learn-bioinfomatics/">如何自学生物信息学：从菜鸟到专家</a>
+              </li>
+            
+              <li>
+                <a href="https://jianzuoyi.github.io/post/best/2020-11-20.linux/">生信人的自我修养：Linux 命令速查手册</a>
+              </li>
+            
+              <li>
+                <a href="https://jianzuoyi.github.io/post/best/2020-11-19-conda/">生物信息基础：conda包管理器安装及使用</a>
+              </li>
+            
+              <li>
+                <a href="https://jianzuoyi.github.io/post/best/2020-11-09.git/">代码版本控制及托管：我的最佳实践</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      简佐义的博客
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/">首页</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/categories/">分类</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/post/">归档</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/about/">关于</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="https://jianzuoyi.github.io/">精选&#43;</a>
+          <ul class="submenu">
+            
+              <li>
+                <a href="https://jianzuoyi.github.io/post/best/2020-11-23-learn-bioinfomatics/">如何自学生物信息学：从菜鸟到专家</a>
+              </li>
+            
+              <li>
+                <a href="https://jianzuoyi.github.io/post/best/2020-11-20.linux/">生信人的自我修养：Linux 命令速查手册</a>
+              </li>
+            
+              <li>
+                <a href="https://jianzuoyi.github.io/post/best/2020-11-19-conda/">生物信息基础：conda包管理器安装及使用</a>
+              </li>
+            
+              <li>
+                <a href="https://jianzuoyi.github.io/post/best/2020-11-09.git/">代码版本控制及托管：我的最佳实践</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+
+    
+    
+
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">Pyfastx：一个快速随机读取基因组数据的Python模块</h1>
+      
+      <div class="post-meta">
+        <time datetime="2020-12-24" class="post-time">
+          2020-12-24
+        </time>
+        <div class="post-category">
+            <a href="https://jianzuoyi.github.io/categories/%E8%87%AA%E5%AD%A6%E7%94%9F%E4%BF%A1/"> 自学生信 </a>
+            
+          </div>
+        
+
+        
+        
+          <span id="busuanzi_container_page_pv">
+            | 阅读 <span id="busuanzi_value_page_pv"></span>
+          </span>
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#安装">安装</a></li>
+    <li><a href="#fastx-模块">FASTX 模块</a>
+      <ul>
+        <li><a href="#fasta-文件迭代">FASTA 文件迭代</a></li>
+        <li><a href="#fastq-文件迭代">FASTQ 文件迭代</a></li>
+      </ul>
+    </li>
+    <li><a href="#fasta-模块">FASTA 模块</a>
+      <ul>
+        <li><a href="#fasta-文件读取">FASTA 文件读取</a></li>
+        <li><a href="#fasta-文件迭代-1">FASTA 文件迭代</a></li>
+        <li><a href="#fasta-类">FASTA 类</a></li>
+        <li><a href="#sequence-类">Sequence 类</a></li>
+      </ul>
+    </li>
+    <li><a href="#fastq-模块">FASTQ 模块</a>
+      <ul>
+        <li><a href="#fastq-文件读取">FASTQ 文件读取</a></li>
+        <li><a href="#fastq-文件迭代-1">FASTQ 文件迭代</a></li>
+        <li><a href="#fastq-类">FASTQ 类</a></li>
+        <li><a href="#read-类">Read 类</a></li>
+      </ul>
+    </li>
+    <li><a href="#命令行接口">命令行接口</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p>今天介绍一个同门师兄开发的Python模块：pyfastx，用于快速随机访问基因组序列文件。</p>
+<p>师兄任职于成都大学，专注于生物信息学研究，是真正的<code>Too maker</code>。</p>
+<blockquote>
+<p>Pyfastx: a robust python module for fast random access to sequences from plain and gzipped FASTA/Q file</p>
+<p>文章地址：<a href="https://doi.org/10.1093/bib/bbaa368">https://doi.org/10.1093/bib/bbaa368</a></p>
+<p>代码地址：<a href="https://github.com/lmdu/pyfastx">https://github.com/lmdu/pyfastx</a></p>
+</blockquote>
+<p>模块的使用文档非常详细，感兴趣的朋友可以直接到<a href="https://github.com/lmdu/pyfastx">pyfastx官网</a>查看使用说明。</p>
+<p>本文仅作抛砖引玉，首先我们来看一下pyfastx的特点。</p>
+<ul>
+<li>一个接口同时满足FASTA/Q文件读写需求</li>
+<li>轻量级、内存节约</li>
+<li>随机访问压缩的FASTA/Q文件</li>
+<li>逐条迭代读取FASTA文件</li>
+<li>计算FASTA文件的N50和L50</li>
+<li>计算序列的GC含量和核酸组成</li>
+<li>计算反向互补序列</li>
+<li>良好的兼容性，支持分析非标准的FASTA文件</li>
+<li>支持FASTQ文件的碱基质量值转换</li>
+<li>提供命令行接口用于拆分FASTA/Q文件</li>
+</ul>
+<p>功能很多，覆盖了平时序列文件操作的常见需求。Pyfastx内部含有多个功能模块，比如:</p>
+<ul>
+<li>FASTX 接口，为迭代Fasta/q文件提供统一的接口</li>
+<li>FASTA 接口，迭代或随机访问Fasta文件</li>
+<li>FASTQ 接口 ，迭代或随机访问Fastq文件</li>
+<li>Fasta 类，封装好的Fasta文件类</li>
+<li>Fastq类，封装好的Fastq文件类</li>
+<li>Sequence类，提供Fasta记录的常用操作</li>
+<li>Read类，提供Fastq记录的常用操作</li>
+</ul>
+<h2 id="安装">安装</h2>
+<p>目前，pyfastx支持Python 3.5以上的版本，通过<code>pip</code>即可安装。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">pip install pyfastx
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="fastx-模块">FASTX 模块</h2>
+<h3 id="fasta-文件迭代">FASTA 文件迭代</h3>
+<p>迭代 Fasta 文件时，返回一个元组（<code>name, seq, comment</code>），其中 comment  是标题栏第一个空格后面的内容。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">&gt;&gt;&gt; <span class="nv">fa</span> <span class="o">=</span> pyfastx.Fastx<span class="o">(</span><span class="s1">&#39;tests/data/test.fa.gz&#39;</span><span class="o">)</span>
+&gt;&gt;&gt; <span class="k">for</span> name,seq,comment in fa:
+&gt;&gt;&gt;     print<span class="o">(</span>name<span class="o">)</span>
+&gt;&gt;&gt;     print<span class="o">(</span>seq<span class="o">)</span>
+&gt;&gt;&gt;     print<span class="o">(</span>comment<span class="o">)</span>
+
+&gt;&gt;&gt; <span class="c1">#always output uppercase sequence</span>
+&gt;&gt;&gt; <span class="k">for</span> item in pyfastx.Fastx<span class="o">(</span><span class="s1">&#39;tests/data/test.fa&#39;</span>, <span class="nv">uppercase</span><span class="o">=</span>True<span class="o">)</span>:
+&gt;&gt;&gt;     print<span class="o">(</span>item<span class="o">)</span>
+
+&gt;&gt;&gt; <span class="c1">#Manually specify sequence format</span>
+&gt;&gt;&gt; <span class="k">for</span> item in pyfastx.Fastx<span class="o">(</span><span class="s1">&#39;tests/data/test.fa&#39;</span>, <span class="nv">format</span><span class="o">=</span><span class="s2">&#34;fasta&#34;</span><span class="o">)</span>:
+&gt;&gt;&gt;     print<span class="o">(</span>item<span class="o">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="fastq-文件迭代">FASTQ 文件迭代</h3>
+<p>迭代Fastq文件时，返回一个元组（<code>name, seq, qual, comment</code>），其中 comment  是标题栏第一个空格后面的内容。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">&gt;&gt;&gt; <span class="nv">fq</span> <span class="o">=</span> pyfastx.Fastx<span class="o">(</span><span class="s1">&#39;tests/data/test.fq.gz&#39;</span><span class="o">)</span>
+&gt;&gt;&gt; <span class="k">for</span> name,seq,qual,comment in fq:
+&gt;&gt;&gt;     print<span class="o">(</span>name<span class="o">)</span>
+&gt;&gt;&gt;     print<span class="o">(</span>seq<span class="o">)</span>
+&gt;&gt;&gt;     print<span class="o">(</span>qual<span class="o">)</span>
+&gt;&gt;&gt;     print<span class="o">(</span>comment<span class="o">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="fasta-模块">FASTA 模块</h2>
+<p>读取Fasta文件，并且支持随机访问其中的任意序列。</p>
+<p>这里要说明一下顺序迭代和随机读取的区别。顺序迭代顾名思义就是从一个文件的开始逐条记录往后读，直至最后一条记录。</p>
+<p>随机读取就是能够直接访问指定的序列，不需要从头读到尾。怎么实现呢？一般是先要为序列建立索引，pyfastx也不例外。</p>
+<h3 id="fasta-文件读取">FASTA 文件读取</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">&gt;&gt;&gt; import pyfastx
+&gt;&gt;&gt; <span class="nv">fa</span> <span class="o">=</span> pyfastx.Fasta<span class="o">(</span><span class="s1">&#39;test/data/test.fa.gz&#39;</span><span class="o">)</span>
+&gt;&gt;&gt; fa
+&lt;Fasta&gt; test/data/test.fa.gz contains <span class="m">211</span> seqs
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="fasta-文件迭代-1">FASTA 文件迭代</h3>
+<p>Fasta文件中每条序列最重要的就是名称和序列信息了，这两个信息可以方便地通过迭代返回。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">&gt;&gt;&gt; import pyfastx
+&gt;&gt;&gt; <span class="k">for</span> name, seq in pyfastx.Fasta<span class="o">(</span><span class="s1">&#39;test/data/test.fa.gz&#39;</span>, <span class="nv">build_index</span><span class="o">=</span>False<span class="o">)</span>:
+&gt;&gt;&gt;     print<span class="o">(</span>name, seq<span class="o">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>此外也可以直接返回 FASTA 对象。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">&gt;&gt;&gt; import pyfastx
+&gt;&gt;&gt; <span class="k">for</span> seq in pyfastx.Fasta<span class="o">(</span><span class="s1">&#39;test/data/test.fa.gz&#39;</span><span class="o">)</span>:
+&gt;&gt;&gt;     print<span class="o">(</span>seq.name<span class="o">)</span>
+&gt;&gt;&gt;     print<span class="o">(</span>seq.seq<span class="o">)</span>
+&gt;&gt;&gt;     print<span class="o">(</span>seq.description<span class="o">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="fasta-类">FASTA 类</h3>
+<p>FASTA 对象有许多属性和方法可供使用，如计算 GC 含量、计算 N50/L50、提取任意序列等。</p>
+<p>以提取指定序列为例，FASTA 不仅可以提取指定序列，还可以指定序列的某一区间。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">&gt;&gt;&gt; <span class="c1"># get subsequence with start and end position</span>
+&gt;&gt;&gt; <span class="nv">interval</span> <span class="o">=</span> <span class="o">(</span>1, 10<span class="o">)</span>
+&gt;&gt;&gt; fa.fetch<span class="o">(</span><span class="s1">&#39;JZ822577.1&#39;</span>, interval<span class="o">)</span>
+<span class="s1">&#39;CTCTAGAGAT&#39;</span>
+
+&gt;&gt;&gt; <span class="c1"># get subsequences with a list of start and end position</span>
+&gt;&gt;&gt; <span class="nv">intervals</span> <span class="o">=</span> <span class="o">[(</span>1, 10<span class="o">)</span>, <span class="o">(</span>50, 60<span class="o">)]</span>
+&gt;&gt;&gt; fa.fetch<span class="o">(</span><span class="s1">&#39;JZ822577.1&#39;</span>, intervals<span class="o">)</span>
+<span class="s1">&#39;CTCTAGAGATTTTAGTTTGAC&#39;</span>
+
+&gt;&gt;&gt; <span class="c1"># get subsequences with reverse strand</span>
+&gt;&gt;&gt; fa.fetch<span class="o">(</span><span class="s1">&#39;JZ822577.1&#39;</span>, <span class="o">(</span>1, 10<span class="o">)</span>, <span class="nv">strand</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="o">)</span>
+<span class="s1">&#39;ATCTCTAGAG&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>当然，FASTA 对象还有更加花式的序列提取方式。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">&gt;&gt;&gt; <span class="c1"># get sequence like a dictionary by identifier</span>
+&gt;&gt;&gt; <span class="nv">s1</span> <span class="o">=</span> fa<span class="o">[</span><span class="s1">&#39;JZ822577.1&#39;</span><span class="o">]</span>
+&gt;&gt;&gt; s1
+&lt;Sequence&gt; JZ822577.1 with length of <span class="m">333</span>
+
+&gt;&gt;&gt; <span class="c1"># get sequence like a list by index</span>
+&gt;&gt;&gt; <span class="nv">s2</span> <span class="o">=</span> fa<span class="o">[</span>2<span class="o">]</span>
+&gt;&gt;&gt; s2
+&lt;Sequence&gt; JZ822579.1 with length of <span class="m">176</span>
+
+&gt;&gt;&gt; <span class="c1"># get last sequence</span>
+&gt;&gt;&gt; <span class="nv">s3</span> <span class="o">=</span> fa<span class="o">[</span>-1<span class="o">]</span>
+&gt;&gt;&gt; s3
+&lt;Sequence&gt; JZ840318.1 with length of <span class="m">134</span>
+
+&gt;&gt;&gt; <span class="c1"># check a sequence name weather in FASTA file</span>
+&gt;&gt;&gt; <span class="s1">&#39;JZ822577.1&#39;</span> in fa
+True
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="sequence-类">Sequence 类</h3>
+<p>FASTA 文件的记录，被封装成 Sequence 类，为操作 FASTA 文件的记录提供接口。例如，你可以对它进行切片。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">&gt;&gt;&gt; <span class="c1"># get a sub seq from sequence</span>
+&gt;&gt;&gt; <span class="nv">s</span> <span class="o">=</span> fa<span class="o">[</span>-1<span class="o">]</span>
+&gt;&gt;&gt; <span class="nv">ss</span> <span class="o">=</span> s<span class="o">[</span>10:30<span class="o">]</span>
+&gt;&gt;&gt; ss
+&lt;Sequence&gt; JZ840318.1 from <span class="m">11</span> to <span class="m">30</span>
+
+&gt;&gt;&gt; ss.name
+<span class="s1">&#39;JZ840318.1:11-30&#39;</span>
+
+&gt;&gt;&gt; ss.seq
+<span class="s1">&#39;CTTCTTCCTGTGGAAAGTAA&#39;</span>
+
+&gt;&gt;&gt; <span class="nv">ss</span> <span class="o">=</span> s<span class="o">[</span>-10:<span class="o">]</span>
+&gt;&gt;&gt; ss
+&lt;Sequence&gt; JZ840318.1 from <span class="m">125</span> to <span class="m">134</span>
+
+&gt;&gt;&gt; ss.name
+<span class="s1">&#39;JZ840318.1:125-134&#39;</span>
+
+&gt;&gt;&gt; ss.seq
+<span class="s1">&#39;CCATGTTGGT&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>或者对 Sequence 进行反向、互补或反向互补。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">&gt;&gt;&gt; <span class="c1"># get sliced sequence</span>
+&gt;&gt;&gt; fa<span class="o">[</span>0<span class="o">][</span>10:20<span class="o">]</span>.seq
+<span class="s1">&#39;GTCAATTTCC&#39;</span>
+
+&gt;&gt;&gt; <span class="c1"># get reverse of sliced sequence</span>
+&gt;&gt;&gt; fa<span class="o">[</span>0<span class="o">][</span>10:20<span class="o">]</span>.reverse
+<span class="s1">&#39;CCTTTAACTG&#39;</span>
+
+&gt;&gt;&gt; <span class="c1"># get complement of sliced sequence</span>
+&gt;&gt;&gt; fa<span class="o">[</span>0<span class="o">][</span>10:20<span class="o">]</span>.complement
+<span class="s1">&#39;CAGTTAAAGG&#39;</span>
+
+&gt;&gt;&gt; <span class="c1"># get reversed complement sequence, corresponding to sequence in antisense strand</span>
+&gt;&gt;&gt; fa<span class="o">[</span>0<span class="o">][</span>10:20<span class="o">]</span>.antisense
+<span class="s1">&#39;GGAAATTGAC&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="fastq-模块">FASTQ 模块</h2>
+<h3 id="fastq-文件读取">FASTQ 文件读取</h3>
+<p>读取Fastq文件，并支持随机访问，前提是先要构建索引。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">&gt;&gt;&gt; import pyfastx
+&gt;&gt;&gt; <span class="nv">fq</span> <span class="o">=</span> pyfastx.Fastq<span class="o">(</span><span class="s1">&#39;tests/data/test.fq.gz&#39;</span><span class="o">)</span>
+&gt;&gt;&gt; fq
+&lt;Fastq&gt; tests/data/test.fq.gz contains <span class="m">100</span> reads
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="fastq-文件迭代-1">FASTQ 文件迭代</h3>
+<p>Fastq每一条记录有 4 行，其中 comment 通常总为<code>+</code>号，因此有价值的是<code>name, seq, qual</code>三项信息。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">&gt;&gt;&gt; import pyfastx
+&gt;&gt;&gt; <span class="k">for</span> name,seq,qual in pyfastx.Fastq<span class="o">(</span><span class="s1">&#39;tests/data/test.fq.gz&#39;</span>, <span class="nv">build_index</span><span class="o">=</span>False<span class="o">)</span>:
+&gt;&gt;&gt;     print<span class="o">(</span>name<span class="o">)</span>
+&gt;&gt;&gt;     print<span class="o">(</span>seq<span class="o">)</span>
+&gt;&gt;&gt;     print<span class="o">(</span>qual<span class="o">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>也可以直接返回 FASTQ 对象。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">&gt;&gt;&gt; import pyfastx
+&gt;&gt;&gt; <span class="k">for</span> <span class="nb">read</span> in pyfastx.Fastq<span class="o">(</span><span class="s1">&#39;test/data/test.fq.gz&#39;</span><span class="o">)</span>:
+&gt;&gt;&gt;     print<span class="o">(</span>read.name<span class="o">)</span>
+&gt;&gt;&gt;     print<span class="o">(</span>read.seq<span class="o">)</span>
+&gt;&gt;&gt;     print<span class="o">(</span>read.qual<span class="o">)</span>
+&gt;&gt;&gt;     print<span class="o">(</span>read.quali<span class="o">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="fastq-类">FASTQ 类</h3>
+<p>FASTQ 类封装了 Fastq 文件，为 Fastq 文件常用操作提供方便的接口。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">&gt;&gt;&gt; <span class="c1"># get read counts in FASTQ</span>
+&gt;&gt;&gt; len<span class="o">(</span>fq<span class="o">)</span>
+<span class="m">800</span>
+
+&gt;&gt;&gt; <span class="c1"># get total bases</span>
+&gt;&gt;&gt; fq.size
+<span class="m">120000</span>
+
+&gt;&gt;&gt; <span class="c1"># get GC content of FASTQ file</span>
+&gt;&gt;&gt; fq.gc_content
+66.17471313476562
+
+&gt;&gt;&gt; <span class="c1"># get composition of bases in FASTQ</span>
+&gt;&gt;&gt; fq.composition
+<span class="o">{</span><span class="s1">&#39;A&#39;</span>: 20501, <span class="s1">&#39;C&#39;</span>: 39705, <span class="s1">&#39;G&#39;</span>: 39704, <span class="s1">&#39;T&#39;</span>: 20089, <span class="s1">&#39;N&#39;</span>: 1<span class="o">}</span>
+
+&gt;&gt;&gt; <span class="c1"># New in pyfastx 0.6.10</span>
+&gt;&gt;&gt; <span class="c1"># get average length of reads</span>
+&gt;&gt;&gt; fq.avglen
+150.0
+
+&gt;&gt;&gt; <span class="c1"># get maximum lenth of reads</span>
+&gt;&gt;&gt; fq.maxlen
+<span class="m">150</span>
+
+&gt;&gt;&gt; <span class="c1"># get minimum length of reas</span>
+&gt;&gt;&gt; fq.minlen
+<span class="m">150</span>
+
+&gt;&gt;&gt; <span class="c1"># get maximum quality score</span>
+&gt;&gt;&gt; fq.maxqual
+<span class="m">70</span>
+
+&gt;&gt;&gt; <span class="c1"># get minimum quality score</span>
+&gt;&gt;&gt; fq.minqual
+<span class="m">35</span>
+
+&gt;&gt;&gt; <span class="c1"># get phred which affects the quality score conversion</span>
+&gt;&gt;&gt; fq.phred
+<span class="m">33</span>
+
+&gt;&gt;&gt; <span class="c1"># Guess fastq quality encoding system</span>
+&gt;&gt;&gt; <span class="c1"># New in pyfastx 0.4.1</span>
+&gt;&gt;&gt; fq.encoding_type
+<span class="o">[</span><span class="s1">&#39;Sanger Phred+33&#39;</span>, <span class="s1">&#39;Illumina 1.8+ Phred+33&#39;</span><span class="o">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="read-类">Read 类</h3>
+<p>FASTQ 文件的每一条记录是一个 read，Read 类为操作 Fastq 记录提供了接口。</p>
+<p><strong>获取 Read 对象</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">&gt;&gt;&gt; <span class="c1">#get read like a dict by read name</span>
+&gt;&gt;&gt; <span class="nv">r1</span> <span class="o">=</span> fq<span class="o">[</span><span class="s1">&#39;A00129:183:H77K2DMXX:1:1101:4752:1047&#39;</span><span class="o">]</span>
+&gt;&gt;&gt; r1
+&lt;Read&gt; A00129:183:H77K2DMXX:1:1101:4752:1047 with length of <span class="m">150</span>
+
+&gt;&gt;&gt; <span class="c1"># get read like a list by index</span>
+&gt;&gt;&gt; <span class="nv">r2</span> <span class="o">=</span> fq<span class="o">[</span>10<span class="o">]</span>
+&gt;&gt;&gt; r2
+&lt;Read&gt; A00129:183:H77K2DMXX:1:1101:18041:1078 with length of <span class="m">150</span>
+
+&gt;&gt;&gt; <span class="c1"># get the last read</span>
+&gt;&gt;&gt; <span class="nv">r3</span> <span class="o">=</span> fq<span class="o">[</span>-1<span class="o">]</span>
+&gt;&gt;&gt; r3
+&lt;Read&gt; A00129:183:H77K2DMXX:1:1101:31575:4726 with length of <span class="m">150</span>
+
+&gt;&gt;&gt; <span class="c1"># check a read weather in FASTQ file</span>
+&gt;&gt;&gt; <span class="s1">&#39;A00129:183:H77K2DMXX:1:1101:4752:1047&#39;</span> in fq
+True
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>获取 Read 对象的信息。</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">&gt;&gt;&gt; <span class="nv">r</span> <span class="o">=</span> fq<span class="o">[</span>-10<span class="o">]</span>
+&gt;&gt;&gt; r
+&lt;Read&gt; A00129:183:H77K2DMXX:1:1101:1750:4711 with length of <span class="m">150</span>
+
+&gt;&gt;&gt; <span class="c1"># get read order number in FASTQ file</span>
+&gt;&gt;&gt; r.id
+<span class="m">791</span>
+
+&gt;&gt;&gt; <span class="c1"># get read name</span>
+&gt;&gt;&gt; r.name
+<span class="s1">&#39;A00129:183:H77K2DMXX:1:1101:1750:4711&#39;</span>
+
+&gt;&gt;&gt; <span class="c1"># get read full header line, New in pyfastx 0.6.3</span>
+&gt;&gt;&gt; r.description
+<span class="s1">&#39;@A00129:183:H77K2DMXX:1:1101:1750:4711 1:N:0:CAATGGAA+CGAGGCTG&#39;</span>
+
+&gt;&gt;&gt; <span class="c1"># get read length</span>
+&gt;&gt;&gt; len<span class="o">(</span>r<span class="o">)</span>
+<span class="m">150</span>
+
+&gt;&gt;&gt; <span class="c1"># get read sequence</span>
+&gt;&gt;&gt; r.seq
+<span class="s1">&#39;CGAGGAAATCGACGTCACCGATCTGGAAGCCCTGCGCGCCCATCTCAACCAGAAATGGGGTGGCCAGCGCGGCAAGCTGACCCTGCTGCCGTTCCTGGTCCGCGCCATGGTCGTGGCGCTGCGCGACTTCCCGCAGTTGAACGCGCGCTA&#39;</span>
+
+&gt;&gt;&gt; <span class="c1"># get raw string of read, New in pyfastx 0.6.3</span>
+&gt;&gt;&gt; print<span class="o">(</span>r.raw<span class="o">)</span>
+@A00129:183:H77K2DMXX:1:1101:1750:4711 1:N:0:CAATGGAA+CGAGGCTG
+CGAGGAAATCGACGTCACCGATCTGGAAGCCCTGCGCGCCCATCTCAACCAGAAATGGGGTGGCCAGCGCGGCAAGCTGACCCTGCTGCCGTTCCTGGTCCGCGCCATGGTCGTGGCGCTGCGCGACTTCCCGCAGTTGAACGCGCGCTA
++
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF:FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF:FF,FFFFFFFFFFFFFFFFFFFFFFFFFF,F:FFFFFFFFF:
+
+&gt;&gt;&gt; <span class="c1"># get read quality ascii string</span>
+&gt;&gt;&gt; r.qual
+<span class="s1">&#39;FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF:FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF:FF,FFFFFFFFFFFFFFFFFFFFFFFFFF,F:FFFFFFFFF:&#39;</span>
+
+&gt;&gt;&gt; <span class="c1"># get read quality integer value, ascii - 33 or 64</span>
+&gt;&gt;&gt; r.quali
+<span class="o">[</span>37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 25, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 25, 37, 37, 11, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 11, 37, 25, 37, 37, 37, 37, 37, 37, 37, 37, 37, 25<span class="o">]</span>
+
+&gt;&gt;&gt; <span class="c1"># get read length</span>
+&gt;&gt;&gt; len<span class="o">(</span>r<span class="o">)</span>
+<span class="m">150</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="命令行接口">命令行接口</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ pyfastx -h
+
+usage: pyfastx COMMAND <span class="o">[</span>OPTIONS<span class="o">]</span>
+
+A <span class="nb">command</span> line tool <span class="k">for</span> FASTA/Q file manipulation
+
+optional arguments:
+  -h, --help     show this <span class="nb">help</span> message and <span class="nb">exit</span>
+  -v, --version  show program<span class="err">&#39;</span>s version number and <span class="nb">exit</span>
+
+Commands:
+
+    index        build index <span class="k">for</span> fasta/q file
+    stat         show detailed statistics information of fasta/q file
+    split        split fasta/q file into multiple files
+    fq2fa        convert fastq file to fasta file
+    subseq       get subsequences from fasta file by region
+    sample       randomly sample sequences from fasta or fastq file
+    extract      extract full sequences or reads from fasta/q file
+</code></pre></td></tr></table>
+</div>
+</div><p>Pyfastx 还提供了额外接口，方便在命令行下直接操作 Fasta/q 文件。好了，鉴于时间和篇幅有限，这部分大家自行探索吧。</p>
+<p>最后，Pyfastx 虽然已经发表文章，但还在持续维护更新。希望大家多多使用，有什么建议可以跟作者反馈。</p>
+<p>好的工具和用户是共同成长的，祝大家科研顺利。</p>
+<blockquote>
+<p>作者简介：杜联明，博士，成都大学特聘副研究员。毕业于四川大学生物信息学专业，主要从事基因组学与转录组学研究，生物信息学数据库和数据分析软件开发。相关成果发表在Bioinformatics，Molecular Ecology Resources，Aging，Journal of Heredity，Genome Research，Molecular Biology and Evolution等国际知名期刊上。</p>
+</blockquote>
+<p><strong>欢迎关注<a href="https://www.zhihu.com/people/jianzuoyi">简说基因</a>，觉得不错，请点个“赞”吧！</strong></p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">知乎：简佐义，公众号：简说基因</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2020-12-24
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content">本站文章皆为原创，转载需注明作者及文章链接，谢谢！</span>
+  </p>
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://jianzuoyi.github.io/tags/%E8%87%AA%E5%AD%A6%E7%94%9F%E4%BF%A1/">自学生信</a>
+          <a href="https://jianzuoyi.github.io/tags/%E7%94%9F%E4%BF%A1%E8%BD%AF%E4%BB%B6/">生信软件</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/2020-12-22-clinical-microbe-ngs-application/">
+            <span class="next-text nav-default">病原微生物高通量测序：第二节 应用场景</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    显示 Disqus 评论
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "https://jianzuoyi.github.io/post/2020-12-24-pyfastx/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'jianzuoyi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+  
+  </div>
+
+    
+
+  
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+  
+    <a href="mailto:jianzuoyi@qq.com" rel="me noopener" class="iconfont"
+      title="email" >
+      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://github.com/jianzuoyi" rel="me noopener" class="iconfont"
+      title="github"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M512 12.672c-282.88 0-512 229.248-512 512 0 226.261333 146.688 418.133333 350.08 485.76 25.6 4.821333 34.986667-11.008 34.986667-24.618667 0-12.16-0.426667-44.373333-0.64-87.04-142.421333 30.890667-172.458667-68.693333-172.458667-68.693333C188.672 770.986667 155.008 755.2 155.008 755.2c-46.378667-31.744 3.584-31.104 3.584-31.104 51.413333 3.584 78.421333 52.736 78.421333 52.736 45.653333 78.293333 119.850667 55.68 149.12 42.581333 4.608-33.109333 17.792-55.68 32.426667-68.48-113.706667-12.8-233.216-56.832-233.216-253.013333 0-55.893333 19.84-101.546667 52.693333-137.386667-5.76-12.928-23.04-64.981333 4.48-135.509333 0 0 42.88-13.738667 140.8 52.48 40.96-11.392 84.48-17.024 128-17.28 43.52 0.256 87.04 5.888 128 17.28 97.28-66.218667 140.16-52.48 140.16-52.48 27.52 70.528 10.24 122.581333 5.12 135.509333 32.64 35.84 52.48 81.493333 52.48 137.386667 0 196.693333-119.68 240-233.6 252.586667 17.92 15.36 34.56 46.762667 34.56 94.72 0 68.522667-0.64 123.562667-0.64 140.202666 0 13.44 8.96 29.44 35.2 24.32C877.44 942.592 1024 750.592 1024 524.672c0-282.752-229.248-512-512-512"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.zhihu.com/people/jianzuoyi" rel="me noopener" class="iconfont"
+      title="zhihu"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M351.791182 562.469462l192.945407 0c0-45.367257-21.3871-71.939449-21.3871-71.939449L355.897709 490.530013c3.977591-82.182744 7.541767-187.659007 8.816806-226.835262l159.282726 0c0 0-0.86367-67.402109-18.578124-67.402109s-279.979646 0-279.979646 0 16.850783-88.141456 39.318494-127.053698c0 0-83.60514-4.510734-112.121614 106.962104S81.344656 355.077018 76.80834 367.390461c-4.536316 12.313443 24.62791 5.832845 36.941354 0 12.313443-5.832845 68.050885-25.924439 84.252893-103.69571l86.570681 0c1.165546 49.28652 4.596691 200.335724 3.515057 226.835262L109.86113 490.530013c-25.275663 18.147312-33.701566 71.939449-33.701566 71.939449L279.868105 562.469462c-8.497535 56.255235-23.417339 128.763642-44.275389 167.210279-33.05279 60.921511-50.55235 116.65793-169.802314 212.576513 0 0-19.442818 14.257725 40.829917 9.073656 60.273758-5.185093 117.305683-20.739347 156.840094-99.807147 20.553105-41.107233 41.805128-93.250824 58.386782-146.138358l-0.055259 0.185218 167.855986 193.263655c0 0 22.035876-51.847855 5.832845-108.880803L371.045711 650.610918l-42.1244 31.157627-0.045025 0.151449c11.69946-41.020252 20.11206-81.5749 22.726607-116.858498C351.665315 564.212152 351.72876 563.345412 351.791182 562.469462z"></path>
+  <path d="M584.918753 182.033893l0 668.840094 70.318532 0 28.807093 80.512708 121.875768-80.512708 153.600307 0L959.520453 182.033893 584.918753 182.033893zM887.150192 778.934538l-79.837326 0-99.578949 65.782216-23.537066-65.782216-24.855084 0L659.341766 256.673847l227.807403 0L887.149169 778.934538z"></path>
+</svg>
+
+    </a>
+
+
+<a href="https://jianzuoyi.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+   
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    2020
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        知乎：简佐义，公众号：简说基因
+        
+      </span></span>
+
+  
+  
+    <span id="busuanzi_container">
+      访客数/访问量：<span id="busuanzi_value_site_uv"></span>/<span id="busuanzi_value_site_pv"></span>
+    </span>
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
