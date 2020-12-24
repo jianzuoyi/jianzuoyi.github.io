@@ -28,673 +28,11 @@
     </item>
     
     <item>
-      <title>Pyfastx：一个快速随机读取基因组数据的Python模块</title>
+      <title>生信顶刊文章|Pyfastx：一个快速随机读取基因组数据的Python模块</title>
       <link>https://jianzuoyi.github.io/post/2020-12-24-pyfastx/</link>
       <pubDate>Thu, 24 Dec 2020 12:00:00 +0800</pubDate>
       
       <guid>https://jianzuoyi.github.io/post/2020-12-24-pyfastx/</guid>
-      
-        <description>&lt;p&gt;今天介绍一个同门师兄开发的Python模块：pyfastx，用于快速随机访问基因组序列文件。&lt;/p&gt;
-&lt;p&gt;师兄任职于成都大学，专注于生物信息学研究，是真正的&lt;code&gt;Too maker&lt;/code&gt;。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Pyfastx: a robust python module for fast random access to sequences from plain and gzipped FASTA/Q file&lt;/p&gt;
-&lt;p&gt;文章地址：&lt;a href=&#34;https://doi.org/10.1093/bib/bbaa368&#34;&gt;https://doi.org/10.1093/bib/bbaa368&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;代码地址：&lt;a href=&#34;https://github.com/lmdu/pyfastx&#34;&gt;https://github.com/lmdu/pyfastx&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;模块的使用文档非常详细，感兴趣的朋友可以直接到&lt;a href=&#34;https://github.com/lmdu/pyfastx&#34;&gt;pyfastx官网&lt;/a&gt;查看使用说明。&lt;/p&gt;
-&lt;p&gt;本文仅作抛砖引玉，首先我们来看一下pyfastx的特点。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;一个接口同时满足FASTA/Q文件读写需求&lt;/li&gt;
-&lt;li&gt;轻量级、内存节约&lt;/li&gt;
-&lt;li&gt;随机访问压缩的FASTA/Q文件&lt;/li&gt;
-&lt;li&gt;逐条迭代读取FASTA文件&lt;/li&gt;
-&lt;li&gt;计算FASTA文件的N50和L50&lt;/li&gt;
-&lt;li&gt;计算序列的GC含量和核酸组成&lt;/li&gt;
-&lt;li&gt;计算反向互补序列&lt;/li&gt;
-&lt;li&gt;良好的兼容性，支持分析非标准的FASTA文件&lt;/li&gt;
-&lt;li&gt;支持FASTQ文件的碱基质量值转换&lt;/li&gt;
-&lt;li&gt;提供命令行接口用于拆分FASTA/Q文件&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;功能很多，覆盖了平时序列文件操作的常见需求。Pyfastx内部含有多个功能模块，比如:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;FASTX 接口，为迭代Fasta/q文件提供统一的接口&lt;/li&gt;
-&lt;li&gt;FASTA 接口，迭代或随机访问Fasta文件&lt;/li&gt;
-&lt;li&gt;FASTQ 接口 ，迭代或随机访问Fastq文件&lt;/li&gt;
-&lt;li&gt;Fasta 类，封装好的Fasta文件类&lt;/li&gt;
-&lt;li&gt;Fastq类，封装好的Fastq文件类&lt;/li&gt;
-&lt;li&gt;Sequence类，提供Fasta记录的常用操作&lt;/li&gt;
-&lt;li&gt;Read类，提供Fastq记录的常用操作&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
-&lt;p&gt;目前，pyfastx支持Python 3.5以上的版本，通过&lt;code&gt;pip&lt;/code&gt;即可安装。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;pip install pyfastx
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;fastx-模块&#34;&gt;FASTX 模块&lt;/h2&gt;
-&lt;h3 id=&#34;fasta-文件迭代&#34;&gt;FASTA 文件迭代&lt;/h3&gt;
-&lt;p&gt;迭代 Fasta 文件时，返回一个元组（&lt;code&gt;name, seq, comment&lt;/code&gt;），其中 comment  是标题栏第一个空格后面的内容。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;nv&#34;&gt;fa&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; pyfastx.Fastx&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;tests/data/test.fa.gz&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; name,seq,comment in fa:
-&amp;gt;&amp;gt;&amp;gt;     print&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;name&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt;     print&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;seq&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt;     print&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;comment&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;#always output uppercase sequence&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; item in pyfastx.Fastx&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;tests/data/test.fa&amp;#39;&lt;/span&gt;, &lt;span class=&#34;nv&#34;&gt;uppercase&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;True&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;:
-&amp;gt;&amp;gt;&amp;gt;     print&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;item&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;#Manually specify sequence format&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; item in pyfastx.Fastx&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;tests/data/test.fa&amp;#39;&lt;/span&gt;, &lt;span class=&#34;nv&#34;&gt;format&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;fasta&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;:
-&amp;gt;&amp;gt;&amp;gt;     print&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;item&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;fastq-文件迭代&#34;&gt;FASTQ 文件迭代&lt;/h3&gt;
-&lt;p&gt;迭代Fastq文件时，返回一个元组（&lt;code&gt;name, seq, qual, comment&lt;/code&gt;），其中 comment  是标题栏第一个空格后面的内容。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;nv&#34;&gt;fq&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; pyfastx.Fastx&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;tests/data/test.fq.gz&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; name,seq,qual,comment in fq:
-&amp;gt;&amp;gt;&amp;gt;     print&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;name&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt;     print&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;seq&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt;     print&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;qual&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt;     print&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;comment&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;fasta-模块&#34;&gt;FASTA 模块&lt;/h2&gt;
-&lt;p&gt;读取Fasta文件，并且支持随机访问其中的任意序列。&lt;/p&gt;
-&lt;p&gt;这里要说明一下顺序迭代和随机读取的区别。顺序迭代顾名思义就是从一个文件的开始逐条记录往后读，直至最后一条记录。&lt;/p&gt;
-&lt;p&gt;随机读取就是能够直接访问指定的序列，不需要从头读到尾。怎么实现呢？一般是先要为序列建立索引，pyfastx也不例外。&lt;/p&gt;
-&lt;h3 id=&#34;fasta-文件读取&#34;&gt;FASTA 文件读取&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&amp;gt;&amp;gt;&amp;gt; import pyfastx
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;nv&#34;&gt;fa&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; pyfastx.Fasta&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;test/data/test.fa.gz&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; fa
-&amp;lt;Fasta&amp;gt; test/data/test.fa.gz contains &lt;span class=&#34;m&#34;&gt;211&lt;/span&gt; seqs
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;fasta-文件迭代-1&#34;&gt;FASTA 文件迭代&lt;/h3&gt;
-&lt;p&gt;Fasta文件中每条序列最重要的就是名称和序列信息了，这两个信息可以方便地通过迭代返回。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&amp;gt;&amp;gt;&amp;gt; import pyfastx
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; name, seq in pyfastx.Fasta&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;test/data/test.fa.gz&amp;#39;&lt;/span&gt;, &lt;span class=&#34;nv&#34;&gt;build_index&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;False&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;:
-&amp;gt;&amp;gt;&amp;gt;     print&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;name, seq&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;此外也可以直接返回 FASTA 对象。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&amp;gt;&amp;gt;&amp;gt; import pyfastx
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; seq in pyfastx.Fasta&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;test/data/test.fa.gz&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;:
-&amp;gt;&amp;gt;&amp;gt;     print&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;seq.name&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt;     print&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;seq.seq&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt;     print&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;seq.description&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;fasta-类&#34;&gt;FASTA 类&lt;/h3&gt;
-&lt;p&gt;FASTA 对象有许多属性和方法可供使用，如计算 GC 含量、计算 N50/L50、提取任意序列等。&lt;/p&gt;
-&lt;p&gt;以提取指定序列为例，FASTA 不仅可以提取指定序列，还可以指定序列的某一区间。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;# get subsequence with start and end position&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;nv&#34;&gt;interval&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;1, 10&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; fa.fetch&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;JZ822577.1&amp;#39;&lt;/span&gt;, interval&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-&lt;span class=&#34;s1&#34;&gt;&amp;#39;CTCTAGAGAT&amp;#39;&lt;/span&gt;
-
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;# get subsequences with a list of start and end position&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;nv&#34;&gt;intervals&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[(&lt;/span&gt;1, 10&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;50, 60&lt;span class=&#34;o&#34;&gt;)]&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; fa.fetch&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;JZ822577.1&amp;#39;&lt;/span&gt;, intervals&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-&lt;span class=&#34;s1&#34;&gt;&amp;#39;CTCTAGAGATTTTAGTTTGAC&amp;#39;&lt;/span&gt;
-
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;# get subsequences with reverse strand&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; fa.fetch&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;JZ822577.1&amp;#39;&lt;/span&gt;, &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;1, 10&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, &lt;span class=&#34;nv&#34;&gt;strand&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;-&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-&lt;span class=&#34;s1&#34;&gt;&amp;#39;ATCTCTAGAG&amp;#39;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;当然，FASTA 对象还有更加花式的序列提取方式。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;# get sequence like a dictionary by identifier&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;nv&#34;&gt;s1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; fa&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;JZ822577.1&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; s1
-&amp;lt;Sequence&amp;gt; JZ822577.1 with length of &lt;span class=&#34;m&#34;&gt;333&lt;/span&gt;
-
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;# get sequence like a list by index&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;nv&#34;&gt;s2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; fa&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;2&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; s2
-&amp;lt;Sequence&amp;gt; JZ822579.1 with length of &lt;span class=&#34;m&#34;&gt;176&lt;/span&gt;
-
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;# get last sequence&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;nv&#34;&gt;s3&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; fa&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;-1&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; s3
-&amp;lt;Sequence&amp;gt; JZ840318.1 with length of &lt;span class=&#34;m&#34;&gt;134&lt;/span&gt;
-
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;# check a sequence name weather in FASTA file&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;JZ822577.1&amp;#39;&lt;/span&gt; in fa
-True
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;sequence-类&#34;&gt;Sequence 类&lt;/h3&gt;
-&lt;p&gt;FASTA 文件的记录，被封装成 Sequence 类，为操作 FASTA 文件的记录提供接口。例如，你可以对它进行切片。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;# get a sub seq from sequence&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;nv&#34;&gt;s&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; fa&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;-1&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;nv&#34;&gt;ss&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; s&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;10:30&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; ss
-&amp;lt;Sequence&amp;gt; JZ840318.1 from &lt;span class=&#34;m&#34;&gt;11&lt;/span&gt; to &lt;span class=&#34;m&#34;&gt;30&lt;/span&gt;
-
-&amp;gt;&amp;gt;&amp;gt; ss.name
-&lt;span class=&#34;s1&#34;&gt;&amp;#39;JZ840318.1:11-30&amp;#39;&lt;/span&gt;
-
-&amp;gt;&amp;gt;&amp;gt; ss.seq
-&lt;span class=&#34;s1&#34;&gt;&amp;#39;CTTCTTCCTGTGGAAAGTAA&amp;#39;&lt;/span&gt;
-
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;nv&#34;&gt;ss&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; s&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;-10:&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; ss
-&amp;lt;Sequence&amp;gt; JZ840318.1 from &lt;span class=&#34;m&#34;&gt;125&lt;/span&gt; to &lt;span class=&#34;m&#34;&gt;134&lt;/span&gt;
-
-&amp;gt;&amp;gt;&amp;gt; ss.name
-&lt;span class=&#34;s1&#34;&gt;&amp;#39;JZ840318.1:125-134&amp;#39;&lt;/span&gt;
-
-&amp;gt;&amp;gt;&amp;gt; ss.seq
-&lt;span class=&#34;s1&#34;&gt;&amp;#39;CCATGTTGGT&amp;#39;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;或者对 Sequence 进行反向、互补或反向互补。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;# get sliced sequence&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; fa&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;0&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;10:20&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;.seq
-&lt;span class=&#34;s1&#34;&gt;&amp;#39;GTCAATTTCC&amp;#39;&lt;/span&gt;
-
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;# get reverse of sliced sequence&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; fa&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;0&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;10:20&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;.reverse
-&lt;span class=&#34;s1&#34;&gt;&amp;#39;CCTTTAACTG&amp;#39;&lt;/span&gt;
-
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;# get complement of sliced sequence&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; fa&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;0&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;10:20&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;.complement
-&lt;span class=&#34;s1&#34;&gt;&amp;#39;CAGTTAAAGG&amp;#39;&lt;/span&gt;
-
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;# get reversed complement sequence, corresponding to sequence in antisense strand&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; fa&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;0&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;10:20&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;.antisense
-&lt;span class=&#34;s1&#34;&gt;&amp;#39;GGAAATTGAC&amp;#39;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;fastq-模块&#34;&gt;FASTQ 模块&lt;/h2&gt;
-&lt;h3 id=&#34;fastq-文件读取&#34;&gt;FASTQ 文件读取&lt;/h3&gt;
-&lt;p&gt;读取Fastq文件，并支持随机访问，前提是先要构建索引。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&amp;gt;&amp;gt;&amp;gt; import pyfastx
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;nv&#34;&gt;fq&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; pyfastx.Fastq&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;tests/data/test.fq.gz&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; fq
-&amp;lt;Fastq&amp;gt; tests/data/test.fq.gz contains &lt;span class=&#34;m&#34;&gt;100&lt;/span&gt; reads
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;fastq-文件迭代-1&#34;&gt;FASTQ 文件迭代&lt;/h3&gt;
-&lt;p&gt;Fastq每一条记录有 4 行，其中 comment 通常总为&lt;code&gt;+&lt;/code&gt;号，因此有价值的是&lt;code&gt;name, seq, qual&lt;/code&gt;三项信息。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&amp;gt;&amp;gt;&amp;gt; import pyfastx
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; name,seq,qual in pyfastx.Fastq&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;tests/data/test.fq.gz&amp;#39;&lt;/span&gt;, &lt;span class=&#34;nv&#34;&gt;build_index&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;False&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;:
-&amp;gt;&amp;gt;&amp;gt;     print&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;name&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt;     print&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;seq&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt;     print&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;qual&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;也可以直接返回 FASTQ 对象。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&amp;gt;&amp;gt;&amp;gt; import pyfastx
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;read&lt;/span&gt; in pyfastx.Fastq&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;test/data/test.fq.gz&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;:
-&amp;gt;&amp;gt;&amp;gt;     print&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;read.name&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt;     print&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;read.seq&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt;     print&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;read.qual&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt;     print&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;read.quali&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;fastq-类&#34;&gt;FASTQ 类&lt;/h3&gt;
-&lt;p&gt;FASTQ 类封装了 Fastq 文件，为 Fastq 文件常用操作提供方便的接口。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;37
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;38
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;39
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;40
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;41
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;42
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;43
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;44
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;45
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;# get read counts in FASTQ&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; len&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;fq&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-&lt;span class=&#34;m&#34;&gt;800&lt;/span&gt;
-
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;# get total bases&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; fq.size
-&lt;span class=&#34;m&#34;&gt;120000&lt;/span&gt;
-
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;# get GC content of FASTQ file&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; fq.gc_content
-66.17471313476562
-
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;# get composition of bases in FASTQ&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; fq.composition
-&lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;: 20501, &lt;span class=&#34;s1&#34;&gt;&amp;#39;C&amp;#39;&lt;/span&gt;: 39705, &lt;span class=&#34;s1&#34;&gt;&amp;#39;G&amp;#39;&lt;/span&gt;: 39704, &lt;span class=&#34;s1&#34;&gt;&amp;#39;T&amp;#39;&lt;/span&gt;: 20089, &lt;span class=&#34;s1&#34;&gt;&amp;#39;N&amp;#39;&lt;/span&gt;: 1&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
-
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;# New in pyfastx 0.6.10&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;# get average length of reads&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; fq.avglen
-150.0
-
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;# get maximum lenth of reads&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; fq.maxlen
-&lt;span class=&#34;m&#34;&gt;150&lt;/span&gt;
-
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;# get minimum length of reas&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; fq.minlen
-&lt;span class=&#34;m&#34;&gt;150&lt;/span&gt;
-
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;# get maximum quality score&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; fq.maxqual
-&lt;span class=&#34;m&#34;&gt;70&lt;/span&gt;
-
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;# get minimum quality score&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; fq.minqual
-&lt;span class=&#34;m&#34;&gt;35&lt;/span&gt;
-
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;# get phred which affects the quality score conversion&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; fq.phred
-&lt;span class=&#34;m&#34;&gt;33&lt;/span&gt;
-
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;# Guess fastq quality encoding system&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;# New in pyfastx 0.4.1&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; fq.encoding_type
-&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;Sanger Phred+33&amp;#39;&lt;/span&gt;, &lt;span class=&#34;s1&#34;&gt;&amp;#39;Illumina 1.8+ Phred+33&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;read-类&#34;&gt;Read 类&lt;/h3&gt;
-&lt;p&gt;FASTQ 文件的每一条记录是一个 read，Read 类为操作 Fastq 记录提供了接口。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;获取 Read 对象&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;#get read like a dict by read name&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;nv&#34;&gt;r1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; fq&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;A00129:183:H77K2DMXX:1:1101:4752:1047&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; r1
-&amp;lt;Read&amp;gt; A00129:183:H77K2DMXX:1:1101:4752:1047 with length of &lt;span class=&#34;m&#34;&gt;150&lt;/span&gt;
-
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;# get read like a list by index&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;nv&#34;&gt;r2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; fq&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;10&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; r2
-&amp;lt;Read&amp;gt; A00129:183:H77K2DMXX:1:1101:18041:1078 with length of &lt;span class=&#34;m&#34;&gt;150&lt;/span&gt;
-
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;# get the last read&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;nv&#34;&gt;r3&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; fq&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;-1&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; r3
-&amp;lt;Read&amp;gt; A00129:183:H77K2DMXX:1:1101:31575:4726 with length of &lt;span class=&#34;m&#34;&gt;150&lt;/span&gt;
-
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;# check a read weather in FASTQ file&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;A00129:183:H77K2DMXX:1:1101:4752:1047&amp;#39;&lt;/span&gt; in fq
-True
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;strong&gt;获取 Read 对象的信息。&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;37
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;38
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;39
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;40
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;41
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;42
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;nv&#34;&gt;r&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; fq&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;-10&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; r
-&amp;lt;Read&amp;gt; A00129:183:H77K2DMXX:1:1101:1750:4711 with length of &lt;span class=&#34;m&#34;&gt;150&lt;/span&gt;
-
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;# get read order number in FASTQ file&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; r.id
-&lt;span class=&#34;m&#34;&gt;791&lt;/span&gt;
-
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;# get read name&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; r.name
-&lt;span class=&#34;s1&#34;&gt;&amp;#39;A00129:183:H77K2DMXX:1:1101:1750:4711&amp;#39;&lt;/span&gt;
-
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;# get read full header line, New in pyfastx 0.6.3&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; r.description
-&lt;span class=&#34;s1&#34;&gt;&amp;#39;@A00129:183:H77K2DMXX:1:1101:1750:4711 1:N:0:CAATGGAA+CGAGGCTG&amp;#39;&lt;/span&gt;
-
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;# get read length&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; len&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;r&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-&lt;span class=&#34;m&#34;&gt;150&lt;/span&gt;
-
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;# get read sequence&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; r.seq
-&lt;span class=&#34;s1&#34;&gt;&amp;#39;CGAGGAAATCGACGTCACCGATCTGGAAGCCCTGCGCGCCCATCTCAACCAGAAATGGGGTGGCCAGCGCGGCAAGCTGACCCTGCTGCCGTTCCTGGTCCGCGCCATGGTCGTGGCGCTGCGCGACTTCCCGCAGTTGAACGCGCGCTA&amp;#39;&lt;/span&gt;
-
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;# get raw string of read, New in pyfastx 0.6.3&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; print&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;r.raw&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-@A00129:183:H77K2DMXX:1:1101:1750:4711 1:N:0:CAATGGAA+CGAGGCTG
-CGAGGAAATCGACGTCACCGATCTGGAAGCCCTGCGCGCCCATCTCAACCAGAAATGGGGTGGCCAGCGCGGCAAGCTGACCCTGCTGCCGTTCCTGGTCCGCGCCATGGTCGTGGCGCTGCGCGACTTCCCGCAGTTGAACGCGCGCTA
-+
-FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF:FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF:FF,FFFFFFFFFFFFFFFFFFFFFFFFFF,F:FFFFFFFFF:
-
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;# get read quality ascii string&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; r.qual
-&lt;span class=&#34;s1&#34;&gt;&amp;#39;FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF:FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF:FF,FFFFFFFFFFFFFFFFFFFFFFFFFF,F:FFFFFFFFF:&amp;#39;&lt;/span&gt;
-
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;# get read quality integer value, ascii - 33 or 64&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; r.quali
-&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 25, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 25, 37, 37, 11, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 11, 37, 25, 37, 37, 37, 37, 37, 37, 37, 37, 37, 25&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
-
-&amp;gt;&amp;gt;&amp;gt; &lt;span class=&#34;c1&#34;&gt;# get read length&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; len&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;r&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-&lt;span class=&#34;m&#34;&gt;150&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;命令行接口&#34;&gt;命令行接口&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ pyfastx -h
-
-usage: pyfastx COMMAND &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;OPTIONS&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
-
-A &lt;span class=&#34;nb&#34;&gt;command&lt;/span&gt; line tool &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; FASTA/Q file manipulation
-
-optional arguments:
-  -h, --help     show this &lt;span class=&#34;nb&#34;&gt;help&lt;/span&gt; message and &lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt;
-  -v, --version  show program&lt;span class=&#34;err&#34;&gt;&amp;#39;&lt;/span&gt;s version number and &lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt;
-
-Commands:
-
-    index        build index &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; fasta/q file
-    stat         show detailed statistics information of fasta/q file
-    split        split fasta/q file into multiple files
-    fq2fa        convert fastq file to fasta file
-    subseq       get subsequences from fasta file by region
-    sample       randomly sample sequences from fasta or fastq file
-    extract      extract full sequences or reads from fasta/q file
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Pyfastx 还提供了额外接口，方便在命令行下直接操作 Fasta/q 文件。好了，鉴于时间和篇幅有限，这部分大家自行探索吧。&lt;/p&gt;
-&lt;p&gt;最后，Pyfastx 虽然已经发表文章，但还在持续维护更新。希望大家多多使用，有什么建议可以跟作者反馈。&lt;/p&gt;
-&lt;p&gt;好的工具和用户是共同成长的，祝大家科研顺利。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;作者简介：杜联明，博士，成都大学特聘副研究员。毕业于四川大学生物信息学专业，主要从事基因组学与转录组学研究，生物信息学数据库和数据分析软件开发。相关成果发表在Bioinformatics，Molecular Ecology Resources，Aging，Journal of Heredity，Genome Research，Molecular Biology and Evolution等国际知名期刊上。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;欢迎关注&lt;a href=&#34;https://www.zhihu.com/people/jianzuoyi&#34;&gt;简说基因&lt;/a&gt;，觉得不错，请点个“赞”吧！&lt;/strong&gt;&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>生信顶刊文章|Pyfastx：一个快速随机读取基因组数据的Python模块</title>
-      <link>https://jianzuoyi.github.io/post/2020-12-23-pyfastx/</link>
-      <pubDate>Thu, 24 Dec 2020 12:00:00 +0800</pubDate>
-      
-      <guid>https://jianzuoyi.github.io/post/2020-12-23-pyfastx/</guid>
       
         <description>&lt;p&gt;今天介绍一个同门师兄开发的Python模块：pyfastx，用于快速随机访问基因组序列文件。文章已经发表在生信顶刊《Briefings in Bioinformatics》上，必须强行安利一波。&lt;/p&gt;
 &lt;p&gt;师兄任职于成都大学，专注于生物信息学研究，是真正的&lt;code&gt;Too maker&lt;/code&gt;。&lt;/p&gt;
@@ -3302,6 +2640,96 @@ CATCGTAATGACGGCCT
 &lt;p&gt;&lt;a href=&#34;http://muchong.com/html/200507/103133.html&#34;&gt;小木虫：【实验】PCR常见问题总结&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.biomart.cn/experiment/430/457/741/36114.htm&#34;&gt;丁香通：PCR常见问题及解决方案&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://www.zoonbio.com/molecular/PCR-solutions.html&#34;&gt;钟鼎生物：PCR常见问题原因分析及解决方法&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;从零开始学PCR系列文章：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/319757338&#34;&gt;从零开始学PCR技术（一）：PCR技术科普&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/319408322&#34;&gt;从零开始学PCR技术（二）：Taq DNA酶&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/322323091&#34;&gt;从零开始学PCR技术（三）：PCR引物设计&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/324396902&#34;&gt;从零开始学PCR技术（四）：常见问题&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://www.zhihu.com/people/jianzuoyi&#34;&gt;觉得内容不错，请点个赞吧!&lt;/a&gt;&lt;/strong&gt; 日拱一卒，功不唐捐，run run run。。。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>从零开始学PCR技术（三）：PCR引物设计</title>
+      <link>https://jianzuoyi.github.io/post/2020-11-30-pcr-3-primer-design/</link>
+      <pubDate>Mon, 30 Nov 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-11-30-pcr-3-primer-design/</guid>
+      
+        <description>&lt;p&gt;扩增子测序在临床基因检测中有广泛应用，合理的Panel设计非常重要，而Panel设计最终要落地，精心设计引物就是重中之重了。&lt;/p&gt;
+&lt;p&gt;本文通过公开资料整理而成，志在让外行了解一些引物设计的基础知识，深入研究请参考专业文献。本文仅供学习参考，不构成任何具体建议。&lt;/p&gt;
+&lt;h2 id=&#34;背景dna热力学&#34;&gt;背景：DNA热力学&lt;/h2&gt;
+&lt;p&gt;DNA热力学是指温度影响双链DNA（double-stranded DNA，dsDNA）的核酸结构。这部分知识是难的，但如果不深入了解，引物设计过程中可能会犯许多错误。&lt;/p&gt;
+&lt;p&gt;一些基础概念：&lt;/p&gt;
+&lt;p&gt;杂交： 正常情况下，寡核苷酸、DNA或RNA会绑定到其互补序列，互补序列的碱基之间通过氢键连接，最常见的是，核酸碱基对以A = T和G≡C的方式成对形成，其中后者更稳定(由于氢键数较多)。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://jianzuoyi.github.io/img/2020-11-30-DNA_strands_in_solution.jpg&#34; alt=&#34;DNA strands in solution.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;变性：又称DNA解链或融化，是DNA双链因为加热温度升高或者化学物质的诱导变成单链的过程。我们把DNA双链解开一半时所需要的温度称为融点（Melting temperature, T&lt;!-- raw HTML omitted --&gt;m&lt;!-- raw HTML omitted --&gt;）。T&lt;!-- raw HTML omitted --&gt;m&lt;!-- raw HTML omitted --&gt;依赖于DNA分子的长度及其特定的核酸序列组成。&lt;/p&gt;
+&lt;p&gt;复性：又称退火。单链DNA或RNA与互补的探针或引物结合形成配对的双链核苷酸的过程。&lt;/p&gt;
+&lt;h2 id=&#34;关于pcr的7个谬误及改进办法&#34;&gt;关于PCR的7个谬误及改进办法&lt;/h2&gt;
+&lt;h3 id=&#34;myth-1-pcr-nearly-always-works-and-design-is-not-that-important&#34;&gt;Myth 1: PCR Nearly Always Works and Design Is Not that Important&lt;/h3&gt;
+&lt;p&gt;谬误1：PCR随便弄就行了，反正都能工作。&lt;/p&gt;
+&lt;p&gt;有些时候或许确实如此，尤其是一重PCR的时候，但如果是多重PCR就必须要精心设计了。&lt;/p&gt;
+&lt;h3 id=&#34;myth-2-different-methods-for-predicting-hybridization-tsubmsub-are-essentially-equivalent-in-accuracy&#34;&gt;Myth 2: Different Methods for Predicting Hybridization T&lt;!-- raw HTML omitted --&gt;m&lt;!-- raw HTML omitted --&gt; Are Essentially Equivalent in Accuracy&lt;/h3&gt;
+&lt;p&gt;谬误2：随便一种方法预测寡核苷酸的T&lt;!-- raw HTML omitted --&gt;m&lt;!-- raw HTML omitted --&gt;值准确性都差不多。&lt;/p&gt;
+&lt;p&gt;计算T&lt;!-- raw HTML omitted --&gt;m&lt;!-- raw HTML omitted --&gt;最简单的公式是：&lt;/p&gt;
+&lt;p&gt;T&lt;!-- raw HTML omitted --&gt;m&lt;!-- raw HTML omitted --&gt; = 4(G + C) + 2(A + T)&lt;/p&gt;
+&lt;p&gt;这个等式忽略了许多重要信息：T&lt;!-- raw HTML omitted --&gt;m&lt;!-- raw HTML omitted --&gt;值依赖于链的浓度，盐分浓度以及碱基序列。这个公式得到的T&lt;!-- raw HTML omitted --&gt;m&lt;!-- raw HTML omitted --&gt;通常比实验测得的高15℃。因此并不推荐使用，一个更好的公式是：&lt;/p&gt;
+&lt;p&gt;T&lt;!-- raw HTML omitted --&gt;m&lt;!-- raw HTML omitted --&gt; = 81.5C + 16.6 × log10[Na+]+0.41(%G+C)–0.63(%formamide)–600/L&lt;/p&gt;
+&lt;p&gt;其中L是双链DNA的长度。&lt;/p&gt;
+&lt;h3 id=&#34;myth-3-designing-forward-and-reverse-primers-to-have-mathing-tsubmsubs-is-the-best-strategy-to-optimize-for-pcr&#34;&gt;Myth 3: Designing Forward and Reverse Primers to Have Mathing T&lt;!-- raw HTML omitted --&gt;m&lt;!-- raw HTML omitted --&gt;&amp;rsquo;s Is the Best Strategy to Optimize for PCR&lt;/h3&gt;
+&lt;p&gt;谬误3：很多老手都相信这一点：优化PCR设计时，最好让上下游的引物都具有接近的T&lt;!-- raw HTML omitted --&gt;m&lt;!-- raw HTML omitted --&gt;。&lt;/p&gt;
+&lt;p&gt;许多软件也是基于这一策略设计的。但这是有缺陷的，用Δ&lt;em&gt;G&lt;/em&gt;°比T&lt;!-- raw HTML omitted --&gt;m&lt;!-- raw HTML omitted --&gt;要好。&lt;/p&gt;
+&lt;h3 id=&#34;myth-4-primer-dimer-artifacts-are-due-to-dimerization&#34;&gt;Myth 4: &amp;ldquo;Primer Dimer&amp;rdquo; Artifacts Are Due to Dimerization&lt;/h3&gt;
+&lt;p&gt;谬误4：引物二聚体只是引物的二聚化。&lt;/p&gt;
+&lt;p&gt;常见导致引物二聚体的因素有：3&amp;rsquo;端互补，5&amp;rsquo;端或中间序列互补，高循环数（&amp;gt;35），掺入外源基因组DNA，引物结合靶DNA的效率低，使用具有校正活性的DNA聚合酶（Pfu等）因3&amp;rsquo;外切活性可能使原本不匹配的3&amp;rsquo;端互补。&lt;/p&gt;
+&lt;h3 id=&#34;myth-5-a-blast-search-is-the-best-method-for-determing-the-specificity-of-a-primer&#34;&gt;Myth 5: A BLAST Search Is the Best Method for Determing the Specificity of a Primer&lt;/h3&gt;
+&lt;p&gt;谬误5：BLAST搜索是检验引物特异性的最佳方法。&lt;/p&gt;
+&lt;p&gt;事实上，热力学参数比序列相似性能够更好地预测引物特异性。&lt;/p&gt;
+&lt;h3 id=&#34;myth-6-at-the-end-of-pcr-amplification-efficiency-is-not-exponential-because-the-primers-or-ntps-are-exhausted-or-the-polymerase-looses-activity&#34;&gt;Myth 6: At the End of PCR, Amplification Efficiency Is Not Exponential Because the Primers or NTPs Are Exhausted or the Polymerase Looses Activity&lt;/h3&gt;
+&lt;p&gt;谬误6：PCR平台期的出现是因为引物或dNTP耗尽，或者酶失去活性。&lt;/p&gt;
+&lt;p&gt;实则不然，真正导致平台期的原因是积累的dsDNA产物的抑制，这已经得到了实验证明。&lt;/p&gt;
+&lt;h3 id=&#34;myth-7-multiplex-pcr-can-succeed-by-optimization-of-individual-pcrs&#34;&gt;Myth 7: Multiplex PCR Can Succeed by Optimization of Individual PCRs&lt;/h3&gt;
+&lt;p&gt;谬误7：可以通过优化单重PCR来优化多重PCR。&lt;/p&gt;
+&lt;p&gt;设计良好的单重PCR确实有助于开发多重PCR，但如果只使用这种策略则过于简单。还需要使用软件而不是人工来协助设计。&lt;/p&gt;
+&lt;h2 id=&#34;pcr引物设计原则&#34;&gt;PCR引物设计原则&lt;/h2&gt;
+&lt;p&gt;PCR反应中有两条引物，即5′端引物和3′引物。设计引物时以一条DNA单链为基准（常以信息链为基准），5′端引物与位于待扩增片段5′端上的一小段DNA序列相同；3′端引物与位于待扩增片段3′端的一小段DNA序列互补。&lt;/p&gt;
+&lt;h3 id=&#34;1-引物设计基本原则&#34;&gt;1. 引物设计基本原则&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;引物长度：18-26bp，可放宽至18-30bp（有研究表明超过30bp再增加引物长度意义不大）；&lt;/li&gt;
+&lt;li&gt;引物碱基：G+C含量以40-60%为宜，G+C太少扩增效果不佳，G+C 过多易出现非特异条带。ATGC最好随机分布，避免5个以上的嘌呤或嘧啶核苷酸的成串排列存在；&lt;/li&gt;
+&lt;li&gt;引物T&lt;!-- raw HTML omitted --&gt;m&lt;!-- raw HTML omitted --&gt;：54-58℃，可放宽至52～62℃，GC%&amp;gt;60%可进一步放宽；&lt;/li&gt;
+&lt;li&gt;扩增子T&lt;!-- raw HTML omitted --&gt;m&lt;!-- raw HTML omitted --&gt;：&amp;gt;92℃；&lt;/li&gt;
+&lt;li&gt;3&amp;rsquo;端：优选三联体WSS、SWS、TTS，二连体GC，单体S，尽量规避WWW、CGW、GGG、CG；&lt;/li&gt;
+&lt;li&gt;引物与非特异扩增区的序列的同源性不要超过70%，引物3′末端连续8个碱基在待扩增区以外不能有完全互补序列，否则易导致非特异性扩增；&lt;/li&gt;
+&lt;li&gt;末端2bp最好为GC；&lt;/li&gt;
+&lt;li&gt;引物的5′端可以修饰。如附加限制酶位点，引入突变位点，用生物素、荧光物质、地高辛标记，加入其它短序列，包括起始密码子、终止密码子等；&lt;/li&gt;
+&lt;li&gt;其他：避免3&amp;rsquo;端8bp及以上序列与模板多位点互补，尽量避免上下游3&amp;rsquo;端4bp及以上反向互补，尽量避免内部回文。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;基于上述原则，怎么在实践中应用呢？这要分两种情况：
+(1) 基因克隆PCR引物设计&lt;/p&gt;
+&lt;p&gt;这种情况我们往往并没有太多选择，只能从ATG开始，从TAA等结束，什么GC%、二聚体和错配，可能根本由不得我们。既然起点定了，那只能通过改变长度来匹配最优设计要求了。
+(2) 鉴定PCR引物设计&lt;/p&gt;
+&lt;p&gt;我们只需要确认一段DNA序列上的一部分，起点是相对的，我们可以在整个序列范围内搜索，引物设计的灵活性大大提高，当然搜索时间也要增加。&lt;/p&gt;
+&lt;h3 id=&#34;2-引物设计软件&#34;&gt;2. 引物设计软件&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Primer Premier5.0 （自动搜索）&lt;/li&gt;
+&lt;li&gt;vOligo6 （引物评价）&lt;/li&gt;
+&lt;li&gt;vVector NTI Suit&lt;/li&gt;
+&lt;li&gt;vDNAsis&lt;/li&gt;
+&lt;li&gt;vOmiga&lt;/li&gt;
+&lt;li&gt;vDNAstar&lt;/li&gt;
+&lt;li&gt;vPrimer3 （在线服务）&lt;/li&gt;
+&lt;li&gt;ThermoBLAST&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;参考文献&#34;&gt;参考文献&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;PCR Primer Design, 《Methods In Molecular Biology》第402卷&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://links.jianshu.com/go?to=http%3A%2F%2Fcshprotocols.cshlp.org%2Fcontent%2F2009%2F3%2Fpdb.ip65.full.pdf%2Bhtml&#34;&gt;PCR Primer Design&lt;/a&gt;来自于2009年第3卷（doi:doi:10.1101/pdb.ip65）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://links.jianshu.com/go?to=https%3A%2F%2Fwww.ajol.info%2Findex.php%2Fajb%2Farticle%2Fdownload%2F14794%2F58513&#34;&gt;Bioinformatic tools and guideline for PCR primer design(10.5897/AJB2003.000-1019)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.jianshu.com/p/3a2f28bff33d&#34;&gt;临窗听风雨：PCR引物设计大法&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://baike.baidu.com/item/%E8%81%9A%E5%90%88%E9%85%B6%E9%93%BE%E5%BC%8F%E5%8F%8D%E5%BA%94/555320?fromtitle=PCR&amp;amp;fromid=9806&amp;amp;fr=aladdin&#34;&gt;百度百科：聚合酶链式反应&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt;从零开始学PCR系列文章：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/319757338&#34;&gt;从零开始学PCR技术（一）：PCR技术科普&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/319408322&#34;&gt;从零开始学PCR技术（二）：Taq DNA酶&lt;/a&gt;&lt;/p&gt;

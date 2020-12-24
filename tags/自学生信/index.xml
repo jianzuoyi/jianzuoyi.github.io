@@ -8,20 +8,11 @@
     <language>zh-cn</language>
     <lastBuildDate>Thu, 24 Dec 2020 12:00:00 +0800</lastBuildDate><atom:link href="https://jianzuoyi.github.io/tags/%E8%87%AA%E5%AD%A6%E7%94%9F%E4%BF%A1/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Pyfastx：一个快速随机读取基因组数据的Python模块</title>
+      <title>生信顶刊文章|Pyfastx：一个快速随机读取基因组数据的Python模块</title>
       <link>https://jianzuoyi.github.io/post/2020-12-24-pyfastx/</link>
       <pubDate>Thu, 24 Dec 2020 12:00:00 +0800</pubDate>
       
       <guid>https://jianzuoyi.github.io/post/2020-12-24-pyfastx/</guid>
-      <description>今天介绍一个同门师兄开发的Python模块：pyfastx，用于快速随机访问基因组序列文件。 师兄任职于成都大学，专注于生物信息学研究，是真正</description>
-    </item>
-    
-    <item>
-      <title>生信顶刊文章|Pyfastx：一个快速随机读取基因组数据的Python模块</title>
-      <link>https://jianzuoyi.github.io/post/2020-12-23-pyfastx/</link>
-      <pubDate>Thu, 24 Dec 2020 12:00:00 +0800</pubDate>
-      
-      <guid>https://jianzuoyi.github.io/post/2020-12-23-pyfastx/</guid>
       <description>今天介绍一个同门师兄开发的Python模块：pyfastx，用于快速随机访问基因组序列文件。文章已经发表在生信顶刊《Briefings in Bi</description>
     </item>
     
@@ -185,6 +176,15 @@
       
       <guid>https://jianzuoyi.github.io/post/2020-07-18.ssh/</guid>
       <description>作为一名生信工程师，每天都要跟服务器打交道，如何登录到远程服务器上去呢？通常有两种方法： 通过专用软件登录，常用的有： Xshell, 收费软件（支持平台：W</description>
+    </item>
+    
+    <item>
+      <title>奔涌吧，生信！</title>
+      <link>https://jianzuoyi.github.io/post/2020-07-19.houlang/</link>
+      <pubDate>Sun, 19 Jul 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-07-19.houlang/</guid>
+      <description>(图片来源于网络，侵删) 那些口口声声“不会开发工具就不能搞生信”的人，应该看着你们，像我一样 我看着你们，满怀羡慕 行业积累了几十年的财富 所有的</description>
     </item>
     
   </channel>
