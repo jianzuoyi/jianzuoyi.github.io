@@ -35,7 +35,7 @@
       <guid>https://jianzuoyi.github.io/post/2020-12-24-pyfastx/</guid>
       
         <description>&lt;p&gt;今天介绍一个同门师兄开发的Python模块：pyfastx，用于快速随机访问基因组序列文件。文章已经发表在生信顶刊《Briefings in Bioinformatics》上，必须强行安利一波。&lt;/p&gt;
-&lt;p&gt;师兄任职于成都大学，专注于生物信息学研究，是真正的&lt;code&gt;Too maker&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;师兄任职于成都大学，专注于生物信息学研究，是真正的&lt;code&gt;Tool maker&lt;/code&gt;。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Pyfastx: a robust python module for fast random access to sequences from plain and gzipped FASTA/Q file&lt;/p&gt;
 &lt;p&gt;文章地址：&lt;a href=&#34;https://doi.org/10.1093/bib/bbaa368&#34;&gt;https://doi.org/10.1093/bib/bbaa368&lt;/a&gt;&lt;/p&gt;
