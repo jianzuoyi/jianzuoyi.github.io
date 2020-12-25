@@ -66,21 +66,28 @@
   
   <url>
     <loc>https://jianzuoyi.github.io/tags/ngs/</loc>
-    <lastmod>2020-12-22T00:00:00+08:00</lastmod>
+    <lastmod>2020-12-23T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://jianzuoyi.github.io/tags/%E7%97%85%E5%8E%9F%E5%BE%AE%E7%94%9F%E7%89%A9/</loc>
-    <lastmod>2020-12-22T00:00:00+08:00</lastmod>
+    <lastmod>2020-12-23T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://jianzuoyi.github.io/categories/%E7%97%85%E5%8E%9F%E5%BE%AE%E7%94%9F%E7%89%A9/</loc>
-    <lastmod>2020-12-22T00:00:00+08:00</lastmod>
+    <lastmod>2020-12-23T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-12-23-clinical-microbe-ngs-theory/</loc>
+    <lastmod>2020-12-23T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

@@ -690,6 +690,58 @@ Commands:
     </item>
     
     <item>
+      <title>病原微生物高通量测序：第三节 检测原理</title>
+      <link>https://jianzuoyi.github.io/post/2020-12-23-clinical-microbe-ngs-theory/</link>
+      <pubDate>Wed, 23 Dec 2020 15:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-12-23-clinical-microbe-ngs-theory/</guid>
+      
+        <description>&lt;p&gt;临床微生物高通量检测，应用场景不同，各种测序技术令人眼花缭乱，但我们可以做如下总结。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;检测对象：病原体核酸，或人宿主自身核酸&lt;/li&gt;
+&lt;li&gt;测序技术：DNA测序，或RNA测序&lt;/li&gt;
+&lt;li&gt;测序范围：DNA靶向，或DNA非靶向；所有RNA，或部分RNA&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;进而可以归纳为两大类，四小类测序策略。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;以微生物核酸为检测对象：
+&lt;ul&gt;
+&lt;li&gt;病原基因组测序（metagenomic）&lt;/li&gt;
+&lt;li&gt;病原转录组测序（metatranscriptomic）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;以人宿主自身核酸为检测对象：
+&lt;ul&gt;
+&lt;li&gt;人基因组测序（DNA-Seq）&lt;/li&gt;
+&lt;li&gt;人转录组测序（RNA-Seq）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;目前，”病原微生物基因检测“约等于”病原宏基因组检测“，正如“精准医疗”约等于“肿瘤基因检测”一样。&lt;/p&gt;
+&lt;p&gt;作为宏基因组的补充，基于多重PCR的靶向测序，具有非常大的应用情景。&lt;/p&gt;
+&lt;p&gt;而其他技术，如宏转录组、RNA-Seq研究病原与人的互作等目前都还处于探索阶段。&lt;/p&gt;
+&lt;h2 id=&#34;1-非靶向测序untargeted-ngsmngs&#34;&gt;1. 非靶向测序（untargeted NGS，mNGS）&lt;/h2&gt;
+&lt;p&gt;非靶向的宏基因组测序，优势是大而全，不管有多少种微生物感染，理论上都一次给测出来。不仅能测已知病原，还能发现未知病原体。&lt;/p&gt;
+&lt;p&gt;但是它最大的缺点，就是灵敏度严重依赖于受背景干扰的程度。特别是组织样本，含有大量人体细胞，测出来的数据 99% 都是人的DNA序列。&lt;/p&gt;
+&lt;p&gt;因此可以说，宏基因组测序，就是大海捞针。而靶向测序，则可与之互为补充。&lt;/p&gt;
+&lt;h2 id=&#34;2-靶向测序targeted-ngs-tngs&#34;&gt;2. 靶向测序（targeted NGS, tNGS）&lt;/h2&gt;
+&lt;p&gt;靶向扩增子测序是先富集目的DNA序列，再测序。这样可以增加测序数据中目标序列的比例，进而提高检测的灵敏度。&lt;/p&gt;
+&lt;p&gt;常用于富含DNA的手段有扩增和捕获两种。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;扩增：&lt;/strong&gt; 通过PCR反应增加目的片段的数量。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;捕获：&lt;/strong&gt; 通过核酸探针与目的片段进行杂交，从而抓取目的序列进行测序。&lt;/p&gt;
+&lt;p&gt;显然，靶向测序只能用于核酸序列已知的病原体的检测。其好处是灵敏度高、成本低。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;参考文献：&lt;/p&gt;
+&lt;p&gt;Chiu C Y , Miller S A . Clinical metagenomics[J]. Nature Reviews Genetics, 2019.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果你想自学生物信息学，可以看&lt;a href=&#34;https://zhuanlan.zhihu.com/p/323951235&#34;&gt;如何自学生物信息学：从菜鸟到专家&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果你想快速入门Linux，可以看&lt;a href=&#34;https://zhuanlan.zhihu.com/p/302596162&#34;&gt;如何自学生物信息学：一天入门Linux&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;欢迎关注&lt;a href=&#34;https://www.zhihu.com/people/jianzuoyi&#34;&gt;简说基因&lt;/a&gt;，觉得不错，请点个“赞”吧！&lt;/strong&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>病原微生物高通量测序：第二节 应用场景</title>
       <link>https://jianzuoyi.github.io/post/2020-12-22-clinical-microbe-ngs-application/</link>
       <pubDate>Tue, 22 Dec 2020 22:00:00 +0800</pubDate>
@@ -2640,96 +2692,6 @@ CATCGTAATGACGGCCT
 &lt;p&gt;&lt;a href=&#34;http://muchong.com/html/200507/103133.html&#34;&gt;小木虫：【实验】PCR常见问题总结&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.biomart.cn/experiment/430/457/741/36114.htm&#34;&gt;丁香通：PCR常见问题及解决方案&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://www.zoonbio.com/molecular/PCR-solutions.html&#34;&gt;钟鼎生物：PCR常见问题原因分析及解决方法&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;从零开始学PCR系列文章：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/319757338&#34;&gt;从零开始学PCR技术（一）：PCR技术科普&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/319408322&#34;&gt;从零开始学PCR技术（二）：Taq DNA酶&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/322323091&#34;&gt;从零开始学PCR技术（三）：PCR引物设计&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/324396902&#34;&gt;从零开始学PCR技术（四）：常见问题&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://www.zhihu.com/people/jianzuoyi&#34;&gt;觉得内容不错，请点个赞吧!&lt;/a&gt;&lt;/strong&gt; 日拱一卒，功不唐捐，run run run。。。&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>从零开始学PCR技术（三）：PCR引物设计</title>
-      <link>https://jianzuoyi.github.io/post/2020-11-30-pcr-3-primer-design/</link>
-      <pubDate>Mon, 30 Nov 2020 00:00:00 +0800</pubDate>
-      
-      <guid>https://jianzuoyi.github.io/post/2020-11-30-pcr-3-primer-design/</guid>
-      
-        <description>&lt;p&gt;扩增子测序在临床基因检测中有广泛应用，合理的Panel设计非常重要，而Panel设计最终要落地，精心设计引物就是重中之重了。&lt;/p&gt;
-&lt;p&gt;本文通过公开资料整理而成，志在让外行了解一些引物设计的基础知识，深入研究请参考专业文献。本文仅供学习参考，不构成任何具体建议。&lt;/p&gt;
-&lt;h2 id=&#34;背景dna热力学&#34;&gt;背景：DNA热力学&lt;/h2&gt;
-&lt;p&gt;DNA热力学是指温度影响双链DNA（double-stranded DNA，dsDNA）的核酸结构。这部分知识是难的，但如果不深入了解，引物设计过程中可能会犯许多错误。&lt;/p&gt;
-&lt;p&gt;一些基础概念：&lt;/p&gt;
-&lt;p&gt;杂交： 正常情况下，寡核苷酸、DNA或RNA会绑定到其互补序列，互补序列的碱基之间通过氢键连接，最常见的是，核酸碱基对以A = T和G≡C的方式成对形成，其中后者更稳定(由于氢键数较多)。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://jianzuoyi.github.io/img/2020-11-30-DNA_strands_in_solution.jpg&#34; alt=&#34;DNA strands in solution.jpg&#34;&gt;&lt;/p&gt;
-&lt;p&gt;变性：又称DNA解链或融化，是DNA双链因为加热温度升高或者化学物质的诱导变成单链的过程。我们把DNA双链解开一半时所需要的温度称为融点（Melting temperature, T&lt;!-- raw HTML omitted --&gt;m&lt;!-- raw HTML omitted --&gt;）。T&lt;!-- raw HTML omitted --&gt;m&lt;!-- raw HTML omitted --&gt;依赖于DNA分子的长度及其特定的核酸序列组成。&lt;/p&gt;
-&lt;p&gt;复性：又称退火。单链DNA或RNA与互补的探针或引物结合形成配对的双链核苷酸的过程。&lt;/p&gt;
-&lt;h2 id=&#34;关于pcr的7个谬误及改进办法&#34;&gt;关于PCR的7个谬误及改进办法&lt;/h2&gt;
-&lt;h3 id=&#34;myth-1-pcr-nearly-always-works-and-design-is-not-that-important&#34;&gt;Myth 1: PCR Nearly Always Works and Design Is Not that Important&lt;/h3&gt;
-&lt;p&gt;谬误1：PCR随便弄就行了，反正都能工作。&lt;/p&gt;
-&lt;p&gt;有些时候或许确实如此，尤其是一重PCR的时候，但如果是多重PCR就必须要精心设计了。&lt;/p&gt;
-&lt;h3 id=&#34;myth-2-different-methods-for-predicting-hybridization-tsubmsub-are-essentially-equivalent-in-accuracy&#34;&gt;Myth 2: Different Methods for Predicting Hybridization T&lt;!-- raw HTML omitted --&gt;m&lt;!-- raw HTML omitted --&gt; Are Essentially Equivalent in Accuracy&lt;/h3&gt;
-&lt;p&gt;谬误2：随便一种方法预测寡核苷酸的T&lt;!-- raw HTML omitted --&gt;m&lt;!-- raw HTML omitted --&gt;值准确性都差不多。&lt;/p&gt;
-&lt;p&gt;计算T&lt;!-- raw HTML omitted --&gt;m&lt;!-- raw HTML omitted --&gt;最简单的公式是：&lt;/p&gt;
-&lt;p&gt;T&lt;!-- raw HTML omitted --&gt;m&lt;!-- raw HTML omitted --&gt; = 4(G + C) + 2(A + T)&lt;/p&gt;
-&lt;p&gt;这个等式忽略了许多重要信息：T&lt;!-- raw HTML omitted --&gt;m&lt;!-- raw HTML omitted --&gt;值依赖于链的浓度，盐分浓度以及碱基序列。这个公式得到的T&lt;!-- raw HTML omitted --&gt;m&lt;!-- raw HTML omitted --&gt;通常比实验测得的高15℃。因此并不推荐使用，一个更好的公式是：&lt;/p&gt;
-&lt;p&gt;T&lt;!-- raw HTML omitted --&gt;m&lt;!-- raw HTML omitted --&gt; = 81.5C + 16.6 × log10[Na+]+0.41(%G+C)–0.63(%formamide)–600/L&lt;/p&gt;
-&lt;p&gt;其中L是双链DNA的长度。&lt;/p&gt;
-&lt;h3 id=&#34;myth-3-designing-forward-and-reverse-primers-to-have-mathing-tsubmsubs-is-the-best-strategy-to-optimize-for-pcr&#34;&gt;Myth 3: Designing Forward and Reverse Primers to Have Mathing T&lt;!-- raw HTML omitted --&gt;m&lt;!-- raw HTML omitted --&gt;&amp;rsquo;s Is the Best Strategy to Optimize for PCR&lt;/h3&gt;
-&lt;p&gt;谬误3：很多老手都相信这一点：优化PCR设计时，最好让上下游的引物都具有接近的T&lt;!-- raw HTML omitted --&gt;m&lt;!-- raw HTML omitted --&gt;。&lt;/p&gt;
-&lt;p&gt;许多软件也是基于这一策略设计的。但这是有缺陷的，用Δ&lt;em&gt;G&lt;/em&gt;°比T&lt;!-- raw HTML omitted --&gt;m&lt;!-- raw HTML omitted --&gt;要好。&lt;/p&gt;
-&lt;h3 id=&#34;myth-4-primer-dimer-artifacts-are-due-to-dimerization&#34;&gt;Myth 4: &amp;ldquo;Primer Dimer&amp;rdquo; Artifacts Are Due to Dimerization&lt;/h3&gt;
-&lt;p&gt;谬误4：引物二聚体只是引物的二聚化。&lt;/p&gt;
-&lt;p&gt;常见导致引物二聚体的因素有：3&amp;rsquo;端互补，5&amp;rsquo;端或中间序列互补，高循环数（&amp;gt;35），掺入外源基因组DNA，引物结合靶DNA的效率低，使用具有校正活性的DNA聚合酶（Pfu等）因3&amp;rsquo;外切活性可能使原本不匹配的3&amp;rsquo;端互补。&lt;/p&gt;
-&lt;h3 id=&#34;myth-5-a-blast-search-is-the-best-method-for-determing-the-specificity-of-a-primer&#34;&gt;Myth 5: A BLAST Search Is the Best Method for Determing the Specificity of a Primer&lt;/h3&gt;
-&lt;p&gt;谬误5：BLAST搜索是检验引物特异性的最佳方法。&lt;/p&gt;
-&lt;p&gt;事实上，热力学参数比序列相似性能够更好地预测引物特异性。&lt;/p&gt;
-&lt;h3 id=&#34;myth-6-at-the-end-of-pcr-amplification-efficiency-is-not-exponential-because-the-primers-or-ntps-are-exhausted-or-the-polymerase-looses-activity&#34;&gt;Myth 6: At the End of PCR, Amplification Efficiency Is Not Exponential Because the Primers or NTPs Are Exhausted or the Polymerase Looses Activity&lt;/h3&gt;
-&lt;p&gt;谬误6：PCR平台期的出现是因为引物或dNTP耗尽，或者酶失去活性。&lt;/p&gt;
-&lt;p&gt;实则不然，真正导致平台期的原因是积累的dsDNA产物的抑制，这已经得到了实验证明。&lt;/p&gt;
-&lt;h3 id=&#34;myth-7-multiplex-pcr-can-succeed-by-optimization-of-individual-pcrs&#34;&gt;Myth 7: Multiplex PCR Can Succeed by Optimization of Individual PCRs&lt;/h3&gt;
-&lt;p&gt;谬误7：可以通过优化单重PCR来优化多重PCR。&lt;/p&gt;
-&lt;p&gt;设计良好的单重PCR确实有助于开发多重PCR，但如果只使用这种策略则过于简单。还需要使用软件而不是人工来协助设计。&lt;/p&gt;
-&lt;h2 id=&#34;pcr引物设计原则&#34;&gt;PCR引物设计原则&lt;/h2&gt;
-&lt;p&gt;PCR反应中有两条引物，即5′端引物和3′引物。设计引物时以一条DNA单链为基准（常以信息链为基准），5′端引物与位于待扩增片段5′端上的一小段DNA序列相同；3′端引物与位于待扩增片段3′端的一小段DNA序列互补。&lt;/p&gt;
-&lt;h3 id=&#34;1-引物设计基本原则&#34;&gt;1. 引物设计基本原则&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;引物长度：18-26bp，可放宽至18-30bp（有研究表明超过30bp再增加引物长度意义不大）；&lt;/li&gt;
-&lt;li&gt;引物碱基：G+C含量以40-60%为宜，G+C太少扩增效果不佳，G+C 过多易出现非特异条带。ATGC最好随机分布，避免5个以上的嘌呤或嘧啶核苷酸的成串排列存在；&lt;/li&gt;
-&lt;li&gt;引物T&lt;!-- raw HTML omitted --&gt;m&lt;!-- raw HTML omitted --&gt;：54-58℃，可放宽至52～62℃，GC%&amp;gt;60%可进一步放宽；&lt;/li&gt;
-&lt;li&gt;扩增子T&lt;!-- raw HTML omitted --&gt;m&lt;!-- raw HTML omitted --&gt;：&amp;gt;92℃；&lt;/li&gt;
-&lt;li&gt;3&amp;rsquo;端：优选三联体WSS、SWS、TTS，二连体GC，单体S，尽量规避WWW、CGW、GGG、CG；&lt;/li&gt;
-&lt;li&gt;引物与非特异扩增区的序列的同源性不要超过70%，引物3′末端连续8个碱基在待扩增区以外不能有完全互补序列，否则易导致非特异性扩增；&lt;/li&gt;
-&lt;li&gt;末端2bp最好为GC；&lt;/li&gt;
-&lt;li&gt;引物的5′端可以修饰。如附加限制酶位点，引入突变位点，用生物素、荧光物质、地高辛标记，加入其它短序列，包括起始密码子、终止密码子等；&lt;/li&gt;
-&lt;li&gt;其他：避免3&amp;rsquo;端8bp及以上序列与模板多位点互补，尽量避免上下游3&amp;rsquo;端4bp及以上反向互补，尽量避免内部回文。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;基于上述原则，怎么在实践中应用呢？这要分两种情况：
-(1) 基因克隆PCR引物设计&lt;/p&gt;
-&lt;p&gt;这种情况我们往往并没有太多选择，只能从ATG开始，从TAA等结束，什么GC%、二聚体和错配，可能根本由不得我们。既然起点定了，那只能通过改变长度来匹配最优设计要求了。
-(2) 鉴定PCR引物设计&lt;/p&gt;
-&lt;p&gt;我们只需要确认一段DNA序列上的一部分，起点是相对的，我们可以在整个序列范围内搜索，引物设计的灵活性大大提高，当然搜索时间也要增加。&lt;/p&gt;
-&lt;h3 id=&#34;2-引物设计软件&#34;&gt;2. 引物设计软件&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Primer Premier5.0 （自动搜索）&lt;/li&gt;
-&lt;li&gt;vOligo6 （引物评价）&lt;/li&gt;
-&lt;li&gt;vVector NTI Suit&lt;/li&gt;
-&lt;li&gt;vDNAsis&lt;/li&gt;
-&lt;li&gt;vOmiga&lt;/li&gt;
-&lt;li&gt;vDNAstar&lt;/li&gt;
-&lt;li&gt;vPrimer3 （在线服务）&lt;/li&gt;
-&lt;li&gt;ThermoBLAST&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;参考文献&#34;&gt;参考文献&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;PCR Primer Design, 《Methods In Molecular Biology》第402卷&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://links.jianshu.com/go?to=http%3A%2F%2Fcshprotocols.cshlp.org%2Fcontent%2F2009%2F3%2Fpdb.ip65.full.pdf%2Bhtml&#34;&gt;PCR Primer Design&lt;/a&gt;来自于2009年第3卷（doi:doi:10.1101/pdb.ip65）&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://links.jianshu.com/go?to=https%3A%2F%2Fwww.ajol.info%2Findex.php%2Fajb%2Farticle%2Fdownload%2F14794%2F58513&#34;&gt;Bioinformatic tools and guideline for PCR primer design(10.5897/AJB2003.000-1019)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.jianshu.com/p/3a2f28bff33d&#34;&gt;临窗听风雨：PCR引物设计大法&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://baike.baidu.com/item/%E8%81%9A%E5%90%88%E9%85%B6%E9%93%BE%E5%BC%8F%E5%8F%8D%E5%BA%94/555320?fromtitle=PCR&amp;amp;fromid=9806&amp;amp;fr=aladdin&#34;&gt;百度百科：聚合酶链式反应&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt;从零开始学PCR系列文章：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/319757338&#34;&gt;从零开始学PCR技术（一）：PCR技术科普&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/319408322&#34;&gt;从零开始学PCR技术（二）：Taq DNA酶&lt;/a&gt;&lt;/p&gt;

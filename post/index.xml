@@ -17,6 +17,15 @@
     </item>
     
     <item>
+      <title>病原微生物高通量测序：第三节 检测原理</title>
+      <link>https://jianzuoyi.github.io/post/2020-12-23-clinical-microbe-ngs-theory/</link>
+      <pubDate>Wed, 23 Dec 2020 15:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-12-23-clinical-microbe-ngs-theory/</guid>
+      <description>临床微生物高通量检测，应用场景不同，各种测序技术令人眼花缭乱，但我们可以做如下总结。 检测对象：病原体核酸，或人宿主自身核酸 测序技术：DNA测</description>
+    </item>
+    
+    <item>
       <title>病原微生物高通量测序：第二节 应用场景</title>
       <link>https://jianzuoyi.github.io/post/2020-12-22-clinical-microbe-ngs-application/</link>
       <pubDate>Tue, 22 Dec 2020 22:00:00 +0800</pubDate>
@@ -176,15 +185,6 @@
       
       <guid>https://jianzuoyi.github.io/post/2020-11-30-pcr-3-primer-design/</guid>
       <description>扩增子测序在临床基因检测中有广泛应用，合理的Panel设计非常重要，而Panel设计最终要落地，精心设计引物就是重中之重了。 本文通过公开资料</description>
-    </item>
-    
-    <item>
-      <title>从零开始学PCR技术（二）：Taq DNA酶</title>
-      <link>https://jianzuoyi.github.io/post/2020-11-29-pcr-2-taq_dna/</link>
-      <pubDate>Sun, 29 Nov 2020 00:00:00 +0800</pubDate>
-      
-      <guid>https://jianzuoyi.github.io/post/2020-11-29-pcr-2-taq_dna/</guid>
-      <description>PCR技术改变了现代分子生物学，而Taq DNA聚合酶改变了PCR。 1986年，Mullis发明了PCR技术，当时使用的是大肠杆菌聚合酶I（K</description>
     </item>
     
   </channel>
