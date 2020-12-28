@@ -9,22 +9,50 @@
   </url>
   
   <url>
+    <loc>https://jianzuoyi.github.io/post/2020-12-28-2020-picture/</loc>
+    <lastmod>2020-12-28T14:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://jianzuoyi.github.io/categories/</loc>
-    <lastmod>2020-12-24T12:00:00+08:00</lastmod>
+    <lastmod>2020-12-28T14:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://jianzuoyi.github.io/post/</loc>
-    <lastmod>2020-12-24T12:00:00+08:00</lastmod>
+    <lastmod>2020-12-28T14:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://jianzuoyi.github.io/tags/</loc>
-    <lastmod>2020-12-24T12:00:00+08:00</lastmod>
+    <lastmod>2020-12-28T14:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/</loc>
+    <lastmod>2020-12-28T14:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/tags/%E7%BE%8E%E7%9A%84%E4%BA%8B%E7%89%A9/</loc>
+    <lastmod>2020-12-28T14:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/categories/%E7%BE%8E%E7%9A%84%E4%BA%8B%E7%89%A9/</loc>
+    <lastmod>2020-12-28T14:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -38,13 +66,6 @@
   
   <url>
     <loc>https://jianzuoyi.github.io/tags/%E7%94%9F%E4%BF%A1%E8%BD%AF%E4%BB%B6/</loc>
-    <lastmod>2020-12-24T12:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://jianzuoyi.github.io/</loc>
     <lastmod>2020-12-24T12:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

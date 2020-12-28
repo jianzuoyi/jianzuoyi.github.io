@@ -6,7 +6,16 @@
     <description>Recent content in Posts on 简佐义的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 24 Dec 2020 12:00:00 +0800</lastBuildDate><atom:link href="https://jianzuoyi.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Dec 2020 14:00:00 +0800</lastBuildDate><atom:link href="https://jianzuoyi.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2020 图片：我们人类这一年</title>
+      <link>https://jianzuoyi.github.io/post/2020-12-28-2020-picture/</link>
+      <pubDate>Mon, 28 Dec 2020 14:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-12-28-2020-picture/</guid>
+      <description>2020年还有3天就要过去了，我们人类这一年可真不容易。 2019/06/04 黄鹤楼，岁月静好。 2020/01/06 北京下雪了。摄于上班途中。 2020/01/29 武汉已经封城一周。担心疫情严重不能</description>
+    </item>
+    
     <item>
       <title>李恒大神亲测推荐，基因组序列处理神器Pyfastx简介</title>
       <link>https://jianzuoyi.github.io/post/2020-12-24-pyfastx/</link>
@@ -176,15 +185,6 @@
       
       <guid>https://jianzuoyi.github.io/post/2020-12-01-pcr-4-question/</guid>
       <description>从零开始学PCR技术（四）：常见问题 PCR反应可能存在问题，比如无扩增条带、有扩增条带但是假阳性、出现非特异性条带或者条带出现拖尾现象，这是</description>
-    </item>
-    
-    <item>
-      <title>从零开始学PCR技术（三）：PCR引物设计</title>
-      <link>https://jianzuoyi.github.io/post/2020-11-30-pcr-3-primer-design/</link>
-      <pubDate>Mon, 30 Nov 2020 00:00:00 +0800</pubDate>
-      
-      <guid>https://jianzuoyi.github.io/post/2020-11-30-pcr-3-primer-design/</guid>
-      <description>扩增子测序在临床基因检测中有广泛应用，合理的Panel设计非常重要，而Panel设计最终要落地，精心设计引物就是重中之重了。 本文通过公开资料</description>
     </item>
     
   </channel>
