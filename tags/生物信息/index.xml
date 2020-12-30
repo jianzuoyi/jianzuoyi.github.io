@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>生物信息 on 简佐义的博客</title>
+    <link>https://jianzuoyi.github.io/tags/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF/</link>
+    <description>Recent content in 生物信息 on 简佐义的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 30 Dec 2020 16:00:00 +0800</lastBuildDate><atom:link href="https://jianzuoyi.github.io/tags/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>对于有生物学基础，但无生物信息学背景的人，转行到生信难不难</title>
+      <link>https://jianzuoyi.github.io/post/2020-12-30-biology-to-bioinformatics/</link>
+      <pubDate>Wed, 30 Dec 2020 16:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-12-30-biology-to-bioinformatics/</guid>
+      <description>这个问题像是为我量身定做的，必须来答一波，希望给新人一点参考。 本人生物本科，后来考研转型生物信息学，毕业后在企业担任生信工程师，现在为北京一</description>
+    </item>
+    
+    <item>
+      <title>生物信息为什么要学 Linux？</title>
+      <link>https://jianzuoyi.github.io/post/2020-12-29-why-bioinformatics-need-linux/</link>
+      <pubDate>Wed, 30 Dec 2020 16:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-12-29-why-bioinformatics-need-linux/</guid>
+      <description>前面写了一篇生信人的自我修养：Linux命令速查手册，有朋友觉得是为 IT 人员准备的。 科普任重而道远，我还是用这篇文章解释一下吧。 两个方面的需求</description>
+    </item>
+    
+  </channel>
+</rss>

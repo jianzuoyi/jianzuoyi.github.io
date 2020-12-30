@@ -6,7 +6,7 @@
     <description>Recent content on 简佐义的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 28 Dec 2020 14:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 30 Dec 2020 16:00:00 +0800</lastBuildDate>
     
         <atom:link href="https://jianzuoyi.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -23,6 +23,89 @@
 &lt;p&gt;知乎：&lt;a href=&#34;https://www.zhihu.com/people/jianzuoyi&#34;&gt;@简佐义&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;公众号：简说基因&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://jianzuoyi.github.io/img/barcode_2d.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>对于有生物学基础，但无生物信息学背景的人，转行到生信难不难</title>
+      <link>https://jianzuoyi.github.io/post/2020-12-30-biology-to-bioinformatics/</link>
+      <pubDate>Wed, 30 Dec 2020 16:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-12-30-biology-to-bioinformatics/</guid>
+      
+        <description>&lt;p&gt;这个问题像是为我量身定做的，必须来答一波，希望给新人一点参考。&lt;/p&gt;
+&lt;p&gt;本人生物本科，后来考研转型生物信息学，毕业后在企业担任生信工程师，现在为北京一家创业公司的生信负责人。&lt;/p&gt;
+&lt;p&gt;转型总的来说，不容易。你必须要有兴趣。必须要热爱生命科学，才能长期坚持。&lt;/p&gt;
+&lt;p&gt;就收入来说，生物实验 &amp;lt; 生物信息 &amp;lt; IT。当然指的是技术岗的普通技术人员。&lt;/p&gt;
+&lt;p&gt;高级技术人员和管理岗任何行业都有高收入。&lt;/p&gt;
+&lt;p&gt;21世纪是生物的世纪，这个口号喊了这么多年，但是普通生物专业的就业形式之差有目共睹。&lt;/p&gt;
+&lt;p&gt;而这个口号对于生物信息学来说，有那么一点像了。因为随着测序技术的发展和测序成本的下降，生物行业正在进入大数据时代。
+&lt;a href=&#34;https://www.zhihu.com/question/431250278/answer/1586317261&#34;&gt;为什么说生物信息学是真正的大数据专业？&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;生物信息学，或者说是测序技术，目前主要应用于科研、临床以及司法鉴定等。&lt;/p&gt;
+&lt;p&gt;科研方面。虽然已经有很多物种的基因组已经破译，但相对于地球上庞大的物种数量来说，仍是九牛一毛，路还远得很。&lt;/p&gt;
+&lt;p&gt;临床方面。肿瘤基因检测、微生物基因检测、无创产前诊断、胚胎植入前诊断、基因遗传病诊断等都很热门。&lt;/p&gt;
+&lt;p&gt;上面大致讲了行业的现状。下面再来聊一聊难不难。&lt;/p&gt;
+&lt;p&gt;这个得看你对自己的要求，或者对收入的要求。是&lt;/p&gt;
+&lt;p&gt;初级，脱离实验岗，目标是地区平均工资。不难，掌握基础知识，会跑现成流程就可以了，做一个执行者。&lt;/p&gt;
+&lt;p&gt;中级，能带新人，目标是地区平均工资 2 倍。有点难，需要会写脚本、科研画图、掌握常用生物信息学软件和数据库的使用。&lt;/p&gt;
+&lt;p&gt;高级，进入中、上管理层。难，需要懂算法，能抓住市场的需求并通过代码去实现需求，并有一定的管理能力。&lt;/p&gt;
+&lt;p&gt;所以说难不难，跟个人是不是对技术有执著、或者家里有没有矿有关。&lt;/p&gt;
+&lt;p&gt;因为太多新人面临转型的困惑，我花了不少时间整理了生物信息学的学习路线图，你可以参考下。
+&lt;a href=&#34;https://zhuanlan.zhihu.com/p/323951235&#34;&gt;如何自学生物信息学：从菜鸟到专家&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;生物信息学需要的 Linux 知识，我也整理放在了这篇文章里:&lt;a href=&#34;https://zhuanlan.zhihu.com/p/302596162&#34;&gt;生信人的自我修养：Linux命令速查手册&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;我转型的经历以及心路历程：&lt;a href=&#34;https://zhuanlan.zhihu.com/p/161568818&#34;&gt;一个生信人的自白：从生物转生信，我的学习与工作经历&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>生物信息为什么要学 Linux？</title>
+      <link>https://jianzuoyi.github.io/post/2020-12-29-why-bioinformatics-need-linux/</link>
+      <pubDate>Wed, 30 Dec 2020 16:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-12-29-why-bioinformatics-need-linux/</guid>
+      
+        <description>&lt;blockquote&gt;
+&lt;p&gt;前面写了一篇&lt;a href=&#34;https://zhuanlan.zhihu.com/p/302596162&#34;&gt;生信人的自我修养：Linux命令速查手册&lt;/a&gt;，有朋友觉得是为 IT 人员准备的。&lt;/p&gt;
+&lt;p&gt;科普任重而道远，我还是用这篇文章解释一下吧。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://jianzuoyi.github.io/img/2020-12-29-question.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;两个方面的需求：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;数据处理&lt;/li&gt;
+&lt;li&gt;服务器运维&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;数据处理方面的需求&#34;&gt;数据处理方面的需求&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;1. 首先是必要需&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.zhihu.com/question/431250278/answer/1586317261&#34;&gt;生物信息学是真正的大数据专业&lt;/a&gt;，对计算资源要求较大，很多时候需要在服务器上分析数据，而 Linux 是最常用的服务器操作系统。&lt;/p&gt;
+&lt;p&gt;比如一个基因组组装，需要 1 T内存，20 T硬盘，你很容易就排除掉了 Windows 和 Mac系统了是吧。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. 其次是好用&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Linux 为生产而生，所以在上面做数据分析肯定是很好的。Linux 有很多现成的小工具可以直接使用，比如 &lt;code&gt;grep, sed, awk&lt;/code&gt;，非常方便。另外也可以写脚本自动化执行许多重复性的工作，这些都是 Windows / Mac 平台没法比的。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3. 行业共识&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;鉴于以上两个原因，行业逐步达成了共识。人才往这方面培养，软件往这方面开发。&lt;/p&gt;
+&lt;p&gt;人才方面，生信专业从考研开始，就要考 Linux 基础知识。&lt;/p&gt;
+&lt;p&gt;软件方面，很多生信软件优先开发 Linux 版本，甚至只有 Linux 版本。&lt;/p&gt;
+&lt;h2 id=&#34;服务器运维方面的需求&#34;&gt;服务器运维方面的需求&lt;/h2&gt;
+&lt;p&gt;愉快的大学生活就要结束了，你反复考虑，决定要读研。经过一段时间的挑灯夜战，终于考上生物信息研究生。进入实验室后。。。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;你：老板，搞数据分析需要服务器啊。&lt;/p&gt;
+&lt;p&gt;老板：这是5万块。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;然后你去电脑城，弄了台5万块的服务器，开始搞分析。第二年，师弟师妹来了。。。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;师弟师妹：老板，服务器不够用。&lt;/p&gt;
+&lt;p&gt;老板：这里还有5万块。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;然后你和师弟师妹一起又去电脑城搞了台服务器。几年下来，已经有4、5台服务器了，总不能为每一位同学都配一台吧。&lt;/p&gt;
+&lt;p&gt;于是如何充分利用现有的计算资源，就成为了当务之急。&lt;/p&gt;
+&lt;p&gt;大家上网苦苦搜索，发现一个叫做 SGE （Sun Grid Engine）的东西，可以把几台零散的服务器组成一个集群，用户使用这个集群的所有计算机，就像使用一台一样。&lt;/p&gt;
+&lt;p&gt;这个光荣而艰巨的任务，当然由你来干。集群弄好了，加个账户、添块硬盘、排下错误，于是你久病成良医，硬把自己折腾成了一个运维人员，要转行也是分分钟的事。&lt;/p&gt;
+&lt;p&gt;（以上故事纯属虚构，如有雷同，实属巧合。）&lt;/p&gt;
+&lt;p&gt;说完了实验室的情况，再聊一聊企业。一般大型的生物信息公司，都有自己的计算集群，有专门的服务提供商（比如荣之联）。此外，如果用阿里、华为这样的云服务器，则运维的事情会少很多。&lt;/p&gt;
+&lt;h2 id=&#34;写在最后&#34;&gt;写在最后&lt;/h2&gt;
+&lt;p&gt;Linux 对于生信来说，运维不是刚需，但使用是刚需。生物信息学如何快速入门 Linux，请移步到下面这篇文章。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/302596162&#34;&gt;生信人的自我修养：Linux命令速查手册&lt;/a&gt;&lt;/p&gt;
 </description>
       
     </item>
@@ -2423,221 +2506,6 @@ CATCGTAATGACGGCCT
 &lt;li&gt;sum()函数计算不相同的字符数，即为汉明距离。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://www.zhihu.com/people/jianzuoyi&#34;&gt;学生信欢迎关注我的知乎&lt;/a&gt;，请“点赞”为爱发电，只“收藏”不点赞都是耍流氓。&lt;/strong&gt;&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>Rosalind刷题笔记：001 碱基统计</title>
-      <link>https://jianzuoyi.github.io/post/rosalind/2020-12-04-rosalind-001-base-count/</link>
-      <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jianzuoyi.github.io/post/rosalind/2020-12-04-rosalind-001-base-count/</guid>
-      
-        <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Rosalind is a platform for learning bioinformatics and programming through problem solving.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Rosalind是一个通过解决实际生物学问题来学习生物信息和练习编程的平台，类似于IT行业的刷题网站力扣（LeetCode）。工作学习之余，咱们也来刷一波吧。&lt;/p&gt;
-&lt;h2 id=&#34;说明&#34;&gt;说明&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Python是我推荐做生信必学的一门脚本语言，因此所有算法都用Python实现。&lt;/li&gt;
-&lt;li&gt;Rosalind刷题需要有一定的Python编程基础。&lt;/li&gt;
-&lt;li&gt;最好在Linux系统下进行编写和测试Python脚本。&lt;/li&gt;
-&lt;li&gt;鉴于Python的哲学是：处理一件事最好的方法只有一种。因此我在解完题后，会参考别人已有的答案，如果解决方式更好，便会采用，同时会注明出处。这样做的目的是力求为读者呈现最佳的解题思路，不会为了原创而原创。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;问题描述&#34;&gt;问题描述&lt;/h2&gt;
-&lt;p&gt;字符串是Python中的一种基本数据类型，一个字符串由一组有序的字符组成。由于DNA的四种碱基通常用A、T、C、G四个字母表示，因此一段DNA序列可以通过一个字符串表示，如：ATGCTTCAGAAAGGTCTTACG&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;给定：&lt;/strong&gt; 一条长度至多1000bp的DNA字符序列。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;需得：&lt;/strong&gt; 4个以空格隔开的整数，分别表示4种碱基（A, C, G, T）在字符串中出现的次数。&lt;/p&gt;
-&lt;h2 id=&#34;示例数据&#34;&gt;示例数据&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;示例结果&#34;&gt;示例结果&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;m&#34;&gt;20&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;12&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;17&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;21&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;python实现&#34;&gt;Python实现&lt;/h2&gt;
-&lt;p&gt;Counting_DNA_Nucleotides.py&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;collections&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;defaultdict&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-
-&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;count_dna_nucleotides&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dna&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
-    &lt;span class=&#34;n&#34;&gt;d&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;defaultdict&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;dna&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;upper&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
-        &lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;%d&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt; &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;%d&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt; &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;%d&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt; &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;%d&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;%&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;C&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;G&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;T&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
-
-
-&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;test&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
-    &lt;span class=&#34;n&#34;&gt;dna&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC&amp;#39;&lt;/span&gt;
-    &lt;span class=&#34;n&#34;&gt;ret&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;count_dna_nucleotides&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dna&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ret&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;20 12 17 21&amp;#34;&lt;/span&gt;
-
-
-&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;vm&#34;&gt;__name__&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;not&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;test&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
-        &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;count_dna_nucleotides: Failed&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-
-    &lt;span class=&#34;k&#34;&gt;with&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;open&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;rosalind_dna.txt&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;as&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fh&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
-        &lt;span class=&#34;n&#34;&gt;dna&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fh&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;read&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
-        &lt;span class=&#34;n&#34;&gt;ret&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;count_dna_nucleotides&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dna&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-        &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ret&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;说明：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;用一个字典保存四种碱基的计数&lt;/li&gt;
-&lt;li&gt;用defaultdict而不是普通的dict，defaultdict的好处是任意键都已经默认初始化了一个值，可以直接使用&lt;/li&gt;
-&lt;li&gt;一个小技巧是构造一个测试函数test()，先用示例数据测试通过后再用从Rosalind下载的数据集进行计算答案，确保一次通过&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;怎么样，很简单吧，赶快上车吧。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://www.zhihu.com/people/jianzuoyi&#34;&gt;学生信欢迎关注我的知乎&lt;/a&gt;，请“点赞”为爱发电，只“收藏”不点赞都是耍流氓。&lt;/strong&gt;&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>从零开始学PCR技术（五）：试验污染</title>
-      <link>https://jianzuoyi.github.io/post/2020-12-02-pcr-5-pollution/</link>
-      <pubDate>Wed, 02 Dec 2020 00:00:00 +0800</pubDate>
-      
-      <guid>https://jianzuoyi.github.io/post/2020-12-02-pcr-5-pollution/</guid>
-      
-        <description>&lt;h1 id=&#34;从零开始学pcr技术五试验污染&#34;&gt;从零开始学PCR技术（五）：试验污染&lt;/h1&gt;
-&lt;p&gt;PCR反应最大的特点是具有较大的扩增能力和极高的灵敏度，正因为如此，极其微量的污染即可造成检测结果的假阳性。监控污染，防止污染对检测结果的影响，不仅对实验，对后续生信分析也提出了挑战。&lt;/p&gt;
-&lt;h2 id=&#34;一污染原因&#34;&gt;一、污染原因&lt;/h2&gt;
-&lt;h3 id=&#34;1-交叉污染&#34;&gt;1. 交叉污染&lt;/h3&gt;
-&lt;p&gt;(1) 容器被污染。&lt;/p&gt;
-&lt;p&gt;(2) 标本放置时，由于密封不严溢于容器外。&lt;/p&gt;
-&lt;p&gt;(3) 容器外粘有标本而造成相互间交叉污染。&lt;/p&gt;
-&lt;p&gt;(4) 标本核酸模板在提取过程中，由于吸样枪污染导致标本间污染。&lt;/p&gt;
-&lt;p&gt;(5) 有些微生物标本尤其是病毒可随气溶胶或形成气溶胶而扩散，导致彼此间的污染。&lt;/p&gt;
-&lt;h3 id=&#34;2-试剂污染&#34;&gt;2. 试剂污染&lt;/h3&gt;
-&lt;p&gt;PCR试剂配制过程中，由于加样枪、容器、双蒸水及其它溶液被PCR核酸模板污染。&lt;/p&gt;
-&lt;h3 id=&#34;3-扩增产物污染&#34;&gt;3. 扩增产物污染&lt;/h3&gt;
-&lt;p&gt;这是PCR污染最主要的形式，因为：&lt;/p&gt;
-&lt;p&gt;(1) PCR产物拷贝量大（一般为10&lt;!-- raw HTML omitted --&gt;^&lt;!-- raw HTML omitted --&gt;13拷贝/ml），远远高于PCR检测数个拷贝的极限，所以极微量的PCR产物污染，就可形成假阳性。&lt;/p&gt;
-&lt;p&gt;(2) 最有可能造成PCR产物污染的形式是气溶胶污染。在空气与液体面摩擦时就可形成气溶胶，在操作时比较剧烈地摇动反应管，开盖时、吸样时及污染进样枪的反复吸样都可形成气溶胶而污染。据计算一个气溶胶颗粒可含48000拷贝，因而由其造成的污染是一个值得特别重视的问题。&lt;/p&gt;
-&lt;h3 id=&#34;4-克隆质粒污染&#34;&gt;4. 克隆质粒污染&lt;/h3&gt;
-&lt;p&gt;(1) 某些用克隆质粒做阳性对照的检验室，这个问题比较常见。&lt;/p&gt;
-&lt;p&gt;(2) 克隆质粒在单位容积内含量相当高，另外在纯化过程中需用较多的用具及试剂，而且在活细胞内的质粒，由于活细胞的生长繁殖的简便性及具有很强的生命力，其污染可能性也很大。&lt;/p&gt;
-&lt;h2 id=&#34;二污染监测&#34;&gt;二、污染监测&lt;/h2&gt;
-&lt;p&gt;通常使用对照对检测的各个环节进行监控，常用的对照有以下这些。&lt;/p&gt;
-&lt;h3 id=&#34;一-pcr中的对照&#34;&gt;(一) PCR中的对照&lt;/h3&gt;
-&lt;h4 id=&#34;1-阳性对照与阴性对照&#34;&gt;1. 阳性对照与阴性对照&lt;/h4&gt;
-&lt;p&gt;阳性对照和阴性对照是指在相同的处理条件下，比如一份已知的感染样品和一份已知的未感染样品，都进行了提取和扩增最终获得了阳性结果和阴性结果。阴阳性对照强调处理过程与样品一致，并且有明确的预期结果。&lt;/p&gt;
-&lt;h4 id=&#34;2-扩增对照&#34;&gt;2. 扩增对照&lt;/h4&gt;
-&lt;p&gt;我们通常说的阳性对照和阴性对照指的是扩增试剂盒中附带的不需要提取的阳性对照和阴性对照，更准确的定义应该是扩增阳性对照和扩增阴性对照。扩增阳性对照含有阳性扩增模板，扩增阴性对照应含有阴性扩增模板（基质核酸）。扩增对照只能监控每次扩增过程中的扩增系统是否正常，不能监控采样、提取和每份样品的操作过程。如果是检测 RNA 样品的检测试剂盒，其扩增阳性对照使用质粒，便无法监控反转录过程。&lt;/p&gt;
-&lt;h4 id=&#34;3-内标internal-control-ic&#34;&gt;3. 内标（Internal Control, IC）&lt;/h4&gt;
-&lt;p&gt;内标是指在同一反应管中与靶序列共同扩增的一段非靶序列分子。内标有两种形式，一种是使用天然样品中含有的内参基因作为内标，另一种是人工添加的内标。内标的最大特点是与靶序列共同扩增，而其他的对照都是独立扩增。&lt;/p&gt;
-&lt;p&gt;(1) 内参基因&lt;/p&gt;
-&lt;p&gt;通常它们在各组织和细胞中的表达相对恒定，在检测基因的表达水平变化时常用它来做参照物。内参基因通常是管家基因（house-keeping gene）因为其表达水平受环境因素影响较小，而且在个体各个生长阶段的几乎全部组织中持续表达变化很小。常用的内参基因包括 GAPDH、β-actin (BETA-actin)、18sRNA、B2M、HPRT 和 TBP 等。&lt;/p&gt;
-&lt;p&gt;内参基因的优点是与样品中的靶基因经历完全相同的处理程序，可以监控采样，运输，核酸提取和扩增的全部过程。缺点是不同物种，不同生理状态下，不同组织中的内参基因存在一定的差异。如果样品类型是口腔液，咽拭子等样品，内参基因的量很低可能导致实验不成功。如果检测的是环境样品则内参基因可能完全失效。&lt;/p&gt;
-&lt;p&gt;(2) 人工内标&lt;/p&gt;
-&lt;p&gt;添加一种不会干扰靶序列扩增的人工合成的内标。现在国外的诊断试剂盒大部分都会将内标直接添加在反应液中与模板一起扩增，但是这样的内标不能监控采样，运输和核酸提取的过程。&lt;/p&gt;
-&lt;p&gt;还有另一种形式的内标，使用人工合成的假病毒，在核酸提取前在每一份样品中加入等量的内标，这样就可以监控样品的提取到扩增的过程。但是由于是人工添加到样品中，仍然不能监控胞内细菌病毒的释放情况。&lt;/p&gt;
-&lt;h4 id=&#34;4-核酸提取对照&#34;&gt;4. 核酸提取对照&lt;/h4&gt;
-&lt;p&gt;可以使用内参基因，假病毒混合基质，灭活病毒混合基质来监控提取到扩增的流程。&lt;/p&gt;
-&lt;h4 id=&#34;5-反转录对照rt-control&#34;&gt;5. 反转录对照（RT control）&lt;/h4&gt;
-&lt;p&gt;可以使用提取好的 RNA 内参基因，RNA 假病毒混合基质，灭活 RNA 病毒混合基质来监控反转录到扩增的流程。&lt;/p&gt;
-&lt;p&gt;无反转录对照（no-RT control）含有除反转录酶以外的所有成分。&lt;/p&gt;
-&lt;h4 id=&#34;6-空白对照&#34;&gt;6. 空白对照&lt;/h4&gt;
-&lt;p&gt;(1) 无模板空白对照&lt;/p&gt;
-&lt;p&gt;NTC （No Template Control）是指不含有模板（阳性模板或者阴性模板），但含有引物探针和反应液，主要监控引物探针、反应体系有没有被污染的对照。目前的试剂盒的 NC 一般都是水或阴性缓冲液，所以 NC 等同于 NTC。其实两者有不同的作用。&lt;/p&gt;
-&lt;p&gt;(2) 仪器空白对照&lt;/p&gt;
-&lt;p&gt;仪器空白对照通常使用的是空反应管来监控仪器有无非特异性的荧光信号。&lt;/p&gt;
-&lt;p&gt;(3) 荧光染料对照&lt;/p&gt;
-&lt;p&gt;最常使用的是 ROX 染料，由于荧光定量 PCR 的荧光信号在每个样品孔会有微小的差异所以使用特定的 ROX 荧光染料，系统可以根据 ROX 荧光染料的信号值来校准每孔的荧光信号。&lt;/p&gt;
-&lt;h4 id=&#34;7-质控品quality-control-qc&#34;&gt;7. 质控品（Quality control, QC）&lt;/h4&gt;
-&lt;p&gt;上述环节中使用的各种对照大部分是试剂厂家匹配试剂盒使用的产品，有的是实验室自制，所以整个的监控过程可能存在不够客观和独立。因此在实验室的对照设置中每次检测都建议使用第三方质控品，有条件的使用国家有证标准物质 (Reference material ,RM)。由于标准物质具有准确量值和计量溯源性，可以更准确的评估整个试验流程的准确度。&lt;/p&gt;
-&lt;h4 id=&#34;8-定值参考品&#34;&gt;8. 定值参考品&lt;/h4&gt;
-&lt;p&gt;医学上的定量检测试剂盒，需要配套定值参考品用于试剂盒的定量检测使用。&lt;/p&gt;
-&lt;h3 id=&#34;二-pcr对照的选择&#34;&gt;(二) PCR对照的选择&lt;/h3&gt;
-&lt;p&gt;从上文可知没有一种对照是完美的，在检测中我们要根据自己的需求来进行灵活选择和搭配。笔者建议每一次检测时添加一个能对从提取到扩增环节进行监控的质控品或标准物质；每份检测样品中添加内标（如果样品种类比较多样建议使用人工内标，如果样品类型为相对固定的动物组织建议使用内参基因）；扩增阳性对照，扩增阴性对照，无模板对照和 ROX 对照。有条件的添加临床阳性对照和临床阴性对照，在怀疑提取环节或者反转录环节出现问题时使用核酸提取对照和反转录对照。不定期使用仪器空白对照。&lt;/p&gt;
-&lt;h4 id=&#34;1-阳性对照与污染&#34;&gt;1. 阳性对照与污染&lt;/h4&gt;
-&lt;p&gt;不可否认的一个事实是阳性对照可以增加实验室污染的风险。这种污染的来源一种是直接来源于扩增阳性对照的污染。对于扩增阳性对照来说通常 10000 拷贝 / 微升（CT 值约 25）是比较理想的，但是有一些试剂盒厂家的扩增阳性对照设置在 CT 值 20 以下，比大部分阳性样本都强。这么高浓度的对照给实验室带来了巨大的污染风险，原因可能仅仅是因为试剂厂家担心其阳性对照不稳定，长时间存放阳性对照降解。另一种污染来自于扩增产物的处理不当，或者实验室的设计布局不合理。&lt;/p&gt;
-&lt;h4 id=&#34;2-初筛和确诊&#34;&gt;2. 初筛和确诊&lt;/h4&gt;
-&lt;p&gt;对于初筛实验，我们希望提高真阳性检出率，即提高诊断敏感性。我们需要检测系统达到最高检测效率，因此要在不同环节添加阳性对照，确保每个环节的检测效率最高。&lt;/p&gt;
-&lt;p&gt;对于确诊实验，我们希望提高真阴性检出率，即提高诊断特异性。我们需要确保检测系统不出现假阳性，因此要在不同环节添加阴性对照，减少非必须的阳性对照，甚至要在样品盘的不同位置中随机插入几个阴性对照，确保实验过程中没有被污染。&lt;/p&gt;
-&lt;h2 id=&#34;三污染预防&#34;&gt;三、污染预防&lt;/h2&gt;
-&lt;h3 id=&#34;1-首要原则&#34;&gt;1. 首要原则&lt;/h3&gt;
-&lt;p&gt;(1) 永远要设置NTC对照：如果不能在污染出现的第一时间发现，会导致严重后果：一大段时间的数据不可信。&lt;/p&gt;
-&lt;p&gt;(2) 准备PCR的移液器要专用：千万不能用吸取PCR产物/克隆质粒的移液器去准备PCR体系。&lt;/p&gt;
-&lt;h3 id=&#34;2-基本策略&#34;&gt;2. 基本策略&lt;/h3&gt;
-&lt;h4 id=&#34;21-划分操作区&#34;&gt;2.1 划分操作区&lt;/h4&gt;
-&lt;p&gt;目前，普通PCR尚不能做到单人单管，实现完全闭管操作，但无论是否能够达到单人单管，均要求实验操作在三个不同的区域内进行，PCR的前处理和后处理要在不同的隔离区内进行。&lt;/p&gt;
-&lt;p&gt;(1) 标本处理区，包括扩增摸板的制备。&lt;/p&gt;
-&lt;p&gt;(2) 扩增区，包括反应液的配制和PCR扩增。&lt;/p&gt;
-&lt;p&gt;(3) 产物分析区，凝胶电泳分析，产物拍照及重组克隆的制备。&lt;/p&gt;
-&lt;p&gt;(4) 各工作区要有一定的隔离，操作器材专用，要有一定的方向性。如：标本制备→PCR扩增→产物分析→产物处理。&lt;/p&gt;
-&lt;p&gt;切记：产物分析区的产物及器材不要拿到其他两个工作区。&lt;/p&gt;
-&lt;h4 id=&#34;22-分装试剂&#34;&gt;2.2 分装试剂&lt;/h4&gt;
-&lt;p&gt;PCR扩增所需要的试剂均应在装有紫外灯的超净工作台或负压工作台配制和分装。所有的加样器和吸头需固定放于其中，不能用来吸取扩增后的DNA和其他来源的DNA。&lt;/p&gt;
-&lt;p&gt;(1) PCR用水应为高压的双蒸水。&lt;/p&gt;
-&lt;p&gt;(2) 引物和dNTP用高压的双蒸水在无PCR扩增产物区配制。&lt;/p&gt;
-&lt;p&gt;(3) 引物和dNTP应分装储存，分装时应标明时间，以备发生污染时查找原因。&lt;/p&gt;
-&lt;h4 id=&#34;23-实验操作注意事项&#34;&gt;2.3 实验操作注意事项&lt;/h4&gt;
-&lt;p&gt;尽管扩增序列的残留污染大部分是假阳性反应的原因，样品间的交叉污染也是原因之一。因此，不仅要在进行扩增反应时谨慎认真，在样品的收集、抽提和扩增的所有环节都应该注意。&lt;/p&gt;
-&lt;p&gt;(1) 戴一次性手套，若不小心溅上反应液，立即更换手套。&lt;/p&gt;
-&lt;p&gt;(2) 使用一次性吸头，严禁与PCR产物分析室的吸头混用，吸头不要长时间暴露于空气中，避免气溶胶的污染。&lt;/p&gt;
-&lt;p&gt;(3) 避免反应液飞溅，打开反应管时为避免此种情况，开盖前稍离心收集液体于管底。若不小心溅到手套或桌面上，应立刻更换手套并用稀酸擦拭桌面。&lt;/p&gt;
-&lt;p&gt;(4) 操作多份样品时，制备反应混合液，先将dNTP、缓冲液、引物和酶混合好，然后分装，这样即可以减少操作，避免污染，又可以增加反应的精确度。&lt;/p&gt;
-&lt;p&gt;(5) 最后加入反应模板，加入后盖紧反应管。&lt;/p&gt;
-&lt;p&gt;(6) 操作时设立阴阳性对照和空白对照，既可验证PCR反应的可靠性，又可以协助判断扩增系统的可信性。&lt;/p&gt;
-&lt;p&gt;(7) 尽可能用可替换或可高压处理的加样器，由于加样器最容易受产物气溶胶或标本DNA的污染，最好使用可替换或高压处理的加样器。如没有这种特殊的加样器，至少PCR操作过程中加样器应该专用，不能交叉使用，尤其是PCR产物分析所用加样器不能拿到其它两个区。&lt;/p&gt;
-&lt;p&gt;(8) 重复实验，验证结果，慎下结论。&lt;/p&gt;
-&lt;p&gt;注：本文内容来源于网络，仅供自己学习参考之用。&lt;/p&gt;
-&lt;p&gt;觉得内容不错，请点赞、评论或分享给需要的朋友！&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.zhihu.com/people/jianzuoyi&#34;&gt;如果你热爱生物信息学，欢迎关注我的知乎&lt;/a&gt;，或公众号：简说基因&lt;/p&gt;
-&lt;p&gt;博客地址：&lt;a href=&#34;https://link.zhihu.com/?target=https%3A//jianzuoyi.github.io/&#34;&gt;https://jianzuoyi.github.io/&lt;/a&gt;，在这里从零开始学习生信&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;PCR技术系列文章更新计划：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/319757338&#34;&gt;从零开始学PCR技术（零）：PCR技术科普&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/315451374&#34;&gt;从零开始学PCR技术（一）：PCR技术简介&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/319408322&#34;&gt;从零开始学PCR技术（二）：Taq DNA聚合酶&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/322323091&#34;&gt;从零开始学PCR技术（三）：PCR引物设计&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/324396902&#34;&gt;从零开始学PCR技术（四）：常见问题&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;从零开始学PCR技术（五）：试验污染&lt;/p&gt;
-&lt;p&gt;从零开始学PCR技术（六）：多重PCR&lt;/p&gt;
 </description>
       
     </item>

@@ -6,7 +6,25 @@
     <description>Recent content in Posts on 简佐义的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 28 Dec 2020 14:00:00 +0800</lastBuildDate><atom:link href="https://jianzuoyi.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 30 Dec 2020 16:00:00 +0800</lastBuildDate><atom:link href="https://jianzuoyi.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>对于有生物学基础，但无生物信息学背景的人，转行到生信难不难</title>
+      <link>https://jianzuoyi.github.io/post/2020-12-30-biology-to-bioinformatics/</link>
+      <pubDate>Wed, 30 Dec 2020 16:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-12-30-biology-to-bioinformatics/</guid>
+      <description>这个问题像是为我量身定做的，必须来答一波，希望给新人一点参考。 本人生物本科，后来考研转型生物信息学，毕业后在企业担任生信工程师，现在为北京一</description>
+    </item>
+    
+    <item>
+      <title>生物信息为什么要学 Linux？</title>
+      <link>https://jianzuoyi.github.io/post/2020-12-29-why-bioinformatics-need-linux/</link>
+      <pubDate>Wed, 30 Dec 2020 16:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-12-29-why-bioinformatics-need-linux/</guid>
+      <description>前面写了一篇生信人的自我修养：Linux命令速查手册，有朋友觉得是为 IT 人员准备的。 科普任重而道远，我还是用这篇文章解释一下吧。 两个方面的需求</description>
+    </item>
+    
     <item>
       <title>2020 图片：我们人类这一年</title>
       <link>https://jianzuoyi.github.io/post/2020-12-28-2020-picture/</link>
@@ -167,24 +185,6 @@
       
       <guid>https://jianzuoyi.github.io/post/rosalind/2020-12-04-rosalind-001-base-count/</guid>
       <description>前言 Rosalind is a platform for learning bioinformatics and programming through problem solving. Rosalind是一个通过解决实际生物学问题来学习生物信息和练习编程的平台，类似于IT行业的刷题网站力扣（Lee</description>
-    </item>
-    
-    <item>
-      <title>从零开始学PCR技术（五）：试验污染</title>
-      <link>https://jianzuoyi.github.io/post/2020-12-02-pcr-5-pollution/</link>
-      <pubDate>Wed, 02 Dec 2020 00:00:00 +0800</pubDate>
-      
-      <guid>https://jianzuoyi.github.io/post/2020-12-02-pcr-5-pollution/</guid>
-      <description>从零开始学PCR技术（五）：试验污染 PCR反应最大的特点是具有较大的扩增能力和极高的灵敏度，正因为如此，极其微量的污染即可造成检测结果的假阳</description>
-    </item>
-    
-    <item>
-      <title>从零开始学PCR技术（四）：常见问题</title>
-      <link>https://jianzuoyi.github.io/post/2020-12-01-pcr-4-question/</link>
-      <pubDate>Tue, 01 Dec 2020 00:00:00 +0800</pubDate>
-      
-      <guid>https://jianzuoyi.github.io/post/2020-12-01-pcr-4-question/</guid>
-      <description>从零开始学PCR技术（四）：常见问题 PCR反应可能存在问题，比如无扩增条带、有扩增条带但是假阳性、出现非特异性条带或者条带出现拖尾现象，这是</description>
     </item>
     
   </channel>
