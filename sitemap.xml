@@ -51,15 +51,15 @@
   </url>
   
   <url>
-    <loc>https://jianzuoyi.github.io/post/2020-12-29-why-bioinformatics-need-linux/</loc>
+    <loc>https://jianzuoyi.github.io/</loc>
     <lastmod>2020-12-30T16:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://jianzuoyi.github.io/</loc>
-    <lastmod>2020-12-30T16:00:00+08:00</lastmod>
+    <loc>https://jianzuoyi.github.io/post/2020-12-29-why-bioinformatics-need-linux/</loc>
+    <lastmod>2020-12-29T16:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
