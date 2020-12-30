@@ -470,4 +470,16 @@
     <priority>0.5</priority>
   </url>
   
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-12-25-chun-jiang-hua-yue-ye/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-12-29-why-bioinformatics-need-linux/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
 </urlset>
