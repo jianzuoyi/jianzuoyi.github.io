@@ -35,12 +35,39 @@
     </item>
     
     <item>
+      <title>如何自学生物信息学：从菜鸟到专家</title>
+      <link>https://jianzuoyi.github.io/post/best/2020-11-23-learn-bioinfomatics/</link>
+      <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/best/2020-11-23-learn-bioinfomatics/</guid>
+      <description>看透了如此多的秘密，我们已停止相信尚有不可知之物。然而，那不可知之物却仍然坐在那里，冷静地舔着自己的嘴唇。 ​ ——H.L. Mencken 尽管人类已把航天器</description>
+    </item>
+    
+    <item>
+      <title>生信人的自我修养：Linux 命令速查手册</title>
+      <link>https://jianzuoyi.github.io/post/best/2020-11-20.linux/</link>
+      <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/best/2020-11-20.linux/</guid>
+      <description>许多人做生物信息学，要么不重视Linux，要么不知道怎么才能学好。翻开厚厚的一本教材，却不知道哪些是重点。Linux的核心知识有哪些，就像英</description>
+    </item>
+    
+    <item>
       <title>为什么说生物信息学是真正的大数据行业？</title>
       <link>https://jianzuoyi.github.io/post/2020-11-20.base-pair-unit/</link>
       <pubDate>Fri, 20 Nov 2020 00:00:00 +0800</pubDate>
       
       <guid>https://jianzuoyi.github.io/post/2020-11-20.base-pair-unit/</guid>
       <description>一不小心进入了大数据这一朝阳产业，内心还有点小激动呢。怎么回事呢？我什么都不知道啊。先看下表吧。 表 1：DNA碱基对单位 碱基对 单位 缩写 例子 1 单</description>
+    </item>
+    
+    <item>
+      <title>生物信息基础：conda包管理器安装及使用</title>
+      <link>https://jianzuoyi.github.io/post/best/2020-11-19-conda/</link>
+      <pubDate>Thu, 19 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/best/2020-11-19-conda/</guid>
+      <description>Conda是一个包管理器，类似于手机上的AppStore或电脑上的软件管家，可以方便地安装各种软件，并且能够为每一个软件创建自己的运行环境，</description>
     </item>
     
     <item>
@@ -116,6 +143,15 @@
     </item>
     
     <item>
+      <title>代码版本控制及托管：我的最佳实践</title>
+      <link>https://jianzuoyi.github.io/post/best/2020-11-09.git/</link>
+      <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/best/2020-11-09.git/</guid>
+      <description>作为半个IT人，写代码是工作日常，如何进行代码版本控制及托管，本文介绍一下我的最佳实践，其实很容易。 工作或学习过程中写的代码，存在本地的话容</description>
+    </item>
+    
+    <item>
       <title>Aspera：基因组数据高速下载利器，以NCBI和EBI数据下载为例</title>
       <link>https://jianzuoyi.github.io/post/2020-09-15.aspera/</link>
       <pubDate>Tue, 15 Sep 2020 00:00:00 +0800</pubDate>
@@ -149,42 +185,6 @@
       
       <guid>https://jianzuoyi.github.io/post/2020-07-20.chuxin/</guid>
       <description>自媒体要重度垂直，内容为王，为特定读者提供实际价值，同时也为了提醒自己不忘初心，砥砺前行，因此特作如下简要说明。 1. 定位 重度垂直：专注于临床基</description>
-    </item>
-    
-    <item>
-      <title>SSH应用，如何优雅地登录远程服务器？</title>
-      <link>https://jianzuoyi.github.io/post/2020-07-18.ssh/</link>
-      <pubDate>Sun, 19 Jul 2020 00:00:00 +0800</pubDate>
-      
-      <guid>https://jianzuoyi.github.io/post/2020-07-18.ssh/</guid>
-      <description>作为一名生信工程师，每天都要跟服务器打交道，如何登录到远程服务器上去呢？通常有两种方法： 通过专用软件登录，常用的有： Xshell, 收费软件（支持平台：W</description>
-    </item>
-    
-    <item>
-      <title>奔涌吧，生信！</title>
-      <link>https://jianzuoyi.github.io/post/2020-07-19.houlang/</link>
-      <pubDate>Sun, 19 Jul 2020 00:00:00 +0800</pubDate>
-      
-      <guid>https://jianzuoyi.github.io/post/2020-07-19.houlang/</guid>
-      <description>(图片来源于网络，侵删) 那些口口声声“不会开发工具就不能搞生信”的人，应该看着你们，像我一样 我看着你们，满怀羡慕 行业积累了几十年的财富 所有的</description>
-    </item>
-    
-    <item>
-      <title>重拾写作：从开始到放弃</title>
-      <link>https://jianzuoyi.github.io/post/2020-07-17.markdown/</link>
-      <pubDate>Fri, 17 Jul 2020 00:00:00 +0800</pubDate>
-      
-      <guid>https://jianzuoyi.github.io/post/2020-07-17.markdown/</guid>
-      <description>这是我的第三个公众号了，前两个都无疾而终，所谓事不过三，难的是坚持！！！ 做过网站，建过论坛，玩过博客和微博，每次都虎头蛇尾，坚持不了几天。 这</description>
-    </item>
-    
-    <item>
-      <title>一个生信人的自白：从生物转生信，我的学习与工作经历</title>
-      <link>https://jianzuoyi.github.io/post/2020-07-16.aboutme/</link>
-      <pubDate>Thu, 16 Jul 2020 00:00:00 +0800</pubDate>
-      
-      <guid>https://jianzuoyi.github.io/post/2020-07-16.aboutme/</guid>
-      <description>人生就像一盒巧克力，你永远不知道下一块会是什么。 ——电影《阿甘正传》 生物信息到底是什么？在学生物的人看来，就是敲代码的，甚至要负责修电脑，而</description>
     </item>
     
   </channel>
