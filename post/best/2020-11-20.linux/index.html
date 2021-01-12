@@ -69,7 +69,7 @@
 <meta itemprop="description" content="许多人做生物信息学，要么不重视Linux，要么不知道怎么才能学好。翻开厚厚的一本教材，却不知道哪些是重点。Linux的核心知识有哪些，就像英">
 <meta itemprop="datePublished" content="2020-11-20T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-12-21T00:00:00+00:00" />
-<meta itemprop="wordCount" content="7633">
+<meta itemprop="wordCount" content="7647">
 
 
 
@@ -770,7 +770,20 @@ free -h		<span class="c1"># 查看内存使用情况</span>
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="top-htop-ps-kill---任务管理">top, htop, ps, kill - 任务管理</h2>
+<p>htop 安装</p>
 <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">yum -y install epel-release
+
+yum -y install htop
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -1706,7 +1719,9 @@ md5sum			<span class="c1"># 生成，或验证文件的MD5值</span>
 
   <span class="copyright-year">
     &copy;
-    2020
+    
+      2020 -
+    2021
     <span class="heart">
       
       <i class="iconfont">
