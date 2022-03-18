@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.79.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
 
 <link rel="canonical" href="https://jianzuoyi.github.io/post/2020-11-17-pysam/" />
@@ -53,7 +53,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.b3a8813c06e6d785beba22bf8264e174fa2cb3a396b22f9ba24e2c00c18aaf7f.css" integrity="sha256-s6iBPAbm14W&#43;uiK/gmThdPoss6OWsi&#43;bok4sAMGKr38=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.f1e506a781bf25d33ffc18aa6b4e972a965c58049d27d4f92b7db2e9bf28e4bf.css" integrity="sha256-8eUGp4G/JdM//Biqa06XKpZcWASdJ9T5K32y6b8o5L8=" media="screen" crossorigin="anonymous">
 
 
 
@@ -67,14 +67,13 @@
 <meta property="article:modified_time" content="2020-11-17T00:00:00+08:00" />
 <meta itemprop="name" content="生物信息基础：基因组文件读写（pysam）">
 <meta itemprop="description" content="Pysam是一个Python模块，它打包了高通量测序库htslib的C-API，可用于读写基因组相关文件，如Fasta/Fastq，SAM/">
-<meta itemprop="datePublished" content="2020-11-17T00:00:00+08:00" />
-<meta itemprop="dateModified" content="2020-11-17T00:00:00+08:00" />
+<meta itemprop="datePublished" content="2020-11-17T00:00:00&#43;08:00" />
+<meta itemprop="dateModified" content="2020-11-17T00:00:00&#43;08:00" />
 <meta itemprop="wordCount" content="877">
 
 
 
-<meta itemprop="keywords" content="生物信息," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="生物信息," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="生物信息基础：基因组文件读写（pysam）"/>
 <meta name="twitter:description" content="Pysam是一个Python模块，它打包了高通量测序库htslib的C-API，可用于读写基因组相关文件，如Fasta/Fastq，SAM/"/>
 
@@ -451,29 +450,29 @@ conda install pysam
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pysam</span>
 
-<span class="c1"># 构建FastaFile对象，随机访问需要先创建faidx，没有的话在这里会自动创建faidx</span>
+<span class="c1"># 构建FastaFile对象，随机访问需要先创建faidx，没有的话在这里会自动创建faidx</span>
 <span class="n">fa</span> <span class="o">=</span> <span class="n">pysam</span><span class="o">.</span><span class="n">FastaFile</span><span class="p">(</span><span class="s2">&#34;ex1.fa&#34;</span><span class="p">)</span>
 
-<span class="c1"># Fasta文件中序列的数量，结果是一个整数</span>
+<span class="c1"># Fasta文件中序列的数量，结果是一个整数</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&#34;number of reference sequences: </span><span class="si">%d</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">fa</span><span class="o">.</span><span class="n">nreferences</span><span class="p">)</span>
 
-<span class="c1"># Fasta文件中序列的名称，结果是一个列表</span>
+<span class="c1"># Fasta文件中序列的名称，结果是一个列表</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&#34;names of reference sequences: &#34;</span> <span class="o">+</span> <span class="s2">&#34;,&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">fa</span><span class="o">.</span><span class="n">references</span><span class="p">))</span>
 
-<span class="c1"># Fasta文件中序列的长度，结果是一个列表</span>
+<span class="c1"># Fasta文件中序列的长度，结果是一个列表</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&#34;lengths of reference sequences: &#34;</span> <span class="o">+</span> <span class="s2">&#34;,&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">fa</span><span class="o">.</span><span class="n">lengths</span><span class="p">]))</span>
 
-<span class="c1"># 这里是关键，用fetch函数随机读取序列</span>
-<span class="c1"># 1. 提取整条序列</span>
+<span class="c1"># 这里是关键，用fetch函数随机读取序列</span>
+<span class="c1"># 1. 提取整条序列</span>
 <span class="n">chr2</span> <span class="o">=</span> <span class="n">fa</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s2">&#34;chr2&#34;</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&#34;Random fetch chr2 sequence:</span><span class="se">\n</span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">chr2</span><span class="p">)</span>
 
-<span class="c1"># 2. Python风格半开区间：提取chr2位置11-20之间的碱基</span>
-<span class="c1"># 半开区间碱基位置编号从0开始,（10, 20），其中包含位置10，不包含位置20</span>
+<span class="c1"># 2. Python风格半开区间：提取chr2位置11-20之间的碱基</span>
+<span class="c1"># 半开区间碱基位置编号从0开始,（10, 20），其中包含位置10，不包含位置20</span>
 <span class="n">front1</span> <span class="o">=</span> <span class="n">fa</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s2">&#34;chr2&#34;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&#34;Python style region(chr2, 10, 20): </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">front1</span><span class="p">)</span>
 
-<span class="c1"># 3. Samtools风格闭区间：提取chr2位置11-20之间的碱基，碱基位置编号从1开始</span>
+<span class="c1"># 3. Samtools风格闭区间：提取chr2位置11-20之间的碱基，碱基位置编号从1开始</span>
 <span class="n">front2</span> <span class="o">=</span> <span class="n">fa</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="s2">&#34;chr2:11-20&#34;</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&#34;samtools style region(chr2:11-20): </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">front2</span><span class="p">)</span>
 </code></pre></td></tr></table>
@@ -493,7 +492,7 @@ conda install pysam
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">number of reference sequences: <span class="m">2</span>
+<pre class="chroma"><code class="language-bash" data-lang="bash">number of reference sequences: 2
 names of reference sequences: chr1,chr2
 lengths of reference sequences: 1575,1584
 Random fetch chr2 sequence:
@@ -751,7 +750,7 @@ CTCTAACAATAGACTAAACCAAGCAGAAGAAAGAGGTTCAGAACTTGAAGACAAGTCTCT
     &copy;
     
       2020 -
-    2021
+    2022
     <span class="heart">
       
       <i class="iconfont">

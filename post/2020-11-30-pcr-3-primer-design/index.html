@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.79.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
 
 <link rel="canonical" href="https://jianzuoyi.github.io/post/2020-11-30-pcr-3-primer-design/" />
@@ -53,7 +53,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.b3a8813c06e6d785beba22bf8264e174fa2cb3a396b22f9ba24e2c00c18aaf7f.css" integrity="sha256-s6iBPAbm14W&#43;uiK/gmThdPoss6OWsi&#43;bok4sAMGKr38=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.f1e506a781bf25d33ffc18aa6b4e972a965c58049d27d4f92b7db2e9bf28e4bf.css" integrity="sha256-8eUGp4G/JdM//Biqa06XKpZcWASdJ9T5K32y6b8o5L8=" media="screen" crossorigin="anonymous">
 
 
 
@@ -67,14 +67,13 @@
 <meta property="article:modified_time" content="2020-11-30T00:00:00+08:00" />
 <meta itemprop="name" content="从零开始学PCR技术（三）：PCR引物设计">
 <meta itemprop="description" content="扩增子测序在临床基因检测中有广泛应用，合理的Panel设计非常重要，而Panel设计最终要落地，精心设计引物就是重中之重了。 本文通过公开资料">
-<meta itemprop="datePublished" content="2020-11-30T00:00:00+08:00" />
-<meta itemprop="dateModified" content="2020-11-30T00:00:00+08:00" />
-<meta itemprop="wordCount" content="2311">
+<meta itemprop="datePublished" content="2020-11-30T00:00:00&#43;08:00" />
+<meta itemprop="dateModified" content="2020-11-30T00:00:00&#43;08:00" />
+<meta itemprop="wordCount" content="2269">
 
 
 
-<meta itemprop="keywords" content="PCR," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="PCR," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="从零开始学PCR技术（三）：PCR引物设计"/>
 <meta name="twitter:description" content="扩增子测序在临床基因检测中有广泛应用，合理的Panel设计非常重要，而Panel设计最终要落地，精心设计引物就是重中之重了。 本文通过公开资料"/>
 
@@ -389,7 +388,7 @@
       <ul>
         <li><a href="#myth-1-pcr-nearly-always-works-and-design-is-not-that-important">Myth 1: PCR Nearly Always Works and Design Is Not that Important</a></li>
         <li><a href="#myth-2-different-methods-for-predicting-hybridization-tsubmsub-are-essentially-equivalent-in-accuracy">Myth 2: Different Methods for Predicting Hybridization T<!-- raw HTML omitted -->m<!-- raw HTML omitted --> Are Essentially Equivalent in Accuracy</a></li>
-        <li><a href="#myth-3-designing-forward-and-reverse-primers-to-have-mathing-tsubmsubs-is-the-best-strategy-to-optimize-for-pcr">Myth 3: Designing Forward and Reverse Primers to Have Mathing T<!-- raw HTML omitted -->m<!-- raw HTML omitted -->&rsquo;s Is the Best Strategy to Optimize for PCR</a></li>
+        <li><a href="#myth-3-designing-forward-and-reverse-primers-to-have-mathing-tsubmsubs-is-the-best-strategy-to-optimize-for-pcr">Myth 3: Designing Forward and Reverse Primers to Have Mathing T<!-- raw HTML omitted -->m<!-- raw HTML omitted -->'s Is the Best Strategy to Optimize for PCR</a></li>
         <li><a href="#myth-4-primer-dimer-artifacts-are-due-to-dimerization">Myth 4: &ldquo;Primer Dimer&rdquo; Artifacts Are Due to Dimerization</a></li>
         <li><a href="#myth-5-a-blast-search-is-the-best-method-for-determing-the-specificity-of-a-primer">Myth 5: A BLAST Search Is the Best Method for Determing the Specificity of a Primer</a></li>
         <li><a href="#myth-6-at-the-end-of-pcr-amplification-efficiency-is-not-exponential-because-the-primers-or-ntps-are-exhausted-or-the-polymerase-looses-activity">Myth 6: At the End of PCR, Amplification Efficiency Is Not Exponential Because the Primers or NTPs Are Exhausted or the Polymerase Looses Activity</a></li>
@@ -430,12 +429,12 @@
 <p>这个等式忽略了许多重要信息：T<!-- raw HTML omitted -->m<!-- raw HTML omitted -->值依赖于链的浓度，盐分浓度以及碱基序列。这个公式得到的T<!-- raw HTML omitted -->m<!-- raw HTML omitted -->通常比实验测得的高15℃。因此并不推荐使用，一个更好的公式是：</p>
 <p>T<!-- raw HTML omitted -->m<!-- raw HTML omitted --> = 81.5C + 16.6 × log10[Na+]+0.41(%G+C)–0.63(%formamide)–600/L</p>
 <p>其中L是双链DNA的长度。</p>
-<h3 id="myth-3-designing-forward-and-reverse-primers-to-have-mathing-tsubmsubs-is-the-best-strategy-to-optimize-for-pcr">Myth 3: Designing Forward and Reverse Primers to Have Mathing T<!-- raw HTML omitted -->m<!-- raw HTML omitted -->&rsquo;s Is the Best Strategy to Optimize for PCR</h3>
+<h3 id="myth-3-designing-forward-and-reverse-primers-to-have-mathing-tsubmsubs-is-the-best-strategy-to-optimize-for-pcr">Myth 3: Designing Forward and Reverse Primers to Have Mathing T<!-- raw HTML omitted -->m<!-- raw HTML omitted -->'s Is the Best Strategy to Optimize for PCR</h3>
 <p>谬误3：很多老手都相信这一点：优化PCR设计时，最好让上下游的引物都具有接近的T<!-- raw HTML omitted -->m<!-- raw HTML omitted -->。</p>
 <p>许多软件也是基于这一策略设计的。但这是有缺陷的，用Δ<em>G</em>°比T<!-- raw HTML omitted -->m<!-- raw HTML omitted -->要好。</p>
 <h3 id="myth-4-primer-dimer-artifacts-are-due-to-dimerization">Myth 4: &ldquo;Primer Dimer&rdquo; Artifacts Are Due to Dimerization</h3>
 <p>谬误4：引物二聚体只是引物的二聚化。</p>
-<p>常见导致引物二聚体的因素有：3&rsquo;端互补，5&rsquo;端或中间序列互补，高循环数（&gt;35），掺入外源基因组DNA，引物结合靶DNA的效率低，使用具有校正活性的DNA聚合酶（Pfu等）因3&rsquo;外切活性可能使原本不匹配的3&rsquo;端互补。</p>
+<p>常见导致引物二聚体的因素有：3'端互补，5'端或中间序列互补，高循环数（&gt;35），掺入外源基因组DNA，引物结合靶DNA的效率低，使用具有校正活性的DNA聚合酶（Pfu等）因3'外切活性可能使原本不匹配的3'端互补。</p>
 <h3 id="myth-5-a-blast-search-is-the-best-method-for-determing-the-specificity-of-a-primer">Myth 5: A BLAST Search Is the Best Method for Determing the Specificity of a Primer</h3>
 <p>谬误5：BLAST搜索是检验引物特异性的最佳方法。</p>
 <p>事实上，热力学参数比序列相似性能够更好地预测引物特异性。</p>
@@ -453,11 +452,11 @@
 <li>引物碱基：G+C含量以40-60%为宜，G+C太少扩增效果不佳，G+C 过多易出现非特异条带。ATGC最好随机分布，避免5个以上的嘌呤或嘧啶核苷酸的成串排列存在；</li>
 <li>引物T<!-- raw HTML omitted -->m<!-- raw HTML omitted -->：54-58℃，可放宽至52～62℃，GC%&gt;60%可进一步放宽；</li>
 <li>扩增子T<!-- raw HTML omitted -->m<!-- raw HTML omitted -->：&gt;92℃；</li>
-<li>3&rsquo;端：优选三联体WSS、SWS、TTS，二连体GC，单体S，尽量规避WWW、CGW、GGG、CG；</li>
+<li>3'端：优选三联体WSS、SWS、TTS，二连体GC，单体S，尽量规避WWW、CGW、GGG、CG；</li>
 <li>引物与非特异扩增区的序列的同源性不要超过70%，引物3′末端连续8个碱基在待扩增区以外不能有完全互补序列，否则易导致非特异性扩增；</li>
 <li>末端2bp最好为GC；</li>
 <li>引物的5′端可以修饰。如附加限制酶位点，引入突变位点，用生物素、荧光物质、地高辛标记，加入其它短序列，包括起始密码子、终止密码子等；</li>
-<li>其他：避免3&rsquo;端8bp及以上序列与模板多位点互补，尽量避免上下游3&rsquo;端4bp及以上反向互补，尽量避免内部回文。</li>
+<li>其他：避免3'端8bp及以上序列与模板多位点互补，尽量避免上下游3'端4bp及以上反向互补，尽量避免内部回文。</li>
 </ul>
 <p>基于上述原则，怎么在实践中应用呢？这要分两种情况：
 (1) 基因克隆PCR引物设计</p>
@@ -671,7 +670,7 @@
     &copy;
     
       2020 -
-    2021
+    2022
     <span class="heart">
       
       <i class="iconfont">

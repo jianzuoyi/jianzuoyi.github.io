@@ -6,7 +6,11 @@
     <description>Recent content in PCR on 简佐义的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 02 Dec 2020 00:00:00 +0800</lastBuildDate><atom:link href="https://jianzuoyi.github.io/tags/pcr/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Dec 2020 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://jianzuoyi.github.io/tags/pcr/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>从零开始学PCR技术（五）：试验污染</title>
       <link>https://jianzuoyi.github.io/post/2020-12-02-pcr-5-pollution/</link>

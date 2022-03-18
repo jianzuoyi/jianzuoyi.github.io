@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="微信：jianzuoyi，知乎：简佐义，公众号：简说基因" />
-  <meta name="description" content="DNA序列的GC含量是指序列中&amp;rsquo;G&amp;rsquo;和&amp;rsquo;C&amp;rsquo;所占的百分比。 一条DNA序列很容易表示，但是如果" />
+  <meta name="description" content="DNA序列的GC含量是指序列中&amp;rsquo;G&#39;和&amp;rsquo;C&#39;所占的百分比。 一条DNA序列很容易表示，但是如果有多条DNA序列放在一起" />
 
   <meta name="keywords" content="生物信息学, 自学生物信息学, 生物信息学学习, 生物学, linux, python, R, 简佐义, 博客, 笔记" />
 
@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.79.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
 
 <link rel="canonical" href="https://jianzuoyi.github.io/post/rosalind/2020-12-05-rosalind-005-gc_content/" />
@@ -53,30 +53,29 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.b3a8813c06e6d785beba22bf8264e174fa2cb3a396b22f9ba24e2c00c18aaf7f.css" integrity="sha256-s6iBPAbm14W&#43;uiK/gmThdPoss6OWsi&#43;bok4sAMGKr38=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.f1e506a781bf25d33ffc18aa6b4e972a965c58049d27d4f92b7db2e9bf28e4bf.css" integrity="sha256-8eUGp4G/JdM//Biqa06XKpZcWASdJ9T5K32y6b8o5L8=" media="screen" crossorigin="anonymous">
 
 
 
 
 
 <meta property="og:title" content="Rosalind刷题笔记：005 计算GC含量" />
-<meta property="og:description" content="DNA序列的GC含量是指序列中&rsquo;G&rsquo;和&rsquo;C&rsquo;所占的百分比。 一条DNA序列很容易表示，但是如果" />
+<meta property="og:description" content="DNA序列的GC含量是指序列中&rsquo;G&#39;和&rsquo;C&#39;所占的百分比。 一条DNA序列很容易表示，但是如果有多条DNA序列放在一起" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jianzuoyi.github.io/post/rosalind/2020-12-05-rosalind-005-gc_content/" />
 <meta property="article:published_time" content="2020-12-05T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-12-05T00:00:00+00:00" />
 <meta itemprop="name" content="Rosalind刷题笔记：005 计算GC含量">
-<meta itemprop="description" content="DNA序列的GC含量是指序列中&rsquo;G&rsquo;和&rsquo;C&rsquo;所占的百分比。 一条DNA序列很容易表示，但是如果">
-<meta itemprop="datePublished" content="2020-12-05T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2020-12-05T00:00:00+00:00" />
-<meta itemprop="wordCount" content="542">
+<meta itemprop="description" content="DNA序列的GC含量是指序列中&rsquo;G&#39;和&rsquo;C&#39;所占的百分比。 一条DNA序列很容易表示，但是如果有多条DNA序列放在一起">
+<meta itemprop="datePublished" content="2020-12-05T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-12-05T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="530">
 
 
 
-<meta itemprop="keywords" content="Rosalind," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Rosalind," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Rosalind刷题笔记：005 计算GC含量"/>
-<meta name="twitter:description" content="DNA序列的GC含量是指序列中&rsquo;G&rsquo;和&rsquo;C&rsquo;所占的百分比。 一条DNA序列很容易表示，但是如果"/>
+<meta name="twitter:description" content="DNA序列的GC含量是指序列中&rsquo;G&#39;和&rsquo;C&#39;所占的百分比。 一条DNA序列很容易表示，但是如果有多条DNA序列放在一起"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -394,7 +393,7 @@
 
     
     <div class="post-content">
-      <p>DNA序列的GC含量是指序列中&rsquo;G&rsquo;和&rsquo;C&rsquo;所占的百分比。</p>
+      <p>DNA序列的GC含量是指序列中&rsquo;G'和&rsquo;C'所占的百分比。</p>
 <p>一条DNA序列很容易表示，但是如果有多条DNA序列放在一起，则每条序列必须被标记，通常的做法是保存为FASTA格式文件。在这种格式中，序列的名称占一行，名称的最前面是一个大于符号‘&gt;’开头，序列名称后面可以跟一系列说明；序列信息从名称的下一行开始，直到遇到下一个以‘&gt;’开头的序列名称为止。Fasta格式文件可参考下面的示例数据。</p>
 <p>**给定：**一个Fasta序列文件。</p>
 <p>**需得：**GC含量最高的序列名称及其GC含量（各占一行行输出）。</p>
@@ -682,7 +681,7 @@ TGGGAACCTGCGGGCAGTAGGTGGAAT
     &copy;
     
       2020 -
-    2021
+    2022
     <span class="heart">
       
       <i class="iconfont">

@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.79.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
 
 <link rel="canonical" href="https://jianzuoyi.github.io/post/best/2020-11-20.linux/" />
@@ -53,7 +53,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.b3a8813c06e6d785beba22bf8264e174fa2cb3a396b22f9ba24e2c00c18aaf7f.css" integrity="sha256-s6iBPAbm14W&#43;uiK/gmThdPoss6OWsi&#43;bok4sAMGKr38=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.f1e506a781bf25d33ffc18aa6b4e972a965c58049d27d4f92b7db2e9bf28e4bf.css" integrity="sha256-8eUGp4G/JdM//Biqa06XKpZcWASdJ9T5K32y6b8o5L8=" media="screen" crossorigin="anonymous">
 
 
 
@@ -67,14 +67,13 @@
 <meta property="article:modified_time" content="2020-12-21T00:00:00+00:00" />
 <meta itemprop="name" content="生信人的自我修养：Linux 命令速查手册">
 <meta itemprop="description" content="许多人做生物信息学，要么不重视Linux，要么不知道怎么才能学好。翻开厚厚的一本教材，却不知道哪些是重点。Linux的核心知识有哪些，就像英">
-<meta itemprop="datePublished" content="2020-11-20T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2020-12-21T00:00:00+00:00" />
+<meta itemprop="datePublished" content="2020-11-20T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-12-21T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="7647">
 
 
 
-<meta itemprop="keywords" content="生物信息," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="生物信息," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="生信人的自我修养：Linux 命令速查手册"/>
 <meta name="twitter:description" content="许多人做生物信息学，要么不重视Linux，要么不知道怎么才能学好。翻开厚厚的一本教材，却不知道哪些是重点。Linux的核心知识有哪些，就像英"/>
 
@@ -588,7 +587,7 @@ grep <span class="s1">&#39;^&gt;&#39;</span> test.fa <span class="p">|</span> cu
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-bash" data-lang="bash">less file       <span class="c1"># 分屏显示文件内容，按空格键显示下一页，按下/后可以搜索内容</span>
-less -SN file   <span class="c1"># 显示文件的行号，并且截断太长的行 </span>
+less -SN file   <span class="c1"># 显示文件的行号，并且截断太长的行</span> 
 
 head file	    <span class="c1"># 默认显示文件前10行</span>
 head -n <span class="m">20</span> file <span class="c1"># 显示文件前20行</span>
@@ -873,7 +872,7 @@ ctrl + z	<span class="c1"># 按ctrl + z，将任务放到后台</span>
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">command</span> &lt; file			<span class="c1"># 将file的内容作为command的输入 </span>
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">command</span> &lt; file			<span class="c1"># 将file的内容作为command的输入</span> 
 <span class="nb">command</span> <span class="s">&lt;&lt; END			# 从标准输入（键盘）中读取数据，直到遇到分界符END</span>时停止（分界符用户可以自定义）
 <span class="nb">command</span> &lt;file1 &gt; file2	<span class="c1"># 将file1作为command的输入，并将处理结果输出到file2</span>
 </code></pre></td></tr></table>
@@ -1270,10 +1269,10 @@ field               $
 <td class="lntd">
 <pre class="chroma"><code class="language-bash" data-lang="bash">seq <span class="m">20</span> <span class="p">|</span> xargs -n5 &gt; file
 <span class="c1"># cat file</span>
-<span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span>
-<span class="m">6</span> <span class="m">7</span> <span class="m">8</span> <span class="m">9</span> <span class="m">10</span>
-<span class="m">11</span> <span class="m">12</span> <span class="m">13</span> <span class="m">14</span> <span class="m">15</span>
-<span class="m">16</span> <span class="m">17</span> <span class="m">18</span> <span class="m">19</span> <span class="m">20</span>
+<span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> 5
+<span class="m">6</span> <span class="m">7</span> <span class="m">8</span> <span class="m">9</span> 10
+<span class="m">11</span> <span class="m">12</span> <span class="m">13</span> <span class="m">14</span> 15
+<span class="m">16</span> <span class="m">17</span> <span class="m">18</span> <span class="m">19</span> 20
 
 awk <span class="s1">&#39;$5 ~ /10/&#39;</span> file
 awk <span class="s1">&#39;$5 ~ &#34;10&#34;&#39;</span> file
@@ -1337,9 +1336,9 @@ awk <span class="s1">&#39;$5 ~ 10&#39;</span> file
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span>							<span class="c1"># 打印整条记录到标准输出，相当于print $0</span>
-<span class="k">print</span> <span class="n">expr1</span><span class="p">,</span> <span class="n">expr2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">exprn</span>	<span class="c1"># 打印指定字段到标准输出</span>
-<span class="n">printf</span> <span class="n">format</span><span class="p">,</span> <span class="n">expr</span><span class="o">-</span><span class="nb">list</span>		<span class="c1"># C语言printf函数的重用</span>
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span>							<span class="c1"># 打印整条记录到标准输出，相当于print $0</span>
+<span class="k">print</span> <span class="n">expr1</span><span class="p">,</span> <span class="n">expr2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">exprn</span>	<span class="c1"># 打印指定字段到标准输出</span>
+<span class="n">printf</span> <span class="n">format</span><span class="p">,</span> <span class="n">expr</span><span class="o">-</span><span class="nb">list</span>		<span class="c1"># C语言printf函数的重用</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>输入函数getline有以下几种形式：</p>
@@ -1435,14 +1434,14 @@ awk <span class="s1">&#39;$1 ~ /EGFR/&#39;</span> file	<span class="c1"># 打印
 
 <span class="c1"># 按指定列去除重复行</span>
 <span class="c1"># cat file</span>
-<span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span>
-<span class="m">6</span> <span class="m">2</span> <span class="m">8</span> <span class="m">9</span> <span class="m">10</span>
-<span class="m">11</span> <span class="m">12</span> <span class="m">13</span> <span class="m">14</span> <span class="m">15</span>
-<span class="m">16</span> <span class="m">17</span> <span class="m">18</span> <span class="m">19</span> <span class="m">20</span>
+<span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> 5
+<span class="m">6</span> <span class="m">2</span> <span class="m">8</span> <span class="m">9</span> 10
+<span class="m">11</span> <span class="m">12</span> <span class="m">13</span> <span class="m">14</span> 15
+<span class="m">16</span> <span class="m">17</span> <span class="m">18</span> <span class="m">19</span> 20
 awk <span class="s1">&#39;!a[$2]++&#39;</span> file		<span class="c1"># 第二列出现两次2，只保留第一次出现的那一行，结果如下：</span>
-<span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span>
-<span class="m">11</span> <span class="m">12</span> <span class="m">13</span> <span class="m">14</span> <span class="m">15</span>
-<span class="m">16</span> <span class="m">17</span> <span class="m">18</span> <span class="m">19</span> <span class="m">20</span>
+<span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> 5
+<span class="m">11</span> <span class="m">12</span> <span class="m">13</span> <span class="m">14</span> 15
+<span class="m">16</span> <span class="m">17</span> <span class="m">18</span> <span class="m">19</span> 20
 
 awk <span class="s1">&#39;{sum+=$1} END {print sum}&#39;</span> file	<span class="c1"># 累加文件的第一列</span>
 awk <span class="s1">&#39;{sum+=$1} END {print sum/NR}&#39;</span> file	<span class="c1"># 求第一列的平均数</span>
@@ -1721,7 +1720,7 @@ md5sum			<span class="c1"># 生成，或验证文件的MD5值</span>
     &copy;
     
       2020 -
-    2021
+    2022
     <span class="heart">
       
       <i class="iconfont">

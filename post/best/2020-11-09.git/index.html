@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.79.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
 
 <link rel="canonical" href="https://jianzuoyi.github.io/post/best/2020-11-09.git/" />
@@ -53,7 +53,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.b3a8813c06e6d785beba22bf8264e174fa2cb3a396b22f9ba24e2c00c18aaf7f.css" integrity="sha256-s6iBPAbm14W&#43;uiK/gmThdPoss6OWsi&#43;bok4sAMGKr38=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.f1e506a781bf25d33ffc18aa6b4e972a965c58049d27d4f92b7db2e9bf28e4bf.css" integrity="sha256-8eUGp4G/JdM//Biqa06XKpZcWASdJ9T5K32y6b8o5L8=" media="screen" crossorigin="anonymous">
 
 
 
@@ -67,14 +67,13 @@
 <meta property="article:modified_time" content="2020-11-09T00:00:00+00:00" />
 <meta itemprop="name" content="代码版本控制及托管：我的最佳实践">
 <meta itemprop="description" content="作为半个IT人，写代码是工作日常，如何进行代码版本控制及托管，本文介绍一下我的最佳实践，其实很容易。 工作或学习过程中写的代码，存在本地的话容">
-<meta itemprop="datePublished" content="2020-11-09T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2020-11-09T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2921">
+<meta itemprop="datePublished" content="2020-11-09T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-11-09T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="3008">
 
 
 
-<meta itemprop="keywords" content="生物信息," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="生物信息," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="代码版本控制及托管：我的最佳实践"/>
 <meta name="twitter:description" content="作为半个IT人，写代码是工作日常，如何进行代码版本控制及托管，本文介绍一下我的最佳实践，其实很容易。 工作或学习过程中写的代码，存在本地的话容"/>
 
@@ -391,6 +390,7 @@
         <li><a href="#三远程仓库">三、远程仓库</a></li>
         <li><a href="#四分支管理">四、分支管理</a></li>
         <li><a href="#五解决冲突">五、解决冲突</a></li>
+        <li><a href="#六显示中文">六、显示中文</a></li>
       </ul>
     </li>
   </ul>
@@ -566,6 +566,11 @@ git push -u origin main
 <p>切换到本地的代码目录，运行上述命令，就可以在当前目录创建代码仓库，并与远程仓库进行关联</p>
 </li>
 </ol>
+<p>4.GitHub 访问不了的解决办法，修改Hosts</p>
+<ul>
+<li>在查询 IP 的网站，查询 github.com 的 IP</li>
+<li>修改 C:/Windows/…/etc/hosts</li>
+</ul>
 <h3 id="四分支管理">四、分支管理</h3>
 <p>分支的作用：当一个功能还没开发完成时就提交代码，不完整的代码库会导致程序不能正常工作。如果等完成了再提交，又存在丢失每天进度的风险。</p>
 <p>有了分支，就可以等开发完毕后一次性合并到原来的分支上。</p>
@@ -595,6 +600,16 @@ git stash pop，弹出暂存的工作区内容
 git status，查看工作区状态
 git diff &lt;file&gt;，查看具体文件的修改，从而决定是否用新版本，如果要保存新版本，则执行<span class="sb">`</span>git add, git commit<span class="sb">`</span>流程
 git checkout -- &lt;file&gt;，如果要放弃文件的修改，则执行此命令
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="六显示中文">六、显示中文</h3>
+<p>解决git status不显示中文的问题：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">git config --global core.quotepath false
 </code></pre></td></tr></table>
 </div>
 </div><p>掌握以上这些命令，基本上就够用了。</p>
@@ -780,7 +795,7 @@ git checkout -- &lt;file&gt;，如果要放弃文件的修改，则执行此命�
     &copy;
     
       2020 -
-    2021
+    2022
     <span class="heart">
       
       <i class="iconfont">

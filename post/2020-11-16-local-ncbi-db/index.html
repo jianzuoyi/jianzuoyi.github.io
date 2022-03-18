@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.79.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
 
 <link rel="canonical" href="https://jianzuoyi.github.io/post/2020-11-16-local-ncbi-db/" />
@@ -53,7 +53,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.b3a8813c06e6d785beba22bf8264e174fa2cb3a396b22f9ba24e2c00c18aaf7f.css" integrity="sha256-s6iBPAbm14W&#43;uiK/gmThdPoss6OWsi&#43;bok4sAMGKr38=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.f1e506a781bf25d33ffc18aa6b4e972a965c58049d27d4f92b7db2e9bf28e4bf.css" integrity="sha256-8eUGp4G/JdM//Biqa06XKpZcWASdJ9T5K32y6b8o5L8=" media="screen" crossorigin="anonymous">
 
 
 
@@ -67,14 +67,13 @@
 <meta property="article:modified_time" content="2020-11-16T00:00:00+08:00" />
 <meta itemprop="name" content="一文搞懂NCBI Blast本地数据库（NT/NR等）构建">
 <meta itemprop="description" content="一文搞懂NCBI Blast本地数据库（NT/NR等）构建 背景介绍 blast&#43;： ftp://ftp.ncbi.nlm.nih.gov/blast/executables/LATEST blast db：ftp://ftp.ncbi.nlm.nih.gov">
-<meta itemprop="datePublished" content="2020-11-16T00:00:00+08:00" />
-<meta itemprop="dateModified" content="2020-11-16T00:00:00+08:00" />
+<meta itemprop="datePublished" content="2020-11-16T00:00:00&#43;08:00" />
+<meta itemprop="dateModified" content="2020-11-16T00:00:00&#43;08:00" />
 <meta itemprop="wordCount" content="669">
 
 
 
-<meta itemprop="keywords" content="生物信息," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="生物信息," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="一文搞懂NCBI Blast本地数据库（NT/NR等）构建"/>
 <meta name="twitter:description" content="一文搞懂NCBI Blast本地数据库（NT/NR等）构建 背景介绍 blast&#43;： ftp://ftp.ncbi.nlm.nih.gov/blast/executables/LATEST blast db：ftp://ftp.ncbi.nlm.nih.gov"/>
 
@@ -511,7 +510,7 @@ CGATAATTCATCTGGCCGCCTTCCACACCCAGCGCGCGCAAAAAGTGGTGGCGGAAACGATCCGCACTGAAAATACCGTG
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">time</span> blastn -query test.fa -db /path/to/nt.fa -num_threads <span class="m">48</span> -max_target_seqs <span class="m">5</span> -outfmt <span class="m">6</span>
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">time</span> blastn -query test.fa -db /path/to/nt.fa -num_threads <span class="m">48</span> -max_target_seqs <span class="m">5</span> -outfmt 6
 </code></pre></td></tr></table>
 </div>
 </div><p>结果如下：</p>
@@ -528,11 +527,11 @@ CGATAATTCATCTGGCCGCCTTCCACACCCAGCGCGCGCAAAAAGTGGTGGCGGAAACGATCCGCACTGAAAATACCGTG
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">chr1    CP046720.1      100.000 <span class="m">111</span>     <span class="m">0</span>       <span class="m">0</span>       <span class="m">1</span>       <span class="m">111</span>     <span class="m">1286985</span> <span class="m">1287095</span> 1.92e-49        <span class="m">206</span>
-chr1    CP044338.1      100.000 <span class="m">111</span>     <span class="m">0</span>       <span class="m">0</span>       <span class="m">1</span>       <span class="m">111</span>     <span class="m">1283638</span> <span class="m">1283748</span> 1.92e-49        <span class="m">206</span>
-chr1    MK355143.1      100.000 <span class="m">111</span>     <span class="m">0</span>       <span class="m">0</span>       <span class="m">1</span>       <span class="m">111</span>     <span class="m">76</span>      <span class="m">186</span>     1.92e-49        <span class="m">206</span>
-chr1    MK355138.1      100.000 <span class="m">111</span>     <span class="m">0</span>       <span class="m">0</span>       <span class="m">1</span>       <span class="m">111</span>     <span class="m">76</span>      <span class="m">186</span>     1.92e-49        <span class="m">206</span>
-chr1    MK355136.1      100.000 <span class="m">111</span>     <span class="m">0</span>       <span class="m">0</span>       <span class="m">1</span>       <span class="m">111</span>     <span class="m">76</span>      <span class="m">186</span>     1.92e-49        <span class="m">206</span>
+<pre class="chroma"><code class="language-bash" data-lang="bash">chr1    CP046720.1      100.000 <span class="m">111</span>     <span class="m">0</span>       <span class="m">0</span>       <span class="m">1</span>       <span class="m">111</span>     <span class="m">1286985</span> <span class="m">1287095</span> 1.92e-49        206
+chr1    CP044338.1      100.000 <span class="m">111</span>     <span class="m">0</span>       <span class="m">0</span>       <span class="m">1</span>       <span class="m">111</span>     <span class="m">1283638</span> <span class="m">1283748</span> 1.92e-49        206
+chr1    MK355143.1      100.000 <span class="m">111</span>     <span class="m">0</span>       <span class="m">0</span>       <span class="m">1</span>       <span class="m">111</span>     <span class="m">76</span>      <span class="m">186</span>     1.92e-49        206
+chr1    MK355138.1      100.000 <span class="m">111</span>     <span class="m">0</span>       <span class="m">0</span>       <span class="m">1</span>       <span class="m">111</span>     <span class="m">76</span>      <span class="m">186</span>     1.92e-49        206
+chr1    MK355136.1      100.000 <span class="m">111</span>     <span class="m">0</span>       <span class="m">0</span>       <span class="m">1</span>       <span class="m">111</span>     <span class="m">76</span>      <span class="m">186</span>     1.92e-49        206
 
 real    0m15.609s
 user    1m17.647s
@@ -722,7 +721,7 @@ sys     0m31.350s
     &copy;
     
       2020 -
-    2021
+    2022
     <span class="heart">
       
       <i class="iconfont">

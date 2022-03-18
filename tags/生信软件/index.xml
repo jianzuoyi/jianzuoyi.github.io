@@ -6,7 +6,11 @@
     <description>Recent content in 生信软件 on 简佐义的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 24 Dec 2020 12:00:00 +0800</lastBuildDate><atom:link href="https://jianzuoyi.github.io/tags/%E7%94%9F%E4%BF%A1%E8%BD%AF%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 Dec 2020 12:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://jianzuoyi.github.io/tags/%E7%94%9F%E4%BF%A1%E8%BD%AF%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>李恒大神亲测推荐，基因组序列处理神器Pyfastx简介</title>
       <link>https://jianzuoyi.github.io/post/2020-12-24-pyfastx/</link>

@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.79.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
 
 <link rel="canonical" href="https://jianzuoyi.github.io/post/2020-12-24-pyfastx/" />
@@ -53,7 +53,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.b3a8813c06e6d785beba22bf8264e174fa2cb3a396b22f9ba24e2c00c18aaf7f.css" integrity="sha256-s6iBPAbm14W&#43;uiK/gmThdPoss6OWsi&#43;bok4sAMGKr38=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.f1e506a781bf25d33ffc18aa6b4e972a965c58049d27d4f92b7db2e9bf28e4bf.css" integrity="sha256-8eUGp4G/JdM//Biqa06XKpZcWASdJ9T5K32y6b8o5L8=" media="screen" crossorigin="anonymous">
 
 
 
@@ -67,14 +67,13 @@
 <meta property="article:modified_time" content="2020-12-24T12:00:00+08:00" />
 <meta itemprop="name" content="李恒大神亲测推荐，基因组序列处理神器Pyfastx简介">
 <meta itemprop="description" content="今天强烈安利一个基因组序列处理神器：Pyfastx。软件历经20个月、70个版本，文章发表在生信顶刊《Briefings in Bioinform">
-<meta itemprop="datePublished" content="2020-12-24T12:00:00+08:00" />
-<meta itemprop="dateModified" content="2020-12-24T12:00:00+08:00" />
+<meta itemprop="datePublished" content="2020-12-24T12:00:00&#43;08:00" />
+<meta itemprop="dateModified" content="2020-12-24T12:00:00&#43;08:00" />
 <meta itemprop="wordCount" content="2828">
 
 
 
-<meta itemprop="keywords" content="生物信息,生信软件," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="生物信息,生信软件," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="李恒大神亲测推荐，基因组序列处理神器Pyfastx简介"/>
 <meta name="twitter:description" content="今天强烈安利一个基因组序列处理神器：Pyfastx。软件历经20个月、70个版本，文章发表在生信顶刊《Briefings in Bioinform"/>
 
@@ -622,17 +621,17 @@
 <pre class="chroma"><code class="language-bash" data-lang="bash">&gt;&gt;&gt; <span class="c1"># get sequence like a dictionary by identifier</span>
 &gt;&gt;&gt; <span class="nv">s1</span> <span class="o">=</span> fa<span class="o">[</span><span class="s1">&#39;JZ822577.1&#39;</span><span class="o">]</span>
 &gt;&gt;&gt; s1
-&lt;Sequence&gt; JZ822577.1 with length of <span class="m">333</span>
+&lt;Sequence&gt; JZ822577.1 with length of 333
 
 &gt;&gt;&gt; <span class="c1"># get sequence like a list by index</span>
 &gt;&gt;&gt; <span class="nv">s2</span> <span class="o">=</span> fa<span class="o">[</span>2<span class="o">]</span>
 &gt;&gt;&gt; s2
-&lt;Sequence&gt; JZ822579.1 with length of <span class="m">176</span>
+&lt;Sequence&gt; JZ822579.1 with length of 176
 
 &gt;&gt;&gt; <span class="c1"># get last sequence</span>
 &gt;&gt;&gt; <span class="nv">s3</span> <span class="o">=</span> fa<span class="o">[</span>-1<span class="o">]</span>
 &gt;&gt;&gt; s3
-&lt;Sequence&gt; JZ840318.1 with length of <span class="m">134</span>
+&lt;Sequence&gt; JZ840318.1 with length of 134
 
 &gt;&gt;&gt; <span class="c1"># check a sequence name weather in FASTA file</span>
 &gt;&gt;&gt; <span class="s1">&#39;JZ822577.1&#39;</span> in fa
@@ -670,7 +669,7 @@ True
 &gt;&gt;&gt; <span class="nv">s</span> <span class="o">=</span> fa<span class="o">[</span>-1<span class="o">]</span>
 &gt;&gt;&gt; <span class="nv">ss</span> <span class="o">=</span> s<span class="o">[</span>10:30<span class="o">]</span>
 &gt;&gt;&gt; ss
-&lt;Sequence&gt; JZ840318.1 from <span class="m">11</span> to <span class="m">30</span>
+&lt;Sequence&gt; JZ840318.1 from <span class="m">11</span> to 30
 
 &gt;&gt;&gt; ss.name
 <span class="s1">&#39;JZ840318.1:11-30&#39;</span>
@@ -680,7 +679,7 @@ True
 
 &gt;&gt;&gt; <span class="nv">ss</span> <span class="o">=</span> s<span class="o">[</span>-10:<span class="o">]</span>
 &gt;&gt;&gt; ss
-&lt;Sequence&gt; JZ840318.1 from <span class="m">125</span> to <span class="m">134</span>
+&lt;Sequence&gt; JZ840318.1 from <span class="m">125</span> to 134
 
 &gt;&gt;&gt; ss.name
 <span class="s1">&#39;JZ840318.1:125-134&#39;</span>
@@ -833,11 +832,11 @@ True
 <td class="lntd">
 <pre class="chroma"><code class="language-bash" data-lang="bash">&gt;&gt;&gt; <span class="c1"># get read counts in FASTQ</span>
 &gt;&gt;&gt; len<span class="o">(</span>fq<span class="o">)</span>
-<span class="m">800</span>
+800
 
 &gt;&gt;&gt; <span class="c1"># get total bases</span>
 &gt;&gt;&gt; fq.size
-<span class="m">120000</span>
+120000
 
 &gt;&gt;&gt; <span class="c1"># get GC content of FASTQ file</span>
 &gt;&gt;&gt; fq.gc_content
@@ -854,23 +853,23 @@ True
 
 &gt;&gt;&gt; <span class="c1"># get maximum lenth of reads</span>
 &gt;&gt;&gt; fq.maxlen
-<span class="m">150</span>
+150
 
 &gt;&gt;&gt; <span class="c1"># get minimum length of reas</span>
 &gt;&gt;&gt; fq.minlen
-<span class="m">150</span>
+150
 
 &gt;&gt;&gt; <span class="c1"># get maximum quality score</span>
 &gt;&gt;&gt; fq.maxqual
-<span class="m">70</span>
+70
 
 &gt;&gt;&gt; <span class="c1"># get minimum quality score</span>
 &gt;&gt;&gt; fq.minqual
-<span class="m">35</span>
+35
 
 &gt;&gt;&gt; <span class="c1"># get phred which affects the quality score conversion</span>
 &gt;&gt;&gt; fq.phred
-<span class="m">33</span>
+33
 
 &gt;&gt;&gt; <span class="c1"># Guess fastq quality encoding system</span>
 &gt;&gt;&gt; <span class="c1"># New in pyfastx 0.4.1</span>
@@ -906,17 +905,17 @@ True
 <pre class="chroma"><code class="language-bash" data-lang="bash">&gt;&gt;&gt; <span class="c1">#get read like a dict by read name</span>
 &gt;&gt;&gt; <span class="nv">r1</span> <span class="o">=</span> fq<span class="o">[</span><span class="s1">&#39;A00129:183:H77K2DMXX:1:1101:4752:1047&#39;</span><span class="o">]</span>
 &gt;&gt;&gt; r1
-&lt;Read&gt; A00129:183:H77K2DMXX:1:1101:4752:1047 with length of <span class="m">150</span>
+&lt;Read&gt; A00129:183:H77K2DMXX:1:1101:4752:1047 with length of 150
 
 &gt;&gt;&gt; <span class="c1"># get read like a list by index</span>
 &gt;&gt;&gt; <span class="nv">r2</span> <span class="o">=</span> fq<span class="o">[</span>10<span class="o">]</span>
 &gt;&gt;&gt; r2
-&lt;Read&gt; A00129:183:H77K2DMXX:1:1101:18041:1078 with length of <span class="m">150</span>
+&lt;Read&gt; A00129:183:H77K2DMXX:1:1101:18041:1078 with length of 150
 
 &gt;&gt;&gt; <span class="c1"># get the last read</span>
 &gt;&gt;&gt; <span class="nv">r3</span> <span class="o">=</span> fq<span class="o">[</span>-1<span class="o">]</span>
 &gt;&gt;&gt; r3
-&lt;Read&gt; A00129:183:H77K2DMXX:1:1101:31575:4726 with length of <span class="m">150</span>
+&lt;Read&gt; A00129:183:H77K2DMXX:1:1101:31575:4726 with length of 150
 
 &gt;&gt;&gt; <span class="c1"># check a read weather in FASTQ file</span>
 &gt;&gt;&gt; <span class="s1">&#39;A00129:183:H77K2DMXX:1:1101:4752:1047&#39;</span> in fq
@@ -972,11 +971,11 @@ True
 <td class="lntd">
 <pre class="chroma"><code class="language-bash" data-lang="bash">&gt;&gt;&gt; <span class="nv">r</span> <span class="o">=</span> fq<span class="o">[</span>-10<span class="o">]</span>
 &gt;&gt;&gt; r
-&lt;Read&gt; A00129:183:H77K2DMXX:1:1101:1750:4711 with length of <span class="m">150</span>
+&lt;Read&gt; A00129:183:H77K2DMXX:1:1101:1750:4711 with length of 150
 
 &gt;&gt;&gt; <span class="c1"># get read order number in FASTQ file</span>
 &gt;&gt;&gt; r.id
-<span class="m">791</span>
+791
 
 &gt;&gt;&gt; <span class="c1"># get read name</span>
 &gt;&gt;&gt; r.name
@@ -988,7 +987,7 @@ True
 
 &gt;&gt;&gt; <span class="c1"># get read length</span>
 &gt;&gt;&gt; len<span class="o">(</span>r<span class="o">)</span>
-<span class="m">150</span>
+150
 
 &gt;&gt;&gt; <span class="c1"># get read sequence</span>
 &gt;&gt;&gt; r.seq
@@ -1011,7 +1010,7 @@ FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF:FFFFFFFFFFFFFFFFFFFFFFFFFFFFF
 
 &gt;&gt;&gt; <span class="c1"># get read length</span>
 &gt;&gt;&gt; len<span class="o">(</span>r<span class="o">)</span>
-<span class="m">150</span>
+150
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="命令行接口">命令行接口</h2>
@@ -1249,7 +1248,7 @@ Commands:
     &copy;
     
       2020 -
-    2021
+    2022
     <span class="heart">
       
       <i class="iconfont">

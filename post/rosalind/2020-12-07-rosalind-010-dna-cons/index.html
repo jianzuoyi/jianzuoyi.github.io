@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.79.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
 
 <link rel="canonical" href="https://jianzuoyi.github.io/post/rosalind/2020-12-07-rosalind-010-dna-cons/" />
@@ -53,7 +53,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.b3a8813c06e6d785beba22bf8264e174fa2cb3a396b22f9ba24e2c00c18aaf7f.css" integrity="sha256-s6iBPAbm14W&#43;uiK/gmThdPoss6OWsi&#43;bok4sAMGKr38=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.f1e506a781bf25d33ffc18aa6b4e972a965c58049d27d4f92b7db2e9bf28e4bf.css" integrity="sha256-8eUGp4G/JdM//Biqa06XKpZcWASdJ9T5K32y6b8o5L8=" media="screen" crossorigin="anonymous">
 
 
 
@@ -67,14 +67,13 @@
 <meta property="article:modified_time" content="2020-12-07T00:00:00+00:00" />
 <meta itemprop="name" content="Rosalind刷题笔记：010 DNA一致性序列计算">
 <meta itemprop="description" content="经常碰到需要计算一组DNA序列的一致性序列，比如去除测序数据中的PCR错误，最简单的方法就是通过计算它们之间的一致性序列。 计算一致性序列，通">
-<meta itemprop="datePublished" content="2020-12-07T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2020-12-07T00:00:00+00:00" />
+<meta itemprop="datePublished" content="2020-12-07T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-12-07T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="519">
 
 
 
-<meta itemprop="keywords" content="Rosalind," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Rosalind," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Rosalind刷题笔记：010 DNA一致性序列计算"/>
 <meta name="twitter:description" content="经常碰到需要计算一组DNA序列的一致性序列，比如去除测序数据中的PCR错误，最简单的方法就是通过计算它们之间的一致性序列。 计算一致性序列，通"/>
 
@@ -445,10 +444,10 @@ ATGGCACT
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-bash" data-lang="bash">ATGCAACT
-A: <span class="m">5</span> <span class="m">1</span> <span class="m">0</span> <span class="m">0</span> <span class="m">5</span> <span class="m">5</span> <span class="m">0</span> <span class="m">0</span>
-C: <span class="m">0</span> <span class="m">0</span> <span class="m">1</span> <span class="m">4</span> <span class="m">2</span> <span class="m">0</span> <span class="m">6</span> <span class="m">1</span>
-G: <span class="m">1</span> <span class="m">1</span> <span class="m">6</span> <span class="m">3</span> <span class="m">0</span> <span class="m">1</span> <span class="m">0</span> <span class="m">0</span>
-T: <span class="m">1</span> <span class="m">5</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">1</span> <span class="m">1</span> <span class="m">6</span>
+A: <span class="m">5</span> <span class="m">1</span> <span class="m">0</span> <span class="m">0</span> <span class="m">5</span> <span class="m">5</span> <span class="m">0</span> 0
+C: <span class="m">0</span> <span class="m">0</span> <span class="m">1</span> <span class="m">4</span> <span class="m">2</span> <span class="m">0</span> <span class="m">6</span> 1
+G: <span class="m">1</span> <span class="m">1</span> <span class="m">6</span> <span class="m">3</span> <span class="m">0</span> <span class="m">1</span> <span class="m">0</span> 0
+T: <span class="m">1</span> <span class="m">5</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">1</span> <span class="m">1</span> 6
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="python实现">Python实现</h2>
@@ -493,7 +492,7 @@ T: <span class="m">1</span> <span class="m">5</span> <span class="m">0</span> <s
 <span class="kn">import</span> <span class="nn">pysam</span>
 
 <span class="k">def</span> <span class="nf">consensus</span><span class="p">(</span><span class="n">infasta</span><span class="p">):</span>
-    <span class="c1"># Create profile matrix</span>
+    <span class="c1"># Create profile matrix</span>
     <span class="n">base</span> <span class="o">=</span> <span class="s1">&#39;ACGT&#39;</span>
     <span class="n">profile</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">with</span> <span class="n">pysam</span><span class="o">.</span><span class="n">FastxFile</span><span class="p">(</span><span class="n">infasta</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
@@ -503,7 +502,7 @@ T: <span class="m">1</span> <span class="m">5</span> <span class="m">0</span> <s
             <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">b</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">sequence</span><span class="p">):</span>
                 <span class="n">profile</span><span class="p">[</span><span class="n">base</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">b</span><span class="p">)][</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
 
-    <span class="c1"># Get consensus string</span>
+    <span class="c1"># Get consensus string</span>
     <span class="n">cons</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">profile</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
         <span class="n">count</span> <span class="o">=</span> <span class="p">{</span> <span class="n">b</span><span class="p">:</span><span class="n">profile</span><span class="p">[</span><span class="n">base</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">b</span><span class="p">)][</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">base</span> <span class="p">}</span>
@@ -512,7 +511,7 @@ T: <span class="m">1</span> <span class="m">5</span> <span class="m">0</span> <s
 
 <span class="k">def</span> <span class="nf">test</span><span class="p">():</span>
     <span class="n">cons</span><span class="p">,</span> <span class="n">profile</span> <span class="o">=</span> <span class="n">consensus</span><span class="p">(</span><span class="s1">&#39;rosalind_cons_test.txt&#39;</span><span class="p">)</span>
-    <span class="c1">#cons, profile = consensus(&#39;rosalind_cons.txt&#39;)</span>
+    <span class="c1">#cons, profile = consensus(&#39;rosalind_cons.txt&#39;)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">cons</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">base</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="s1">&#39;ACGT&#39;</span><span class="p">):</span>
         <span class="n">line</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">:&#39;</span><span class="o">%</span><span class="n">base</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">profile</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span>
@@ -706,7 +705,7 @@ T: <span class="m">1</span> <span class="m">5</span> <span class="m">0</span> <s
     &copy;
     
       2020 -
-    2021
+    2022
     <span class="heart">
       
       <i class="iconfont">

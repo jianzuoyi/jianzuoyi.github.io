@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.79.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
 
 <link rel="canonical" href="https://jianzuoyi.github.io/post/2020-09-03.microbe-bcl2fastq/" />
@@ -53,7 +53,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.b3a8813c06e6d785beba22bf8264e174fa2cb3a396b22f9ba24e2c00c18aaf7f.css" integrity="sha256-s6iBPAbm14W&#43;uiK/gmThdPoss6OWsi&#43;bok4sAMGKr38=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.f1e506a781bf25d33ffc18aa6b4e972a965c58049d27d4f92b7db2e9bf28e4bf.css" integrity="sha256-8eUGp4G/JdM//Biqa06XKpZcWASdJ9T5K32y6b8o5L8=" media="screen" crossorigin="anonymous">
 
 
 
@@ -67,14 +67,13 @@
 <meta property="article:modified_time" content="2020-09-03T00:00:00+08:00" />
 <meta itemprop="name" content="病原微生物扩增子数据分析实战（一）：bcl2fastq软件完成数据拆分">
 <meta itemprop="description" content="懂得了那么多道理，却依然过不好这一生。 所以理论归理论，最终要落实到分析代码上，咱们从这一篇开始，介绍一套扩增子数据分析流程。 闲话少叙，首先介">
-<meta itemprop="datePublished" content="2020-09-03T00:00:00+08:00" />
-<meta itemprop="dateModified" content="2020-09-03T00:00:00+08:00" />
+<meta itemprop="datePublished" content="2020-09-03T00:00:00&#43;08:00" />
+<meta itemprop="dateModified" content="2020-09-03T00:00:00&#43;08:00" />
 <meta itemprop="wordCount" content="1540">
 
 
 
-<meta itemprop="keywords" content="扩增子,NGS,病原微生物," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="扩增子,NGS,病原微生物," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="病原微生物扩增子数据分析实战（一）：bcl2fastq软件完成数据拆分"/>
 <meta name="twitter:description" content="懂得了那么多道理，却依然过不好这一生。 所以理论归理论，最终要落实到分析代码上，咱们从这一篇开始，介绍一套扩增子数据分析流程。 闲话少叙，首先介"/>
 
@@ -413,12 +412,12 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">/path-to/bcl2fastq_V219 <span class="se">\
-</span><span class="se"></span>-R /path-to/200821_M06862_0006_000000000-C9TL7 <span class="se">\
-</span><span class="se"></span>--sample-sheet /path-to/SampleSheet.csv <span class="se">\
-</span><span class="se"></span>--output-dir /path-to/Demultiplexed <span class="se">\
-</span><span class="se"></span>--barcode-mismatches <span class="m">1</span> <span class="se">\
-</span><span class="se"></span>--use-bases-mask Y75n,I8,I8,Y75n
+<pre class="chroma"><code class="language-bash" data-lang="bash">/path-to/bcl2fastq_V219 <span class="se">\</span>
+-R /path-to/200821_M06862_0006_000000000-C9TL7 <span class="se">\</span>
+--sample-sheet /path-to/SampleSheet.csv <span class="se">\</span>
+--output-dir /path-to/Demultiplexed <span class="se">\</span>
+--barcode-mismatches <span class="m">1</span> <span class="se">\</span>
+--use-bases-mask Y75n,I8,I8,Y75n
 </code></pre></td></tr></table>
 </div>
 </div><p><a href="https://support.illumina.com/sequencing/sequencing_software/bcl2fastq-conversion-software/downloads.html">bcl2fastq_V219</a>，是illumina官方提供的BCL转FASTQ格式的软件，这里用的版本是v2.19。</p>
@@ -765,7 +764,7 @@ wenku5,,,,D705,ATTCAGAA,D504,GGCTCTGA,,
     &copy;
     
       2020 -
-    2021
+    2022
     <span class="heart">
       
       <i class="iconfont">
