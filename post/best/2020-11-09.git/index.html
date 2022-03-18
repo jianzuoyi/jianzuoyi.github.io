@@ -69,7 +69,7 @@
 <meta itemprop="description" content="作为半个IT人，写代码是工作日常，如何进行代码版本控制及托管，本文介绍一下我的最佳实践，其实很容易。 工作或学习过程中写的代码，存在本地的话容">
 <meta itemprop="datePublished" content="2020-11-09T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-11-09T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="3008">
+<meta itemprop="wordCount" content="3053">
 
 
 
@@ -532,7 +532,18 @@ git reset --hard commit_id	<span class="c1"># 在任意版本之间切换</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>HEAD指向的版本就是当前版本，Git允许在任意版本之间切换</p>
-<h3 id="三远程仓库">三、远程仓库</h3>
+<p><strong>情况6：删除版本库中的文件</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">git rm                     <span class="c1"># 删除版本库和工作区的文件</span>
+git rm -r --cached dir     <span class="c1"># 删除版本库中的文件</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="三远程仓库">三、远程仓库</h3>
 <p>版本管理的最佳实践就是先创建远程仓库，再克隆到本地进行修改，然后push到远程仓库。</p>
 <p>但是有些时候代码已经存在本地了，需要将其推送到远程仓库，我通常是这样做的：</p>
 <ol>
