@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 日志 | 简说基因</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 日志 | 简说基因" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 日志 | 简说基因" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="Zo Zo" />
+
+
+<meta name="date" content="2022-03-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="笔记.html"/>
+<link rel="next" href="图书馆.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">简说基因</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> 关于</a></li>
+<li class="chapter" data-level="2" data-path="账号.html"><a href="账号.html"><i class="fa fa-check"></i><b>2</b> 账号</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="账号.html"><a href="账号.html#docker-token-2022114"><i class="fa fa-check"></i><b>2.1</b> docker token (2022/1/14)</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="笔记.html"><a href="笔记.html"><i class="fa fa-check"></i><b>3</b> 笔记</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="笔记.html"><a href="笔记.html#离线安装-github-包"><i class="fa fa-check"></i><b>3.1</b> 离线安装 GitHub 包</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="笔记.html"><a href="笔记.html#第一种方式"><i class="fa fa-check"></i><b>3.1.1</b> 第一种方式</a></li>
+<li class="chapter" data-level="3.1.2" data-path="笔记.html"><a href="笔记.html#第二种方式"><i class="fa fa-check"></i><b>3.1.2</b> 第二种方式</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="笔记.html"><a href="笔记.html#cnvkit使用"><i class="fa fa-check"></i><b>3.2</b> CNVkit使用</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="笔记.html"><a href="笔记.html#diagram"><i class="fa fa-check"></i><b>3.2.1</b> diagram</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="笔记.html"><a href="笔记.html#找tcga-276个ddr基因"><i class="fa fa-check"></i><b>3.3</b> 找TCGA 276个DDR基因</a></li>
+<li class="chapter" data-level="3.4" data-path="笔记.html"><a href="笔记.html#转录组流程"><i class="fa fa-check"></i><b>3.4</b> 转录组流程</a></li>
+<li class="chapter" data-level="3.5" data-path="笔记.html"><a href="笔记.html#阿里云k8s系统使用自有镜像的问题"><i class="fa fa-check"></i><b>3.5</b> 阿里云k8s系统使用自有镜像的问题</a></li>
+<li class="chapter" data-level="3.6" data-path="笔记.html"><a href="笔记.html#docker使用"><i class="fa fa-check"></i><b>3.6</b> Docker使用</a></li>
+<li class="chapter" data-level="3.7" data-path="笔记.html"><a href="笔记.html#安装-vep"><i class="fa fa-check"></i><b>3.7</b> 安装 vep</a></li>
+<li class="chapter" data-level="3.8" data-path="笔记.html"><a href="笔记.html#安装-cnvkit"><i class="fa fa-check"></i><b>3.8</b> 安装 cnvkit</a></li>
+<li class="chapter" data-level="3.9" data-path="笔记.html"><a href="笔记.html#数据备份专题"><i class="fa fa-check"></i><b>3.9</b> 数据备份专题</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="日志.html"><a href="日志.html"><i class="fa fa-check"></i><b>4</b> 日志</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="日志.html"><a href="日志.html#section"><i class="fa fa-check"></i><b>4.1</b> 2022</a></li>
+<li class="chapter" data-level="4.2" data-path="日志.html"><a href="日志.html#section-1"><i class="fa fa-check"></i><b>4.2</b> 2021</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="图书馆.html"><a href="图书馆.html"><i class="fa fa-check"></i><b>5</b> 图书馆</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="图书馆.html"><a href="图书馆.html#通识"><i class="fa fa-check"></i><b>5.1</b> 通识</a></li>
+<li class="chapter" data-level="5.2" data-path="图书馆.html"><a href="图书馆.html#专业生物信息"><i class="fa fa-check"></i><b>5.2</b> 专业：生物信息</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="图书馆.html"><a href="图书馆.html#计算机"><i class="fa fa-check"></i><b>5.2.1</b> 计算机</a></li>
+<li class="chapter" data-level="5.2.2" data-path="图书馆.html"><a href="图书馆.html#统计学"><i class="fa fa-check"></i><b>5.2.2</b> 统计学</a></li>
+<li class="chapter" data-level="5.2.3" data-path="图书馆.html"><a href="图书馆.html#肿瘤学"><i class="fa fa-check"></i><b>5.2.3</b> 肿瘤学</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="图书馆.html"><a href="图书馆.html#财商"><i class="fa fa-check"></i><b>5.3</b> 财商</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="r医学科研.html"><a href="r医学科研.html"><i class="fa fa-check"></i><b>6</b> R医学科研</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="r医学科研.html"><a href="r医学科研.html#第1章-r语言简介"><i class="fa fa-check"></i><b>6.1</b> 第1章 R语言简介</a></li>
+<li class="chapter" data-level="6.2" data-path="r医学科研.html"><a href="r医学科研.html#第2章-输入数据"><i class="fa fa-check"></i><b>6.2</b> 第2章 输入数据</a></li>
+<li class="chapter" data-level="6.3" data-path="r医学科研.html"><a href="r医学科研.html#第3章-数据变换"><i class="fa fa-check"></i><b>6.3</b> 第3章 数据变换</a></li>
+<li class="chapter" data-level="6.4" data-path="r医学科研.html"><a href="r医学科研.html#第4章-可视化"><i class="fa fa-check"></i><b>6.4</b> 第4章 可视化</a></li>
+<li class="chapter" data-level="6.5" data-path="r医学科研.html"><a href="r医学科研.html#第5章-建模"><i class="fa fa-check"></i><b>6.5</b> 第5章 建模</a></li>
+<li class="chapter" data-level="6.6" data-path="r医学科研.html"><a href="r医学科研.html#第6章-交流"><i class="fa fa-check"></i><b>6.6</b> 第6章 交流</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="r医学科研-第1章-r语言简介.html"><a href="r医学科研-第1章-r语言简介.html"><i class="fa fa-check"></i><b>7</b> R医学科研 第1章 R语言简介</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="r医学科研-第1章-r语言简介.html"><a href="r医学科研-第1章-r语言简介.html#r的安装"><i class="fa fa-check"></i><b>7.1</b> 1.1 R的安装</a></li>
+<li class="chapter" data-level="7.2" data-path="r医学科研-第1章-r语言简介.html"><a href="r医学科研-第1章-r语言简介.html#rstudio"><i class="fa fa-check"></i><b>7.2</b> 1.2 RStudio</a></li>
+<li class="chapter" data-level="7.3" data-path="r医学科研-第1章-r语言简介.html"><a href="r医学科研-第1章-r语言简介.html#r包"><i class="fa fa-check"></i><b>7.3</b> 1.3 R包</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="r医学科研-第1章-r语言简介.html"><a href="r医学科研-第1章-r语言简介.html#包的安装"><i class="fa fa-check"></i><b>7.3.1</b> 1.3.1 包的安装</a></li>
+<li class="chapter" data-level="7.3.2" data-path="r医学科研-第1章-r语言简介.html"><a href="r医学科研-第1章-r语言简介.html#包的加载"><i class="fa fa-check"></i><b>7.3.2</b> 1.3.2 包的加载</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="r医学科研-第1章-r语言简介.html"><a href="r医学科研-第1章-r语言简介.html#获得帮助"><i class="fa fa-check"></i><b>7.4</b> 1.4 获得帮助</a></li>
+<li class="chapter" data-level="7.5" data-path="r医学科研-第1章-r语言简介.html"><a href="r医学科研-第1章-r语言简介.html#工作流程"><i class="fa fa-check"></i><b>7.5</b> 1.5 工作流程</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="r医学科研-第1章-r语言简介.html"><a href="r医学科研-第1章-r语言简介.html#基础"><i class="fa fa-check"></i><b>7.5.1</b> 基础</a></li>
+<li class="chapter" data-level="7.5.2" data-path="r医学科研-第1章-r语言简介.html"><a href="r医学科研-第1章-r语言简介.html#脚本"><i class="fa fa-check"></i><b>7.5.2</b> 脚本</a></li>
+<li class="chapter" data-level="7.5.3" data-path="r医学科研-第1章-r语言简介.html"><a href="r医学科研-第1章-r语言简介.html#项目"><i class="fa fa-check"></i><b>7.5.3</b> 项目</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">简说基因</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="日志" class="section level1" number="4">
+<h1><span class="header-section-number">Chapter 4</span> 日志</h1>
+<div id="section" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> 2022</h2>
+<p><strong>2022-3-19</strong></p>
+<ul>
+<li>更新一篇公众号文章</li>
+</ul>
+<p>7：40 起床，早餐，洗澡
+9：30 开始写ggsci文章，10：50，完成《R数据科学》电子书下载，预计依据该书写系列文章
+13：18 R生物信息，按生信的需求仿R数据科学</p>
+<p><strong>2022/3/18</strong></p>
+<ul>
+<li><p>构建新博客（博客还是保留以前的）</p></li>
+<li><p>整理过去的笔记到书中，写两本书：生物信息学，投资。</p></li>
+<li><p>靠自媒体，还是靠不断追求职业晋升？晋升和投资应该作为主流。体现出自己的价值。
+全力以赴工作，获得更高的职位，完全集中精力，致心一处。工作第一，投资第二，自媒体，只是自己提升，或者锻炼与人交往的手段，保持影响力。
+如此，那么个人素质应该排第一位，每天精进的，应该是：交际能力，管理能力，其次才是专业能力。先是通常的学识，其次才是专业，最后是财商。</p></li>
+<li><p>情商（第一重要）：交际，管理。世事洞明皆学问，人情练达即文章。写书。</p>
+<ul>
+<li>张越去诺禾面试情况，不给涨工作，说泛司给的工资在行业内不正常。</li>
+<li>昨天上午去亦庄也不涨，行业现在确实陷入了困境</li>
+</ul></li>
+<li><p>智商（第二重要）：生信。写：书，博客，公众号（一定要写，名人都在写），演讲</p>
+<ul>
+<li>胃癌项目</li>
+<li>职称评定，领导名字由：Zoey wu改为吴双秀，11：38</li>
+</ul></li>
+<li><p>财商（第三重要）：投资。写书</p></li>
+<li><p>普通收入</p></li>
+<li><p>投资收入</p></li>
+<li><p>被动收入</p></li>
+</ul>
+<p>2022/3/17</p>
+<p>9：00 看邮件。给彬彬指导批量生成转录组任务的脚本。9：34结束
+9：40 开始胃癌项目。11：20，完成一个周期任务。主要做差异基因的富集分析，结果中没有P值小于0.05的。期间与CM多次沟通。
+14：30 完成转录组项目的脚本生成
+午睡，起来后看《R语言实战》
+19：21 sublime text4 注册码
+19：23 《R语言实战》——图形初阶
+19：55 完成Rstudio主题选择
+22：25 《R语言实战》——图形初阶-完</p>
+<p>2022/3/16</p>
+<p>9：58 到公司，戴昆寄的转录组硬盘到了，给彬彬分析
+10：20 1：30时钟，胃癌项目，12：10结束。吃饭
+13：11 完成胃癌KEGG分析
+16：15 跟Zoey，CM开会。领导说会招熟练生信替换现在不熟悉的BB</p>
+<p>2022/3/15</p>
+<p>招聘要求</p>
+<p>学历方面：有经验的硕士就可以，博士的话，国内生信博士还是比较少，他们去处多，往往还有做科研的想法，对目前的工作难以有长久的兴趣，存在不稳定性。</p>
+<p>任职条件：最主要的，一定的基础，加上工作态度最重要。有基础，没经验，但是只要愿意学，工作认真，可以迅速积累经验。</p>
+<p>R语言，Python，Perl必需精通一项。精通一项，其他的如果不熟悉，可以迅速学习掌握。</p>
+<p>熟悉Linux服务器使用，有SGE，SLURM，K8S等集群使用经验。</p>
+<p>10：49 看BOSS生信招聘要求
+10：50 倒记时：1小时10分 开始胃癌项目
+看一段《南渡北归》
+13：14 倒记时：1小时30分 胃癌项目，14：46结束。完成signature分析
+15：10 倒记时：50分钟 胃癌项目，16：00结束，完成两组队列比较
+16：00-16：50 三里屯走路
+17：00 倒记时30分钟。胃癌项目
+20：55 倒记时1：30，胃癌项目
+22:23 数据处理部分，与展示部分分开</p>
+<p>2022/3/14</p>
+<p>上午，下午，XML，cnv过滤，生成maftools格式的文件</p>
+<p>2022/3/13</p>
+<p>10点过起床，中午饭后，带小孩去奥森公园北园推着车走了一圈
+回来3点过，午睡到晚饭时间。
+晚上看书。</p>
+<p>2022/3/12</p>
+<p>下午13：30，打疫苗
+没有工作和学习</p>
+<p>2022/3/11</p>
+<p>上班，中午同事聚餐。
+16：00，与张越河边走。</p>
+<p>2022/3/10</p>
+<ul>
+<li>生物信息工程师职称评定 11：47完成，只差照片了
+晚饭后，上传完成</li>
+<li>胃癌项目 21：20，完成新的Table1</li>
+</ul>
+<p>2022/3/9</p>
+<p>全天都在准备材料，主要是3000字的个人技术报告。</p>
+<ul>
+<li>生物信息工程师职称评定 昨天已给刘飞飞发送了报告名，上午询问是否收到
+<ul>
+<li>照相</li>
+<li>专业技术业绩</li>
+<li>个人评价</li>
+</ul></li>
+</ul>
+<p>2022/3/8</p>
+<p>在家办公，明天也是。</p>
+<p>卓有成效的工作</p>
+<p>计划：
+- 完成流程基础docker镜像构建：biotools:0.1 完成docker build，并push 到jangene docker hub
+- 完成质控统计 完成16：35
+- 完成职称评定材料准备 20：09，报名表已填好。20：20邮件给刘飞飞
+22：03，只差专业技术工作业绩以及3000字个人评价了。明天继续
+- 完成一篇公众号文章
+- 无线键盘购买 完成微软Sculpt人体式学键盘选择，待活动。
+- 充电灯购买
+- 遗传咨询师考证相关 中国卫生人才网举办过一次。现在有国家标准。
+- 梳理以往文章，删除，修改不合适的
+- 洗澡 17：03完成
+- 剪指甲</p>
+<p>10：11，开始工作</p>
+<p>2022/3/7</p>
+<p>职称评定：工程师，需要档案存档证明。</p>
+<p>14：00 组会
+16：00 走路，张，何
+17：00 琳涵项目，拷贝需要的图，补多因素分析森林图。</p>
+<p>2022/3/5</p>
+<p>上中午：看《南渡北归》
+下午5点过：奥森北园跑步，和双。让两小朋友在家看电视。大约一小时后回。第一次尝试让两个在家。
+晚上：跑胃癌项目的CNV分析。顺便看了一下流程调度系统：AirFlow，SJM + SGE，k8s。最终可能还是研究k8s较好。
+23：02，准备休息，明天带两个去丰台区消防博物馆
+0：13 对WES流程作了一些小的修改，洗漱，休息。</p>
+<p>2022/3/3</p>
+<p>上午，70WES项目，重跟失败的几例样本
+下午，看R data.table。</p>
+<p>2022/2/18</p>
+<p>WES64增加数据，跑起来。
+跑步
+galaxy，安装几个工具。</p>
+<p>2022/2/17</p>
+<p>21：55 这几天都在弄galaxy平台。今天终于在ECS上装好的21.09最新版。
+明天正式开始分析WES 64例项目。后续买一个ECS服务器，用现在的 galaxy 镜像。暂不考虑Ubuntu 20.04，16.04够用。碰到问题再考虑换。</p>
+<p>2022/2/16</p>
+<p>上班，Ubuntu 18.04 升级到 Ubuntu 20.04
+19：39 重启云桌面，花了约30分钟才成功</p>
+<p>2022/2/15</p>
+<p>NAS昨天因为运行了galaxy，产生了大量费用，一小时5元多。因为原来的galaxy相关文件变成低频存储了。 网站运行一直访问数据库，产生大量取回费用。</p>
+<p>14：00 公司年会
+16：00 运动
+17：00 安装R包
+21：00 原打算晚上在ECS上把galaxy的maftools oncoplot工具弄好，但想着还是在云桌面上先开发，ECS做为生产布署。
+因此，云桌面加了30G数据存储，以应对galaxy的日常运行。
+21：04 ossutil64 cp -r oss://my-galaxy/galaxy-21.09 galaxy-21.09，运行中
+21：28 ossutil64 cp -r oss://my-galaxy/www www 运行中
+22：58 ossutil工具传输之后，会丢失软链接。先用tar打包再传输更能保持原来的目录结构。</p>
+<p>2022/2/14</p>
+<p>下载WES 64新增的数据</p>
+<p>2022/1/29</p>
+<p>问题：现在的通路比较，包含了外显子外的突变，后期只考虑exon上面的</p>
+<p>2022/1/28</p>
+<p>10：00 到公司，与陈梅，Zoeyi老师开会，讨论WES 64项目。
+13：30 到负一层吃饭，三人
+19：00 小区外吃东西
+23：15 各通路的基因突变，Landscape图完成。睡觉</p>
+<p>2022/1/27</p>
+<p>09：56 开始补充64例的分析
+上午，启黄，Zoeyi老师汇报了30例胸腺癌项目
+18：41 下午一直在改64例胃癌WES项目
+19：04 snv/indel, cnv对通路的影响，分开分析，完毕
+20：00 吃完饭，感觉没什么可分析的了，看象棋直播
+21：20 洗完澡，准备看会ggpubr睡觉
+22：31 睡</p>
+<p>2022/1/26</p>
+<p>在家办公
+12：11 启黄项目还差一项，gistic分析
+14：01 午饭，看视频，股票
+15：10 思考以后方向问题，开始分析最后一项
+20：48 结束，生成最终报告，交付
+21：21 已交付</p>
+<p>2022/1/25</p>
+<p>09：00 到公司，讨论WES64项目的补充分析。
+得知芸姐已离职。
+12：50 公司游园会
+13：30 公司请的专家讲座</p>
+<p>2022/1/24</p>
+<p>11：48 开始工作
+11：55 备份WES 64项目
+12：58 备份完成
+13：57 开始启黄项目
+16：16 已完成Table 1，Figure 1修改，比较SqCC与Adenocacinoma之间的差异基因
+23：36 完成DDR与TMB的分析
+23：45 睡觉</p>
+<p>2022/1/23</p>
+<p>计划：CNV分组比较，然后交付，做好备份工作，开始启黄项目。</p>
+<p>13：08 起床后，一直研究gistic用法。
+发现：all_lesions.conf_99.txt中，判断Amp和Del的一列，Amplitude Threshold，
+0: t&lt;0.3; 1: 0.3&lt;t&lt; 0.9; 2: t&gt;0.9
+0: t&gt;-1; 1: -1&gt;t&gt; -1.3; 2: t&lt; -1.3</p>
+<p>gistic的-ta, -td参数只是影响低扩增或删除，高扩增 t&gt;0.9，和删除t &lt; -1.3是程序写死的。
+2的（1+0.9）次方等于：3.7拷贝
+2的（1-1.3）次方等于：0.81拷贝
+因此，gistic结果，只能用高扩增或删除的结果，即拷贝数变异数为2或-2的才可靠。这是根据Amplitude Threshold离散化后的结果。</p>
+<p>15：50 午睡，睡着了
+16：21 跑gistic中，分HAGC和NAGC， -ta, -td都为0.3
+18：43 已交付</p>
+<p>2022/1/22</p>
+<p>计划：signature分析</p>
+<p>01：50 完成通路热图绘制。睡觉
+10：40 起床后洗漱，吃东西，看GenVizR包
+10：41 开始研究sigminer
+21：54 signature分析完毕</p>
+<p>2022/1/21</p>
+<p>计划：完成通路富集分析图。整理所有通路基因到文本中，再读入R</p>
+<p>0：35 准备睡觉
+8:59 P11跑varscan结束，过滤中。完成somaticfilter.py，太慢，耗时4-5个小时，后续得优化
+11:25 P11过滤中，新方法。注释中。
+12：06 最终MAF文件完成，重绘Landscape图
+13：05 开始计算TMB
+让IT改直线上级为: Zoeyi wu
+14:39 完成TMB计算，并绘制箱线图，以及小提琴图，用ggpub包<br />
+15：30 开始通路分析<br />
+16：07 在maftools包中发现10条TCGA通路的所有基因，下一步找DDR通路的200多个基因
+16：47 找到TCGA 276个DDR基因
+22：43 完成10条TCGA肿瘤信号通路和DDR 276基因10通路的雷达图，HAGC和NAGC比较分析，下一步画通路热图
+洗漱
+23：34 开始画通路热图</p>
+<p>TMB要补充性别差异，年龄差异</p>
+<p>2022/1/20</p>
+<p>计划：肿瘤20x，对照10x，再滤一下snvindel，看能不能找点变异回来，参考文献：Proteogenomic and metabolomic characterization of
+human glioblastoma，该文献也有gistic用法</p>
+<p>上午 优化varscan过滤脚本：somaticfilter.py，调整关键阈值
+下午 重新过滤，发现有15个样本前期的varscan跑中断了，结果不正常，导致Landscape图上突变过少，重新跑varscan
+晚上 P40过滤多次中断，P11太慢，mpileup文件158G，中断一次，重跑。其他14个样本重跟varscan成功。
+看了看cnv可视化方法
+21：24 P11跑varscan中，P40非投递过滤中，过滤完62个</p>
+<p>2022/1/19</p>
+<p>计划：完成琳涵项目
+确定cnv基因，一是cnvkit结果的gainloss，这个是基础；其次是gistic的all_thresholded.by_genes.txt
+两者结合确定cnv列表，导致maftools重画Landscape图。不能按maftools官方网站的教程直接读入gistic的结果，而要先过滤好，以custom的形式提供cnv结果
+gistic的只考虑+2，-2的深拷贝或删除</p>
+<p>9：31 开始分析琳涵项目
+13：30 细妹去爸那里，跟爸视频，简宝也在
+15：37 完成琳涵项目的补充分析，提供5个图。
+16：00 俊慧问公司在线画图做单、多因素分析的问题
+21：00 Landscape图，加了临床信息，CNV也加进去了，CNV还得用人工筛选过的，不能直接将gistic结果给maftools
+21：34 分析gistic中，先跑一个结果出来，后续问zoey老师或陈梅，她们看文献多，看文献中用的什么阈值，自己就不花太多时间在上面了，反正cnvkit的结果是准的。</p>
+<p>2022/1/18</p>
+<p>上午，帮彬彬过滤190例转录组样本结果，由他发邮件交付
+13：00 2022年一季度存储资源会议，各部门解释具体存储需求的情况
+15：30 跑gistic
+16：00 走路
+17：00 看gistic教程
+17：50 下班，走时跟领导讲明天开始在家办公画图，领导多聊了一会
+23:28 gistic用法，网上查资料，看文献，看官方文档，明天完成琳涵项目后，正式调整图形
+画图Amp上面，坐标不准，重新安装软件，也不好。罢了。</p>
+<p>2022/1/17</p>
+<p>计划：1、指导彬彬完成转录组项目；2、整理cnv结果</p>
+<p>0：08 用SLD的BED跑cnvkit完毕，结果感觉更好些
+0：20 用Fsz的BED重跑中。洗漱，睡觉。
+9：30 告诉海飞停xy集群账号
+10：53 190例转录组其中一个样本数据不全，诺禾重新传了，彬彬下载后重新跑
+上午去公司，与 Zoey 老师商量，过滤掉了X和Y两条染色体的CNV结果，感觉假阳性可能性大
+14：00 - 17：50 组会，周博讲血液肿瘤方面知道，没听，一直在服务器上弄CNV结果
+今天，回答张越 maftools的一些问题
+史总聊，戴昆一个田凯华的项目，可能会找生信部门去做
+晚上，眯了一会，原本打算早点睡，坐在床上查了会stringtie的资料，看怎么过滤FPKM的值
+23：00 看stringtie官网，加 -A 参数可输出表格形式的FPKM和TPM值，于是重跑stringtie
+23:32 睡觉</p>
+<p>2022/1/16</p>
+<p>4：26 整晚排查cnvkit结果，发现程序有Bug：iloc()错误，修正为loc()，cnvkit 0.98版本的docker镜像是作者1年前构建的，存在bug，在新版程序中已经修正
+以后安装程序，一定要确定是最新版
+明天重新构建最新的cnvkit Docker（根据官方的Dockerfile文件）
+4：47 洗漱，睡觉
+12：53 上午，继续排查cnvkit错误，搞定，更新cnvkit到v0.99并改正其一个错误
+下午，发现刘删除了一些程序，请示领导是否封禁他的账号
+18：32 重新跑cnv中</p>
+<p>2022/1/15</p>
+<p>周末两天着重研究signature分析，彻底弄明白
+8：00 买到了29号北京西 - 贵阳北的高铁票
+上午，学会了离线安装R包
+下午，完成TCGAmutations安装，并完成胃癌TCGA 439例数据的基本分析
+18:10 帮彬彬写好190例转录本分批运行的脚本
+18：20 检查通过hg19_WES_V6.bed跑的cnvkit结果，查看拷贝数情况</p>
+<p>检查下NovoDB过滤是否正确，是否滤多了</p>
+<p>2022/1/14
+计划：
+提醒彬彬忘记安装sambamba软件了，转录组流程已中断。
+拷贝数的结果要写脚本过滤，通过log2筛选,log2是减了1的，要注意
+看见Zoeyi老师0：28的信息，明早回
+在公司测的样本cnv换BED重算，都换BED算算，通过V6版本，公司版本，思路迪版本可能不靠谱。
+并且，要靶向区域，以及附带区域，不能是原始探针，现在用的是原始探针，不对</p>
+<p>2：07 看cnvkit结果中
+3：23 CNV结果要重新算。睡觉。
+10：05 加班申请表完成，周末两天
+1:58 k8s集群使用自己的镜像成功，跑cnvkit中；
+今天医疗股涨得不错；
+20:19 自有cnvkit镜像运行中断，发现是用了投递节点的<code>Rscript</code>，因为脚本中<code>source过</code>，应在运行cnvkit.py前，强制让docker的Rscript路径在前面
+23:03 用通用hg19_WES_V6跑cnvkit，洗个澡，今天早点睡。</p>
+<p>2022/1/13</p>
+<p>计划：
+通过报告核实在公司测的样本的突变情况。
+让 Zoey 老师让销售一并申请在公司测的10几例的突变列表。 不用，自己伽利略看。
+服务器版IGV开端口，联系IT
+检查每一个样本的突变列表，查看原始的vcf文件是否有染色体x/y的变异，有则正常
+1:43 准备睡觉
+昨天收获还是不错的：
+流程主体完成了，解决了VCF TO MAF的问题
+知道用 sublime text插件，支持markdown, vim
+1:56 所有样本的 SnvIndel 都分析完毕，画了 Landscape 图。睡觉。</p>
+<p>伽利略上检查在公司送检的12例
+P2109240256 K034509T MAF:23; snvindel:34, cnv:2, sv:0; all, 1/59
+P2108240202 K030859T MAF:17; snvindel:52, cnv:0, sv:0; CDH1,7/59; RHOA/2/59
+P2109240260 K035664T MAF:29; snvindel:59, cnv:0, sv:1; CDH1,7/59
+P2109130214 K033142T MAF:7; snvindel:1, cnv:0, sv:0； KRAS, 1/59
+P2109130216 K033080T MAF:18; snvindel:57, cnv:0, sv:0; TP53, 2/59
+P2108310229 K032178T MAF:44; snvindel:99+,cnv:0, sv:0; all, 1/59
+P2109050216 K032166T MAF:10; snvindel:15,cnv:0, sv:0; all, 1/59
+P2109130217 K034653T MAF:0; 阴性
+P2109020223 K031857T MAF:163; snvindel:85, cnv:0, sv:0; all, 1/59
+P2108240201 K030770T MAF:15; snvindel:49, cnv:0, sv:0; all, 1/59
+P1912310010 W047759T MAF:73; 查不到报告
+P2104190219 K016923T MAF:103; snvindel:99, cnv:3, sv:0; CDH1, 2/59; TP53, 2/59</p>
+<p>看IGV
+1、先肉眼看，突变丰度10%以上的不用看，着重看5%左右的。—————先不看，流程过滤结果应该没问题，就算有假点，也少，不影响科研分析。</p>
+<p>19：21 开始跑 gistic
+21：30 王义文来电话，聊了些事。他说去年亏200多百；现在弄培训学校；
+23：33 gitstic结果画在 landcape 图上，不好看，乱。</p>
+<p>2022/1/12
+1:37 过滤SnvIndel，不想写脚本，用现成的 vcf2maf.pl，骗过脚本，用 docker 里的程序跑
+技术路线，vcf, snpEff暂时不用，直接annovar过频率数据库，然后 vep to maf，明天继续</p>
+<p>上午，给彬彬写转录组流程邮件，抄送Zoeyi和高老师，看 vcf2maf.pl
+午饭后有点困，休息约一个小时
+14：09 继续看 vcf2maf.pl，写得不错，好的perl脚本也可以为我所用，不用抗拒
+下午与张越讨论生信问题，他有分析需求，让他写邮件，几次了都没写，要自己学
+18：00 给彬彬写转录组运行要的脚本
+21：35 完成 MAF 文件生丰，21，45号样本有问题，排查中。结果：snv文件是二进制的，变异要重新call。感觉varscan的结果可能会有问题。
+重跑：
+nohup sh Call_SnvIndel_P21.sh &amp;&gt; Call_SnvIndel_P21.sh.o &amp;
+nohup sh Call_SnvIndel_P45.sh &amp;&gt; Call_SnvIndel_P45.sh.o &amp;
+23：00，据说要停水，赶快洗个澡
+snvindel从质控到 MAF，今天正式弄完。</p>
+<p>2022/1/11</p>
+<p>上午，6点过起来看 RNA 项目任务情况，3个失败，重投后继续睡。
+跟Zoey老师说这周后面时间都在家。
+凡凡在学校拉肚子，9点过双去接回来了
+戴昆数据，有11G要下载放转录组的硬盘里，让彬彬操作
+彬彬跑 hisat2出错，是因为索引文件需要的内存太大，没弄好，给他我昨天让陈梅下载的，他却要用自己的。</p>
+<p>下午写 SnvIndel 过滤脚本
+19：53 写好
+P34样本，变异太少。实则正常，snv只到5号染色体有，但indel各条都有了。</p>
+<p>2022/1/10</p>
+<p>上午，看 cnvkit 执行情况，成功17个，错误更多，重跑，一个一个跑
+下午，组会，领导介绍了目前所有项目，64例WES已公开是由我做
+检查彬彬传的190例RNA数据是否正确，不漏传的，检查MD5完整性：完整
+让陈梅帮忙下载 hisat2 的索引文件，在其官网
+教张越下载 TCGA R包，以及画 oncoplot图
+晚上，测试 hisat2</p>
+<p>2022/1/9</p>
+<p>8：30 恢复任务，测试过滤条件，掌握 samtools tview使用
+11：22 转录组流程简单测试</p>
+<p>阴性样本
+r2k-jianzuoyi-filter-snvindel-p35.sh4rsnr-4159970334 0/2 Error 0 30m varscan就是阴性; 重跑后有结果了
+r2k-jianzuoyi-filter-snvindel-p39.shtm7k2-3629824292 0/2 Error 0 30m 过滤后只有一个germline；重跑有结果
+r2k-jianzuoyi-filter-snvindel-p41.shr7tzv-2172895873 0/2 Error 0 30m 同上；同上
+r2k-jianzuoyi-filter-snvindel-p47.shvqkxw-3480795293 0/2 Error 0 30m varscan就是阴性；重跑后有结果
+r2k-jianzuoyi-filter-snvindel-p51.shv7dkx-3817315767 0/2 Error 0 30m 文件大小全为502，表头都没有；重跑有结果
+r2k-jianzuoyi-filter-snvindel-p54.shgbl45-2909327204 0/2 Error 0 30m varscan只有表头；同上
+r2k-jianzuoyi-filter-snvindel-p55.sht5szg-2841979272 0/2 Error 0 30m 文件大小全为502，表头都没有；重跑有结果
+r2k-jianzuoyi-filter-snvindel-p59.sh59dv8-348088453 0/2 Error 0 30m varscan只有表头；重跑有结果
+r2k-jianzuoyi-filter-snvindel-p64.shjw2kh-2980648877 0/2 Error 0 30m 过滤后阴性；重跑有结果</p>
+<p>2022/1/8</p>
+<p>替换有问题的一例BAM为之前分析的（不用换，做过校正，不如用自己没校正的）
+转录组项目与彬彬同时推进
+WES项目一直往前推，尽快把后续分析的脚本都写好。运算可以有资源就跑。
+变异结果看IGV也可以等转录组项目结束后让彬彬看，用新的变异列表再重做后续分析，因为脚本都在，重分析一遍也不费什么事。
+关键是尽快把相关脚本都写完。</p>
+<p>跑任务，变异检出
+S6_Calling_<span class="math inline">\(Patient_\)</span>Sample，检胚系耽误了些时间
+Call_SnvIndel_$Patient</p>
+<p>Zoey老师问 CNV Segment文件</p>
+<p>1:15 洗澡，睡觉</p>
+<p>2022/1/7</p>
+<p>10：00 190例转录组数据到，彬彬上传中
+13：46 XML 测试 BAM 文件重比对
+21：51 k8s任务投递成功，以后运算量大的任务投递，不大的 xargs -P本机执行
+WES项目可先完成不校正版的分析，时间允许，再做不校正分析，比较二者差异，差异不大的话就不做校正，费时太多</p>
+<p>2022/1/6</p>
+<p>22:12 sambamba排序完，bamdst统计，</p>
+<p>conda install -c r r-essentials，失败
+conda install r-base，成功</p>
+<p>全部开始统计，但是不能 R 画图</p>
+<p>用的思路迪 WES BED，明天换公司BED试试结果</p>
+<p>WES 64, sambamba排序</p>
+<p>给张越讲基本统计，Fisher</p>
+<p>跟彬彬讨论转录组流程，确定质控工具选择</p>
+<p>2022/1/5
+11:30 昨天拉肚子，起得迟，11：30前，都只是看看任务</p>
+<p>11:30 xargs -P, parallel，本机并行任务处理。以后优先用 xargs</p>
+<p>优化 XML，将之前的 <ENV> </ENV>完全去掉，Envirionment.sh默认自动获取：config/Environment.sh
+Target放到 Environment.sh中</p>
+<p>为cancerPipeline.py， 可以指定 BED 文件以及Environment.sh文件
+增加 logging，没必要</p>
+<p>增加一些打印语句，XML文件替换后可以保存为新的XML</p>
+<p>测试后续脚本</p>
+<p>2022/1/4
+优化流程，下午开会</p>
+<p>2022/1/3
+cancerPipeline.py优化</p>
+<p>2022/1/2
+cancerPipeline.py优化，主要是 DAG 排序
+明天开始分析64例WES数据，一边搭 XML 流程</p>
+<p>2022/1/1
+cancerPipeline.py优化，基本完成，明天检查排序</p>
+</div>
+<div id="section-1" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> 2021</h2>
+<p>2021/12/31</p>
+<p>检查 WES64 项目数据。
+指导上传数据。帮忙转换数据格式
+聚餐，走路
+改cancerPipeline.py
+象棋
+跨年</p>
+<p>2021/12/30</p>
+<p>戴昆/田主任项目，临床信息对不上，核对中。。。</p>
+<p>WES64项目，BED文件，和损坏的文件，已给</p>
+<p>2021/12/29</p>
+<p>戴昆/田主任项目，看文献</p>
+<p>胸腺癌项目线上交流：Zoey，启黄。迟到了10分钟
+signature，
+共突变：百分比
+3个显著基因的功能，深入分析的话。TTN不做</p>
+<p>驱动基因分析+</p>
+<p>CNV，修改</p>
+<p>热图：排序</p>
+<p>TP53，Cell_Cycle，关联强，着重讲一下，TP53明显影响预后</p>
+<p>DDR2，补充，200多基因。 看不同癌的DDR有无差别</p>
+<p>gistic cnv补充</p>
+<p>2021/12/28
+9：07 免疫微环境：PPT，彬彬
+概念
+免疫细胞浸润分析：逻辑
+卷积和去卷积概念：复杂</p>
+<p>常用方法：
+Cibersort：22种免疫浸润细胞
+输入：转录组 + ？
+d图？
+LM22.txt，是不是都是淋巴细胞
+测序数据最好是TPM（肿瘤基因表达值），是否会筛选转录组测序数据？
+RPKM/FPKM/TPM</p>
+<p>TIMER：6种免疫浸润细胞
+流程：</p>
+<p>quanTIseq： 从Fastq开始处理</p>
+<p>EPIC：</p>
+<p>标记基因：xCell</p>
+<p>x?</p>
+<p>标记基因：MCP-counter</p>
+<p>先理解</p>
+<p>列出常见的所有软件，一个表，测评文章，应该放上</p>
+<p>提炼，输入：表达量 + ？ -&gt; 细胞比例</p>
+<p>除了转录组，还有其他什么输入数据？</p>
+<p>特异性细胞表面分子标志（必须）
+标记基因：</p>
+<p>有没有合并的方法？</p>
+<p>2021/12/27
+上午，完成周报，与Zoey老师讨论64例WES项目
+下午，完成《2021年度个人工作目标设定与绩效评估》
+询问Zoey老师转正情况
+下载 life流程
+下载 IGV，导入 Genome 中
+周会改到明天</p>
+<p>2021/12/23
+计划：胸腺项目，完成生存分析
+9:05 查看昨晚质控结果，程序卡住了
+10:40 有样本是昨天9点过就卡住，一晚上根本没跑其他任务
+12:23 完成胸腺癌热图：胸腺癌相关7条通路及其基因变异情况
+17:20 WES，开始BWA
+23:40 胸腺癌，完成生存分析，只着CNV分析了
+23：52 WES，任务正常运行</p>
+<p>2021/12/22
+12：00 64例WES样本编号整理
+18：15 核实完样本编号，完成原始数据改名
+21：02 开始fastp质控所有样本
+21：45 启黄/胸腺癌项目：确定signature最终版本
+22：10 肿瘤通路富集，开始
+22：24 优化了一下报告排版</p>
+<p>2021/12/21
+10:15 检查数据完整性中（30774S02X4_R1.fastq.gz，不完整）
+10:35 fsz服务器，下载PM2.0中（完成）
+13:21 完成PPT制作——《使用伽利略系统查询医生送检样本情况》
+15:26 WES流程，annovar安装（cosmic数据库较旧：cosmic70）
+VEP缓存文件下载中（完成：/obu/jianzuoyi/download）
+22:30 胸腺癌项目，sigminer分析</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="笔记.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="图书馆.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/04-daily-note.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
