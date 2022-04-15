@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 简佐义的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 30 Dec 2020 16:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 15 Apr 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jianzuoyi.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>网址大全</title>
+      <link>https://jianzuoyi.github.io/post/best/2022-04-15-websites/</link>
+      <pubDate>Fri, 15 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/best/2022-04-15-websites/</guid>
+      <description>维基百科 维基百科（Wikipedia）是一个自由内容、公开编辑且多语言的网络百科全书协作项目，通过Wiki技术使得包括您在内的所有人都可以简</description>
+    </item>
     
     <item>
       <title>对于有生物学基础，但无生物信息学背景的人，转行到生信难不难</title>
@@ -180,15 +189,6 @@
       
       <guid>https://jianzuoyi.github.io/post/rosalind/2020-12-05-rosalind-006-hamm/</guid>
       <description>汉明距离的定义：对于两条长度相等的字符串来说，汉明距离指的是它们之间不相同的字符数。对于两条DNA，则是它们之间的点突变数目。 **给定：**</description>
-    </item>
-    
-    <item>
-      <title>Rosalind刷题笔记：001 碱基统计</title>
-      <link>https://jianzuoyi.github.io/post/rosalind/2020-12-04-rosalind-001-base-count/</link>
-      <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jianzuoyi.github.io/post/rosalind/2020-12-04-rosalind-001-base-count/</guid>
-      <description>前言 Rosalind is a platform for learning bioinformatics and programming through problem solving. Rosalind是一个通过解决实际生物学问题来学习生物信息和练习编程的平台，类似于IT行业的刷题网站力扣（Lee</description>
     </item>
     
   </channel>
