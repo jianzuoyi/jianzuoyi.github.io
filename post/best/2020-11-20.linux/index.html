@@ -69,7 +69,7 @@
 <meta itemprop="description" content="许多人做生物信息学，要么不重视Linux，要么不知道怎么才能学好。翻开厚厚的一本教材，却不知道哪些是重点。Linux的核心知识有哪些，就像英">
 <meta itemprop="datePublished" content="2020-11-20T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-12-21T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="7661">
+<meta itemprop="wordCount" content="7660">
 
 
 
@@ -802,7 +802,7 @@ yum -y install htop
 <pre class="chroma"><code class="language-bash" data-lang="bash">top -c		<span class="c1"># 查看CPU，内存的使用情况</span>
 htop		<span class="c1"># top的完美替代品，Linux系统不自带，需要安装， ubuntu系统：apt install htop</span>
 ps aut		<span class="c1"># 查看后台任务运行情况，第2列是任务的PID号</span>
-ps -f -w -w <span class="m">17604</span> <span class="c1"># 查看完整的命令</span>
+ps -w -w xv	<span class="c1"># 查看完整的命令</span>
 <span class="nb">kill</span> -9 PID <span class="c1"># 删除编号为PID的任务</span>
 </code></pre></td></tr></table>
 </div>
