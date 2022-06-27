@@ -69,7 +69,7 @@
 <meta itemprop="description" content="作为半个IT人，写代码是工作日常，如何进行代码版本控制及托管，本文介绍一下我的最佳实践，其实很容易。 工作或学习过程中写的代码，存在本地的话容">
 <meta itemprop="datePublished" content="2020-11-09T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-11-09T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="3069">
+<meta itemprop="wordCount" content="3229">
 
 
 
@@ -399,7 +399,8 @@
         <li><a href="#四分支管理">四、分支管理</a></li>
         <li><a href="#五解决冲突">五、解决冲突</a></li>
         <li><a href="#六显示中文">六、显示中文</a></li>
-        <li><a href="#打标签">打标签</a></li>
+        <li><a href="#七打标签">七、打标签</a></li>
+        <li><a href="#八github上传大文件">八、GitHub上传大文件</a></li>
       </ul>
     </li>
   </ul>
@@ -634,7 +635,7 @@ git checkout -- &lt;file&gt;，如果要放弃文件的修改，则执行此命�
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">git config --global core.quotepath false
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="打标签">打标签</h3>
+</div><h3 id="七打标签">七、打标签</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -645,7 +646,48 @@ git checkout -- &lt;file&gt;，如果要放弃文件的修改，则执行此命�
 git push origin 1.0
 </code></pre></td></tr></table>
 </div>
-</div><p>掌握以上这些命令，基本上就够用了。</p>
+</div><h3 id="八github上传大文件">八、GitHub上传大文件</h3>
+<p>误提交大文件报错：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">remote: warning: Large files detected.
+# remote: warning: File big_file is 55.00 MB; this is larger than GitHub&#39;s recommended maximum file size of 50 MB
+</code></pre></td></tr></table>
+</div>
+</div><p>删除大文件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$git rm --cached giant_file
+# Stage our giant file for removal, but leave it on disk
+
+$git commit --amend -CHEAD
+# Amend the previous commit with your change
+# Simply making a new commit won&#39;t work, as you need
+# to remove the file from the unpushed history as well
+
+$git push
+# Push our rewritten, smaller commit
+</code></pre></td></tr></table>
+</div>
+</div><p>或者：</p>
+<p><a href="https://blog.csdn.net/qianghaohao/article/details/79115108">使用LFS解决GitHub无法上传大文件问题</a></p>
+<p>尽量不提交大文件到 Github，即使不报错，上传也慢。</p>
 
     </div>
 

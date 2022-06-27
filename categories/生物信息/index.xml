@@ -6,10 +6,19 @@
     <description>Recent content in 生物信息 on 简佐义的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 15 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 06 Jun 2022 16:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://jianzuoyi.github.io/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>生信工程师的核心竞争力在哪里？</title>
+      <link>https://jianzuoyi.github.io/post/2022-06-06-bioinformatics-core-skill/</link>
+      <pubDate>Mon, 06 Jun 2022 16:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2022-06-06-bioinformatics-core-skill/</guid>
+      <description>做生信，现在的程序或各种软件包都非常强大，输入数据，几行代码就出来想要的结果，生信工程师的基本功在于各种数据格式整理，天花板在于会讲生物学故</description>
+    </item>
     
     <item>
       <title>网址大全</title>
@@ -180,15 +189,6 @@
       
       <guid>https://jianzuoyi.github.io/post/2020-09-01.best-bioinfo-env-win/</guid>
       <description>我之前的文章说过，搞生信的理想工作设备是Mac电脑+Linux服务器，但是有些同学还是工作在Windows平台下，或者公司只配置了Windo</description>
-    </item>
-    
-    <item>
-      <title>最佳生物信息工作环境</title>
-      <link>https://jianzuoyi.github.io/post/2020-07-21.best-bioinfo-env-mac/</link>
-      <pubDate>Tue, 21 Jul 2020 00:00:00 +0800</pubDate>
-      
-      <guid>https://jianzuoyi.github.io/post/2020-07-21.best-bioinfo-env-mac/</guid>
-      <description>日常工作环境的好坏直接影响我们的心情和效率，这篇文章介绍一下我这些年用得顺手的一些工具。 1.本地电脑 平台： Mac电脑，强烈建议搞生信用Mac</description>
     </item>
     
   </channel>
