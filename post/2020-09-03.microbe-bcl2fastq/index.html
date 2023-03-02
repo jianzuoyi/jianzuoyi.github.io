@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="zh-cn" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>病原微生物扩增子数据分析实战（一）：bcl2fastq软件完成数据拆分 - 简佐义的博客</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="公众号：简说基因, 知乎：简佐义" />
+  <meta name="description" content="懂得了那么多道理，却依然过不好这一生。 所以理论归理论，最终要落实到分析代码上，咱们从这一篇开始，介绍一套扩增子数据分析流程。 闲话少叙，首先介" />
+
+  <meta name="keywords" content="生物信息学, 自学生物信息学, 生物信息学学习, 生物学, linux, python, R, 简佐义, 博客, 笔记" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.68.3" />
+
+
+<link rel="canonical" href="https://jianzuoyi.github.io/post/2020-09-03.microbe-bcl2fastq/" />
+
+
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.f1e506a781bf25d33ffc18aa6b4e972a965c58049d27d4f92b7db2e9bf28e4bf.css" integrity="sha256-8eUGp4G/JdM//Biqa06XKpZcWASdJ9T5K32y6b8o5L8=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+<meta property="og:title" content="病原微生物扩增子数据分析实战（一）：bcl2fastq软件完成数据拆分" />
+<meta property="og:description" content="懂得了那么多道理，却依然过不好这一生。 所以理论归理论，最终要落实到分析代码上，咱们从这一篇开始，介绍一套扩增子数据分析流程。 闲话少叙，首先介" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jianzuoyi.github.io/post/2020-09-03.microbe-bcl2fastq/" />
+<meta property="article:published_time" content="2020-09-03T00:00:00+08:00" />
+<meta property="article:modified_time" content="2020-09-03T00:00:00+08:00" />
+<meta itemprop="name" content="病原微生物扩增子数据分析实战（一）：bcl2fastq软件完成数据拆分">
+<meta itemprop="description" content="懂得了那么多道理，却依然过不好这一生。 所以理论归理论，最终要落实到分析代码上，咱们从这一篇开始，介绍一套扩增子数据分析流程。 闲话少叙，首先介">
+<meta itemprop="datePublished" content="2020-09-03T00:00:00&#43;08:00" />
+<meta itemprop="dateModified" content="2020-09-03T00:00:00&#43;08:00" />
+<meta itemprop="wordCount" content="1540">
+
+
+
+<meta itemprop="keywords" content="扩增子,NGS,病原微生物," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="病原微生物扩增子数据分析实战（一）：bcl2fastq软件完成数据拆分"/>
+<meta name="twitter:description" content="懂得了那么多道理，却依然过不好这一生。 所以理论归理论，最终要落实到分析代码上，咱们从这一篇开始，介绍一套扩增子数据分析流程。 闲话少叙，首先介"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">简佐义的博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/">首页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/categories/">分类</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/post/">归档</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/about/">关于</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://jianzuoyi.github.io/">
+              精选&#43;
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://jianzuoyi.github.io/post/best/2020-11-23-learn-bioinfomatics/">如何自学生物信息学：从菜鸟到专家</a>
+              </li>
+            
+              <li>
+                <a href="https://jianzuoyi.github.io/post/best/2020-11-20.linux/">生信人的自我修养：Linux 命令速查手册</a>
+              </li>
+            
+              <li>
+                <a href="https://jianzuoyi.github.io/post/best/2020-11-19-conda/">生物信息基础：conda包管理器安装及使用</a>
+              </li>
+            
+              <li>
+                <a href="https://jianzuoyi.github.io/post/best/2020-11-09.git/">代码版本控制及托管：我的最佳实践</a>
+              </li>
+            
+              <li>
+                <a href="https://jianzuoyi.github.io/post/best/2022-04-15-websites/">网址大全</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      简佐义的博客
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/">首页</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/categories/">分类</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/post/">归档</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://jianzuoyi.github.io/about/">关于</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="https://jianzuoyi.github.io/">精选&#43;</a>
+          <ul class="submenu">
+            
+              <li>
+                <a href="https://jianzuoyi.github.io/post/best/2020-11-23-learn-bioinfomatics/">如何自学生物信息学：从菜鸟到专家</a>
+              </li>
+            
+              <li>
+                <a href="https://jianzuoyi.github.io/post/best/2020-11-20.linux/">生信人的自我修养：Linux 命令速查手册</a>
+              </li>
+            
+              <li>
+                <a href="https://jianzuoyi.github.io/post/best/2020-11-19-conda/">生物信息基础：conda包管理器安装及使用</a>
+              </li>
+            
+              <li>
+                <a href="https://jianzuoyi.github.io/post/best/2020-11-09.git/">代码版本控制及托管：我的最佳实践</a>
+              </li>
+            
+              <li>
+                <a href="https://jianzuoyi.github.io/post/best/2022-04-15-websites/">网址大全</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+
+    
+    
+
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">病原微生物扩增子数据分析实战（一）：bcl2fastq软件完成数据拆分</h1>
+      
+      <div class="post-meta">
+        <time datetime="2020-09-03" class="post-time">
+          2020-09-03
+        </time>
+        <div class="post-category">
+            <a href="https://jianzuoyi.github.io/categories/%E6%89%A9%E5%A2%9E%E5%AD%90/"> 扩增子 </a>
+            
+          </div>
+        
+
+        
+        
+          <span id="busuanzi_container_page_pv">
+            | 阅读 <span id="busuanzi_value_page_pv"></span>
+          </span>
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents"></nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p><strong>懂得了那么多道理，却依然过不好这一生。</strong></p>
+<p>所以理论归理论，最终要落实到分析代码上，咱们从这一篇开始，介绍一套扩增子数据分析流程。</p>
+<p>闲话少叙，首先介绍一下项目背景：</p>
+<ul>
+<li>测序平台: Illumina MiSeq，双端（Paired-end）测序</li>
+<li>服务器：CentOS 7操作系统，128G内存，CPU 48线程</li>
+<li>编程语言：Bash script、Python</li>
+</ul>
+<p>NGS测序项目大致分为二个部分：</p>
+<ol>
+<li>湿实验部分，即取样、提取、建库以及上机测序</li>
+<li>干实验部分，即测序数据的生物信息分析</li>
+</ol>
+<p>测序仪运行结束，就完成了生物样本的数字化过程，但此时核酸的信息，具体来说是DNA的序列信息（RNA样本的话会先反转录成DNA再测序），是保存在称为BCL（Binary Base Call）的文件中的，而生物信息分析工作即是从这里开始。</p>
+<p>首先，要将BCL文件转化成FASTQ文件格式，过程并不复杂，一条命令就够了。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">/path-to/bcl2fastq_V219 <span class="se">\</span>
+-R /path-to/200821_M06862_0006_000000000-C9TL7 <span class="se">\</span>
+--sample-sheet /path-to/SampleSheet.csv <span class="se">\</span>
+--output-dir /path-to/Demultiplexed <span class="se">\</span>
+--barcode-mismatches <span class="m">1</span> <span class="se">\</span>
+--use-bases-mask Y75n,I8,I8,Y75n
+</code></pre></td></tr></table>
+</div>
+</div><p><a href="https://support.illumina.com/sequencing/sequencing_software/bcl2fastq-conversion-software/downloads.html">bcl2fastq_V219</a>，是illumina官方提供的BCL转FASTQ格式的软件，这里用的版本是v2.19。</p>
+<p><code>-R参数</code>，是下机数据所在的目录，内容如下，其中的RunInfo.xml文件记录了测序的一些重要信息，如总共运行了多少个循环等。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">200821_M06862_0006_000000000-C9TL7
+├── AnalysisError.txt
+├── AnalysisLog.txt
+├── Basecalling_Netcopy_complete_Read1.txt
+├── Basecalling_Netcopy_complete_Read2.txt
+├── Basecalling_Netcopy_complete_Read3.txt
+├── Basecalling_Netcopy_complete_Read4.txt
+├── Basecalling_Netcopy_complete.txt
+├── CompletedJobInfo.xml
+├── Config
+├── Data
+├── GenerateFASTQRunStatistics.xml
+├── ImageAnalysis_Netcopy_complete_Read1.txt
+├── ImageAnalysis_Netcopy_complete_Read2.txt
+├── ImageAnalysis_Netcopy_complete_Read3.txt
+├── ImageAnalysis_Netcopy_complete_Read4.txt
+├── ImageAnalysis_Netcopy_complete.txt
+├── InterOp
+├── Logs
+├── QueuedForAnalysis.txt
+├── Recipe
+├── RTAComplete.txt
+├── RunCheckDetail.txt
+├── RunInfo.xml
+├── runParameters.xml
+├── SampleSheet.csv
+└── Thumbnail_Images
+</code></pre></td></tr></table>
+</div>
+</div><p><code>--sample-sheet参数</code>，样本清单，内容如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>Header<span class="o">]</span>,,,,,,,,,
+IEMFileVersion,5,,,,,,,,
+Date,7/30/2020,,,,,,,,
+Workflow,GenerateFASTQ,,,,,,,,
+Application,FASTQ Only,,,,,,,,
+Instrument Type,MiSeq,,,,,,,,
+Assay,Nextera DNA,,,,,,,,
+Index Adapters,<span class="s2">&#34;Nextera Index Kit (24 Indexes, 96 Samples)&#34;</span>,,,,,,,,
+Description,,,,,,,,,
+Chemistry,Amplicon,,,,,,,,
+,,,,,,,,,
+<span class="o">[</span>Reads<span class="o">]</span>,,,,,,,,,
+76,,,,,,,,,
+76,,,,,,,,,
+,,,,,,,,,
+<span class="o">[</span>Settings<span class="o">]</span>,,,,,,,,,
+ReverseComplement,0,,,,,,,,
+Adapter,CTGTCTCTTATACACATCT,,,,,,,,
+,,,,,,,,,
+<span class="o">[</span>Data<span class="o">]</span>,,,,,,,,,
+Sample_ID,Sample_Name,Sample_Plate,Sample_Well,I7_Index_ID,index,I5_Index_ID,index2,Sample_Project,Description
+wenku1,,,,D701,ATTACTCG,D504,GGCTCTGA,,
+wenku2,,,,D702,TCCGGAGA,D504,GGCTCTGA,,
+wenku3,,,,D703,CGCTCATT,D504,GGCTCTGA,,
+wenku4,,,,D704,GAGATTCC,D504,GGCTCTGA,,
+wenku5,,,,D705,ATTCAGAA,D504,GGCTCTGA,,
+</code></pre></td></tr></table>
+</div>
+</div><p>这是一个每行都用逗号<code>,</code>隔开的<a href="https://github.com/jianzuoyi/share/blob/master/SampleSheet.csv">SampleSheet.csv</a>文件，可以用Excel或WPS软件编辑成新的，也可以用<a href="https://support.illumina.com/sequencing/sequencing_software/experiment_manager/downloads.html">Illumina Experiment Manager</a>软件来制作清单文件。</p>
+<p>由于测序仪的通量比较大，如果一次只测一个样本，会造成非常大的浪费，因此实际测序过程中都是多个样本混合在一起测，那么后期怎么把各个样本的数据（即大量的reads）分开呢，这就要涉及到建库的原理了，需要较大的篇幅才能说清，在此不便展开。</p>
+<p>简单来说，就是各个样本都加了自己特有的条码（barcode），就是SampleSheet文件中的index和index2序列，如wenku1的index序列<code>ATTACTCG</code>，以及index2序列<code>GGCTCTGA</code>，它们的组合与其他所有文库的都不一样，依据这些条码就能实现数据的拆分，[Data]部分一行是一个样本，每行最低限度只需要填写Sample_ID和index就可以了，如果是双端index测序，再填上index2即可。</p>
+<p><code>--output-dir参数</code>，结果文件保存的目录。</p>
+<p><code>--barcode-mismatches参数</code>，拆分时允许上述index序列错配的碱基个数，通常设为1。</p>
+<p><code>--use-bases-mask参数</code>，用于指导哪些测序循环的数据要保留，哪些要丢弃，示例中<code>Y75n,I8,I8,Y75n</code>的含义是：第一轮测序的前75个循环要保留，之后的循环丢弃，index的8个循环全部保留，index2的8个循环全部保留，第四轮测序的前75个循环要保留，之后的循环丢弃，这样我们拆分出的数据是双端75bp，当然这个参数并非必需。</p>
+<p>以上，就是illumina数据拆分的基本过程，结果得到FASTQ文件（每个样本2个），后续分析都是基于这些文件的。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">Demultiplexed/
+├── wenku1_S1_L001_R1_001.fastq.gz
+├── wenku1_S1_L001_R2_001.fastq.gz
+├── wenku2_S2_L001_R1_001.fastq.gz
+├── wenku2_S2_L001_R2_001.fastq.gz
+├── wenku3_S3_L001_R1_001.fastq.gz
+├── wenku3_S3_L001_R2_001.fastq.gz
+├── wenku4_S4_L001_R1_001.fastq.gz
+├── wenku4_S4_L001_R2_001.fastq.gz
+├── wenku5_S5_L001_R1_001.fastq.gz
+└── wenku5_S5_L001_R2_001.fastq.gz
+</code></pre></td></tr></table>
+</div>
+</div><p>数据分析任重道远，正如莎士比亚的咏叹：</p>
+<blockquote>
+<p>自然啊，你是充满无穷神秘的书！而我，只能读懂些许部分！</p>
+</blockquote>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">公众号：简说基因, 知乎：简佐义</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2020-09-03
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content">本站文章皆为原创，转载需注明作者及文章链接，谢谢！</span>
+  </p>
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://jianzuoyi.github.io/tags/%E6%89%A9%E5%A2%9E%E5%AD%90/">扩增子</a>
+          <a href="https://jianzuoyi.github.io/tags/ngs/">NGS</a>
+          <a href="https://jianzuoyi.github.io/tags/%E7%97%85%E5%8E%9F%E5%BE%AE%E7%94%9F%E7%89%A9/">病原微生物</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/2020-09-05.microbe-fastp/">
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
+            <span class="prev-text nav-default">病原微生物扩增子数据分析实战（二）：fastp软件进行质量控制</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/2020-09-01.best-bioinfo-env-win/">
+            <span class="next-text nav-default">强烈推荐Windows平台下生信环境搭配：Windows Terminal &#43; WSL</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    显示 Disqus 评论
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "https://jianzuoyi.github.io/post/2020-09-03.microbe-bcl2fastq/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'jianzuoyi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+  
+  </div>
+
+    
+
+  
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+  
+    <a href="mailto:jianzuoyi@qq.com" rel="me noopener" class="iconfont"
+      title="email" >
+      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://github.com/jianzuoyi" rel="me noopener" class="iconfont"
+      title="github"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M512 12.672c-282.88 0-512 229.248-512 512 0 226.261333 146.688 418.133333 350.08 485.76 25.6 4.821333 34.986667-11.008 34.986667-24.618667 0-12.16-0.426667-44.373333-0.64-87.04-142.421333 30.890667-172.458667-68.693333-172.458667-68.693333C188.672 770.986667 155.008 755.2 155.008 755.2c-46.378667-31.744 3.584-31.104 3.584-31.104 51.413333 3.584 78.421333 52.736 78.421333 52.736 45.653333 78.293333 119.850667 55.68 149.12 42.581333 4.608-33.109333 17.792-55.68 32.426667-68.48-113.706667-12.8-233.216-56.832-233.216-253.013333 0-55.893333 19.84-101.546667 52.693333-137.386667-5.76-12.928-23.04-64.981333 4.48-135.509333 0 0 42.88-13.738667 140.8 52.48 40.96-11.392 84.48-17.024 128-17.28 43.52 0.256 87.04 5.888 128 17.28 97.28-66.218667 140.16-52.48 140.16-52.48 27.52 70.528 10.24 122.581333 5.12 135.509333 32.64 35.84 52.48 81.493333 52.48 137.386667 0 196.693333-119.68 240-233.6 252.586667 17.92 15.36 34.56 46.762667 34.56 94.72 0 68.522667-0.64 123.562667-0.64 140.202666 0 13.44 8.96 29.44 35.2 24.32C877.44 942.592 1024 750.592 1024 524.672c0-282.752-229.248-512-512-512"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.zhihu.com/people/jianzuoyi" rel="me noopener" class="iconfont"
+      title="zhihu"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M351.791182 562.469462l192.945407 0c0-45.367257-21.3871-71.939449-21.3871-71.939449L355.897709 490.530013c3.977591-82.182744 7.541767-187.659007 8.816806-226.835262l159.282726 0c0 0-0.86367-67.402109-18.578124-67.402109s-279.979646 0-279.979646 0 16.850783-88.141456 39.318494-127.053698c0 0-83.60514-4.510734-112.121614 106.962104S81.344656 355.077018 76.80834 367.390461c-4.536316 12.313443 24.62791 5.832845 36.941354 0 12.313443-5.832845 68.050885-25.924439 84.252893-103.69571l86.570681 0c1.165546 49.28652 4.596691 200.335724 3.515057 226.835262L109.86113 490.530013c-25.275663 18.147312-33.701566 71.939449-33.701566 71.939449L279.868105 562.469462c-8.497535 56.255235-23.417339 128.763642-44.275389 167.210279-33.05279 60.921511-50.55235 116.65793-169.802314 212.576513 0 0-19.442818 14.257725 40.829917 9.073656 60.273758-5.185093 117.305683-20.739347 156.840094-99.807147 20.553105-41.107233 41.805128-93.250824 58.386782-146.138358l-0.055259 0.185218 167.855986 193.263655c0 0 22.035876-51.847855 5.832845-108.880803L371.045711 650.610918l-42.1244 31.157627-0.045025 0.151449c11.69946-41.020252 20.11206-81.5749 22.726607-116.858498C351.665315 564.212152 351.72876 563.345412 351.791182 562.469462z"></path>
+  <path d="M584.918753 182.033893l0 668.840094 70.318532 0 28.807093 80.512708 121.875768-80.512708 153.600307 0L959.520453 182.033893 584.918753 182.033893zM887.150192 778.934538l-79.837326 0-99.578949 65.782216-23.537066-65.782216-24.855084 0L659.341766 256.673847l227.807403 0L887.149169 778.934538z"></path>
+</svg>
+
+    </a>
+
+
+<a href="https://jianzuoyi.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+   
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2020 -
+    2023
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        公众号：简说基因, 知乎：简佐义
+        
+      </span></span>
+
+  
+  
+    <span id="busuanzi_container">
+      访客数/访问量：<span id="busuanzi_value_site_uv"></span>/<span id="busuanzi_value_site_pv"></span>
+    </span>
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

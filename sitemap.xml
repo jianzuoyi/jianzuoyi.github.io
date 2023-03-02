@@ -1,0 +1,507 @@
+<?xml-stylesheet type="text/xsl" href="https://jianzuoyi.github.io/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/about/</loc>
+    <lastmod>2020-12-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/categories/</loc>
+    <lastmod>2022-06-06T16:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/</loc>
+    <lastmod>2022-06-06T16:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/tags/</loc>
+    <lastmod>2022-06-06T16:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2022-06-06-bioinformatics-core-skill/</loc>
+    <lastmod>2022-06-06T16:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/tags/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF/</loc>
+    <lastmod>2022-06-06T16:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF/</loc>
+    <lastmod>2022-06-06T16:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/best/2022-04-15-websites/</loc>
+    <lastmod>2022-04-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-12-30-biology-to-bioinformatics/</loc>
+    <lastmod>2020-12-30T16:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-12-29-why-bioinformatics-need-linux/</loc>
+    <lastmod>2020-12-29T16:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-12-28-2020-picture/</loc>
+    <lastmod>2020-12-28T14:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/tags/%E7%BE%8E%E7%9A%84%E4%BA%8B%E7%89%A9/</loc>
+    <lastmod>2020-12-28T14:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/categories/%E7%BE%8E%E7%9A%84%E4%BA%8B%E7%89%A9/</loc>
+    <lastmod>2020-12-28T14:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-12-24-pyfastx/</loc>
+    <lastmod>2020-12-24T12:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/tags/%E7%94%9F%E4%BF%A1%E8%BD%AF%E4%BB%B6/</loc>
+    <lastmod>2020-12-24T12:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/tags/ngs/</loc>
+    <lastmod>2020-12-23T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/tags/%E7%97%85%E5%8E%9F%E5%BE%AE%E7%94%9F%E7%89%A9/</loc>
+    <lastmod>2020-12-23T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/categories/%E7%97%85%E5%8E%9F%E5%BE%AE%E7%94%9F%E7%89%A9/</loc>
+    <lastmod>2020-12-23T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-12-23-clinical-microbe-ngs-theory/</loc>
+    <lastmod>2020-12-23T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-12-22-clinical-microbe-ngs-application/</loc>
+    <lastmod>2020-12-22T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-12-22-clinical-microbe-ngs-introduction/</loc>
+    <lastmod>2020-12-22T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/</loc>
+    <lastmod>2020-12-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/tags/rosalind/</loc>
+    <lastmod>2020-12-09T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/categories/rosalind/</loc>
+    <lastmod>2020-12-09T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/rosalind/2020-12-09-rosalind-013-prob/</loc>
+    <lastmod>2020-12-09T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/rosalind/2020-12-08-rosalind-011-dna-orf/</loc>
+    <lastmod>2020-12-08T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/rosalind/2020-12-08-rosalind-012-perm/</loc>
+    <lastmod>2020-12-08T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/rosalind/2020-12-07-rosalind-008-first-law/</loc>
+    <lastmod>2020-12-07T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/rosalind/2020-12-07-rosalind-009-dna-motif/</loc>
+    <lastmod>2020-12-07T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/rosalind/2020-12-07-rosalind-010-dna-cons/</loc>
+    <lastmod>2020-12-07T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/rosalind/2020-12-06-rosalind-007-fib/</loc>
+    <lastmod>2020-12-06T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/rosalind/2020-12-05-rosalind-002-transcript/</loc>
+    <lastmod>2020-12-05T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/rosalind/2020-12-05-rosalind-003-translate/</loc>
+    <lastmod>2020-12-05T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/rosalind/2020-12-05-rosalind-004-revc/</loc>
+    <lastmod>2020-12-05T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/rosalind/2020-12-05-rosalind-005-gc_content/</loc>
+    <lastmod>2020-12-05T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/rosalind/2020-12-05-rosalind-006-hamm/</loc>
+    <lastmod>2020-12-05T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/rosalind/2020-12-04-rosalind-001-base-count/</loc>
+    <lastmod>2020-12-04T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/tags/pcr/</loc>
+    <lastmod>2020-12-02T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/categories/pcr/</loc>
+    <lastmod>2020-12-02T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-12-02-pcr-5-pollution/</loc>
+    <lastmod>2020-12-02T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-12-01-pcr-4-question/</loc>
+    <lastmod>2020-12-01T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-11-30-pcr-3-primer-design/</loc>
+    <lastmod>2020-11-30T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-11-29-pcr-2-taq_dna/</loc>
+    <lastmod>2020-11-29T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-11-27-pcr-1-introduction/</loc>
+    <lastmod>2020-11-27T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-11-29-pcr-0-kepu/</loc>
+    <lastmod>2020-11-29T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/best/2020-11-23-learn-bioinfomatics/</loc>
+    <lastmod>2020-11-23T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/best/2020-11-20.linux/</loc>
+    <lastmod>2020-12-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-11-20.base-pair-unit/</loc>
+    <lastmod>2020-11-20T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/best/2020-11-19-conda/</loc>
+    <lastmod>2020-11-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-11-17-pysam/</loc>
+    <lastmod>2020-11-17T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-11-16-local-ncbi-db/</loc>
+    <lastmod>2020-11-16T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-11-14-online-learning/</loc>
+    <lastmod>2020-11-14T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-11-14-bioinfo-competition/</loc>
+    <lastmod>2020-11-14T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-11-13-bioinfo-full-view/</loc>
+    <lastmod>2020-11-13T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-11-13-think-like-company/</loc>
+    <lastmod>2020-11-13T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-11-12-gene-bigdata-jiyinhui/</loc>
+    <lastmod>2020-11-12T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-11-10.letter-to-reader-bioinfo/</loc>
+    <lastmod>2020-11-10T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/best/2020-11-09.git/</loc>
+    <lastmod>2020-11-09T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-09-15.aspera/</loc>
+    <lastmod>2020-09-15T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/tags/%E6%89%A9%E5%A2%9E%E5%AD%90/</loc>
+    <lastmod>2020-09-14T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/categories/%E6%89%A9%E5%A2%9E%E5%AD%90/</loc>
+    <lastmod>2020-09-14T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-09-14.microbe-vsearch/</loc>
+    <lastmod>2020-09-14T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-09-05.microbe-fastp/</loc>
+    <lastmod>2020-09-05T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-09-03.microbe-bcl2fastq/</loc>
+    <lastmod>2020-09-03T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-09-01.best-bioinfo-env-win/</loc>
+    <lastmod>2020-09-01T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-07-21.best-bioinfo-env-mac/</loc>
+    <lastmod>2020-07-21T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-07-20.chuxin/</loc>
+    <lastmod>2020-07-20T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-07-18.ssh/</loc>
+    <lastmod>2020-07-19T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-07-19.houlang/</loc>
+    <lastmod>2020-07-19T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-07-17.markdown/</loc>
+    <lastmod>2020-07-17T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-07-16.aboutme/</loc>
+    <lastmod>2020-07-16T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jianzuoyi.github.io/post/2020-12-25-chun-jiang-hua-yue-ye/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+</urlset>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 简佐义的博客</title>
+    <link>https://jianzuoyi.github.io/post/</link>
+    <description>Recent content in Posts on 简佐义的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 06 Jun 2022 16:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://jianzuoyi.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>生信工程师的核心竞争力在哪里？</title>
+      <link>https://jianzuoyi.github.io/post/2022-06-06-bioinformatics-core-skill/</link>
+      <pubDate>Mon, 06 Jun 2022 16:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2022-06-06-bioinformatics-core-skill/</guid>
+      <description>做生信，现在的程序或各种软件包都非常强大，输入数据，几行代码就出来想要的结果，生信工程师的基本功在于各种数据格式整理，天花板在于会讲生物学故</description>
+    </item>
+    
+    <item>
+      <title>网址大全</title>
+      <link>https://jianzuoyi.github.io/post/best/2022-04-15-websites/</link>
+      <pubDate>Fri, 15 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/best/2022-04-15-websites/</guid>
+      <description>镜像网站 名称 网址 备注 2022谷歌镜像站 https://jia110.github.io/index.htm 谷歌翻译 https://translate.google.cn 1 https://zh.wikipedia.ahau.cf/ 2 3 4 5 英文1 https://en.wanweibaike.com/ 英文2 https://en.jinzhao.wiki/wiki/Main_Page 英文3 http://en.wiki.sxisa.org/wiki/Main_Page https://en.wanweibaike.com/ https://en.wiki.hancel.org/wiki/Main_Page 未阉割版 https://encyclopedia.thefreedictionary.com/</description>
+    </item>
+    
+    <item>
+      <title>对于有生物学基础，但无生物信息学背景的人，转行到生信难不难</title>
+      <link>https://jianzuoyi.github.io/post/2020-12-30-biology-to-bioinformatics/</link>
+      <pubDate>Wed, 30 Dec 2020 16:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-12-30-biology-to-bioinformatics/</guid>
+      <description>这个问题像是为我量身定做的，必须来答一波，希望给新人一点参考。 本人生物本科，后来考研转型生物信息学，毕业后在企业担任生信工程师，现在为北京一</description>
+    </item>
+    
+    <item>
+      <title>生物信息为什么要学 Linux？</title>
+      <link>https://jianzuoyi.github.io/post/2020-12-29-why-bioinformatics-need-linux/</link>
+      <pubDate>Tue, 29 Dec 2020 16:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-12-29-why-bioinformatics-need-linux/</guid>
+      <description>前面写了一篇生信人的自我修养：Linux命令速查手册，有朋友觉得是为 IT 人员准备的。 科普任重而道远，我还是用这篇文章解释一下吧。 两个方面的需求</description>
+    </item>
+    
+    <item>
+      <title>2020 图片：我们人类这一年</title>
+      <link>https://jianzuoyi.github.io/post/2020-12-28-2020-picture/</link>
+      <pubDate>Mon, 28 Dec 2020 14:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-12-28-2020-picture/</guid>
+      <description>2020年还有3天就要过去了，我们人类这一年可真不容易。 2019/06/04 黄鹤楼，岁月静好。 2020/01/06 北京下雪了。摄于上班途中。 2020/01/29 武汉已经封城一周。担心疫情严重不能</description>
+    </item>
+    
+    <item>
+      <title>李恒大神亲测推荐，基因组序列处理神器Pyfastx简介</title>
+      <link>https://jianzuoyi.github.io/post/2020-12-24-pyfastx/</link>
+      <pubDate>Thu, 24 Dec 2020 12:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-12-24-pyfastx/</guid>
+      <description>今天强烈安利一个基因组序列处理神器：Pyfastx。软件历经20个月、70个版本，文章发表在生信顶刊《Briefings in Bioinform</description>
+    </item>
+    
+    <item>
+      <title>病原微生物高通量测序：第三节 检测原理</title>
+      <link>https://jianzuoyi.github.io/post/2020-12-23-clinical-microbe-ngs-theory/</link>
+      <pubDate>Wed, 23 Dec 2020 15:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-12-23-clinical-microbe-ngs-theory/</guid>
+      <description>临床微生物高通量检测，应用场景不同，各种测序技术令人眼花缭乱，但我们可以做如下总结。 检测对象：病原体核酸，或人宿主自身核酸 测序技术：DNA测</description>
+    </item>
+    
+    <item>
+      <title>病原微生物高通量测序：第二节 应用场景</title>
+      <link>https://jianzuoyi.github.io/post/2020-12-22-clinical-microbe-ngs-application/</link>
+      <pubDate>Tue, 22 Dec 2020 22:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-12-22-clinical-microbe-ngs-application/</guid>
+      <description>临床微生物高通量测序，主要有4个应用场景：感染病原识别、微生物组分析、人宿主免疫应答分析和肿瘤学分析。目的不同，采用的测序策略也不一样。 1.</description>
+    </item>
+    
+    <item>
+      <title>病原微生物高通量测序：第一节 概述</title>
+      <link>https://jianzuoyi.github.io/post/2020-12-22-clinical-microbe-ngs-introduction/</link>
+      <pubDate>Tue, 22 Dec 2020 19:00:00 +0800</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/2020-12-22-clinical-microbe-ngs-introduction/</guid>
+      <description>2014年前后，国内肿瘤基因检测才刚起步，但奥巴马总统在2015年1月20日的国情咨文中，提出“精准医疗”这一概念，着实为肿瘤基因检测加了一</description>
+    </item>
+    
+    <item>
+      <title>Rosalind刷题笔记：013 随机DNA序列</title>
+      <link>https://jianzuoyi.github.io/post/rosalind/2020-12-09-rosalind-013-prob/</link>
+      <pubDate>Wed, 09 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/rosalind/2020-12-09-rosalind-013-prob/</guid>
+      <description>众所周知，基因组的核酸链不可能是随机形成的。有时候许多物种基因组之间，存在一些保守序列（motif），这意味着它们可能具有重要功能。但是，我</description>
+    </item>
+    
+    <item>
+      <title>Rosalind刷题笔记：011 DNA六框翻译</title>
+      <link>https://jianzuoyi.github.io/post/rosalind/2020-12-08-rosalind-011-dna-orf/</link>
+      <pubDate>Tue, 08 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/rosalind/2020-12-08-rosalind-011-dna-orf/</guid>
+      <description>开放阅读框（Open Reading Frame, ORF）是由起始密码子开始，直到终止密码子结束，中间不含有其他终止密码子的核酸序列。由于DNA是双链结构，任何一条链</description>
+    </item>
+    
+    <item>
+      <title>Rosalind刷题笔记：012 排列组合</title>
+      <link>https://jianzuoyi.github.io/post/rosalind/2020-12-08-rosalind-012-perm/</link>
+      <pubDate>Tue, 08 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/rosalind/2020-12-08-rosalind-012-perm/</guid>
+      <description>点突变只能使同一个物种内的个体得到变异，而要产生新物种，则需要更大规模的改变，这就是基因组重排。如果我们比较相邻物种的基因组，会发现它们的染</description>
+    </item>
+    
+    <item>
+      <title>Rosalind刷题笔记：008 孟德尔第一定律</title>
+      <link>https://jianzuoyi.github.io/post/rosalind/2020-12-07-rosalind-008-first-law/</link>
+      <pubDate>Mon, 07 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/rosalind/2020-12-07-rosalind-008-first-law/</guid>
+      <description>遗传学三大定律是：基因的分离定律、基因的自由组合定律、基因的连锁与交换定律。本题主要考查孟德尔第一定律及概率论基础知识。 给定： 三个正整数k,</description>
+    </item>
+    
+    <item>
+      <title>Rosalind刷题笔记：009 查找DNA中的motif</title>
+      <link>https://jianzuoyi.github.io/post/rosalind/2020-12-07-rosalind-009-dna-motif/</link>
+      <pubDate>Mon, 07 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/rosalind/2020-12-07-rosalind-009-dna-motif/</guid>
+      <description>在字符串中查找子串是一个常见问题。子串在字符串中可能是唯一的，比如特定的基因序列；也有可能有多个拷贝，比如基因组中的重复序列。这些重复序列可</description>
+    </item>
+    
+    <item>
+      <title>Rosalind刷题笔记：010 DNA一致性序列计算</title>
+      <link>https://jianzuoyi.github.io/post/rosalind/2020-12-07-rosalind-010-dna-cons/</link>
+      <pubDate>Mon, 07 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/rosalind/2020-12-07-rosalind-010-dna-cons/</guid>
+      <description>经常碰到需要计算一组DNA序列的一致性序列，比如去除测序数据中的PCR错误，最简单的方法就是通过计算它们之间的一致性序列。 计算一致性序列，通</description>
+    </item>
+    
+    <item>
+      <title>Rosalind刷题笔记：007 兔子问题和递推</title>
+      <link>https://jianzuoyi.github.io/post/rosalind/2020-12-06-rosalind-007-fib/</link>
+      <pubDate>Sun, 06 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/rosalind/2020-12-06-rosalind-007-fib/</guid>
+      <description>序列是一组有序对象的集合，它有如下特征： 序列内元素可以重复； 序列可以是有限的，也可以是无限的。 递推关系是一种用来定义序列的方法，可以通过前面</description>
+    </item>
+    
+    <item>
+      <title>Rosalind刷题笔记：002 中心法则：转录</title>
+      <link>https://jianzuoyi.github.io/post/rosalind/2020-12-05-rosalind-002-transcript/</link>
+      <pubDate>Sat, 05 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/rosalind/2020-12-05-rosalind-002-transcript/</guid>
+      <description>我在生物信息学：全景一文中，阐述了生物信息学的应用领域非常广泛。但是有一点是很关键的，就是细胞内的生命活动都遵从中心法则，生物信息学很多时候</description>
+    </item>
+    
+    <item>
+      <title>Rosalind刷题笔记：003 中心法则：翻译</title>
+      <link>https://jianzuoyi.github.io/post/rosalind/2020-12-05-rosalind-003-translate/</link>
+      <pubDate>Sat, 05 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/rosalind/2020-12-05-rosalind-003-translate/</guid>
+      <description>我在生物信息学：全景一文中，阐述了生物信息学的应用领域非常广泛。但是有一点是很关键的，就是细胞内的生命活动都遵从中心法则，生物信息学很多时候</description>
+    </item>
+    
+    <item>
+      <title>Rosalind刷题笔记：004 求DNA的反向互补序列</title>
+      <link>https://jianzuoyi.github.io/post/rosalind/2020-12-05-rosalind-004-revc/</link>
+      <pubDate>Sat, 05 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/rosalind/2020-12-05-rosalind-004-revc/</guid>
+      <description>碱基互补配对原则是：A与T配对，G与C配对。 求DNA的反向互补序列分两步：第一是反向，第二是互补。比如序列“ATGC”，反向就是“CGTA”</description>
+    </item>
+    
+    <item>
+      <title>Rosalind刷题笔记：005 计算GC含量</title>
+      <link>https://jianzuoyi.github.io/post/rosalind/2020-12-05-rosalind-005-gc_content/</link>
+      <pubDate>Sat, 05 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jianzuoyi.github.io/post/rosalind/2020-12-05-rosalind-005-gc_content/</guid>
+      <description>DNA序列的GC含量是指序列中&amp;rsquo;G&#39;和&amp;rsquo;C&#39;所占的百分比。 一条DNA序列很容易表示，但是如果有多条DNA序列放在一起</description>
+    </item>
+    
+  </channel>
+</rss>
