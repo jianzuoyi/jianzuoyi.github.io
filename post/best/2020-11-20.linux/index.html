@@ -69,7 +69,7 @@
 <meta itemprop="description" content="许多人做生物信息学，要么不重视Linux，要么不知道怎么才能学好。翻开厚厚的一本教材，却不知道哪些是重点。Linux的核心知识有哪些，就像英">
 <meta itemprop="datePublished" content="2020-11-20T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-12-21T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="7660">
+<meta itemprop="wordCount" content="7611">
 
 
 
@@ -445,7 +445,11 @@
     </li>
     <li><a href="#bash脚本模板">Bash脚本模板</a></li>
     <li><a href="#其他命令">其他命令</a></li>
-    <li><a href="#写在最后">写在最后</a></li>
+    <li><a href="#进阶">进阶</a>
+      <ul>
+        <li><a href="#sftp-ftp-上传下载">sftp FTP 上传下载</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -1545,9 +1549,30 @@ seq 10			<span class="c1"># 产生1到10的整数</span>
 md5sum			<span class="c1"># 生成，或验证文件的MD5值</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="写在最后">写在最后</h2>
-<p>我的文章都汇总在个人博客（https://jianzuoyi.github.io），每个主题都会反复打磨，这样既有利于自己提高，也能为读者提供优质内容。如果你对生物信息学感兴趣，强烈建议你读一读下面这篇文章。</p>
-<p><a href="https://zhuanlan.zhihu.com/p/323951235">如何自学生物信息学：从菜鸟到专家</a></p>
+</div><h2 id="进阶">进阶</h2>
+<h3 id="sftp-ftp-上传下载">sftp FTP 上传下载</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 登录</span>
+sftp username@ip <span class="c1"># 回车，输入密码</span>
+
+ls    <span class="c1"># 显示目录</span>
+<span class="nb">pwd</span>   <span class="c1"># 显示当前路径</span>
+
+get -r ftpDir localDir
+</code></pre></td></tr></table>
+</div>
+</div><p>具体可以参考：<a href="https://linux.cn/article-8253-1.html">如何在 Linux 中使用 sFTP 上传或下载文件与文件夹</a></p>
+<p>&ndash; End &ndash;</p>
 
     </div>
 
